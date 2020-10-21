@@ -1,15 +1,41 @@
 <?PHP
-
-
-include("core/db.php");
-
-class category{
+use coreAppNS\Model;
+class categoryModel extends Model{
 
 
 
     function __construct(){
-     //   $this->db=new DB();
+       $this->db=new DB();
     }
+
+    function  getCategories(){
+        $cols=array();
+        $table=array("categories");
+       $result=  $this->db->cols()
+       ->table($table)
+       ->where("parent","=","0")
+       ->get()
+       ->execute()
+       ->fetch();
+return $result;
+    }
+
+    function  getSubCategories(){
+        $cols=array('cat_name');
+        $table=array("categories");
+       $result=  $this->db->cols()
+       ->table($table)
+       ->where("parent","=","cat_id")
+       ->get()
+       ->execute()
+       ->fetch();
+return $result;
+    }
+
+
+
+
+
 
 
 //     function  getData(){
