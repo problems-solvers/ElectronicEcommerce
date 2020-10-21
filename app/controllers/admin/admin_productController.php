@@ -17,8 +17,11 @@ public $cat_model;
 
 
        function admin_product(){
-       
-        $this->controller->view_object->create_view('admin/products');
+        $items=array(
+            'product'=>$this->cat_model->getQuery(),
+        );
+        print_r($items);
+        $this->controller->view_object->create_view('admin/products', $items);
        }
        function addProduct(){
         $items=array(
@@ -31,7 +34,7 @@ public $cat_model;
         $uuid=baseFunctions::uuid();
 
         $_POST['pro_id']= $uuid;
-        $_POST['create_date']="NOW()";
+        $_POST['create_date']= date('Y-m-d H:i:s');
 
         $img=baseFunctions::img($_FILES['pro_imgs']);
         $main_img=baseFunctions::main_img($_FILES['main_img']);
@@ -46,14 +49,12 @@ public $cat_model;
             'pro_details' =>"'".$_POST['pro_details']."'",
             'brand' =>"'".$_POST['brand']."'",
             'cat_id' =>"'".$_POST['cat_id']."'",
+            'create_date' =>"'".$_POST['create_date']."'",
             'pro_imgs' =>"'".$img."'"            
             );
             $this->cat_model->add($data);
           
        }
-
-     
-
 
 }
 
