@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
 
 <form action="/mvcphp/user/register/signup" method="post">
   <!-- <div class="imgcontainer">
@@ -25,7 +22,7 @@
     <button type="button" class="cancelbtn">Cancel</button>
     <span class="psw"><a href="http://localhost/mvcphp/user/login">login</a></span>
   </div>
-</form>
+<!-- </form>
 <style>
 
 form {
@@ -97,6 +94,4 @@ span.psw {
   .cancelbtn {
     width: 100%;
   }
-}</style>
-</body>
-</html>
+}</style> -->

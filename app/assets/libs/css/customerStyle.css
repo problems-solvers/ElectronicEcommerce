@@ -2,6 +2,65 @@
 /*-----------------------
 Top Header
 -------------------------*/
-.navbar{
-    background: #714674;#CC8B79
+body{
+    background-color:#F6EBFC !important;
+
+}
+#CustTemplate{
+    overflow-x:hidden;
+    min-height: 100vh;
+}
+#CustTemplate nav{
+    background-color: #714674 !important;
+ }
+ .productCard{
+    width: 13rem; 
+    height:330px;
+ }
+ .productCard img{
+    height:200px !important;
+ }
+ .productCardbtns{
+ width:100%; 
+ margin-top:-25px; 
+ font-size:30px;
+ }
+ .productCardbtnsV div{
+    font-size:30px !important;
+ }
+
+ 
+ .block{
+  width: 100%;
+  position: relative;
+  min-height: 600px;
+ 
+}
+.block::after{
+  content: '';
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  background: linear-gradient(to top, #CC8B79, #714674);
+  z-index: -1;
+  
+  transform: skew(0deg, -5deg)
+} 
+#CustTemplate #footer  {
+    
+    bottom: 0;
+    width: 100%;
+    overflow-x:hidden; 
+  }
+ #CustTemplate #footer .mainfooter{
+    background-color: #714674 !important;
+    color:#fff;
+ }
+ #CustTemplate #footer .mainfooter a{
+    color:#fff;
+    text-decoration: none;
+ }
+ #CustTemplate #footer .copyright, .productCardbtns div a , .productCardbtnsV  div a{
+    color:#714674 !important ;
+
  }

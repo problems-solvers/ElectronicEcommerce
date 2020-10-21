@@ -32,13 +32,13 @@
 <!-- ============================================================== -->
 <!-- Optional JavaScript -->
 <!-- jquery 3.3.1 -->
-<script src="../app/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+<script src="/ElectronicEcommerce/app/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
 <!-- bootstap bundle js -->
-<script src="../app/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="/ElectronicEcommerce/app/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
 <!-- slimscroll js -->
-<script src="../app/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+<script src="/ElectronicEcommerce/app/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
 <!-- main js -->
-<script src="../app/assets/libs/js/main-js.js"></script>
+<script src="/ElectronicEcommerce/app/assets/libs/js/main-js.js"></script>
 <!-- chart chartist js -->
 <!-- <script src="../app/assets/vendor/charts/chartist-bundle/chartist.min.js"></script> -->
 <!-- sparkline js -->

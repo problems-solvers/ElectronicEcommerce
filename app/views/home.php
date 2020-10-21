@@ -1,4 +1,315 @@
-<div class="email editor">
+
+
+
+<div id="carouselExampleIndicators" class=" col-8 mx-auto carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner " style="height:300px; ">
+    <div class="carousel-item active ">
+      <img class="d-block w-100 " src="http://placehold.it/64x64" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="http://placehold.it/64x64" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="http://placehold.it/64x64" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<div class="mx-auto  my-2 py-2 col-4 text-center text-light" style="background-color:#CC8B79">
+  <h3>This is a title</h3>
+</div>
+<div id="owl-two" class=" owl-carousel owl-theme mx-auto">
+    <div class="item mx-2"><div class="card productCard mx-auto " >
+  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
+  <div class="row productCardbtns mx-0">
+          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
+  </div>
+  <div class="card-body py-1">
+    <h5 class="card-title">Name</h5>
+    <span >price</span>
+    <br>
+    <span>Category</span>
+  </div>
+</div></div>
+    <div class="item mx-2"><div class="card productCard mx-auto" >
+  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
+  <div class="row productCardbtns mx-0">
+          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
+  </div>
+  <div class="card-body py-1">
+    <h5 class="card-title">Name</h5>
+    <span >price</span>
+    <br>
+    <span>Category</span>
+  </div>
+</div></div>
+    <div class="item mx-2"><div class="card productCard mx-auto" >
+  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
+  <div class="row productCardbtns mx-0">
+          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
+  </div>
+  <div class="card-body py-1">
+    <h5 class="card-title">Name</h5>
+    <span >price</span>
+    <br>
+    <span>Category</span>
+  </div>
+</div></div>
+    <div class="item mx-2"><div class="card productCard mx-auto" >
+  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
+  <div class="row productCardbtns mx-0">
+          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
+  </div>
+  <div class="card-body py-1">
+    <h5 class="card-title">Name</h5>
+    <span >price</span>
+    <br>
+    <span>Category</span>
+  </div>
+</div></div>
+    <div class="item mx-2"><div class="card productCard mx-auto" >
+  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
+  <div class="row productCardbtns mx-0">
+          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
+  </div>
+  <div class="card-body py-1">
+    <h5 class="card-title">Name</h5>
+    <span >price</span>
+    <br>
+    <span>Category</span>
+  </div>
+</div></div>
+    <div class="item mx-2"><div class="card productCard mx-auto" >
+  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
+  <div class="row productCardbtns mx-0">
+          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
+  </div>
+  <div class="card-body py-1">
+    <h5 class="card-title">Name</h5>
+    <span >price</span>
+    <br>
+    <span>Category</span>
+  </div>
+</div></div>
+    <div class="item mx-2"><div class="card productCard mx-auto" >
+  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
+  <div class="row productCardbtns mx-0">
+          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
+  </div>
+  <div class="card-body py-1">
+    <h5 class="card-title">Name</h5>
+    <span >price</span>
+    <br>
+    <span>Category</span>
+  </div>
+</div></div>
+    <div class="item mx-2"><div class="card productCard mx-auto" >
+  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
+  <div class="row productCardbtns mx-0">
+          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
+  </div>
+  <div class="card-body py-1">
+    <h5 class="card-title">Name</h5>
+    <span >price</span>
+    <br>
+    <span>Category</span>
+  </div>
+</div></div>
+    <div class="item mx-2"><div class="card productCard mx-auto" >
+  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
+  <div class="row productCardbtns mx-0">
+          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
+  </div>
+  <div class="card-body py-1">
+    <h5 class="card-title">Name</h5>
+    <span >price</span>
+    <br>
+    <span>Category</span>
+  </div>
+</div></div>
+    <div class="item mx-2"><div class="card productCard mx-auto" >
+  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
+  <div class="row productCardbtns mx-0">
+          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
+  </div>
+  <div class="card-body py-1">
+    <h5 class="card-title">Name</h5>
+    <span >price</span>
+    <br>
+    <span>Category</span>
+  </div>
+</div></div>
+    <div class="item mx-2"><div class="card productCard mx-auto" >
+  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
+  <div class="row productCardbtns mx-0">
+          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
+  </div>
+  <div class="card-body py-1">
+    <h5 class="card-title">Name</h5>
+    <span >price</span>
+    <br>
+    <span>Category</span>
+  </div>
+</div></div>
+    <div class="item mx-2"><div class="card productCard mx-auto" >
+  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
+  <div class="row productCardbtns mx-0">
+          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
+          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
+  </div>
+  <div class="card-body py-1">
+    <h5 class="card-title">Name</h5>
+    <span >price</span>
+    <br>
+    <span>Category</span>
+  </div>
+</div>
+</div>
+</div>
+<div class="mx-auto my-2 py-2 col-4 text-center text-light" style="background-color:#CC8B79">
+  <h3>This is a title</h3>
+</div>
+<div class="row my-2">
+    <div class="col-3  m-auto "> <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap"></div>
+<div class="col-9 row">
+    <div class="col-6 my-3">
+<div class="card  mx-auto" style="width:400px; height:200px;">
+  <div class="d-flex align-content-middle">
+    <div class="col-6 px-0 align-items-center ">
+  <img style="height:100%; width:200px;" src="http://placehold.it/64x64" alt="Card image cap">
+  </div>
+  <div class="card-body col-4 py-1 m-auto">
+    <h5 class="card-title">Name</h5>
+    <span >price</span>
+    <br>
+    <span>Category</span>
+  </div>
+  <div class="col-2 m-auto productCardbtnsV  align-content-middle align-middle" >
+   
+          <div class="m-auto ">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
+          <div class="m-auto" >  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
+          <div class="m-auto" >  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
+  
+  </div>
+  
+  </div>
+</div>
+</div>
+<div class="col-6 my-3">
+<div class="card  mx-auto" style="width:400px; height:200px;">
+  <div class="d-flex align-content-middle">
+    <div class="col-6 px-0 align-items-center ">
+  <img style="height:100%; width:200px;" src="http://placehold.it/64x64" alt="Card image cap">
+  </div>
+  <div class="card-body col-4 py-1 m-auto">
+    <h5 class="card-title">Name</h5>
+    <span >price</span>
+    <br>
+    <span>Category</span>
+  </div>
+  <div class="col-2 m-auto productCardbtnsV  align-content-middle align-middle" >
+   
+          <div class="m-auto ">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
+          <div class="m-auto" >  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
+          <div class="m-auto" >  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
+  
+  </div>
+  
+  </div>
+</div>
+</div>
+<div class="col-6 my-3">
+<div class="card  mx-auto" style="width:400px; height:200px;">
+  <div class="d-flex align-content-middle">
+    <div class="col-6 px-0 align-items-center ">
+  <img style="height:100%; width:200px;" src="http://placehold.it/64x64" alt="Card image cap">
+  </div>
+  <div class="card-body col-4 py-1 m-auto">
+    <h5 class="card-title">Name</h5>
+    <span >price</span>
+    <br>
+    <span>Category</span>
+  </div>
+  <div class="col-2 m-auto productCardbtnsV  align-content-middle align-middle" >
+   
+          <div class="m-auto ">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
+          <div class="m-auto" >  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
+          <div class="m-auto" >  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
+  
+  </div>
+  
+  </div>
+</div>
+</div>
+<div class="col-6 my-3">
+<div class="card  mx-auto" style="width:400px; height:200px;">
+  <div class="d-flex align-content-middle">
+    <div class="col-6 px-0 align-items-center ">
+  <img style="height:100%; width:200px;" src="http://placehold.it/64x64" alt="Card image cap">
+  </div>
+  <div class="card-body col-4 py-1 m-auto">
+    <h5 class="card-title">Name</h5>
+    <span >price</span>
+    <br>
+    <span>Category</span>
+  </div>
+  <div class="col-2 m-auto productCardbtnsV  align-content-middle align-middle" >
+   
+          <div class="m-auto ">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
+          <div class="m-auto" >  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
+          <div class="m-auto" >  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
+  
+  </div>
+  
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row mx-auto my-2" style="height:300px;">
+    <div class="col-5  mx-auto "> <img class="card-img-top "  height="50%" src="http://placehold.it/64x64" alt="Card image cap"></div>
+    <div class="col-5  mx-auto ">  <img class="card-img-top" height="50%" src="http://placehold.it/64x64" alt="Card image cap"></div>
+</div>
+
+
+
+<!-- <div class="email editor">
      <div class="col-md-12 p-0">
          <div class="form-group">
              <label class="control-label sr-only" for="summernote">Descriptions </label>
@@ -353,4 +664,4 @@
                         </div>
                
 
-
+ -->
