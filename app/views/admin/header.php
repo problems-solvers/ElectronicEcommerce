@@ -5,6 +5,8 @@
             <!-- Required meta tags -->
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <link href='bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <!-- Bootstrap CSS -->
             <link rel="stylesheet" href="../app/assets/vendor/bootstrap/css/bootstrap.min.css">
             <link href="../app/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
@@ -15,6 +17,19 @@
             <link rel="stylesheet" href="../app/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
             <!-- <link rel="stylesheet" href="../app/assets/vendor/charts/c3charts/c3.css"> -->
             <link rel="stylesheet" href="../app/assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
+            <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+ 
+            <link href="css/addons/datatables2.min.css" rel="stylesheet">
+ <!-- DataTables JS -->
+            <script src="js/addons/datatables2.min.js" type="text/javascript"></script>
+ 
+ <!-- DataTables Select CSS -->
+            <link href="css/addons/datatables-select2.min.css" rel="stylesheet">
+ <!-- DataTables Select JS -->
+            <script src="js/addons/datatables-select2.min.js" type="text/javascript"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     
+           
             <title>ECOMMERCE CONTROLE PANEL</title>
         </head>
         
