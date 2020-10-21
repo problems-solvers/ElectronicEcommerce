@@ -7,7 +7,7 @@ class DB{
     public $column="";
     public $columnHead="";
     public $finalcol;
-    public $tables="ii";
+    public $tables="";
     public $condation="";
     public $final_query="";
     public $orderBy;
