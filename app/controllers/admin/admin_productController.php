@@ -7,7 +7,7 @@ public $cat_model;
 
 
 
-    function __construct($function="index"){
+    function __construct($function="admin_product"){
 
         $this->controller=new Controller();
         $this->cat_model=$this->controller->model_object->create_model('product');
