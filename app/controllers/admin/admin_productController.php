@@ -20,7 +20,6 @@ public $cat_model;
         $items=array(
             'product'=>$this->cat_model->getQuery(),
         );
-        print_r($items);
         $this->controller->view_object->create_view('admin/products', $items);
        }
        function addProduct(){
@@ -54,6 +53,11 @@ public $cat_model;
             );
             $this->cat_model->add($data);
           
+       }
+       function delete(){
+ 
+        $this->cat_model->delete();
+        
        }
 
 }

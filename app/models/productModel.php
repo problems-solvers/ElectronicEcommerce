@@ -34,6 +34,11 @@ class productModel extends Model {
 
             
     }
+    function delete(){
+        $id=$_REQUEST['empid'];
+        $tbls=array("product");
+        $result=  $this->db->table($tbls)->where("pro_id","=","'".$id."'")->delete()->execute();
+    }
 }
 
 ?>
