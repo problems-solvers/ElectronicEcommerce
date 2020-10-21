@@ -14,3 +14,24 @@
         </div>
     </div>
 </div>
+
+<form class="form-horizontal"  action="/ElectronicEcommerce/admin/admin_cat/addTags"  method="POST" enctype="multipart/form-data">
+<fieldset>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="cat_name">Tag Name</label>  
+  <div class="col-md-4">
+  <input id="tag_name" name="tag_name" placeholder="Tag Name" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <div class="col-md-4">
+    <button id="singlebutton" action="/ElectronicEcommerce/admin/admin_cat" name="singlebutton" class="btn btn-primary">ADD Tag</button>
+  </div>
+  </div>
+  </form>
+

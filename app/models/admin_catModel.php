@@ -15,7 +15,6 @@ class admin_catModel extends Model{
         $table=array("categories");
        $result=  $this->db->cols()
        ->table($table)
-       ->where("is_active","=","1")
        ->get()
        ->execute()
        ->fetch();
@@ -34,7 +33,21 @@ return $result;
 return $result;
     }
 
+    
+    function  addCats($data){
+       print_r($data);
+        $tbls=array("categories");
+        $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
 
+            
+    }
+    function addTags($data){
+        print_r($data);
+         $tbls=array("tags");
+         $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
+ 
+             
+     }
 //     function update(){
 
        

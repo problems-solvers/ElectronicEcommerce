@@ -76,17 +76,19 @@ class DB{
 
     }
     function cols($cols=['*']){
+        //"'".implode("','", $Valuess)."'" ;
 
        $this->columns=$cols=='*' ? $cols : implode(', ',$cols);
        $this->columnsHead= implode(', ',array_keys($cols));
+      //  return $this->columnsHead=$cols=='*' ? $cols : implode(',',array_keys($cols));
         return $this;
 
     }
-  
     function get(){
         
-       $this->final_query="select ".$this->columns." from  ".$this->tables.$this->condation.$this->join.$this->count.$this->orderBy.$this->groupBy.$this->limit;
+       $this->final_query="select ".$this->columns." from ".$this->tables.$this->condation.$this->join.$this->count.$this->orderBy.$this->groupBy.$this->limit;
          return $this;
+       // return $this;
 
     }
     function table($tbl_name){
@@ -100,6 +102,7 @@ class DB{
         $body=explode(',',$this->columns);
        
        for ($i=0; $i < count($heads) ; $i++) { 
+           
         if(empty($this->finalcol))
            $this->finalcol=$heads[$i].' ='. $body[$i];
         else
@@ -113,7 +116,10 @@ class DB{
         return $this;
 
     }
-   
+    // function select($tbl_name){
+    //     return "select $columns from $tables $condation";
+
+    // }
     function insert(){
         $this->final_query= "INSERT INTO ".$this->tables." (".$this->columnsHead.")"." VALUES (".$this->columns.") ";
         return $this;
@@ -124,21 +130,20 @@ class DB{
       
     }
     function execute(){
-     
+      //  PDO::prepare($this->)
+      //  $result = false;
         try {
-         
            $this->stmt = $this->connection->prepare($this->final_query);
-        
+           $this->stmt->execute();
+       
         } catch (PDOException $exception) { die($exception->getMessage()); }
-     
+       // $this->stmt = null;
         return $this;
     }
     function fetch(){
-        $result= $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result= $this->stmt->fetchAll(PDO::FETCH_OBJ);
           return  $result;
     }
-
-
 }
 
 ?>
