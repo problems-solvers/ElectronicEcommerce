@@ -3,8 +3,7 @@ use coreAppNS\Controller;
 //include("app/models/category.php");
 class homeController extends Controller{
 public $controller;
-
-
+public $model;
 
     function __construct(){
 
@@ -18,10 +17,19 @@ public $controller;
 
         $this->controller->view_object->create_view('home');
        // $this->controller->view_object->create_view('admin/categories',$homeItems);
-    
+       $this->$fun();
+
        }
 
+       function home(){
+        echo 'hiiiiiiii';
+    }
 
+
+       
+       }
+       ?>
+       
 }
 
 
