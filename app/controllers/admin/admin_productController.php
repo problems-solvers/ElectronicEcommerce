@@ -15,7 +15,7 @@ public $cat_model;
         
        }
 
-
+      
        function admin_product(){
         $items=array(
             'product'=>$this->cat_model->getQuery(),

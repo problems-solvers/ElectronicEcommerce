@@ -1,7 +1,11 @@
 $(document).ready(function () {
   //Pagination numbers
 
-  
+  $('input.typeahead').typeahead({
+	name: 'typeahead',
+	remote:'http://localhost/ElectronicEcommerce/admin/admin_product/search?key=%QUERY',
+	limit : 10
+});
   $('.delete_employee').click(function(e){   
 	   e.preventDefault();   
 	   var empid = $(this).attr('data-emp-id');

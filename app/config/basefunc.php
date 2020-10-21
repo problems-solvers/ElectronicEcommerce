@@ -44,6 +44,7 @@ $main_temp=$img['tmp_name'];
 $main_name=move_uploaded_file($main_temp,$main_img);
 return $main_img;
 }
+
    
     
 }

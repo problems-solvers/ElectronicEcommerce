@@ -39,6 +39,8 @@ class productModel extends Model {
         $tbls=array("product");
         $result=  $this->db->table($tbls)->where("pro_id","=","'".$id."'")->delete()->execute();
     }
+
+  
 }
 
 ?>
