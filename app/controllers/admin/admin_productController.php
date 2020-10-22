@@ -45,17 +45,26 @@ public $cat_model;
             'pro_name'=>"'". $_POST['pro_name']."'",
             'pro_price'=>"'".$_POST['pro_price']."'",
             'pro_quentity' =>"'".$_POST['pro_quentity']."'",
-            'pro_details' =>"'".$_POST['pro_details']."'",
+            'pro_details' =>"'".$_POST['pro_details']."'", 
             'brand' =>"'".$_POST['brand']."'",
             'cat_id' =>"'".$_POST['cat_id']."'",
             'create_date' =>"'".$_POST['create_date']."'",
             'pro_imgs' =>"'".$img."'"            
             );
-            $this->cat_model->add($data);
+           $result= $this->cat_model->add($data);
+           if( $result)
+           {
+            echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product';</script>";
+            echo  " inside if";
+           }
+           else{
+            echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/addProduct';</script>";
+            </script>";
+
+           }
           
        }
        function delete(){
- 
         $this->cat_model->delete();
         
        }
