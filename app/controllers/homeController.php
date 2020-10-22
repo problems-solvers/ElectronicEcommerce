@@ -15,13 +15,13 @@ public $model;
         
         // );
 
-        $this->controller->view_object->create_view('home');
+        $this->controller->view_object->create_view('product');
        // $this->controller->view_object->create_view('admin/categories',$homeItems);
        $this->$fun();
 
        }
 
-       function home(){
+       function Product(){
         echo 'hiiiiiiii';
     }
 
