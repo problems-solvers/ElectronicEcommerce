@@ -39,7 +39,7 @@
 		echo "
 		<tr>
 		      <td>$index</td>
-							<td><img class='rounded' src='../../$row->main_img' width='70'>
+							<td><img class='rounded' src='../$row->main_img' width='70'>
 							<br>
 							$row->pro_name</td>
 		      <td>$row->pro_price</td>

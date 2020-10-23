@@ -22,6 +22,15 @@ public $cat_model;
         );
         $this->controller->view_object->create_view('admin/products', $items);
        }
+       public function view_product(){
+ 
+        $items=array(
+            'product'=>$this->cat_model->view_product(),
+            
+        );
+        $this->controller->view_object->create_view('admin/view_product',$items);
+       }
+
        function addProduct(){
         $items=array(
             'categories'=>$this->cat_model->getcat(),
