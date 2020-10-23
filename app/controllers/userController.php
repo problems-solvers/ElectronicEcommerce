@@ -12,7 +12,6 @@ class userController extends Controller
        
     }
     function user(){
-		echo 'hiiiiiiii';
 	}
 	function register(){
         $this->controller->view_object->create_view('register');
@@ -30,10 +29,20 @@ function signup(){
 					if($count > 0){
 						echo 'This User Already Exists';
 					}
+
 					else{
+						$uuid=baseFunctions::uuid();
+
+						$_POST['user_id']= $uuid;
+						$_POST['create_date']= date('Y-m-d H:i:s');
 		$data = array(
+		'user_id' =>"'".$_POST['user_id']."'",
+		'first_name' =>"'".$_POST['first_name']."'",
+		'last_name' =>"'".$_POST['last_name']."'",
 		'user_name' =>"'".$_POST['user_name']."'",
 		'user_email' =>"'".$_POST['user_email']."'",
+		'user_role' =>"'".$_POST['user_role']."'",
+		'create_date' =>"'".$_POST['create_date']."'",
 		'user_password' =>"'".md5($_POST['user_password'])."'"
 		);
 		$this->model->signup($data);
@@ -45,7 +54,7 @@ function signup(){
 	{    $this->controller->view_object->create_view('login');
 
 		$this->model->login();
-		header('location: home');
+	//s	header('location: home');
 	}
 	
 	function logout()

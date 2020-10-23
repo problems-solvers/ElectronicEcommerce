@@ -39,18 +39,20 @@ class userModel extends Model
 		->execute()
 		->fetch();
 		$count = count($res);
+		echo 'ffsdf';
 		
 		if ($count > 0) {
 			Session::init();
-			Session::set('role', "user");
-			Session::set('id', $res[0]['id']);
+			Session::set('role',$res[0]['user_role']);
+			Session::set('id', $res[0]['user_id']);
 			Session::set('loggedIn', true);
 			Session::set('user_name', $user_name);
 			Session::set('user_password', $res[0]['user_password']);
-		
+		echo 'loged in';
 		} 
 		   else {
 			Session::set('loggedIn', false);
+			echo 'nots in';
 		
 		}
 		
@@ -60,7 +62,7 @@ class userModel extends Model
 	{$table=array('user');
 		print_r( $data);
 		$que= $this->db->cols($data)->settingcol()->table($table)->
-		where('id','=',Session::get('id'))->
+		where('user_id','=',Session::get('user_id'))->
 		update()->execute();
 			
 	}

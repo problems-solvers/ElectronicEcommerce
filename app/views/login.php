@@ -9,7 +9,7 @@
   </div>
   <div class="form-group  col-8 mx-auto my-5">
     <!-- <label for="password">Password:</label> -->
-    <input type="password" class="form-control" placeholder="Enter Password" id="password" name="password" required>
+    <input type="password" class="form-control" placeholder="Enter Password" id="user_password" name="user_password" required>
   </div>
   <div class="inline-form form-check  col-8 mx-auto my-3">
     <label class="form-check-label px-3">
