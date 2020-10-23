@@ -61,6 +61,13 @@ public $cat_model;
             'pro_imgs' =>"'".$img."'"            
             );
             $this->cat_model->add($data);
+            if( $result)
+            {
+             echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/addProduct';</script>";
+            }
+            else{
+             echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product';</script>";
+            }
           
        }
        function delete(){
@@ -68,6 +75,38 @@ public $cat_model;
         $this->cat_model->delete();
         
        }
+       function update(){
+        $_POST['create_date']='NOW()';
+
+        $img=baseFunctions::img($_FILES['pro_imgs']);
+        $main_img=baseFunctions::main_img($_FILES['main_img']);
+        $data = array(
+            'pro_id' =>"'".$_POST['pro_id']."'",
+            'main_img' =>"'".$main_img."'",
+            'pro_imgs' =>"'".$img."'"  ,
+            'pro_name'=>"'". $_POST['pro_name']."'",
+            'pro_price'=>"'".$_POST['pro_price']."'",
+            'pro_quentity' =>"'".$_POST['pro_quentity']."'",
+            'pro_details' =>"'".$_POST['pro_details']."'",
+            'brand' =>"'".$_POST['brand']."'"            );
+           $result=$this->cat_model->update($data);
+           if( $result)
+           {
+            echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/addProduct';</script>";
+           }
+           else{
+            echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product';</script>";
+           }
+       }
+
+       function updateProduct(){
+       $item=array(
+            'updateProduct'=>$this->cat_model->updateProduct(),
+            
+        );
+        $this->controller->view_object->create_view('admin/updateProduct',$item);
+       }
+
 
 }
 
