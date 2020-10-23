@@ -1,12 +1,22 @@
 <?PHP
+use coreAppNS\Model;
 
-class product{
+class productModel extends Model {
 
     public  $db;
 
     function __construct(){
-        $this->$db=new DB();
-    }
+        $this->db=new DB();
+   }
+   function  getQuery(){
+     
+    $tbls=array("product");
+    return  $this->db
+    ->cols()
+    ->table($tbls)
+    ->get()
+    ->execute()->fetch();      
+}
     function  getcat(){
      
         $tbls=array("categories");
@@ -14,7 +24,8 @@ class product{
         ->cols()
 		->table($tbls)
 		->get()
-		->execute()->fetch();      
+        ->execute()->fetch(); 
+             
     }
     function  add($data){
      
@@ -23,14 +34,13 @@ class product{
 
             
     }
-   
     function delete(){
         $id=$_REQUEST['empid'];
         $tbls=array("product");
         $result=  $this->db->table($tbls)->where("pro_id","=","'".$id."'")->delete()-> execute();
 print_r($result);
     }
-}
+
 function update($data){
         $tbls=array('product');
         $id=$_REQUEST['pro_id'];
@@ -42,5 +52,7 @@ function view_more(){
     $id=$_REQUEST['pro_id'];
     $result=$this->db->clos()->table($tbls)->where("pro_id","=","'".$id."'")->get()-> execute();
     print_r($result);
+}
+}
 
 ?>

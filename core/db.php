@@ -26,7 +26,7 @@ class DB{
 
     }
     function orderBy($ordercol,$orderway){
-        if(empty($this->condation))
+        if(empty($this->orderBy))
         $this->orderBy="order by ".$ordercol." ".$orderway." ";
        else
        $this->orderBy.=",".$ordercol." ".$orderway." ";
@@ -37,7 +37,7 @@ class DB{
         return $this;
     }
     function groupBy($ordercol,$orderway){
-        if(empty($this->condation))
+        if(empty($this->groupBy))
         $this->groupBy="GROUP by ".$ordercol." ".$orderway." ";
        else
        $this->groupBy.=",".$ordercol." ".$orderway." ";
@@ -48,16 +48,25 @@ class DB{
         return $this;
     }
     function innerjoin($table,$leftside,$rightside){
-        $this->join.=" INNER JOIN ".$table." ON ".$leftside." = ".$rightside." ";
-        return $this;
+        if(empty($this->joins))
+        $this->join=" INNER JOIN ".$table." ON ".$leftside." = ".$rightside." ";
+       else
+       $this->join.=" INNER JOIN ".$table." ON ".$leftside." = ".$rightside." ";
+       return $this;
     }
     function outerjoin($table,$leftside,$rightside){
-        $this->join.=" RIGHT JOIN ".$table." ON ".$leftside." = ".$rightside." ";
-        return $this;
+        if(empty($this->join))
+        $this->join=" RIGHT JOIN ".$table." ON ".$leftside." = ".$rightside." ";
+       else
+       $this->join.=" RIGHT JOIN ".$table." ON ".$leftside." = ".$rightside." ";
+       return $this;
     }
     function leftjoin($table,$leftside,$rightside){
-        $this->join.=" LEFT JOIN ".$table." ON ".$leftside." = ".$rightside." ";
-        return $this;
+        if(empty($this->join))
+        $this->join=" LEFT JOIN ".$table." ON ".$leftside." = ".$rightside." ";
+       else
+       $this->join.=" LEFT JOIN ".$table." ON ".$leftside." = ".$rightside." ";
+       return $this;
     }
     function where($col_name,$con,$value){
         if(empty($this->condation))
@@ -76,17 +85,19 @@ class DB{
 
     }
     function cols($cols=['*']){
+        //"'".implode("','", $Valuess)."'" ;
 
        $this->columns=$cols=='*' ? $cols : implode(', ',$cols);
        $this->columnsHead= implode(', ',array_keys($cols));
+      //  return $this->columnsHead=$cols=='*' ? $cols : implode(',',array_keys($cols));
         return $this;
 
     }
-  
     function get(){
         
-       $this->final_query="select ".$this->columns." from  ".$this->tables.$this->condation.$this->join.$this->count.$this->orderBy.$this->groupBy.$this->limit;
+       $this->final_query="select ".$this->columns." from ".$this->tables.$this->join.$this->condation.$this->count.$this->orderBy.$this->groupBy.$this->limit;
          return $this;
+       // return $this;
 
     }
     function table($tbl_name){
@@ -100,6 +111,7 @@ class DB{
         $body=explode(',',$this->columns);
        
        for ($i=0; $i < count($heads) ; $i++) { 
+           
         if(empty($this->finalcol))
            $this->finalcol=$heads[$i].' ='. $body[$i];
         else
@@ -113,7 +125,10 @@ class DB{
         return $this;
 
     }
-   
+    // function select($tbl_name){
+    //     return "select $columns from $tables $condation";
+
+    // }
     function insert(){
         $this->final_query= "INSERT INTO ".$this->tables." (".$this->columnsHead.")"." VALUES (".$this->columns.") ";
         return $this;
@@ -124,21 +139,21 @@ class DB{
       
     }
     function execute(){
-     
+      //  PDO::prepare($this->)
+      //  $result = false;
+      // echo $this->final_query;
         try {
-         
            $this->stmt = $this->connection->prepare($this->final_query);
-        
+           $this->stmt->execute();
+       
         } catch (PDOException $exception) { die($exception->getMessage()); }
-     
+       // $this->stmt = null;
         return $this;
     }
     function fetch(){
-        $result= $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result= $this->stmt->fetchAll(PDO::FETCH_OBJ);
           return  $result;
     }
-
-
 }
 
 ?>
