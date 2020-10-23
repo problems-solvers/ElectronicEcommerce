@@ -54,6 +54,24 @@ public $cat_model;
             $this->cat_model->add($data);
           
        }
+ 
+       function update(){
+        $data = array(
+            'pro_id' =>"'".$_POST['pro_id']."'",
+            'pro_name'=>"'". $_POST['pro_name']."'",
+            'pro_price' =>"'".$_POST['pro_price']."'",
+            'pro_quentity' =>"'".$_POST['pro_quentity']."'",
+            'pro_details' =>"'".$_POST['pro_details']."'",
+            'cat_id' =>"'".$_POST['cat_id']."'"
+            );
+        $this->cat_model->update($data);
+       }
+
+       function updateproduct(){
+        $this->controller->view_object->create_view('admin/updateproduct');
+       }
+
+
        function delete(){
  
         $this->cat_model->delete();
