@@ -8,7 +8,7 @@ body{
 }
 #CustTemplate{
     overflow-x:hidden;
-    min-height: 100vh;
+  /* //  min-height: 100vh; */
 }
 #CustTemplate nav{
     background-color: #714674 !important;
@@ -46,12 +46,12 @@ body{
   
   transform: skew(0deg, -5deg)
 } 
-#CustTemplate #footer  {
+/* #CustTemplate #footer  {
     
     bottom: 0;
     width: 100%;
     overflow-x:hidden; 
-  }
+  } */
  #CustTemplate #footer .mainfooter{
     background-color: #714674 !important;
     color:#fff;

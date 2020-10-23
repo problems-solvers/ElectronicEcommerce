@@ -5,32 +5,33 @@ class homeController extends Controller{
 public $controller;
 public $model;
 
-    function __construct(){
+    function __construct($function){
 
         $this->controller=new Controller();
-        // $cat_model=$this->controller->model_object->create_model('category');
-        // $homeItems=array(
-        //     'categories'=>$cat_model->getData(),
-        //     'products'=>array('Lenovo','Galaxy s10','Dell Inspiron','Toshiba','HTC')
-        
-        // );
+        $this->model=$this->controller->model_object->create_model('home');
+        $this->$function();
 
-        $this->controller->view_object->create_view('home');
-       // $this->controller->view_object->create_view('admin/categories',$homeItems);
-       $this->$fun();
+      
 
-       }
-
-       function home(){
-        echo 'hiiiiiiii';
     }
 
+       function home(){
 
+        $items=array(
+            'Recent'=> $this->model->getRecentAddData(),
+            'Featured'=>$this->model->getAllProCatData()
+         ); 
        
-       }
-       ?>
+         
+
+        $this->controller->view_object->create_view('home',$items);
+       
+    }
+  
+
+
        
 }
 
-
 ?>
+       

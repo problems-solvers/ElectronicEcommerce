@@ -7,26 +7,28 @@ class homeModel extends Model{
  
     
         function  getRecentAddData(){
-            $cols=array('pro_id.product','pro_name.product','pro_price.product','cat_id.categories','cat_name.categories');
-            $table=array("product","categories");
-           $result=  $this->db->cols()
+            $cols=array('product.pro_id','product.pro_name','product.pro_price','product.main_img','categories.cat_id','categories.cat_name');
+            $table=array("product");
+           $result=  $this->db->cols($cols)
            ->table($table)
-           ->where("is_active","=","1")
-           ->orderBy("create_date","=","desc")
+           ->innerjoin("categories","product.cat_id","categories.cat_id")
+           ->where("product.is_active","=","1")
+           ->orderBy("product.create_date","desc")
+           ->limit(0,15)
            ->get()
            ->execute()
            ->fetch();
-    return $result;
+            return $result;
         }
-    
-    
-        function  getAllProCatData(){
-            $cols=array('cat_id','cat_name','pro_name','pro_price');
+   
+     function  getAllProCatData(){
+            $cols=array('product.pro_id','product.pro_name','product.main_img','product.pro_price','categories.cat_id','categories.cat_name');
             $table=array("product");
-           $result=  $this->db->cols()
+           $result=  $this->db->cols($cols)
            ->table($table)
-           ->innerjoin("product","categories","ON", "product.cat_id","=","categories.cat_id")
+           ->innerjoin("categories","product.cat_id","categories.cat_id")
            ->where("product.is_active","=","1")
+           ->orderBy("categories.create_date","desc")
            ->get()
            ->execute()
            ->fetch();
@@ -37,6 +39,3 @@ class homeModel extends Model{
     }
     
     ?>
-
-}
-?>

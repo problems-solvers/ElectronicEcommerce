@@ -34,7 +34,7 @@
 </div>
 	<div class="row copyright">
 		<div class="col-md-12 copy">
-			<p class="text-center copyright">&copy; Copyright 2020 - Electronic ecommerce Site.  All rights reserved.</p>
+			<p class="text-center copyright py-2 my-0">&copy; Copyright 2020 - Electronic ecommerce Site.  All rights reserved.</p>
 		</div>
   </div>
 </footer>

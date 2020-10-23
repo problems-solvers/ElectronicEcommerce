@@ -30,180 +30,62 @@
 <div class="mx-auto  my-2 py-2 col-4 text-center text-light" style="background-color:#CC8B79">
   <h3>This is a title</h3>
 </div>
-<div id="owl-two" class=" owl-carousel owl-theme mx-auto">
-    <div class="item mx-2"><div class="card productCard mx-auto " >
-  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
+<div id="owl-one" class=" owl-carousel owl-theme mx-auto">
+<?php  $rows=$data['Recent'];
+     foreach ($rows as $row) { echo ' 
+<div class="item mx-2">
+
+ <div class="card productCard mx-auto " >
+  <img class="card-img-top" src="'.$row->main_img.'" alt="Card image cap">
   <div class="row productCardbtns mx-0">
-          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
+          <div class="mx-auto">  <a href="#" ><i class="fas fa-heart"></i></a></div> 
+          <div class="mx-auto">  <a href="#" ><i class="fas fa-exchange-alt"></i></a></div> 
+          <div class="mx-auto">  <a href="#" ><i class="fas fa-shopping-cart"></i></a></div>            
   </div>
   <div class="card-body py-1">
-    <h5 class="card-title">Name</h5>
-    <span >price</span>
+    <h5 class="card-title">'.$row->pro_name.'</h5>
+    <span >'.$row->pro_price.'</span>
     <br>
-    <span>Category</span>
+    <span>'.$row->cat_name.'</span>
   </div>
-</div></div>
-    <div class="item mx-2"><div class="card productCard mx-auto" >
-  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
-  <div class="row productCardbtns mx-0">
-          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
-  </div>
-  <div class="card-body py-1">
-    <h5 class="card-title">Name</h5>
-    <span >price</span>
-    <br>
-    <span>Category</span>
-  </div>
-</div></div>
-    <div class="item mx-2"><div class="card productCard mx-auto" >
-  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
-  <div class="row productCardbtns mx-0">
-          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
-  </div>
-  <div class="card-body py-1">
-    <h5 class="card-title">Name</h5>
-    <span >price</span>
-    <br>
-    <span>Category</span>
-  </div>
-</div></div>
-    <div class="item mx-2"><div class="card productCard mx-auto" >
-  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
-  <div class="row productCardbtns mx-0">
-          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
-  </div>
-  <div class="card-body py-1">
-    <h5 class="card-title">Name</h5>
-    <span >price</span>
-    <br>
-    <span>Category</span>
-  </div>
-</div></div>
-    <div class="item mx-2"><div class="card productCard mx-auto" >
-  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
-  <div class="row productCardbtns mx-0">
-          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
-  </div>
-  <div class="card-body py-1">
-    <h5 class="card-title">Name</h5>
-    <span >price</span>
-    <br>
-    <span>Category</span>
-  </div>
-</div></div>
-    <div class="item mx-2"><div class="card productCard mx-auto" >
-  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
-  <div class="row productCardbtns mx-0">
-          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
-  </div>
-  <div class="card-body py-1">
-    <h5 class="card-title">Name</h5>
-    <span >price</span>
-    <br>
-    <span>Category</span>
-  </div>
-</div></div>
-    <div class="item mx-2"><div class="card productCard mx-auto" >
-  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
-  <div class="row productCardbtns mx-0">
-          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
-  </div>
-  <div class="card-body py-1">
-    <h5 class="card-title">Name</h5>
-    <span >price</span>
-    <br>
-    <span>Category</span>
-  </div>
-</div></div>
-    <div class="item mx-2"><div class="card productCard mx-auto" >
-  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
-  <div class="row productCardbtns mx-0">
-          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
-  </div>
-  <div class="card-body py-1">
-    <h5 class="card-title">Name</h5>
-    <span >price</span>
-    <br>
-    <span>Category</span>
-  </div>
-</div></div>
-    <div class="item mx-2"><div class="card productCard mx-auto" >
-  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
-  <div class="row productCardbtns mx-0">
-          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
-  </div>
-  <div class="card-body py-1">
-    <h5 class="card-title">Name</h5>
-    <span >price</span>
-    <br>
-    <span>Category</span>
-  </div>
-</div></div>
-    <div class="item mx-2"><div class="card productCard mx-auto" >
-  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
-  <div class="row productCardbtns mx-0">
-          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
-  </div>
-  <div class="card-body py-1">
-    <h5 class="card-title">Name</h5>
-    <span >price</span>
-    <br>
-    <span>Category</span>
-  </div>
-</div></div>
-    <div class="item mx-2"><div class="card productCard mx-auto" >
-  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
-  <div class="row productCardbtns mx-0">
-          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
-  </div>
-  <div class="card-body py-1">
-    <h5 class="card-title">Name</h5>
-    <span >price</span>
-    <br>
-    <span>Category</span>
-  </div>
-</div></div>
-    <div class="item mx-2"><div class="card productCard mx-auto" >
-  <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap">
-  <div class="row productCardbtns mx-0">
-          <div class="mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-heart"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="twitter"><i class="fas fa-exchange-alt"></i></a></div> 
-          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-shopping-cart"></i></a></div>            
-  </div>
-  <div class="card-body py-1">
-    <h5 class="card-title">Name</h5>
-    <span >price</span>
-    <br>
-    <span>Category</span>
-  </div>
+ </div>
+</div> ';}  
+    ?>
+  
 </div>
-</div>
+
+<div class="row mx-auto my-2" style="height:300px;">
+    <div class="col-5  mx-auto "> <img class="card-img-top "  height="50%" src="http://placehold.it/64x64" alt="Card image cap"></div>
+    <div class="col-5  mx-auto ">  <img class="card-img-top" height="50%" src="http://placehold.it/64x64" alt="Card image cap"></div>
 </div>
 <div class="mx-auto my-2 py-2 col-4 text-center text-light" style="background-color:#CC8B79">
   <h3>This is a title</h3>
 </div>
+
+<div id="owl-two" class=" owl-carousel owl-theme mx-auto">
+<?php  $rows=$data['Featured'];
+     foreach ($rows as $row) { echo ' 
+<div class="item mx-2">
+
+ <div class="card productCard mx-auto " >
+  <img class="card-img-top" src="'.$row->main_img.'" alt="Card image cap">
+  <div class="row productCardbtns mx-0">
+          <div class="mx-auto">  <a href="#" ><i class="fas fa-heart"></i></a></div> 
+          <div class="mx-auto">  <a href="#" ><i class="fas fa-exchange-alt"></i></a></div> 
+          <div class="mx-auto">  <a href="#" ><i class="fas fa-shopping-cart"></i></a></div>            
+  </div>
+  <div class="card-body py-1">
+    <h5 class="card-title">'.$row->pro_name.'</h5>
+    <span >'.$row->pro_price.'</span>
+    <br>
+    <span>'.$row->cat_name.'</span>
+  </div>
+ </div>
+</div> ';}  
+    ?>
+  
+</div>
+<!-- 
 <div class="row my-2">
     <div class="col-3  m-auto "> <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap"></div>
 <div class="col-9 row">
@@ -300,11 +182,12 @@
 </div>
 </div>
 </div>
-</div>
+</div> -->
 
 <div class="row mx-auto my-2" style="height:300px;">
-    <div class="col-5  mx-auto "> <img class="card-img-top "  height="50%" src="http://placehold.it/64x64" alt="Card image cap"></div>
-    <div class="col-5  mx-auto ">  <img class="card-img-top" height="50%" src="http://placehold.it/64x64" alt="Card image cap"></div>
+    <div class="col-3  mx-auto "> <img class="card-img-top "  height="50%" src="http://placehold.it/64x64" alt="Card image cap"></div>
+    <div class="col-3  mx-auto ">  <img class="card-img-top" height="50%" src="http://placehold.it/64x64" alt="Card image cap"></div>
+    <div class="col-3  mx-auto ">  <img class="card-img-top" height="50%" src="http://placehold.it/64x64" alt="Card image cap"></div>
 </div>
 
 

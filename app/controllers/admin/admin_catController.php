@@ -58,11 +58,12 @@ public function __construct($function){
             'is_active' =>"'".($_POST['is_active'])."'"
             );
             $this->model->addCats($data);
-         $this->controller->view_object->create_view('admin/categoriesandTags');
-
-          $this->controller->view_object->create_view('admin/feedback');
-
-
+       //   $this->controller->view_object->create_view('admin/categoriesandTags');
+      // header('http://localhost/ElectronicEcommerce/admin/admin_cat/categoriesandTags');
+         // $this->controller->view_object->create_view('admin/feedback');
+       //   header_remove('http://localhost/ElectronicEcommerce/admin/admin_cat/addCattegories');
+       //   header("Location:https://www.psychocodes.in");
+                   
        }
 
 
@@ -73,18 +74,19 @@ public function __construct($function){
               }
               else{
              
-                     $uuid=baseFunctions::uuid();
+                     print_r( $_POST);
+       //               $uuid=baseFunctions::uuid();
 
-                     $_POST['tag_id']= $uuid;
-        $data = array(
-            'tag_id' =>"'".$_POST['tag_id']."'",
-            'tag_name' =>"'".$_POST['tag_name']."'",
-            'tag_type' =>"'".($_POST['tag_type'])."'",
-            'type_data' =>"'".($_POST['type_data'])."'"
-            );
-            $this->model->addTags($data);
-            $this->controller->view_object->create_view('admin/categoriesandTags');
-            $this->controller->view_object->create_view('admin/feedback');
+       //               $_POST['tag_id']= $uuid;
+       //  $data = array(
+       //      'tag_id' =>"'".$_POST['tag_id']."'",
+       //      'tag_name' =>"'".$_POST['tag_name']."'",
+       //      'tag_type' =>"'".($_POST['tag_type'])."'",
+       //      'type_data' =>"'".($_POST['type_data'])."'"
+       //      );
+       //      $this->model->addTags($data);
+       //      $this->controller->view_object->create_view('admin/categoriesandTags');
+       //      $this->controller->view_object->create_view('admin/feedback');
 
        }
     
