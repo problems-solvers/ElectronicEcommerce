@@ -28,9 +28,35 @@
  <!-- DataTables Select JS -->
             <script src="js/addons/datatables-select2.min.js" type="text/javascript"></script>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     
+            <script src="/ElectronicEcommerce/app/assets/libs/js/typeahead.min.js" type="text/javascript"></script>
+
            
             <title>ECOMMERCE CONTROLE PANEL</title>
+
+
+            <script>
+    $(document).ready(function(){
+    $('input.typeahead').typeahead({
+        name: 'typeahead',
+        remote:'http://localhost/ElectronicEcommerce/admin/admin_product/search?key=%QUERY',
+        limit : 10,
+		 success: function(data){
+ 
+                $('#output').html(data);
+                $('#output').css('display', 'block');
+ 
+                $("#typeahead").focusout(function(){
+                    $('#output').css('display', 'none');
+					  });
+                $("#typeahead").focusin(function(){
+                    $('#output').css('display', 'block');
+                });
+              }
+    });
+});
+
+    </script>
+   
         </head>
         
         
@@ -51,9 +77,12 @@
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-right-top">
                         <li class="nav-item">
-                            <div id="custom-search" class="top-search-bar">
-                                <input class="form-control" type="text" placeholder="Search..">
-                            </div>
+                        <div class="panel panel-default">
+    <div class="bs-example">
+        <input type="text" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="search">
+		 <div id="output"></div>
+    </div>
+  </div>
                         </li>
                         <li class="nav-item dropdown notification">
                             <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i> <span class="indicator"></span></a>

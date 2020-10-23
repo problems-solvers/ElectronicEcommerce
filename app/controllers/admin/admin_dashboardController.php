@@ -12,7 +12,8 @@ class admin_dashboardController extends Controller
        
     }
     function admin_dashboard(){
-		echo 'hiiiiiiii';
+        echo 'hiiiiiiii';
+        
 	}	
 
 
