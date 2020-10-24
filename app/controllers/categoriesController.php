@@ -28,7 +28,8 @@ public $cat_model;
        }
 
        function delete(){
-        
+        $this->cat_model->deleteData( $_GET['id']);
+        include '../views/categories.php';
        
        }
 

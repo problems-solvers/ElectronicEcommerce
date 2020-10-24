@@ -16,6 +16,7 @@ class baseFunctions{
         else
         require_once("app/views/footer.php");
     }
+
     public static   function uuid(){
         $data = random_bytes(16);
         $data[6] = chr(ord($data[6]) & 0x0f | 0x40); 
@@ -44,9 +45,6 @@ $main_temp=$img['tmp_name'];
 $main_name=move_uploaded_file($main_temp,$main_img);
 return $main_img;
 }
-
-   
-    
 }
 
 ?>

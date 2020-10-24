@@ -1,7 +1,7 @@
 <?PHP
 use coreAppNS\Controller;
 
-class   admin_productController extends Controller{
+class admin_productController extends Controller{
 public $controller;
 public $cat_model;
 
@@ -15,12 +15,13 @@ public $cat_model;
         
        }
 
-      
-       function admin_product(){
+
+     public function admin_product(){
+ 
         $items=array(
             'product'=>$this->cat_model->getQuery(),
         );
-        $this->controller->view_object->create_view('admin/products', $items);
+        $this->controller->view_object->create_view('admin/products',$items);
        }
        public function view_product(){
  
@@ -63,10 +64,10 @@ public $cat_model;
             $this->cat_model->add($data);
             if( $result)
             {
-             echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/addProduct';</script>";
+             echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/addProduct/';</script>";
             }
             else{
-             echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product';</script>";
+             echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/';</script>";
             }
           
        }
@@ -92,10 +93,10 @@ public $cat_model;
            $result=$this->cat_model->update($data);
            if( $result)
            {
-            echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/addProduct';</script>";
+            echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/updateProduct';</script>";
            }
            else{
-            echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product';</script>";
+            echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/';</script>";
            }
        }
 
@@ -106,7 +107,6 @@ public $cat_model;
         );
         $this->controller->view_object->create_view('admin/updateProduct',$item);
        }
-
 
 }
 

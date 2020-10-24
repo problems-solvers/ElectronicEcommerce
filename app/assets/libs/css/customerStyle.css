@@ -64,3 +64,23 @@ body{
     color:#714674 !important ;
 
  }
+ .nam{
+margin-top: 20px;
+ }
+.product{
+
+padding-left:30px;
+
+ }
+ .prod{
+   margin-top:10px;
+ }
+ 
+ .descrip{
+  
+  
+   height: 400px;
+  
+   border:solid #641d6d;
+ background-color: #f6f4f7;
+ }

@@ -2,31 +2,28 @@
 use coreAppNS\Controller;
 class categoryController extends Controller{
 public $controller;
-public $model;
+public $cat_model;
 
 
-    function __construct($fun='category'){
+    function __construct($fun_name="index"){
 
         $this->controller=new Controller();
-        $this->model=$this->controller->model_object->create_model('category');
-        $this->$fun();    
+        $this->$fun_name();
+        
+    
        }
 
+       function index(){
+        $this->cat_model=$this->controller->model_object->create_model('category');
+        $homeItems=array(
+            'categories'=>$cat_model->getData(),
+            'products'=>array('Lenovo','Galaxy s10','Dell Inspiron','Toshiba','HTC')
+        
+        );
 
-       function category(){
-		echo 'hello ^^';
-    }
-  
+        $this->controller->view_object->create_view('home',$homeItems);
+       }
 
-	function getCategories() {
-				
-		$this->controller->view_object->create_view('');
-	}
-
-	function getSubCategories() {
-				
-		$this->controller->view_object->create_view('');
-	}
 
        function show(){
            echo "this page will show all products in this categry";

@@ -1,6 +1,6 @@
 
                     <!-- start add form-->
-                    <form class="form-horizontal"  action="/ElectronicEcommerce/admin/admin_product/add"  method="POST" enctype="multipart/form-data">
+<form class="form-horizontal"  action="/ElectronicEcommerce/admin/admin_product/add"  method="POST" enctype="multipart/form-data">
 <fieldset>
 
 <!-- Form Name -->
@@ -97,7 +97,7 @@
 <!-- Button -->
 <div class="form-group">
   <div class="col-md-4">
-    <button id="singlebutton" action="/ElectronicEcommerce/admin/admin_product/view" name="singlebutton" class="btn btn-primary">ADD PRODUCT</button>
+    <button id="singlebutton" action="/ecomm/admin/product/view" name="singlebutton" class="btn btn-primary">ADD PRODUCT</button>
   </div>
   </div>
   </form>

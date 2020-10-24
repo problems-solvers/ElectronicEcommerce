@@ -1,122 +1,129 @@
 $(document).ready(function () {
-  //Pagination numbers
-/*img slick*/
-var App = (function () {
+	
+	$('.delete_employee').click(function(e){   
+		e.preventDefault();   
+		var empid = $(this).attr('data-emp-id');
+		var parent = $(this).parent("td").parent("tr");   
+		bootbox.dialog({
+			 message: "Are you sure you want to Delete ?",
+			 title: "<i class='glyphicon glyphicon-trash'></i> Delete !",
+			 buttons: {
+				 success: {
+					   label: "No",
+					   className: "btn-success",
+					   callback: function() {
+					   $('.bootbox').modal('hide');
+				   }
+				 },
+				 danger: {
+				   label: "Delete!",
+				   className: "btn-danger",
+				   callback: function() {       
+					$.ajax({        
+						 type: 'POST',
+						 url: 'http://localhost/ElectronicEcommerce/admin/admin_product/delete',
+						 data: 'empid='+empid        
+					})
+					.done(function(response){        
+						 bootbox.alert("Delete sucssful");
+						 parent.fadeOut('slow');        
+					})
+					.fail(function(){        
+						 bootbox.alert('Error....');               
+					})              
+				   }
+				 }
+			 }
+		});   
+	 }); 
+	 var slider = $("#slider");
+	 var thumb = $("#thumb");
+	 var slidesPerPage = 4; //globaly define number of elements per page
+	 var syncedSecondary = true;
+	 slider.owlCarousel({
+		 items: 1,
+		 slideSpeed: 2000,
+		 nav: false,
+		 autoplay: false, 
+		 dots: false,
+		 loop: true,
+		 responsiveRefreshRate: 200
+	 }).on('changed.owl.carousel', syncPosition);
+	 thumb
+		 .on('initialized.owl.carousel', function() {
+			 thumb.find(".owl-item").eq(0).addClass("current");
+		 })
+		 .owlCarousel({
+			 items: slidesPerPage,
+			 dots: false,
+			 nav: true,
+			 item: 4,
+			 smartSpeed: 200,
+			 slideSpeed: 500,
+			 slideBy: slidesPerPage, 
+			 navText: ['<svg width="18px" height="18px" viewBox="0 0 11 20"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M9.554,1.001l-8.607,8.607l8.607,8.606"/></svg>', '<svg width="25px" height="25px" viewBox="0 0 11 20" version="1.1"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M1.054,18.214l8.606,-8.606l-8.606,-8.607"/></svg>'],
+			 responsiveRefreshRate: 100
+		 }).on('changed.owl.carousel', syncPosition2);
+	 function syncPosition(el) {
+		 var count = el.item.count - 1;
+		 var current = Math.round(el.item.index - (el.item.count / 2) - .5);
+		 if (current < 0) {
+			 current = count;
+		 }
+		 if (current > count) {
+			 current = 0;
+		 }
+		 thumb
+			 .find(".owl-item")
+			 .removeClass("current")
+			 .eq(current)
+			 .addClass("current");
+		 var onscreen = thumb.find('.owl-item.active').length - 1;
+		 var start = thumb.find('.owl-item.active').first().index();
+		 var end = thumb.find('.owl-item.active').last().index();
+		 if (current > end) {
+			 thumb.data('owl.carousel').to(current, 100, true);
+		 }
+		 if (current < start) {
+			 thumb.data('owl.carousel').to(current - onscreen, 100, true);
+		 }
+	 }
+	 function syncPosition2(el) {
+		 if (syncedSecondary) {
+			 var number = el.item.index;
+			 slider.data('owl.carousel').to(number, 100, true);
+		 }
+	 }
+	 thumb.on("click", ".owl-item", function(e) {
+		 e.preventDefault();
+		 var number = $(this).index();
+		 slider.data('owl.carousel').to(number, 300, true);
+	 });
 
-	//=== Use Strict ===//
-	'use strict';
-	
-	//=== Private Variables ===//
-	var gallery = $('#js-gallery');
-	$('.gallery__hero').zoom();
-	
-	
-	//=== Gallery Object ===//
-	var Gallery = {
-	  zoom: function(imgContainer, img) {
-		var containerHeight = imgContainer.outerHeight(),
-		src = img.attr('src');
+
+	 $(".qtyminus").on("click",function(){
+		 var now = $(".qty").val();
+		 if ($.isNumeric(now)){
+			 if (parseInt(now) -1> 0)
+			 { now--;}
+			 $(".qty").val(now);
+		 }
+	 })            
+	 $(".qtyplus").on("click",function(){
+		 var now = $(".qty").val();
+		 if ($.isNumeric(now)){
+			 $(".qty").val(parseInt(now)+1);
+		 }
+	 });
 	  
-	  },
-	  switch: function(trigger, imgContainer) {
-		var src = trigger.attr('href'),
-		thumbs = trigger.siblings(),
-			  img = trigger.parent().prev().children();
-		
-		// Add active class to thumb
-		trigger.addClass('is-active');
-		
-		// Remove active class from thumbs
-		thumbs.each(function() {
-		  if( $(this).hasClass('is-active') ) {
-			$(this).removeClass('is-active');
-		  }
+	$('input.typeahead').typeahead({
+	  name: 'typeahead',
+	  remote:'http://localhost/ElectronicEcommerce/admin/admin_product/search?key=%QUERY',
+	  limit : 10
+  });
+	  $('#example').DataTable({
+		  "pagingType": "simple_numbers",
+		  "ordering": false 
 		});
-	
-	
-		// Switch image source
-		img.attr('src', src);
-	  }
-	};
-	
-	//=== Public Methods ===//
-	function init() {
-	
-	
-	 // Listen for clicks on anchors within gallery
-	  gallery.delegate('a', 'click', function(event) {
-		var trigger = $(this);
-		var triggerData = trigger.data("gallery");
-	
-		if ( triggerData === 'zoom') {
-		  var imgContainer = trigger.parent(),
-		  img = trigger.siblings();
-		  Gallery.zoom(imgContainer, img);
-		} else if ( triggerData === 'thumb') {
-		  var imgContainer = trigger.parent().siblings();
-		  Gallery.switch(trigger, imgContainer);
-		} else {
-		  return;
-		}
-	
-		event.preventDefault();
-	  });
-	}
-	
-	//=== Make Methods Public ===//
-	return {
-	  init: init
-	};
-	
-	})();
-	
-	App.init();
-
-	
-  $('input.typeahead').typeahead({
-	name: 'typeahead',
-	remote:'http://localhost/ElectronicEcommerce/admin/admin_product/search?key=%QUERY',
-	limit : 10
-});
-  $('.delete_employee').click(function(e){   
-	   e.preventDefault();   
-	   var empid = $(this).attr('data-emp-id');
-	   var parent = $(this).parent("td").parent("tr");   
-	   bootbox.dialog({
-			message: "Are you sure you want to Delete ?",
-			title: "<i class='glyphicon glyphicon-trash'></i> Delete !",
-			buttons: {
-				success: {
-					  label: "No",
-					  className: "btn-success",
-					  callback: function() {
-					  $('.bootbox').modal('hide');
-				  }
-				},
-				danger: {
-				  label: "Delete!",
-				  className: "btn-danger",
-				  callback: function() {       
-				   $.ajax({        
-						type: 'POST',
-						url: 'http://localhost/ElectronicEcommerce/admin/admin_product/delete',
-						data: 'empid='+empid        
-				   })
-				   .done(function(response){        
-						bootbox.alert("Delete sucssful");
-						parent.fadeOut('slow');        
-				   })
-				   .fail(function(){        
-						bootbox.alert('Error....');               
-				   })              
-				  }
-				}
-			}
-	   });   
-	}); 
-	$('#example').DataTable({
-		"pagingType": "simple_numbers",
-		"ordering": false 
-	  });
-	  $('.dataTables_length').addClass('bs-select'); 
-});
+		$('.dataTables_length').addClass('bs-select'); 
+  });

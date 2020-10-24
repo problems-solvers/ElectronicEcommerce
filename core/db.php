@@ -48,9 +48,11 @@ class DB{
         return $this;
     }
     function innerjoin($table,$leftside,$rightside){
-        $this->join.=" INNER JOIN ".$table." ON ".$leftside." = ".$rightside." ";
-        return $this;
-        print_r($this->join);
+        if(empty($this->joins))
+        $this->join .=" INNER JOIN ".$table." ON ".$leftside." = ".$rightside." ";
+       else
+       $this->join .=" INNER JOIN ".$table." ON ".$leftside." = ".$rightside." ";
+       return $this;
     }
     function outerjoin($table,$leftside,$rightside){
         $this->join.=" RIGHT JOIN ".$table." ON ".$leftside." = ".$rightside." ";
@@ -136,12 +138,11 @@ class DB{
         try {
            $this->stmt = $this->connection->prepare($this->final_query);
            $this->stmt->execute();
-           print_r( $this->final_query);
+           print_r($this->final_query);
        
         } catch (PDOException $exception) { die($exception->getMessage()); }
        // $this->stmt = null;
         return $this;
-
     }
     function fetch(){
         $result= $this->stmt->fetchAll(PDO::FETCH_OBJ);
