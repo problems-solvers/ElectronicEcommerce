@@ -41,10 +41,33 @@ class productModel extends Model {
 print_r($result);
     }
 
-function update($data){
+    function  view_product(){
+        $id=$_GET['pro_id'];
+        $tbls=array("product");
+        return  $this->db
+        ->cols()
+        ->table($tbls)
+        ->where("pro_id","=","'".$id."'")
+		->get()
+		->execute()->fetch();      
+    }
+    function  updateProduct(){
+        $id=$_GET['pro_id'];
+        $tbls=array("product");
+        return  $this->db
+        ->cols()
+        ->table($tbls)
+        ->where("pro_id","=","'".$id."'")
+		->get()
+		->execute()->fetch();      
+    }
+    function update($data){
+        print_r($_POST);
         $tbls=array('product');
-        $id=$_REQUEST['pro_id'];
-        $result=$this->db->clos($data)->table($tbls)->where("pro_id","=",$id)->update()-> execute();
+        $id=$_POST['pro_id'];
+        $result= $this->db->cols($data)->settingcol()->table($tbls)->
+        where("pro_id","=","'".$id."'")->
+        update()->execute();
 }
 
 function view_more(){
