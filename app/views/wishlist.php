@@ -1,13 +1,13 @@
 
 <div class="nam mx-auto  my-2 py-2 col-4 text-center text-light" style="background-color: #e0b9e4">
-  <h3>This is a Wishlist</h3>
+  <h3>This is a Card</h3>
 </div>
 <br>
 <div class="col-6 my-8 mx-auto">
-<div class="card  mx-auto" style="width:700px; height:200px;">
+<div class="card  mx-auto" style="width:900px; height:300px;">
   <div class="d-flex align-content-middle">
     <div class="col-6 px-0 align-items-center ">
-  <img style="height:100%; width:200px;" src="http://placehold.it/64x64" alt="Card image cap">
+  <img style="height:80%; width:200px;" src="http://placehold.it/64x64" alt="Card image cap">
   </div>
   <div class="card-body col-4 py-1 m-auto  ">
     <h5 class="card-title ">Name</h5>
@@ -38,8 +38,8 @@
     <div class="col-6 px-0 align-items-center ">
   <img style="height:100%; width:200px;" src="http://placehold.it/64x64" alt="Card image cap">
   </div>
-  <div class="card-body col-4 py-1 m-auto mx-auto">
-    <h5 class="card-title">Name</h5>
+  <div class="card-body col-4 py-1 m-auto mx-auto text-left">
+    <h5 class="card-title ">Name</h5>
     <span >price</span>
     <br>
   

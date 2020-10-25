@@ -66,6 +66,7 @@ font-size:30px;
 }
 .nam{
 margin-top: 20px;
+border-radius: 20px;
 }
 .product{
 
@@ -99,16 +100,18 @@ padding-left: 20px;
  
   border:solid #641d6d;
 background-color: #f6f4f7;
-}
-.cart1{
-border-radius: 30vh;
-background-color: #cdb3cf;
 
 
 }
 .but{
   height: 50px;
-  width: 200px;
-  border-radius: 4vh;
-  background-color: #cdb3cf;
+  width: 250px;
+  border-radius: 20px;
+  background-color: #e0b9e4;
+}
+.card{
+
+border-radius: 20px;
+
+
 }
