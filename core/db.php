@@ -26,7 +26,7 @@ class DB{
 
     }
     function orderBy($ordercol,$orderway){
-        if(empty($this->condation))
+        if(empty($this->orderBy))
         $this->orderBy="order by ".$ordercol." ".$orderway." ";
        else
        $this->orderBy.=",".$ordercol." ".$orderway." ";
@@ -37,7 +37,7 @@ class DB{
         return $this;
     }
     function groupBy($ordercol,$orderway){
-        if(empty($this->condation))
+        if(empty($this->groupBy))
         $this->groupBy="GROUP by ".$ordercol." ".$orderway." ";
        else
        $this->groupBy.=",".$ordercol." ".$orderway." ";
@@ -49,18 +49,24 @@ class DB{
     }
     function innerjoin($table,$leftside,$rightside){
         if(empty($this->joins))
-        $this->join .=" INNER JOIN ".$table." ON ".$leftside." = ".$rightside." ";
+        $this->join=" INNER JOIN ".$table." ON ".$leftside." = ".$rightside." ";
        else
-       $this->join .=" INNER JOIN ".$table." ON ".$leftside." = ".$rightside." ";
+       $this->join.=" INNER JOIN ".$table." ON ".$leftside." = ".$rightside." ";
        return $this;
     }
     function outerjoin($table,$leftside,$rightside){
-        $this->join.=" RIGHT JOIN ".$table." ON ".$leftside." = ".$rightside." ";
-        return $this;
+        if(empty($this->join))
+        $this->join=" RIGHT JOIN ".$table." ON ".$leftside." = ".$rightside." ";
+       else
+       $this->join.=" RIGHT JOIN ".$table." ON ".$leftside." = ".$rightside." ";
+       return $this;
     }
     function leftjoin($table,$leftside,$rightside){
-        $this->join.=" LEFT JOIN ".$table." ON ".$leftside." = ".$rightside." ";
-        return $this;
+        if(empty($this->join))
+        $this->join=" LEFT JOIN ".$table." ON ".$leftside." = ".$rightside." ";
+       else
+       $this->join.=" LEFT JOIN ".$table." ON ".$leftside." = ".$rightside." ";
+       return $this;
     }
     function where($col_name,$con,$value){
         if(empty($this->condation))
@@ -89,7 +95,7 @@ class DB{
     }
     function get(){
         
-       $this->final_query="select ".$this->columns." from ".$this->tables.$this->condation.$this->join.$this->count.$this->orderBy.$this->groupBy.$this->limit;
+       $this->final_query="select ".$this->columns." from ".$this->tables.$this->join.$this->condation.$this->count.$this->orderBy.$this->groupBy.$this->limit;
          return $this;
        // return $this;
 
@@ -135,10 +141,10 @@ class DB{
     function execute(){
       //  PDO::prepare($this->)
       //  $result = false;
+      // echo $this->final_query;
         try {
            $this->stmt = $this->connection->prepare($this->final_query);
            $this->stmt->execute();
-           print_r($this->final_query);
        
         } catch (PDOException $exception) { die($exception->getMessage()); }
        // $this->stmt = null;

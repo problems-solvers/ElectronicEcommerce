@@ -1,6 +1,6 @@
 <?PHP
-
-class product{
+ use coreAppNS\Model;
+class product extends Model{
 
     public  $db;
 
@@ -24,7 +24,7 @@ class product{
         return  $this->db
         ->cols()
 		->table($tbls)
-		->get()
+		->get() 
 		->execute()->fetch();      
     }
     function  add($data){

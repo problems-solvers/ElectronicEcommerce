@@ -1,5 +1,8 @@
 $(document).ready(function () {
+	//cart 
 	
+
+	//delete product 
 	$('.delete_employee').click(function(e){   
 		e.preventDefault();   
 		var empid = $(this).attr('data-emp-id');

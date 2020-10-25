@@ -54,7 +54,7 @@
 		<a  href='http://localhost/ElectronicEcommerce/admin/admin_product/view_product?action=view&pro_id=".$row->pro_id."' class='update'>
 	  <i class='btn fas fa-info-circle ' style='font-size:24px;'></i></a>
 
-	  <a  href='http://localhost/ElectronicEcommerce/admin/admin_product/updateProduct?action=update&pro_id=".$row->pro_id."' class='update'>
+<a href='http://localhost/ElectronicEcommerce/admin/admin_product/updateProduct?action=update&pro_id=".$row->pro_id."' class='update'>
 	  <i class='btn fa fa-pencil text-primary' style='font-size:24px;'></i></a>
 
       <a class='delete_employee' data-emp-id='$row->pro_id' href='javascript:void(0)'>
@@ -62,7 +62,6 @@
 
 
   </td>
-  
 </tr>";
 		$index+=1;
     }
