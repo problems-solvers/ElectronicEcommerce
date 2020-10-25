@@ -34,14 +34,14 @@
 	<div class="item mx-2">
 
 		<div class="card productCard mx-auto " >
-			<img class="card-img-top" src="../<?php echo $row->main_img; ?>" alt="Card image cap">
+			<img class="card-img-top" src="<?php echo $row->main_img; ?>" alt="Card image cap">
 			<div class="row productCardbtns mx-0">
 					<div class="mx-auto">  <a href="#" ><i class="fas fa-heart"></i></a></div> 
 					<div class="mx-auto">  <a href="#" ><i class="fas fa-exchange-alt"></i></a></div> 
 					  <a href="#" title="add to cart" class="attToCart fas fa-shopping-cart"></a>
 			</div>
 			<div class="card-body py-1">
-				<h5 class="card-title">vdefe<?php echo $row->pro_name; ?></h5>
+				<h5 class="card-title"><?php echo $row->pro_name; ?></h5>
 				<span ><?php echo $row->pro_price; ?></span>
 				<input type="hidden" value="<?php echo $row->pro_id; ?>">
 				<br>
@@ -58,13 +58,7 @@
             </div>
          
 			
-		
-	<div class="cartBox">
-		<div class="cart">
-			<h1></h1>
-		</div>
-	</div>
-
+	
 
 	<!-- script -->
 	<script>
@@ -72,15 +66,7 @@
     window.onload = function(){
     //cart box
 	const iconShopping = document.querySelector('.iconShopping');
-	//const cartCloseBtn = document.querySelector('.fa-close');
-	const cartBox = document.querySelector('.cartBox');
-	iconShopping.addEventListener("click",function(){
-		cartBox.classList.add('active');
-	});
-	/*cartCloseBtn.addEventListener("click",function(){
-		cartBox.classList.remove('active');
-	});*/
-
+	
 
 	// adding data to localstorage
 	const attToCartBtn = document.getElementsByClassName('attToCart');
@@ -93,6 +79,7 @@
 						name:e.target.parentElement.parentElement.children[2].textContent,
 						price:e.target.parentElement.parentElement.children[2].children[0].textContent,
 						proID:e.target.parentElement.parentElement.children[2].children[2].value,
+						img:e.target.parentElement.parentElement.children[0].src,
 						no:1
 					};
 				if(JSON.parse(localStorage.getItem('items')) === null){
@@ -127,19 +114,7 @@
 	iconShoppingP.innerHTML = no;
 
 
-    //adding cartbox data in table
-    //show item in cart
-	const cardBoxTable = cartBox.querySelector('table');
-	let tableData = '';
-	tableData += '<tr><th>S no.</th><th>Item pro_id</th><th>Item Name</th><th>Item No</th><th>item Price</th><th></th></tr>';
-	if(JSON.parse(localStorage.getItem('items'))[0] === null){
-		tableData += '<tr><td colspan="5">No items found</td></tr>'
-	}else{
-		JSON.parse(localStorage.getItem('items')).map(data=>{
-			tableData += '<tr><th>'+data.id+'</th><th>'+data.proID+'</th><th>'+data.no+'</th><th>'+data.name+'</th><th>'+data.price+'</th><th><a href="#" onclick=Delete(this);>Delete</a></th></tr>';
-		});
-	}
-	cardBoxTable.innerHTML = tableData;
+   
 }
     
     </script>

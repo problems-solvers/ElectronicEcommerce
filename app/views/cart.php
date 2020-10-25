@@ -25,38 +25,17 @@
 	</script>
 </head>
 <body>
-	<div class="main">
-		<header id="header" class="header">
-			<div class="iconShopping">
-				<p>0</p>
-				<i class="fa fa-shopping-cart"></i>
-			</div>
-		</header>
-		<div class="itemsBox">
-			<div class="item">
-            <?php  $rows=$data['featured'];
-     foreach ($rows as $row) {
-         ?>
-				<img src="../../<?php  echo $row->main_img?>" />
-				<div class="itemInfo">
-					<h1><?php  echo $row->pro_name?></h1>
-					<p>$<span><?php  echo $row->pro_price?></span></p>
-					<a href="#" title="add to cart" class="attToCart">Add to cart</a>
-				</div>
-            </div>
-            <?php 
-     }
-     ?>
-			
-			
-		</div>
-	</div>
+<div class="col-12 my-3 ">
+
+
 	<div class="cartBox">
 		<div class="cart">
-			<i class="fa fa-close"></i>
 			<h1>Cart</h1>
-			<table></table>
+            <div class="table-responsive">
+			<table id="example" class="table table-striped table-bordered second" style="width:100%"></table>
 		</div>
+	</div>
+	</div>
 	</div>
 
 
@@ -66,50 +45,13 @@
     window.onload = function(){
     //cart box
 	const iconShopping = document.querySelector('.iconShopping');
-	const cartCloseBtn = document.querySelector('.fa-close');
 	const cartBox = document.querySelector('.cartBox');
 	iconShopping.addEventListener("click",function(){
 		cartBox.classList.add('active');
 	});
-	cartCloseBtn.addEventListener("click",function(){
-		cartBox.classList.remove('active');
-	});
+	
 
 
-	// adding data to localstorage
-	const attToCartBtn = document.getElementsByClassName('attToCart');
-	let items = [];
-	for(let i=0; i<attToCartBtn.length; i++){
-		attToCartBtn[i].addEventListener("click",function(e){
-			if(typeof(Storage) !== 'undefined'){
-				let item = {
-						id:i+1,
-						name:e.target.parentElement.children[0].textContent,
-						price:e.target.parentElement.children[1].children[0].textContent,
-						no:1
-					};
-				if(JSON.parse(localStorage.getItem('items')) === null){
-					items.push(item);
-					localStorage.setItem("items",JSON.stringify(items));
-					window.location.reload();
-				}else{
-					const localItems = JSON.parse(localStorage.getItem("items"));
-					localItems.map(data=>{
-						if(item.id == data.id){
-							item.no = data.no + 1;
-						}else{
-							items.push(data);
-						}
-					});
-					items.push(item);
-					localStorage.setItem('items',JSON.stringify(items));
-					window.location.reload();
-				}
-			}else{
-				alert('local storage is not working on your browser');
-			}
-		});
-	}
     // adding data to shopping cart 
         //this code is to view number of product in cart
 
@@ -124,12 +66,12 @@
     //show item in cart
 	const cardBoxTable = cartBox.querySelector('table');
 	let tableData = '';
-	tableData += '<tr><th>S no.</th><th>Item Name</th><th>Item No</th><th>item Price</th><th></th></tr>';
+	tableData += '<tr><th class="th-sm">no</th><th class="th-sm">Image</th><th class="th-sm">Item Name</th><th class="th-sm">Quentity</th><th class="th-sm">item Price</th><th class="th-sm"></th></tr>';
 	if(JSON.parse(localStorage.getItem('items'))[0] === null){
 		tableData += '<tr><td colspan="5">No items found</td></tr>'
 	}else{
 		JSON.parse(localStorage.getItem('items')).map(data=>{
-			tableData += '<tr><th>'+data.id+'</th><th>'+data.name+'</th><th>'+data.no+'</th><th>'+data.price+'</th><th><a href="#" onclick=Delete(this);>Delete</a></th></tr>';
+			tableData += '<tr><th>'+data.id+'</th><th> <img scr="'+data.img+'"></th><th>'+data.name+'</th><th>'+data.no+'</th><th>'+data.price+'</th><th><a href="#" onclick=Delete(this);>Delete</a></th></tr>';
 		});
 	}
 	cardBoxTable.innerHTML = tableData;

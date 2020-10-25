@@ -63,7 +63,7 @@
       <input class="form-control " type="search" placeholder="Search">
     </form>
     <ul class="navbar-nav mt-2 mt-lg-0">
-        <a class="nav-link " href="#">
+        <a class="nav-link " href="/ElectronicEcommerce/cart/">
        <li class="fa fa-shopping-cart"> <div class="iconShopping">
 			
 				
