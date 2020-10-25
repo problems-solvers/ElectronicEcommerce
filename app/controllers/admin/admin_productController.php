@@ -93,6 +93,8 @@ public $cat_model;
         );
         $this->controller->view_object->create_view('admin/updateProduct',$item);
        }
+ 
+
        function delete(){
         $this->cat_model->delete();
         

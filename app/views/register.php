@@ -1,12 +1,53 @@
-<!DOCTYPE html>
-<html>
-<body>
 
-<form action="/mvcphp/user/register/signup" method="post">
+
+<div class="block d-flex  align-items-center m-auto">
+  <div class="col-6 col-md-6 col-sm-10 col-xs-10 mx-auto ">
+<div class="card  mx-auto p-3" >
+  <h4 class="text-center my-3">Login</h4>
+<form action="signup" method="post">
+  <div class="form-group col-8 mx-auto my-5">
+    <!-- <label for="user_name">Email address:</label> -->
+    <input type="text" class="form-control" placeholder="Enter fist name"  id="first_name" name="first_name" required>
+  </div>
+   <div class="form-group col-8 mx-auto my-5">
+    <!-- <label for="user_name">Email address:</label> -->
+    <input type="text" class="form-control" placeholder="Enter last name"  id="last_name" name="last_name" required>
+  </div>
+  <div class="form-group col-8 mx-auto my-5">
+    <!-- <label for="user_name">Email address:</label> -->
+    <input type="text" class="form-control" placeholder="Enter Username"  id="user_name" name="user_name" required>
+  </div>
+  <div class="form-group col-8 mx-auto my-5">
+    <!-- <label for="user_name">Email address:</label> -->
+    <input type="email" class="form-control" placeholder="Enter email"  id="user_email" name="user_email" required>
+    <input type="hidden" class="form-control" placeholder="Enter role"  id="user_role" name="user_role" value="3">
+  </div>
+  <div class="form-group  col-8 mx-auto my-5">
+    <!-- <label for="password">Password:</label> -->
+    <input type="password" class="form-control" placeholder="Enter Password" id="user_password" name="user_password" required>
+  </div>
+  <div class="form-group  col-8 mx-auto my-5">
+    <!-- <label for="password">Password:</label> -->
+    <input type="password" class="form-control" placeholder="Enter Password" id="user_password" name="confirm_password" required>
+  </div>
+  <div class="inline-form form-check  col-8 mx-auto my-3">
+    <label class="form-check-label px-3">
+      <input class="form-check-input" type="checkbox">Remember me
+    </label>
+  <span class="float-right">Forgot <a href="http://localhost/mvcphp/user/forgotpassword">password?</a></span>
+</div>
+  <div class="inline-form  col-8 mx-auto align-center my-5">
+  <button type="submit" class="btn btn-primary mx-auto rounded ">Submit</button>
+  <a href="http://localhost/mvcphp/user/forgotpassword" class="btn btn-outline mx-auto rounded">password?</a>
+</div>
+</form>
+</div>
+</div>
+</div>
   <!-- <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div> -->
-
+<!-- 
   <div class="container">
     <label for="uname"><b>Username</b></label>
     <input type="text" placeholder="Enter Username"  id="user_name" name="user_name" required>
@@ -15,88 +56,13 @@
     <label for="password"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" id="password" name="password" required>
 
-    <button type="submit">register</button>
+    <button type="submit">register</button> -->
     <!-- <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label> -->
-  </div>
+  <!-- </div>
 
   <div class="container" style="background-color:#f1f1f1">
     <button type="button" class="cancelbtn">Cancel</button>
     <span class="psw"><a href="http://localhost/mvcphp/user/login">login</a></span>
-  </div>
-</form>
-<style>
-
-form {
-  border: 3px solid #f1f1f1;
-}
-
-/* Full-width inputs */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-/* Set a style for all buttons */
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-/* Add a hover effect for buttons */
-button:hover {
-  opacity: 0.8;
-}
-
-/* Extra style for the cancel button (red) */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-/* Center the avatar image inside this container */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-/* Avatar image */
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
-/* Add padding to containers */
-.container {
-  padding: 16px;
-}
-
-/* The "Forgot password" text */
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-    display: block;
-    float: none;
-  }
-  .cancelbtn {
-    width: 100%;
-  }
-}</style>
-</body>
-</html>
+  </div> -->
