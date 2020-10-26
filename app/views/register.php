@@ -1,9 +1,63 @@
 
-<form action="/mvcphp/user/register/signup" method="post">
+
+<div class="block d-flex  align-items-center m-auto">
+  <div class="col-6 col-md-6 col-sm-10 col-xs-10 mx-auto ">
+<div class="card  mx-auto p-3" >
+  <h4 class="text-center my-3">Login</h4>
+<form action="signup" method="post" id="form1" onchange="validation();">
+<div class="col-12 mx-auto my-5 text-center">
+  <div class="inlining-form mx-auto col-4  "> 
+<input type="text" class="txt-form  "name="first_name" id="first_name" placeholder="First name" required/>
+<small id="helpId1" class="text-muted"></small>
+</div>
+<div class="inlining-form mx-auto col-4 "> 
+<input type="text" class="txt-form mx-auto " name="last_name" id="last_name" placeholder="Last name" required/>
+<small id="helpId2" class="text-muted"></small>
+</div>
+</div>
+  <div class="form-group col-8 mx-auto my-5">
+    <!-- <label for="user_name">Email address:</label> -->
+    <input type="text" class="form-control" placeholder="Enter Username"  id="user_name" name="user_name" required>
+    <small id="helpId3" class="text-muted"></small>
+  </div>
+  <div class="form-group col-8 mx-auto my-5">
+    <!-- <label for="user_name">Email address:</label> -->
+    <input type="email" class="form-control" placeholder="Enter email"  id="user_email" name="user_email" required>
+    <small id="helpId4" class="text-muted"></small>
+    <!--<input type="hidden" class="form-control" placeholder="Enter role"  id="user_role" name="user_role" value="3"> -->
+
+  </div>
+  <div class="form-group  col-8 mx-auto my-5">
+    <!-- <label for="password">Password:</label> -->
+    <input type="password" class="form-control" placeholder="Enter Password" id="user_password" name="user_password" required>
+    <small id="helpId5" class="text-muted"></small>
+  </div>
+  <div class="form-group  col-8 mx-auto my-5">
+    <!-- <label for="password">Password:</label> -->
+    <input type="password" class="form-control" placeholder="Confirm Password" id="user_password" name="confirm_password" required>
+    <small id="helpId6" class="text-muted"></small>
+  </div>
+ 
+  
+  <div class="inlining-form  col-12 mx-auto  my-3 align-center text_center">
+  <div class=" inlining col-2 "></div>
+  <div class=" inlining col-4 mx-auto ">
+  <button type="submit" class="bt mx-auto disabled" id="signup_btn">signup</button>
+</div>
+
+  <div class="inlining col-4 mx-auto">
+  <button type="button" class="bt1 mx-auto"><a href="http://localhost/mvcphp/user/login" >login</button></a>
+</div>
+
+</div>
+</form>
+</div>
+</div>
+</div>
   <!-- <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div> -->
-
+<!-- 
   <div class="container">
     <label for="uname"><b>Username</b></label>
     <input type="text" placeholder="Enter Username"  id="user_name" name="user_name" required>
@@ -12,86 +66,150 @@
     <label for="password"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" id="password" name="password" required>
 
-    <button type="submit">register</button>
+    <button type="submit">register</button> -->
     <!-- <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label> -->
-  </div>
+  <!-- </div>
 
   <div class="container" style="background-color:#f1f1f1">
     <button type="button" class="cancelbtn">Cancel</button>
     <span class="psw"><a href="http://localhost/mvcphp/user/login">login</a></span>
-  </div>
-<!-- </form>
-<style>
+  </div> -->
 
-form {
-  border: 3px solid #f1f1f1;
+
+
+  <script>
+var form1=document.getElementById("form1");
+var sub=document.getElementById("sub");
+
+
+var mass1=document.getElementById("helpId1");
+var mass2=document.getElementById("helpId2");
+var mass3=document.getElementById("helpId3");
+var mass4=document.getElementById("helpId4");
+var mass5=document.getElementById("helpId5");
+var mass6=document.getElementById("helpId6");
+
+var nameFormat= /^[A-Za-z ]+$/;
+var paswd=  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{4,15}$/;
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+var signup_btn = document.querySelector("#signup_btn");
+signup_btn.disabled = true;
+
+
+
+
+function validation(){
+if( nameFormat.test(form1[0].value) && nameFormat.test(form1[1].value) && nameFormat.test(form1[2].value) &&  mailformat.test(form1[3].value) && paswd.test(form1[4].value) && (form1[5].value=== form1[4].value))
+{
+	signup_btn.disabled = false;
+	signup_btn.className = "btn enabled"
+}
+else{
+	signup_btn.disabled = true;
+}
 }
 
-/* Full-width inputs */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
 
-/* Set a style for all buttons */
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
+form1[0].addEventListener("input",function confirmName() 
+{ 
+    
+if(form1[0].value.match(nameFormat))
+{  
 
-/* Add a hover effect for buttons */
-button:hover {
-  opacity: 0.8;
+    form1[0].style.borderColor="green";
+return true;
 }
-
-/* Extra style for the cancel button (red) */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
+else
+{
+  mass1.innerHTML = "*Enter field Name ";
+  form1[0].style.borderColor="red";
+return false;
 }
-
-/* Center the avatar image inside this container */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
+});
+form1[1].addEventListener("input",function confirmName() 
+{ 
+    
+if(form1[1].value.match(nameFormat))
+{  
+    form1[1].style.borderColor="green";
+return true;
 }
-
-/* Avatar image */
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
+else
+{
+  mass2.innerHTML = "*Enter field Name ";
+   form1[1].style.borderColor="red";
+return false;
 }
+});
 
-/* Add padding to containers */
-.container {
-  padding: 16px;
+form1[2].addEventListener("input",function confirmName() 
+{ 
+    
+if(form1[2].value.match(nameFormat))
+{
+    form1[2].style.borderColor="green";
+return true;
 }
-
-/* The "Forgot password" text */
-span.psw {
-  float: right;
-  padding-top: 16px;
+else
+{
+  mass3.innerHTML = "*Enter field Name ";
+    form1[2].style.borderColor="red";
+return false;
 }
+});
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-    display: block;
-    float: none;
-  }
-  .cancelbtn {
-    width: 100%;
-  }
-}</style> -->
+
+form1[3].addEventListener("input",function confirmEmail() 
+{ 
+if(form1[3].value.match(mailformat))
+{
+    form1[3].style.borderColor="green";
+return true;
+}
+else
+{
+    mass4.innerHTML = "*Enter Field Email ";
+    form1[3].style.borderColor="red";
+return false;
+}
+});
+
+form1[4].addEventListener("input",function CheckPassword() 
+{ 
+if(form1[4].value.match(paswd)) 
+{ 
+    form1[4].style.borderColor="green";
+
+return true;
+}
+else
+{ 
+    mass5.innerHTML = "*  Password Should Contain a Number/Carcter/Special Carcter  ";
+    form1[4].style.borderColor="red";
+
+return false;
+}
+});
+
+form1[5].addEventListener("input",function confirmPass() 
+{ 
+if(form1[5].value!=form1[4].value) 
+{ 
+    mass6.innerHTML = "* Not Match  The password ";
+    form1[5].style.borderColor="red";
+    return false;
+}
+else
+{ 
+    form1[5].style.borderColor="green";
+    return true;
+}
+});
+
+
+
+
+</script>

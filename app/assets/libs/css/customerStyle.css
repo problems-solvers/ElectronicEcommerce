@@ -113,5 +113,50 @@ background-color: #f6f4f7;
 
 border-radius: 20px;
 
+ }
 
+/*-----------------------
+ -------------------------*/ 
+.bt{
+   height: 30px;
+   width:100%;
+   border-radius: 4vh;
+   background-color: #ee802f;
+   border: 2px #ee802f solid;
+   color: white;
+margin-right: -10%;
+}
+.bt1{
+   height: 30px;
+   width:100%;
+   border-radius: 4vh;
+   background-color: whitesmoke;
+   border: 2px #ee802f solid;
+   color: black;
+
+}
+.inlining{
+display: inline-block;
+}
+.inlining-form{
+   display: inline-block;
+   }
+.txt-form{
+   display: inline-block;
+   width: 100%;
+   font-size: 15px;
+   line-height: 2.12857143;
+   color: #71748d;
+   background-color: #fff;
+   background-image: none;
+   border: 1px solid #d2d2e4;
+   border-radius: 2px;
+}
+
+.txt-form:focus {
+   color: #71748d;
+   background-color: #fff;
+   border-color: #a7a7f0;
+   outline: 0;
+   box-shadow: 0 0 0 0.2rem rgba(214, 214, 255, .75);
 }

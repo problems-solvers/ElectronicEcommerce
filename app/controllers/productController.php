@@ -8,12 +8,8 @@ public $model;
     function __construct($fun ='products'){
 
         $this->controller =new Controller();
-        
-       
-
         $this->controller->view_object->create_view('productdetale');
-      
-       $this->$fun();
+        $this->$fun();
 
        }
 
@@ -26,6 +22,15 @@ public $model;
     
     }
     
-       }
-       ?>
-  
+       function products(){
+        echo 'hiiiiiiii';
+        //$this->controller->view_object->create_view('products');
+
+    }
+
+
+       
+}
+
+
+?>
