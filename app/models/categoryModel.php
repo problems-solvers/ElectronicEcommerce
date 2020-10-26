@@ -33,12 +33,23 @@ return $result;
     }
 
 
+    function  getTagsData(){
+        $tbls=array("product");
+        return  $this->db
+        ->cols()
+        ->table($tbls) 
+        ->innerjoin("categories","product.cat_id","categories.cat_id") 
+        ->innerjoin("tag_details","product.pro_id","tag_details.pro_id")  
+        ->innerjoin("tags","tag_details.tag_id","tags.tag_id")      
+        ->get()
+        ->where("categories.is_active","=",1)
+        ->execute()->fetch();
+       print_r($result);
+        return $result;
+    }
 
 
 
-
-
-//     function  getData(){
 //         $cols=array("cat_id"=>"8","cat_name"=>"labtop","parrent"=>"0");
 //         $table=array("categories");
 
