@@ -19,6 +19,8 @@
 </div>
   <div class="inline-form  col-8 mx-auto align-center my-5">
   <button type="submit" class="btn btn-primary mx-auto rounded ">Submit</button>
+  <a class="login-btn" href="googlelogin">Login</a>
+  <a class="login-btn" href="twitter">ttt</a>
   <a href="http://localhost/mvcphp/user/forgotpassword" class="btn btn-outline mx-auto rounded">password?</a>
 </div>
 </form>
