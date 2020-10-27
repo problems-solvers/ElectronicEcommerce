@@ -1,3 +1,14 @@
+<?php
+include("app/config/config.php");
+
+$redirectTo="http://localhost/ElectronicEcommerce/user/facebooklogin";
+$data=["email"];
+$loginUrl = $helper->getLoginUrl($redirectTo, $data);
+
+ //$user = $facebook->getUser();
+
+?>
+
 <div class="block d-flex  align-items-center m-auto">
   <div class="col-6 col-md-6 col-sm-10 col-xs-10 mx-auto ">
 <div class="card  mx-auto p-3" >
@@ -19,7 +30,8 @@
     </label>
   <span class="float-right"> <a href="http://localhost/mvcphp/user/forgotpassword">Forgot password?</a></span>
 </div>
-  <a class="login-btn" href="googlelogin">google</a>
+<a class="login-btn" href="googlelogin">google</a> 
+<a href=' <?php echo  $loginUrl ;?>'>Log in with Facebook!</a>
 
 <div class="inlining-form  col-12 mx-auto  my-3 align-center text_center">
   <div class=" inlining col-2 "></div>

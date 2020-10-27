@@ -99,6 +99,17 @@ public $cat_model;
         $this->cat_model->delete();
         
        }
+       function child(){
+        $items=array(
+            'child'=>$this->cat_model->child(),
+
+        );
+                              
+ foreach($items as $row){
+
+        echo ('<option value="'.$row->cat_id.'">' . $row->cat_name . '</option>'); }
+
+       }
 
 }
 
