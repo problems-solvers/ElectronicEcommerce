@@ -231,19 +231,16 @@ function signup(){
 			$picture = $respons->getGraphUser();
 			$profile = $respons->getGraphUser();
 			$fbid = $profile->getProperty('id');           // To Get Facebook ID
-			$fbfullname = $profile->getProperty('first_name');   // To Get Facebook full name
+			$fbfullname = $profile->getProperty('name');   // To Get Facebook full name
+			$fbFirstname = $profile->getProperty('first_name');   // To Get Facebook full name
 			$fblastname = $profile->getProperty('last_name');   // To Get Facebook full name
 			$fbemail = $profile->getProperty('email');    //  To Get Facebook email
 			$fbpic = "<img src='".$picture['url']."' class='img-rounded'/>";
 			# save the user nformation in session variable
-			$_SESSION['fb_id'] = $fbid;
-			$_SESSION['fb_name'] = $fbfullname;
-			$_SESSION['fb_lastname'] = $fblastname;
-			$_SESSION['fb_email'] = $fbemail;
-			$_SESSION['fb_pic'] = $fbpic;
-			$count=$this->model->check_user($_SESSION['fb_name'],$_SESSION['fb_email']);
+		
+			$count=$this->model->check_user($fbfullname,$fbemail);
 			if($count > 0){
-				header('Location: http://localhost/ElectronicEcommerce/login');
+				header('Location: http://localhost/ElectronicEcommerce/user/login/');
 				exit();			
 				echo"insede if ";			
 			}
@@ -257,14 +254,30 @@ function signup(){
 								    $_POST['create_date']= date('Y-m-d H:i:s');
 					                $data = array(
 					                'user_id' =>"'".$_POST['user_id']."'",
-					                'first_name' =>"'".$_SESSION['fb_name']."'",
-					                'user_name' =>"'".$_SESSION['fb_lastname']."'",
-					                'user_email' =>"'".$_SESSION['fb_email']."'",
+					                'user_name' =>"'".$fbfullname."'",
+					                'first_name' =>"'".$fbFirstname."'",
+					                'last_name' =>"'".$fblastname."'",
+					                'user_email' =>"'".$fbemail."'",
 					                 'user_role' =>"'3'",
 					                'create_date' =>"'".$_POST['create_date']."'"					 );
 					 $login=$this->model->signup($data);
-			header('Location: http://localhost/ElectronicEcommerce/');
-			exit();
+			if(!empty($login)){
+			   header('Location:http://localhost/ElectronicEcommerce/user/login/');
+			   print_r($_SESSION);
+			   }
+			   else{
+				   
+				$_SESSION['login_id'] = $fbid;
+				$_SESSION['user'] = $fbfullname;
+				$_SESSION['fb_lastname'] = $fblastname;
+				$_SESSION['email'] = $fbemail;
+				$_SESSION['fb_pic'] = $fbpic;
+				   header('Location:http://localhost/ElectronicEcommerce/');
+				   exit;
+				   print_r($_SESSION);
+				   
+
+			   }
 									}
 
 	}
