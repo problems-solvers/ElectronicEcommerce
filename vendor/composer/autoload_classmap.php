@@ -6,4 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Google_Task_Composer' => $vendorDir . '/google/apiclient/src/aliases.php',
 );

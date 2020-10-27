@@ -31,7 +31,7 @@ class Route{
         $function_name=$clean_url[sizeof($clean_url)-1];
         new $rquestedController($function_name);
 
-    
+   
 
 
 

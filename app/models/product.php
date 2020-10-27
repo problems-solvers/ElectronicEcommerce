@@ -23,7 +23,22 @@ class product extends Model{
         $tbls=array("categories");
         return  $this->db
         ->cols()
-		->table($tbls)
+        ->table($tbls)
+        ->where("is_active","=",1)
+        ->where("parent","=",0)
+		->get() 
+		->execute()->fetch();      
+    }
+
+    function  getcatchiled(){
+        $id=$_REQUEST['empid'];
+       
+        $tbls=array("categories");
+        $result=   $this->db
+        ->cols()
+        ->table($tbls)
+        ->where("is_active","=",1)
+        ->where("parent","=","'.$id.'")
 		->get() 
 		->execute()->fetch();      
     }
@@ -73,6 +88,12 @@ class product extends Model{
         $id=$_REQUEST['empid'];
         $tbls=array("product");
         $result=  $this->db->table($tbls)->where("pro_id","=","'".$id."'")->delete()->execute();
+    }
+
+    function child(){
+        $id=$_POST['input'];
+        $tbls=array("categories");
+        $result=  $this->db->table($tbls)->where("parent","=","'".$id."'")->where("is_active","=",1)->delete()->execute();
     }
 }
 

@@ -49,9 +49,9 @@ class DB{
     }
     function innerjoin($table,$leftside,$rightside){
         if(empty($this->joins))
-        $this->join=" INNER JOIN ".$table." ON ".$leftside." = ".$rightside." ";
+        $this->join.=" INNER JOIN ".$table." ON ".$leftside." = ".$rightside." ";
        else
-       $this->join.=" INNER JOIN ".$table." ON ".$leftside." = ".$rightside." ";
+       $this->join .=" INNER JOIN ".$table." ON ".$leftside." = ".$rightside." ";
        return $this;
     }
     function outerjoin($table,$leftside,$rightside){

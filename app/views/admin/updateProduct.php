@@ -3,7 +3,7 @@
   $rows=$data['updateProduct'];
 foreach($rows as $row){
   ?>                  <!-- start add form-->
-  <form class="form-horizontal"  action="/ElectronicEcommerce/admin/admin_product/update"  method="POST" enctype="multipart/form-data">
+  <form class="form-horizontal"  action="/ecomm/admin/admin_product/update"  method="POST" enctype="multipart/form-data">
 <fieldset>
 
 <!-- Form Name -->

@@ -85,7 +85,7 @@
     ?>
   
 </div>
- 
+<!-- 
 <div class="row my-2">
     <div class="col-3  m-auto "> <img class="card-img-top" src="http://placehold.it/64x64" alt="Card image cap"></div>
 <div class="col-9 row">
@@ -182,7 +182,7 @@
 </div>
 </div>
 </div>
-</div> 
+</div> -->
 
 <div class="row mx-auto my-2" style="height:300px;">
     <div class="col-3  mx-auto "> <img class="card-img-top "  height="50%" src="http://placehold.it/64x64" alt="Card image cap"></div>

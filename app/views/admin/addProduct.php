@@ -1,6 +1,6 @@
 
                     <!-- start add form-->
-<form class="form-horizontal"  action="/ElectronicEcommerce/admin/admin_product/add"  method="POST" enctype="multipart/form-data">
+                    <form class="form-horizontal"  action="/ElectronicEcommerce/admin/admin_product/add"  method="POST" enctype="multipart/form-data">
 <fieldset>
 
 <!-- Form Name -->
@@ -29,7 +29,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="product_categorie">PRODUCT CATEGORY</label>
   <div class="col-md-4">
-  <select class="form-control" id="input-select" name='cat_id'>
+  <select class="form-control"id="cat1" name="cat1">
     <?php
     
     $rows=$data['categories'];
@@ -42,6 +42,16 @@
     </select>
   </div>
 </div>
+<div class="form-group">
+
+<label for="cat_name">Categories_2</label>
+<div class="col-md-4">
+
+    <select class="form-control" id="cat2" name="cat_id"></select>
+    <br />
+</div>
+</div>
+
 <div class="form-group">
   <label class="col-md-4 control-label" for="pro_imgs"></label>
   <div class="col-md-4">
@@ -97,7 +107,22 @@
 <!-- Button -->
 <div class="form-group">
   <div class="col-md-4">
-    <button id="singlebutton" action="/ecomm/admin/product/view" name="singlebutton" class="btn btn-primary">ADD PRODUCT</button>
+    <button id="singlebutton" action="/ElectronicEcommerce/admin/admin_product/view" name="singlebutton" class="btn btn-primary">ADD PRODUCT</button>
   </div>
   </div>
   </form>
+  <script>
+  $(document).ready(function(){
+    $(document).on('change','#cat1',function(){
+        $.ajax({
+            cache: false,
+            url: '/ElectronicEcommerce/admin/admin_product/product/child',
+            type: 'POST',
+            data: 'input=' + $(this).val(),
+            success: function(data){
+                $('#cat2').html(data)
+            }
+        })
+    })
+}
+  </script>

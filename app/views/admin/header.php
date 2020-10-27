@@ -28,26 +28,14 @@
  <!-- DataTables Select JS -->
             <script src="js/addons/datatables-select2.min.js" type="text/javascript"></script>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <script src="/ElectronicEcommerce/app/assets/libs/js/typeahead.min.js" type="text/javascript"></script>
-            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"><div class="pd-wrap">
-		
+     
            
             <title>ECOMMERCE CONTROLE PANEL</title>
-
-
             <script>
     $(document).ready(function(){
     $('input.typeahead').typeahead({
         name: 'typeahead',
-        remote:'http://localhost/ElectronicEcommerce/admin/admin_product/search?key=%QUERY',
+        remote:'http://localhost/ElectronicEcommerce/admin/admin_dashboard?key=%QUERY',
         limit : 10,
 		 success: function(data){
  
@@ -65,7 +53,6 @@
 });
 
     </script>
-   
         </head>
         
         
@@ -86,12 +73,11 @@
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-right-top">
                         <li class="nav-item">
-                        <div class="panel panel-default">
-    <div class="bs-example">
-        <input type="text" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="search">
+                            <div id="custom-search" class="top-search-bar">
+                            <div class="bs-example">
+        <input type="text" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Search">
 		 <div id="output"></div>
-    </div>
-  </div>
+    </div>                            </div>
                         </li>
                         <li class="nav-item dropdown notification">
                             <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i> <span class="indicator"></span></a>

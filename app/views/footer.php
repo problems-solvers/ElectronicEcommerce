@@ -51,15 +51,36 @@
 <script src="/ElectronicEcommerce/app/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
 <!-- slimscroll js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="	sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="	sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="/ElectronicEcommerce/app/assets/libs/js/main-js.js"></script>
-<script src="/ElectronicEcommerce/app/assets/libs/js/script.js"></script>
+<!-- <script src="app/assets/vendor/slimscroll/jquery.slimscroll.js"></script> -->
+<!-- main js -->
+<!-- <script src="app/assets/libs/js/main-js.js"></script> -->
+<!-- chart chartist js -->
+<!-- <script src="../app/assets/vendor/charts/chartist-bundle/chartist.min.js"></script> -->
+<!-- sparkline js -->
+<!-- <script src="../app/assets/vendor/charts/sparkline/jquery.sparkline.js"></script> -->
+<!-- morris js -->
+<!-- <script src="../app/assets/vendor/charts/morris-bundle/raphael.min.js"></script>
+<script src="../app/assets/vendor/charts/morris-bundle/morris.js"></script> -->
+<!-- chart c3 js -->
+<!-- <script src="../app/assets/vendor/charts/c3charts/c3.min.js"></script>
+<script src="../app/assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
+<script src="../app/assets/vendor/charts/c3charts/C3chartjs.js"></script>
+<script src="../app/assets/libs/js/dashboard-ecommerce.js"></script> -->
+<!-- <script src="app/assets/vendor/summernote/js/summernote-bs4.js"></script>
+<script src="app/assets/libs/js/main-js.js"></script>
 
 
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="app/assets/vendor/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+    <script src="app/assets/vendor/datatables/js/buttons.bootstrap4.min.js"></script>
+    <script src="app/assets/vendor/datatables/js/data-table.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.colVis.min.js"></script> -->
 <script src="https://cdn.amcapi.com/translation/1.2.6/cloudtranslation.min.js" crossorigin="anonymous"></script>
 <script src="/ElectronicEcommerce/app/assets/libs/js/CustomerScript.js"></script>
 

@@ -1,82 +1,38 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8"/>
-	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"/> -->
-	<title>
-		shopping cart with javascript using local storage -- fullyworld web tutorials
-	</title>
-	<link rel="stylesheet" href="index.css"/>
-	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-	<script>
-		
-		function Delete(e){
-			let items = [];
-			JSON.parse(localStorage.getItem('items')).map(data=>{
-				if(data.id != e.parentElement.parentElement.children[0].textContent){
-					
-					items.push(data);
+<div class="nam mx-auto  my-2 py-2 col-4 text-center text-light" style="background-color: #e0b9e4">
+  <h3>This is a Wishlist</h3>
+</div>
+<br>
+<div class="col-6 my-8 mx-auto">
+<div class="card  mx-auto" style="width:700px; height:200px;">
+  <div class="d-flex align-content-middle">
+    <div class="col-6 px-0 align-items-center ">
+  <img style="height:100%; width:200px;" src="http://placehold.it/64x64" alt="Card image cap">
+  </div>
+  <div class="card-body col-4 py-1 m-auto mx-auto">
+    <h5 class="card-title">Name</h5>
+    <span >price</span>
+    <br>
+   
+  </div>
+  <div class="col-2 m-auto productCardbtnsV  align-content-middle align-middle" >
+   
+  <div class=" col-lg-12  close-btn" stayl=" padding:40px "> <a href="#"  title="instagram">X</a></div>
+         
+          
+        <br><br><br>
+          <div class="row my-2">   
+          <div class=" mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-minus"></i></a></div> 
+          <div class="mx-auto"> <p>1 </p></div> 
+          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-plus"></i></a></div>    
 
-				}
-			});
-			localStorage.setItem('items',JSON.stringify(items));
-			window.location.reload();
-		};
-	</script>
-</head>
-<body>
-<div class="col-12 my-3 ">
-
-
-	<div class="cartBox">
-		<div class="cart">
-			<h1>Cart</h1>
-            <div class="table-responsive">
-			<table id="example" class="table table-striped table-bordered second" style="width:100%"></table>
-		</div>
-	</div>
-	</div>
-	</div>
-
-
-	<!-- script -->
-	<script>
-    
-    window.onload = function(){
-    //cart box
-	const iconShopping = document.querySelector('.iconShopping');
-	const cartBox = document.querySelector('.cartBox');
-	iconShopping.addEventListener("click",function(){
-		cartBox.classList.add('active');
-	});
-	
-
-
-    // adding data to shopping cart 
-        //this code is to view number of product in cart
-
-	const iconShoppingP = document.querySelector('.iconShopping p');
-	let no = 0;
-	JSON.parse(localStorage.getItem('items')).map(data=>{
-		no = no+data.no;	});
-	iconShoppingP.innerHTML = no;
-
-
-    //adding cartbox data in table
-    //show item in cart
-	const cardBoxTable = cartBox.querySelector('table');
-	let tableData = '';
-	tableData += '<tr><th class="th-sm">no</th><th class="th-sm">Image</th><th class="th-sm">Item Name</th><th class="th-sm">Quentity</th><th class="th-sm">item Price</th><th class="th-sm"></th></tr>';
-	if(JSON.parse(localStorage.getItem('items'))[0] === null){
-		tableData += '<tr><td colspan="5">No items found</td></tr>'
-	}else{
-		JSON.parse(localStorage.getItem('items')).map(data=>{
-			tableData += '<tr><th>'+data.id+'</th><th> <img scr="'+data.img+'"></th><th>'+data.name+'</th><th>'+data.no+'</th><th>'+data.price+'</th><th><a href="#" onclick=Delete(this);>Delete</a></th></tr>';
-		});
-	}
-	cardBoxTable.innerHTML = tableData;
-}
-    
-    </script>
-</body>
-</html>
+         </div>
+          
+  </div>
+  
+  </div>
+</div>
+</div><div class="nam mx-auto  my-4 py-2 col-2 text-center text-light" >
+  
+      <button class="but" >Loge in</button>
+  </div>
+<br><br><br>
