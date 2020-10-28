@@ -1,7 +1,7 @@
 <?PHP
 use coreAppNS\Model;
 
-class baymenttModel extends Model {
+class paymentModel extends Model {
 
     public  $db;
     
@@ -43,6 +43,7 @@ function update($data){
         $tbls=array('ordder');
         $id=$_REQUEST['ord_id'];
         $result=$this->db->clos($data)->table($tbls)->where("ord_id","=",$id)->update()-> execute();
+}
 }
 
 ?>

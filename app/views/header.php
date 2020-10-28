@@ -13,6 +13,7 @@
             <!-- <link rel="stylesheet" href="app/assets/libs/css/style.css"> -->
            <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/libs/css/customerStyle.css">
             <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+            <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 
             <!-- <link rel="stylesheet" type="text/css" href="app/assets/vendor/datatables/css/dataTables.bootstrap4.css">
             <link rel="stylesheet" href="app/assets/vendor/summernote/css/summernote-bs4.css"> -->
