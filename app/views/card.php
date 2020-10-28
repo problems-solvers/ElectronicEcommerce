@@ -1,9 +1,9 @@
-<div class="nam mx-auto  my-2 py-2 col-4 text-center text-light" style="background-color: #e0b9e4">
-  <h3>This is a Wishlist</h3>
+<div class="nam mx-auto  my-2 py-2 col-4 text-center text-light" style="background-color:#c5aa59">
+  <h3>This is a Card</h3>
 </div>
 <br>
 <div class="col-6 my-8 mx-auto">
-<div class="card  mx-auto" style="width:700px; height:200px;">
+<div class="card  mx-auto" style="width:600px; height:200px; border-radius: 20px;">
   <div class="d-flex align-content-middle">
     <div class="col-6 px-0 align-items-center ">
   <img style="height:100%; width:200px;" src="http://placehold.it/64x64" alt="Card image cap">
@@ -16,15 +16,16 @@
   </div>
   <div class="col-2 m-auto productCardbtnsV  align-content-middle align-middle" >
    
-  <div class=" col-lg-12  close-btn" stayl=" padding:40px "> <a href="#"  title="instagram">X</a></div>
+  <div class=" col-lg-4 m-auto  my-2 close-btn" stayl=" padding:40px "> <a href="#"  title="instagram">X</a></div>
          
           
         <br><br><br>
           <div class="row my-2">   
-          <div class=" mx-auto">  <a href="#"  title="Facebook"><i class="fas fa-minus"></i></a></div> 
-          <div class="mx-auto"> <p>1 </p></div> 
-          <div class="mx-auto">  <a href="#"  title="instagram"><i class="fas fa-plus"></i></a></div>    
-
+          <div class=" mx-auto">   <a href="#"  title="instagram">-</a></div>
+         
+          <div class="mx-auto"> <p> 1 </p></div> 
+          <div class="mx-auto">   <a href="#"  title="instagram">+</a></div>
+         
          </div>
           
   </div>
@@ -33,6 +34,6 @@
 </div>
 </div><div class="nam mx-auto  my-4 py-2 col-2 text-center text-light" >
   
-      <button class="but" >Loge in</button>
+      <button class="but" style="background-color:#c5aa59"  >Loge in</button>
   </div>
 <br><br><br>
