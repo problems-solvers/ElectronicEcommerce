@@ -6,7 +6,7 @@ class homeModel extends Model{
  
     
         function  getRecentAddData(){
-        $this->db=new DB();
+            $this->db=new DB();
 
             $cols=array('product.pro_id','product.pro_name','product.pro_price','product.main_img','categories.cat_id','categories.cat_name');
             $table=array("product");

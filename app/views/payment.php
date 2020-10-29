@@ -1,3 +1,4 @@
+
 <div class="container mar">
     <div class="py-5 text-center">
     </div>
@@ -54,6 +55,7 @@
                         <div class="col-md-6 mx-auto">
                           <input type="text" class="form-control" id="user_name" placeholder="user_name" value=""
                             required>
+                            
                         </div>
                       </div>
                       <div class="row align-items-center mx-3 py-3">
@@ -76,7 +78,7 @@
                           <input type="text" class="form-control" id="street" placeholder="street" value="" required>
                         </div>
                         <div class="col-md-6 ">
-                          <input type="text" class="form-control " id="zid_id" placeholder="zid id" required>
+                          <input type="text" class="form-control " id="zip_id" placeholder="zip id" required>
                         </div>
                         
                       </div>
@@ -95,23 +97,38 @@
         <div class="card-body">
           <div class="row d-flex justify-content-center ">
            
-              <div class="custom-control custom-radio mx-auto col-6 ">
+              <div class="custom-control custom-radio mx-auto col-8 text-center">
                 <input id="paypal1" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                <label class="custom-control-label" for="paypal1"> first address details
+                            <label class="custom-control-label" for="paypal1"><?php 
+            $rows=$data['address'];
+            foreach($rows as $row){
+              echo $row->user_name ,",&nbsp;". $row->country, ",&nbsp;".$row->city, ",&nbsp;".$row->street,",&nbsp;".$row->zip_id;
+            }
+            ?>
                 </label>
              
             </div>
             
-              <div class="custom-control custom-radio mx-auto col-6 ">
+              <div class="custom-control custom-radio mx-auto col-8 text-center ">
                 <input id="ourbank" name="paymentMethod" type="radio" class="custom-control-input" required>
-                <label class="custom-control-label" for="ourbank">second address details
+                            <label class="custom-control-label" for="ourbank"><?php 
+            $rows=$data['address'];
+            foreach($rows as $row){
+              echo $row->user_name ,",&nbsp;". $row->country, ",&nbsp;".$row->city, ",&nbsp;".$row->street,",&nbsp;".$row->zip_id;
+            }
+            ?>
                 </label>
               </div>
           
 
-              <div class="custom-control custom-radio mx-auto col-6">
+              <div class="custom-control custom-radio mx-auto col-8 text-center">
                 <input id="kurimi" name="paymentMethod" type="radio" class="custom-control-input" required>
-                <label class="custom-control-label" for="kurimi">third address details
+                              <label class="custom-control-label" for="kurimi"><?php 
+              $rows=$data['address'];
+              foreach($rows as $row){
+                echo $row->user_name ,",&nbsp;". $row->country, ",&nbsp;".$row->city, ",&nbsp;".$row->street,",&nbsp;".$row->zip_id;
+              }
+              ?>
                 </label>
             
             </div>
