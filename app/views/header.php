@@ -6,13 +6,18 @@
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <!-- Bootstrap CSS -->
+            <link href='bootstrap/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            
             <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/vendor/bootstrap/css/bootstrap.min.css">
             <link href="/ElectronicEcommerce/app/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" />
             <!-- <link rel="stylesheet" href="app/assets/libs/css/style.css"> -->
-           <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/libs/css/customerStyle.css">
             <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+<link rel="stylesheet" href="/ElectronicEcommerce/app/assets/libs/css/customerStyle.css">
 
             <!-- <link rel="stylesheet" type="text/css" href="app/assets/vendor/datatables/css/dataTables.bootstrap4.css">
             <link rel="stylesheet" href="app/assets/vendor/summernote/css/summernote-bs4.css"> -->
@@ -49,7 +54,14 @@
       <input class="form-control " type="search" placeholder="Search">
     </form>
     <ul class="navbar-nav mt-2 mt-lg-0">
-        <a class="nav-link " href="#"><li class="fas fa-shopping-cart"></li></a>
+
+        <a class="nav-link " href="#">
+        <div class="iconShopping">
+
+        <i class="fa fa-shopping-cart"></i>
+				<p class="">0</p>
+		</div>
+     </a>
 
         <a class="nav-link" href="#"><li class="fas fa-user-circle"></li></a>
    

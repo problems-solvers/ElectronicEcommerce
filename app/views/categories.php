@@ -26,8 +26,8 @@
   <div class="row productCardbtns mx-0">
           <div class="mx-auto">  <a href="#" ><i class="fas fa-heart"></i></a></div> 
           <div class="mx-auto">  <a href="#" ><i class="fas fa-exchange-alt"></i></a></div> 
-          <div class="mx-auto">  <a href="#" ><i class="fas fa-shopping-cart"></i></a></div>            
-  </div>
+          <a href="#" title="add to cart" class="attToCart fas fa-shopping-cart mx-auto"></a>
+          </div>
   <div class="card-body py-1">
     <h5 class="card-title">'.$row->pro_name.'</h5>
     <span >'.$row->pro_price.'</span>
@@ -38,3 +38,5 @@
 </div> ';}  
     ?>
     </div> 
+
+    

@@ -1,4 +1,7 @@
  $(document).ready(function() {
+
+
+    
     cloudTranslation({
         defaultLanguage: "en", // optional | The main language used.
         urlLanguageLocation: UrlLanguageLocation.none, // optional | To append language in the url (ex: www.website.com/en/).

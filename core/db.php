@@ -139,13 +139,11 @@ class DB{
       
     }
     function execute(){
-      //  PDO::prepare($this->)
-      //  $result = false;
-      // echo $this->final_query;
+     
         try {
            $this->stmt = $this->connection->prepare($this->final_query);
            $this->stmt->execute();
-       
+           echo $this->final_query;
         } catch (PDOException $exception) { die($exception->getMessage()); }
        // $this->stmt = null;
         return $this;

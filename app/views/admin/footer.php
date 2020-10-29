@@ -94,7 +94,6 @@ $(document).ready(function () {
 	});  
 });
 </script>
->>>>>>> cec39e3eaf7fec869b721d84af5e4ae9532a8016
 </body>
 
 </html>

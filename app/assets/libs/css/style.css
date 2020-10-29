@@ -2028,7 +2028,10 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
 .product-carousel .carousel-control-next, .carousel-control-prev {display: none;}
 
 
-.product-details{ background-color: #fff; padding: 30px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; position: relative;}
+.product-details{ 
+    background-color: #fff; padding: 30px;
+     border-top-right-radius: 4px; border-bottom-right-radius: 4px; position: relative;
+    height: 800px;}
 .product-colors {padding-bottom: 10px; margin-bottom: 10px;}
 .product-size{padding-bottom: 14px; margin-bottom: 10px; position: relative;}
 .product-colors input[type=checkbox], input[type=radio] {
@@ -2036,7 +2039,6 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
     padding: 0;
     display: none;
 }
-.product-description{}
 
 
 .product-colors label {
@@ -4180,90 +4182,110 @@ Media Query
 @media only screen and (max-width:320px) {}
 
 
-/**
- * Variables
- */
-/**
- * Base Styles
- * 1. Improve box model
- * 2. Enable fluid images
- */
- *,
- *:before,
- *:after {
-   box-sizing: border-box;
-   /* 1 */
- }
  
- img {
-   max-width: 100%;
-   /* 2 */
- }
- 
- .ir {
-   text-indent: 100%;
-   white-space: nowrap;
+img {
+    max-width: 100%;
+    /* 2 */
+  }
+  
+  .ir {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  
+  .gallery {
    overflow: hidden;
- }
+  }
+  .gallery__hero {
+    overflow: hidden;
+    position: relative;
+    padding: 2em;
+    margin: 0 0 0.3333333333em;
+    background: #fff;
+  }
+  .is-zoomed .gallery__hero {
+    cursor: move;
+  }
+  .is-zoomed .gallery__hero img {
+    max-width: none;
+    position: absolute;
+    z-index: 0;
+    top: -50%;
+    left: -50%;
+  }
+  
+  .gallery__hero-enlarge {
+    position: absolute;
+    right: 0.5em;
+    bottom: 0.5em;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    opacity: 0.5;
+    background-repeat: no-repeat;
+    transition: opacity 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+  .gallery__hero-enlarge:hover {
+    opacity: 1;
+  }
+  
+  
+  .gallery__thumbs {
+    text-align: center;
+    background: #fff;
+  }
+  .gallery__thumbs a {
+    display: inline-block;
+    width: 20%;
+    padding: 0.5em;
+    opacity: 0.75;
+    transition: opacity 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+  .gallery__thumbs a:hover {
+    opacity: 1;
+  }
+  .gallery__thumbs a.is-active {
+    opacity: 0.2;
+  }
  
  
- .gallery {
-   overflow: hidden;
+  body{
+     font-size: 15px;
+     line-height: 24px;
+     color: #7a7a7a;
+ }
+ .product-name {
+     font-size: 22px;
+     font-weight: 500;
+     line-height: 22px;
+     margin-bottom: 4px;
  }
  
- .gallery__hero {
-   overflow: hidden;
-   position: relative;
-   padding: 2em;
-   margin: 0 0 0.3333333333em;
-   background: #fff;
+ .display-flex {
+     display: flex;
  }
- .is-zoomed .gallery__hero {
-   cursor: move;
+ .align-center {
+     align-items: center;
  }
- .is-zoomed .gallery__hero img {
-   max-width: none;
-   position: absolute;
-   z-index: 0;
-   top: -50%;
-   left: -50%;
+ .product-info {
+     width: 100%;
  }
  
- .gallery__hero-enlarge {
-   position: absolute;
-   right: 0.5em;
-   bottom: 0.5em;
-   z-index: 1;
-   width: 30px;
-   height: 30px;
-   opacity: 0.5;
-   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iNS4wIC0xMC4wIDEwMC4wIDEzNS4wIiBmaWxsPSIjMzRCZjQ5Ij48cGF0aCBkPSJNOTMuNTkzIDg2LjgxNkw3Ny4wNDUgNzAuMjY4YzUuNDEzLTYuODczIDguNjQyLTE1LjUyNiA4LjY0Mi0yNC45MTRDODUuNjg3IDIzLjEwNCA2Ny41OTMgNSA0NS4zNDMgNVM1IDIzLjEwNCA1IDQ1LjM1NGMwIDIyLjI0IDE4LjA5NCA0MC4zNDMgNDAuMzQzIDQwLjM0MyA5LjQgMCAxOC4wNjItMy4yNCAyNC45MjQtOC42NTNsMTYuNTUgMTYuNTZjLjkzNy45MjcgMi4xNjIgMS4zOTYgMy4zODggMS4zOTYgMS4yMjUgMCAyLjQ1LS40NyAzLjM5LTEuMzk2IDEuODc0LTEuODc1IDEuODc0LTQuOTEyLS4wMDItNi43ODh6bS00OC4yNS0xMC43MWMtMTYuOTU0IDAtMzAuNzUzLTEzLjc5OC0zMC43NTMtMzAuNzUyIDAtMTYuOTY0IDEzLjgtMzAuNzY0IDMwLjc1My0zMC43NjQgMTYuOTY0IDAgMzAuNzUzIDEzLjggMzAuNzUzIDMwLjc2NCAwIDE2Ljk1NC0xMy43ODggMzAuNzUzLTMwLjc1MyAzMC43NTN6TTYzLjAzMiA0NS4zNTRjMCAyLjM0NC0xLjkwNyA0LjI2Mi00LjI2MiA0LjI2MmgtOS4xNjR2OS4xNjRjMCAyLjM0NC0xLjkwNyA0LjI2Mi00LjI2MiA0LjI2Mi0yLjM1NSAwLTQuMjYyLTEuOTE4LTQuMjYyLTQuMjYydi05LjE2NGgtOS4xNjRjLTIuMzU1IDAtNC4yNjItMS45MTgtNC4yNjItNC4yNjIgMC0yLjM1NSAxLjkwNy00LjI2MiA0LjI2Mi00LjI2Mmg5LjE2NHYtOS4xNzVjMC0yLjM0NCAxLjkwNy00LjI2MiA0LjI2Mi00LjI2MiAyLjM1NSAwIDQuMjYyIDEuOTE4IDQuMjYyIDQuMjYydjkuMTc1aDkuMTY0YzIuMzU1IDAgNC4yNjIgMS45MDcgNC4yNjIgNC4yNjJ6Ii8+PC9zdmc+);
-   background-repeat: no-repeat;
-   -webkit-transition: opacity 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-   transition: opacity 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
- }
- .gallery__hero-enlarge:hover {
-   opacity: 1;
- }
- .is-zoomed .gallery__hero-enlarge {
-   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iNS4wIC0xMC4wIDEwMC4wIDEzNS4wIiBmaWxsPSIjMzRCZjQ5Ij48cGF0aCBkPSJNOTMuNTkzIDg2LjgxNkw3Ny4wNDUgNzAuMjY4YzUuNDEzLTYuODczIDguNjQyLTE1LjUyNiA4LjY0Mi0yNC45MTRDODUuNjg3IDIzLjEwNCA2Ny41OTMgNSA0NS4zNDMgNVM1IDIzLjEwNCA1IDQ1LjM1NGMwIDIyLjI0IDE4LjA5NCA0MC4zNDMgNDAuMzQzIDQwLjM0MyA5LjQgMCAxOC4wNjItMy4yNCAyNC45MjQtOC42NTNsMTYuNTUgMTYuNTZjLjkzNy45MjcgMi4xNjIgMS4zOTYgMy4zODggMS4zOTYgMS4yMjUgMCAyLjQ1LS40NyAzLjM5LTEuMzk2IDEuODc0LTEuODc1IDEuODc0LTQuOTEyLS4wMDItNi43ODh6TTE0LjU5IDQ1LjM1NGMwLTE2Ljk2NCAxMy44LTMwLjc2NCAzMC43NTMtMzAuNzY0IDE2Ljk2NCAwIDMwLjc1MyAxMy44IDMwLjc1MyAzMC43NjQgMCAxNi45NTQtMTMuNzkgMzAuNzUzLTMwLjc1MyAzMC43NTMtMTYuOTUzIDAtMzAuNzUzLTEzLjgtMzAuNzUzLTMwLjc1M3pNNTguNzcyIDQ5LjYxSDMxLjkyYy0yLjM1NSAwLTQuMjYzLTEuOTA3LTQuMjYzLTQuMjZzMS45MDgtNC4yNjMgNC4yNjItNC4yNjNINTguNzdjMi4zNTQgMCA0LjI2MiAxLjkwOCA0LjI2MiA0LjI2MnMtMS45MSA0LjI2LTQuMjYyIDQuMjZ6Ii8+PC9zdmc+);
+ .mb-20 {
+     margin-bottom: 20px;
  }
  
- .gallery__thumbs {
-   text-align: center;
-   background: #fff;
+ .mybtn{
+     background-color:#a85dad;
+     border-radius: 25px;
+     border-color:#714674 ;
+
  }
- .gallery__thumbs a {
-   display: inline-block;
-   width: 20%;
-   padding: 0.5em;
-   opacity: 0.75;
-   -webkit-transition: opacity 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-   transition: opacity 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
- }
- .gallery__thumbs a:hover {
-   opacity: 1;
- }
- .gallery__thumbs a.is-active {
-   opacity: 0.2;
- }
+ .mybtn:hover{
+    background-color:#CC8B79;
+    border-color:#CC8B79 ;
+    border-radius: 25px;
+    
+}
