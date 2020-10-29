@@ -11,10 +11,8 @@ public $model;
         $this->model=$this->controller->model_object->create_model('home');
         $this->$function();
 
-      
 
     }
-
        function home(){
 
         $items=array(
