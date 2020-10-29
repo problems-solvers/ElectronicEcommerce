@@ -88,5 +88,6 @@
 <script src="/ElectronicEcommerce/app/assets/libs/js/jquery.easing.min.js"></script>
 
 
+
 </body>
 </html>

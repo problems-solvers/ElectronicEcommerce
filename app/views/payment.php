@@ -2,7 +2,7 @@
 <div class="container mar">
     <div class="py-5 text-center">
     </div>
-    <form id="msform">
+    <form id="msform" method="post">
       <!-- progressbar -->
       <ul id="progressbar">
         <li class="active">add address</li>
@@ -43,13 +43,14 @@
             <div class="accordion" id="accordionExample">
               <div class="card ">
                 <div class="card-header" style="background-color:whitesmoke">
-                  <h4 class="">
-
-                    charge into a new address
-                  </h4>
+                <h5 class="">
+                   <input type="radio" name="RP-ADD" value="red" id="ad1"> 
+                   <label>charge into a new address</label>
+                 
+                  </h5>
                 </div>
 
-                  <div class="py-2">
+                  <div class="py-2 " id="box1">
                     <form class="needs-validation" novalidate>
                       <div class="row align-items-center mx-3 py-3">
                         <div class="col-md-6 mx-auto">
@@ -89,12 +90,13 @@
     
       <div class="card ">
         <div class="card-header" style="background-color:whitesmoke;">
-          <h4 class="">
-          charge into previos address
-            
-          </h4>
+        <h5 class="">
+                   <input type="radio" name="RP-ADD" id="ad2"> 
+                   <label>charge into a previous address</label>
+                 
+                  </h5>
         </div>
-        <div class="card-body">
+        <div class="card-body" id="box2">
           <div class="row d-flex justify-content-center ">
            
               <div class="custom-control custom-radio mx-auto col-8 text-center">
@@ -241,7 +243,20 @@
       </fieldset>
     </form>
 
-  
+    <script>
+ $(function() {
+   $("input[name='RP-ADD']").click(function() {
+     if ($("#ad1").is(":checked")) {
+       $("#box1").show();
+       $("#box2").hide();
+     }
+      if($("#ad2").is(":checked")) {
+       $("#box2").show();
+       $("#box1").hide();
+     }
+   });
+ });
+</script>
     <script>
       $(function () {
 

@@ -22,29 +22,40 @@ class paymentModel extends Model {
 }
     function  getordder(){
      
-        $tbls=array("ordder");
+        $tbls=array("orders");
         return  $this->db
         ->cols()
 		->table($tbls)
 		->get()
         ->execute()->fetch();
-        $id=$_SESSION['user-id'];where("user-id","=",$id);
+        $id=$_SESSION['user_id'];where("user_id","=",$id);
        
              
     }
     function  addordder($data){
      
-        $tbls=array("ordder");
+        $tbls=array("orders");
         $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
-        $id=$_SESSION['user-id'];where("user-id","=",$id);
+        $id=$_SESSION['user_id'];where("user_id","=",$id);
             
     }
+    
 
 function update($data){
-        $tbls=array('ordder');
-        $id=$_REQUEST['ord_id'];
-        $result=$this->db->clos($data)->table($tbls)->where("ord_id","=",$id)->update()-> execute();
+        $tbls=array('orders');
+        $id=$_REQUEST['order_id'];
+        $result=$this->db->clos($data)->table($tbls)->where("order_id","=",$id)->update()-> execute();
 }
+
+function  addAddress($data){
+     
+    $tbls=array("address");
+    $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
+        
+}
+
+
+
 }
 
 ?>
