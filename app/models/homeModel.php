@@ -2,7 +2,6 @@
     use coreAppNS\Model;
 class homeModel extends Model{
     function __construct(){
-        $this->db=new DB();
     }
  
     
@@ -36,7 +35,7 @@ class homeModel extends Model{
            ->get()
            ->execute()
            ->fetch();
-    return $result;
+        return $result;
         }
     
     

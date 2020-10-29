@@ -82,11 +82,10 @@
     <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.colVis.min.js"></script> -->
 <script src="https://cdn.amcapi.com/translation/1.2.6/cloudtranslation.min.js" crossorigin="anonymous"></script>
-<script src="/ElectronicEcommerce/app/assets/libs/js/CustomerScript.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <!-- jQuery easing plugin -->
 <script src="/ElectronicEcommerce/app/assets/libs/js/jquery.easing.min.js"></script>
 
+<script src="/ElectronicEcommerce/app/assets/libs/js/CustomerScript.js"></script>
 
 
 </body>
