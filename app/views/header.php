@@ -62,10 +62,15 @@
 				<p class="">0</p>
 		</div>
      </a>
+     <a class="nav-link " href="#">
+        <div class="iconheart">
 
+        <i class="fa fa-heart"></i>
+				<p class="">0</p>
+		</div>
+     </a>
         <a class="nav-link" href="#"><li class="fas fa-user-circle"></li></a>
    
-        <a class="nav-link" href="#"><li class="fas fa-heart"></li></a>
      
     </ul>
   </div>

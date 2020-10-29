@@ -25,8 +25,8 @@
                 <div class="card productCard mx-auto ">
                     <img class="card-img-top" src="../<?php echo $row->main_img; ?>" alt="Card image cap">
                     <div class="row productCardbtns mx-0">
-                        <div class="mx-auto"> <a href="#"><i class="fas fa-heart"></i></a></div>
-                        <div class="mx-auto"> <a href="#"><i class="fas fa-exchange-alt"></i></a></div>
+                         <a href="#" class="fas fa-heart addTowish mx-auto"></a>
+                        <a href="#" class="fas fa-exchange-alt mx-auto"></a>
                         <a href="#" title="add to cart" class="attToCart fas fa-shopping-cart"></a>
                     </div>
                     <div class="card-body py-1">

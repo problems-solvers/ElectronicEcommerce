@@ -17,6 +17,16 @@ class productModel extends Model {
     ->get()
     ->execute()->fetch();      
 }
+function  getAllCatData(){
+    $cols=array();
+    $table=array("categories");
+   $result=  $this->db->cols()
+   ->table($table)
+   ->get()
+   ->execute()
+   ->fetch();
+return $result;
+}
 function  getcat(){
      
     $tbls=array("categories");
@@ -29,17 +39,17 @@ function  getcat(){
     ->execute()->fetch();      
 }
 
-function  getcatchiled(){
-    $id=$_REQUEST['empid'];
+function  getcatchiled($id){
    
     $tbls=array("categories");
-    $result=   $this->db
+    return  $this->db
     ->cols()
     ->table($tbls)
     ->where("is_active","=",1)
     ->where("parent","=","'.$id.'")
     ->get() 
-    ->execute()->fetch();      
+    ->execute()->fetch();  
+    
 }
     function  add($data){
      

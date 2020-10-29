@@ -35,24 +35,27 @@
                     <option value="">category</option>
 
                     <?php
-                            
-                            $rows=$data['categories'];
-                            foreach($rows as $ro){
-                              echo "
-                                                                               
-                              <option value=$ro->cat_id>$ro->cat_name</option> ";    }
-                            ?>
+    
+    $rows=$data['categories'];
+   
+    foreach($rows['parents'] as $ro){
+      echo "
+                                                       
+      <option value='$ro->cat_id' disabled>$ro->cat_name</option>";  
+    
+      foreach($rows['child'] as $r){
+          if($ro->cat_id==$r->parent)
+       { echo "
+                                                       
+        <option value='$r->cat_id'>--$r->cat_name</option>
+        "; }}
+    
+    }
+    ?>
                 </select>
             </div>
         </div>
-        <div class="form-group">
-
-            <label for="cat_name">Categories_2</label>
-            <div class="col-md-4">
-
-                <select class="form-control" id="cat2" name=""></select>
-            </div>
-        </div>
+       
 
         <div class="form-group">
             <label class="col-md-4 control-label" for="pro_imgs"></label>

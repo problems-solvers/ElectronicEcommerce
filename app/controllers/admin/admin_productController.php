@@ -23,9 +23,23 @@ public $cat_model;
         $this->controller->view_object->create_view('admin/products', $items);
        }
        function addProduct(){
-        $items=array(
-            'categories'=>$this->cat_model->getcat(),
-        );
+        $parents=array();
+        $child=array();
+        $allcat=$this->cat_model->getAllCatData();
+        foreach ( $allcat as $row) {
+         if($row->parent =='0'){
+            array_push($parents,$row);
+         }
+         if($row->parent !='0'){
+            array_push($child,$row);
+         }
+
+   }
+  $categories=array('parents'=>$parents,'child'=> $child);
+ $items=array(
+     'categories'=>$categories,
+     
+         );
           $this->controller->view_object->create_view('admin/addProduct',$items);
 
        }
