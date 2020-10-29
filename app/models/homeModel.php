@@ -7,6 +7,8 @@ class homeModel extends Model{
  
     
         function  getRecentAddData(){
+            $this->db=new DB();
+
             $cols=array('product.pro_id','product.pro_name','product.pro_price','product.main_img','categories.cat_id','categories.cat_name');
             $table=array("product");
            $result=  $this->db->cols($cols)
@@ -22,6 +24,8 @@ class homeModel extends Model{
         }
    
      function  getAllProCatData(){
+        $this->db=new DB();
+
             $cols=array('product.pro_id','product.pro_name','product.main_img','product.pro_price','categories.cat_id','categories.cat_name');
             $table=array("product");
            $result=  $this->db->cols($cols)
