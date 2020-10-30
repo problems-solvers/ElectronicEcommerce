@@ -61,6 +61,23 @@ return $result;
              
      }
 
+     function  addOrder($data){
+        print_r($data);
+         $tbls=array("orders");
+         $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
+ 
+             
+     }
+
+     function  addOrderDetails($data){
+        $id=$_GET['order_id'];
+        $tbls=array("oreder_details");
+         $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
+ 
+             
+     }
+
+
 }
 
 ?>
