@@ -10,23 +10,15 @@ class cart extends Model{
       }
 
 
-    function  getAllCatData(){
-        $cols=array();
-        $table=array("categories");
-       $result=  $this->db->cols()
-       ->table($table)
-       ->get()
-       ->execute()
-       ->fetch();
-return $result;
-    }
+   
 
 
-    function  getAllTagsData(){
+    function  getAllcartData($id){
         $cols=array();
-        $table=array("tags");
+        $table=array("cart_details");
        $result=  $this->db->cols()
        ->table($table)
+       ->where("cart_details_id","=","'.$id.")
        ->get()
        ->execute()
        ->fetch();
@@ -34,31 +26,7 @@ return $result;
     }
 
     
-    function  getAllProCatData(){
-        $cols=array();
-        $table=array("product");
-       $result=  $this->db->cols()
-       ->table($table)
-       ->get()
-       ->execute()
-       ->fetch();
-return $result;
-    }
     
-    function  addCats($data){
-       print_r($data);
-        $tbls=array("categories");
-        $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
-
-            
-    }
-    function addTags($data){
-        print_r($data);
-         $tbls=array("tags");
-         $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
- 
-             
-     }
 
 }
 

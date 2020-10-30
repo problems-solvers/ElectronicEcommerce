@@ -28,8 +28,14 @@
                     <tbody>
                         <?php
 $rows=$data['product'];
-$index=1;                           
+$index=1;  
+echo '
+<a href="http://localhost/ElectronicEcommerce/order/addorder"><button type="button"
+class="d-inline-block btn btn-success btn-left mybtn" style="float:right; ">Add Product</button></a>
+
+';                         
 foreach($rows as $row){
+   
 if($row->is_active=="1")
 $active="Active";
 else

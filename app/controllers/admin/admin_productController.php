@@ -123,30 +123,7 @@ public $cat_model;
         $this->cat_model->delete();
         
        }
-       function child(){
-       /* $items=array(
-            'child'=>$this->cat_model->child(),
-
-        );
-                              
- foreach($items as $row){
-
-        echo ('<option value="'.$row->cat_id.'">' . $row->cat_name . '</option>'); }*/
-
-        $output = '<option value="">select category first</option>';
-        
-        if($_POST['cat1'])
-        {
-            $query= $this->cat_model->child($_POST['cat1']);
-          
-        foreach($query as $row)
-        {
-         $output .= '<option value="'.$row->cat_id.'">'.$row->cat_name.'</option>';
-        }
-        return $output;
-        }
-
-       }
+      
 
 }
 
