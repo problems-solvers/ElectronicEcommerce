@@ -87,7 +87,10 @@
                      
                   </div>
                
-
+<?php
+$id=$data['order_id'];
+//echo $id;
+?>
     
       <div class="card ">
         <div class="card-header" style="background-color:whitesmoke;">

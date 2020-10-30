@@ -59,9 +59,8 @@
 
     <!-- jQuery easing plugin -->
 <script src="/ElectronicEcommerce/app/assets/libs/js/jquery.easing.min.js"></script>
-
-<script src="/ElectronicEcommerce/app/assets/libs/js/script.js"></script>
-<script src="/ElectronicEcommerce/app/assets/libs/js/CustomerScript.js"></script>
+    <!-- jQuery easing plugin -->
+<script src="/ElectronicEcommerce/app/assets/libs/js/jquery.easing.min.js"></script>
 <script src="/ElectronicEcommerce/app/assets/libs/js/cart.js"></script>
 
 <script src="/ElectronicEcommerce/app/assets/libs/js/CustomerScript.js"></script>

@@ -15,10 +15,14 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" />
             <!-- <link rel="stylesheet" href="app/assets/libs/css/style.css"> -->
             <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+
             <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
 <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/libs/css/customerStyle.css">
+
+            <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+
             <!-- <link rel="stylesheet" type="text/css" href="app/assets/vendor/datatables/css/dataTables.bootstrap4.css">
             <link rel="stylesheet" href="app/assets/vendor/summernote/css/summernote-bs4.css"> -->
             <title>ECOMMERCE Site</title>

@@ -226,7 +226,9 @@ payment
   float: left;
   position: relative;
 }
+<<<<<<< HEAD
 
+<<<<<<< HEAD
 #progressbar li:before {
   content: counter(step);
   counter-increment: step;
@@ -269,6 +271,8 @@ payment
 end payment
 -------------------------*/
 
+=======
+>>>>>>> d9f27a36630d477fa980402155eeba3bc90a00ac
 img {
    max-width: 100%;
    /* 2 */
@@ -362,3 +366,49 @@ img {
 .mb-20 {
 	margin-bottom: 20px;
 }
+<<<<<<< HEAD
+=======
+||||||| 967ff02
+=======
+
+#progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 20px;
+  line-height: 20px;
+  display: block;
+  font-size: 10px;
+  color: white;
+  background: #ee802f;
+  border-radius: 3px;
+  margin: 0 auto 5px auto;
+}
+
+/*progressbar connectors*/
+#progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: white;
+  position: absolute;
+  left: -50%;
+  top: 9px;
+  z-index: -1;
+  /*put it behind the numbers*/
+}
+
+#progressbar li:first-child:after {
+  /*connector not needed before the first step*/
+  content: none;
+}
+
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,
+#progressbar li.active:after {
+  background: #714674;
+  color: white;
+}
+/*-----------------------
+end payment
+-------------------------*/
