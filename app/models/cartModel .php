@@ -6,7 +6,7 @@ class cart extends Model{
 
     function __construct(){
         $this->db=new DB();
-       // Session::init();  
+       Session::init();  
       }
 
 
@@ -47,12 +47,13 @@ return $result;
     
     function  addCats($data){
        print_r($data);
-        $tbls=array("categories");
+        $tbls=array("cart");
         $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
 
             
     }
     function addTags($data){
+        
         print_r($data);
          $tbls=array("tags");
          $result=  $this->db->cols($data)->table($tbls)->insert()->execute();

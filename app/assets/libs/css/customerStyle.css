@@ -268,3 +268,97 @@ payment
 /*-----------------------
 end payment
 -------------------------*/
+
+img {
+   max-width: 100%;
+   /* 2 */
+ }
+ 
+ .ir {
+   text-indent: 100%;
+   white-space: nowrap;
+   overflow: hidden;
+ }
+ 
+ 
+ .gallery {
+  overflow: hidden;
+ }
+ .gallery__hero {
+   overflow: hidden;
+   position: relative;
+   padding: 2em;
+   margin: 0 0 0.3333333333em;
+   background: #fff;
+ }
+ .is-zoomed .gallery__hero {
+   cursor: move;
+ }
+ .is-zoomed .gallery__hero img {
+   max-width: none;
+   position: absolute;
+   z-index: 0;
+   top: -50%;
+   left: -50%;
+ }
+ 
+ .gallery__hero-enlarge {
+   position: absolute;
+   right: 0.5em;
+   bottom: 0.5em;
+   z-index: 1;
+   width: 30px;
+   height: 30px;
+   opacity: 0.5;
+   background-repeat: no-repeat;
+   transition: opacity 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+ }
+ .gallery__hero-enlarge:hover {
+   opacity: 1;
+ }
+ 
+ 
+ .gallery__thumbs {
+   text-align: center;
+   background: #fff;
+ }
+ .gallery__thumbs a {
+   display: inline-block;
+   width: 20%;
+   padding: 0.5em;
+   opacity: 0.75;
+   transition: opacity 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+ }
+ .gallery__thumbs a:hover {
+   opacity: 1;
+ }
+ .gallery__thumbs a.is-active {
+   opacity: 0.2;
+ }
+
+
+ body{
+	font-size: 15px;
+	line-height: 24px;
+	color: #7a7a7a;
+}
+.product-name {
+	font-size: 22px;
+	font-weight: 500;
+	line-height: 22px;
+	margin-bottom: 4px;
+}
+
+.display-flex {
+	display: flex;
+}
+.align-center {
+	align-items: center;
+}
+.product-info {
+	width: 100%;
+}
+
+.mb-20 {
+	margin-bottom: 20px;
+}

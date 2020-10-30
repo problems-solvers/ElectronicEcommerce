@@ -10,7 +10,6 @@
             <!-- Bootstrap CSS -->
             <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/vendor/bootstrap/css/bootstrap.min.css">
             <link href="/ElectronicEcommerce/app/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
-            <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/libs/css/style.css">
             <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
             <!-- <link rel="stylesheet" href="../app/assets/vendor/charts/chartist-bundle/chartist.css">
             <link rel="stylesheet" href="../app/assets/vendor/charts/morris-bundle/morris.css"> -->
@@ -28,7 +27,8 @@
  <!-- DataTables Select JS -->
             <script src="js/addons/datatables-select2.min.js" type="text/javascript"></script>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     
+            <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/libs/css/style.css">
+
            
             <title>ECOMMERCE CONTROLE PANEL</title>
             <script>
