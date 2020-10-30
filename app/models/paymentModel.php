@@ -47,7 +47,7 @@ function update($data){
         $result=$this->db->clos($data)->table($tbls)->where("order_id","=",$id)->update()-> execute();
 }
 
-function  addAddress($data){
+function  addNewAddress($data){
      
     $tbls=array("address");
     $result=  $this->db->cols($data)->table($tbls)->insert()->execute();

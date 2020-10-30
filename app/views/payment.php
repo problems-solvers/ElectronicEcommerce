@@ -2,7 +2,7 @@
 <div class="container mar">
     <div class="py-5 text-center">
     </div>
-    <form id="msform" method="post">
+    <form id="msform" method="POST">
       <!-- progressbar -->
       <ul id="progressbar">
         <li class="active">add address</li>
@@ -43,15 +43,15 @@
             <div class="accordion" id="accordionExample">
               <div class="card ">
                 <div class="card-header" style="background-color:whitesmoke">
-                <h5 class="">
-                   <input type="radio" name="RP-ADD" value="red" id="ad1"> 
-                   <label>charge into a new address</label>
-                 
-                  </h5>
+                <div class="custom-control custom-radio">
+            <input  type="radio" id="ad1" name="RP-ADD" class="custom-control-input" required>
+            <label class="custom-control-label" for="ad1"><h5>charge into a new address</h5>
+            </label>
+          </div>
                 </div>
 
                   <div class="py-2 " id="box1">
-                    <form class="needs-validation" novalidate>
+                    <form class="needs-validation" novalidate method="POST">
                       <div class="row align-items-center mx-3 py-3">
                         <div class="col-md-6 mx-auto">
                           <input type="text" class="form-control" id="user_name" placeholder="user_name" value=""
@@ -81,7 +81,8 @@
                         <div class="col-md-6 ">
                           <input type="text" class="form-control " id="zip_id" placeholder="zip id" required>
                         </div>
-                        
+                        <button class="save" type="submit">save</button>
+
                       </div>
                      
                   </div>
@@ -90,11 +91,11 @@
     
       <div class="card ">
         <div class="card-header" style="background-color:whitesmoke;">
-        <h5 class="">
-                   <input type="radio" name="RP-ADD" id="ad2"> 
-                   <label>charge into a previous address</label>
-                 
-                  </h5>
+        <div class="custom-control custom-radio">
+                    <input  type="radio" id="ad2" name="RP-ADD" class="custom-control-input" required>
+                    <label class="custom-control-label" for="ad2"><h5>charge into a previous address</h5>
+                    </label>
+                  </div>
         </div>
         <div class="card-body" id="box2">
           <div class="row d-flex justify-content-center ">
@@ -243,3 +244,19 @@
       </fieldset>
     </form>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <script>
+ $(function() {
+   $("input[name='RP-ADD']").click(function() {
+     if ($("#ad1").is(":checked")) {
+       $("#box1").show();
+       $("#box2").hide();
+     }
+      if($("#ad2").is(":checked")) {
+       $("#box2").show();
+       $("#box1").hide();
+     }
+   });
+ });
+</script>
