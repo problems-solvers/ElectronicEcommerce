@@ -11,47 +11,27 @@ class paymentModel extends Model {
         $this->db=new DB();
    }
    function  getaddress(){
-     
+    $_SESSION['user_id']="4e8f4455-1163-11eb-9632-f81654";
+
+     $id=$_SESSION['user_id'];
     $tbls=array("address");
     return  $this->db
     ->cols()
     ->table($tbls)
+    ->where("user_id","=","'".$id."'")
     ->get()
     ->execute()->fetch();
-    $result=$this->db->clos($data)->table($tbls)->where("address_id","=",$id)->update()-> execute();      
 }
-    function  getordder(){
-     
-        $tbls=array("orders");
-        return  $this->db
-        ->cols()
-		->table($tbls)
-		->get()
-        ->execute()->fetch();
-        $id=$_SESSION['user_id'];where("user_id","=",$id);
-       
-             
-    }
-    function  addordder($data){
-     
-        $tbls=array("orders");
-        $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
-        $id=$_SESSION['user_id'];where("user_id","=",$id);
-            
-    }
-    
+function  addNewAddress($data){
+   $tbls=array("address");
+   return $this->db->cols($data)->table($tbls)->insert()->execute();  
+}
 
 function update($data){
-        $tbls=array('orders');
-        $id=$_REQUEST['order_id'];
-        $result=$this->db->clos($data)->table($tbls)->where("order_id","=",$id)->update()-> execute();
-}
-
-function  addNewAddress($data){
-     
-    $tbls=array("address");
-    $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
-        
+    $_SESSION['order_id']="02bb2e6e-84e6-48db-b5a6-3903ba";
+    $id=$_SESSION['order_id'];
+        $tbls=array('order');
+        $result=$this->db->cols($data)->settingcol()->table($tbls)->where("order_id","=","'".$id."'")->update()-> execute();
 }
 
 

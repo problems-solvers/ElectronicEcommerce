@@ -21,19 +21,17 @@ public $model;
        
        
 function addorder(){
-         $cart_id=$_SESSION['cart_id'];
-         $order_details ='';
-        $cart_detail=$this->model->getAllcartData($cart_id); 
+    $_SESSION['user_id']="4e8f4455-1163-11eb-9632-f81654";
+   $_SESSION['total_price']=55654;
+    if(isset($_SESSION['user_id']))
+    {
+        $order_details ='';
+        $cart_detail=$this->model->getAllcartData($_SESSION['user_id']); 
         if($cart_detail>0)
         {
-            $cart_total=$this->model->getAllcartTotal($cart_id);
-            $total='';
-            foreach($cart_total as $ca)
-            {
-                $total=$ca->total_price;
-            } 
-           
-            print_r($cart_total);
+                $total= $_SESSION['total_price'];
+             
+            //print_r($cart_detail);
         $uuid=baseFunctions::uuid();
         $_POST['order_id']= $uuid; 
         $_POST['start_date']=date('Y-m-d H:i:s');
@@ -58,14 +56,14 @@ else{
     foreach( $cart_detail as $cart){
         $pro_id=$cart->pro_id;
         $total_price=$cart->total_price;
-        $Quantity=$cart->Quantity;
+        $quentity=$cart->quentity;
         $order_id= $_POST['order_id'];
         $uuid=baseFunctions::uuid();
         $_POST['details_id']= $uuid; 
         $data1=array(
             'details_id' =>"'".$_POST['details_id']."'",
             'pro_id' =>"'".$pro_id."'",
-            'quentity' =>"'". $Quantity."'",
+            'quentity' =>"'". $quentity."'",
             'total_price' =>"'". $total_price."'",
             'order_id' =>"'". $order_id."'"
                    
@@ -82,12 +80,11 @@ else{
 }
 }
           
+       }}
+       else{
+        echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/user/login/';</script>";
        }
     }
-    
-
-     
-
 }
 
 

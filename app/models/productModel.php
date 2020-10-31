@@ -95,7 +95,7 @@ function  getcatchiled($id){
     function update($data){
         $tbls=array('product');
         $id=$_POST['pro_id'];
-        return $this->db->cols($data)->table($tbls)->where("pro_id","=","'".$id."'")->update()->execute();
+        return $this->db->cols($data)->settingcol()->table($tbls)->where("pro_id","=","'".$id."'")->update()->execute();
     }
 
 function view_more(){
