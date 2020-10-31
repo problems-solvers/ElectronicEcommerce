@@ -28,7 +28,7 @@ public $cat_model;
             }
       }
      $categories=array('parents'=>$parents,'child'=> $child);
-     print_r($featured);
+    // print_r($categories);
     $items=array(
         'categories'=>$categories,
         'featured'=>$featured,
