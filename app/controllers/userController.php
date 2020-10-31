@@ -172,7 +172,7 @@ function signup(){
 							$_SESSION['password'] = $password;
 							$_SESSION['email'] = $email;
 
-							header('Location:http://localhost/ElectronicEcommerce/');
+							header('Location:<?php $_SERVER["REQUEST_URL"]?> /');
 							exit;
 							print_r($_SESSION);
 							
@@ -272,7 +272,7 @@ function signup(){
 				$_SESSION['fb_lastname'] = $fblastname;
 				$_SESSION['email'] = $fbemail;
 				$_SESSION['fb_pic'] = $fbpic;
-				   header('Location:http://localhost/ElectronicEcommerce/');
+				   header('Location:<?php $_SERVER["REQUEST_URL"]?> /');
 				   exit;
 				   print_r($_SESSION);
 				   

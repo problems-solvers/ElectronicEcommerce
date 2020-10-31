@@ -45,6 +45,8 @@ if(isset($_COOKIE['fb'])) {
 
 
 ||||||| 967ff02:app/views/cart.php
+
+
 <div class="col-6 my-8 mx-auto">
 <div class="card  mx-auto" style="width:700px; height:200px;">
   <div class="d-flex align-content-middle">
@@ -109,8 +111,7 @@ if(isset($_COOKIE['fb'])) {
 
 
 </div><div class="nam mx-auto  my-4 py-2 col-2 text-center text-light" >
-  
-      <button class="but" style="background-color:#c5aa59"  >Loge in</button>
+   <a href="/ElectronicEcommerce/order/addorder"> <button class="but" style="background-color:#c5aa59"  >Check Out</button></a>
   </div>
 <br><br><br>
 

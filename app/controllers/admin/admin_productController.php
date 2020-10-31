@@ -99,6 +99,8 @@ public $cat_model;
             'main_img' =>"'".$main_img."'",
             'pro_imgs' =>"'".$img."'"  
                   );
+                  print_r($data);
+
            $result=$this->cat_model->update($data);
            print_r($result);
           if( $result)
