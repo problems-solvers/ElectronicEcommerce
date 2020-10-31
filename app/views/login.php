@@ -31,13 +31,13 @@ $_SESSION['redirect']=$_SERVER['REQUEST_URL'];
     </label>
   <span class="float-right"> <a href="http://localhost/mvcphp/user/forgotpassword">Forgot password?</a></span>
 </div>
-<a class="login-btn" href="googlelogin">google</a> 
+<a  href="googlelogin">google</a> 
 <a href=' <?php echo  $loginUrl ;?>'>Log in with Facebook!</a>
 
 <div class="inlining-form  col-12 mx-auto  my-3 align-center text_center">
   <div class=" inlining col-2 "></div>
   <div class=" inlining col-4 mx-auto ">
-  <button type="submit" class="bt mx-auto login_btn">login</button>
+  <button type="submit" id="submit" class="bt mx-auto login_btn">login</button>
 </div>
 
   <div class="inlining col-4 mx-auto">
@@ -50,13 +50,50 @@ $_SESSION['redirect']=$_SERVER['REQUEST_URL'];
 </div>
 </div>
 <script>
+
+$(document).ready(function() {
+
+
+$('#submit').click(function(e){
+  e.preventDefault();
+
+
+  var name = $("#user_name").val();
+  var password = $("#user_password").val();
+
+  var x= JSON.parse(localStorage.getItem("cart")) 
+  $.ajax({
+      type: "POST",
+      url: "http://localhost/ElectronicEcommerce/user/run",
+      context: document.body,
+      data: {user_name:name, user_password:password , cartdata: JSON.stringify(x) },
+      success: function(result) {
+        //console.log(result);
+        if (<?php echo isset($_SESSION['id'])?'true':'false'; ?>) {
+               localStorage.removeItem('cart');
+               var x= JSON.parse(localStorage.getItem("cart"))
+               console.log(x)
+        }
+        else{
+          console.log('couldnt')
+        }
+    },
+    error: function(result){
+       alert("Error saving concert");
+       }
+  })
+
+
+});
+});
 var form1=document.getElementById("form1");
 var mass1=document.getElementById("helpId1");
 var mass2=document.getElementById("helpId2");
+var login_btn=document.getElementById("submit");
 var nameFormat= /^[A-Za-z ]+$/;
 var paswd=  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{4,15}$/;
 function validation(){
-if( nameFormat.test(form1[0].value) &&  paswd.test(form1[1].value))
+if( nameFormat.test(form1[0].value) )
 {
 	login_btn.disabled = false;
 	login_btn.className = "btn enabled"

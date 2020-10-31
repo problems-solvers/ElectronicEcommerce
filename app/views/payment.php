@@ -2,7 +2,7 @@
 <div class="container mar">
     <div class="py-5 text-center">
     </div>
-    <form id="msform">
+    <form id="msform" method="POST">
       <!-- progressbar -->
       <ul id="progressbar">
         <li class="active">add address</li>
@@ -43,6 +43,7 @@
             <div class="accordion" id="accordionExample">
               <div class="card ">
                 <div class="card-header" style="background-color:whitesmoke">
+
                 <input type="radio" value="new" name="address">
 
                   <h4 class="">
@@ -51,8 +52,8 @@
                   </h4>
                 </div>
 
-                  <div class="py-2">
-                    <form class="needs-validation" novalidate>
+                  <div class="py-2 " id="box1">
+                    <form class="needs-validation" novalidate method="POST">
                       <div class="row align-items-center mx-3 py-3">
                         <div class="col-md-6 mx-auto">
                           <input type="text" class="form-control" id="user_name" name="user_name" placeholder="user_name" value="name"required>
@@ -81,7 +82,8 @@
                         <div class="col-md-6 ">
                           <input type="text" class="form-control " name="zip_id"  id="zip_id" placeholder="zip id" required>
                         </div>
-                        
+                        <button class="save" type="submit">save</button>
+
                       </div>
                      
                   </div>
@@ -93,13 +95,14 @@
     
       <div class="card ">
         <div class="card-header" style="background-color:whitesmoke;">
+
           <input type="radio" value="old" name="address">
           <h4 class="">
           charge into previos address
             
           </h4>
         </div>
-        <div class="card-body">
+        <div class="card-body" id="box2">
           <div class="row d-flex justify-content-center ">
            
               <div class="custom-control custom-radio mx-auto col-8 text-center">
@@ -224,6 +227,7 @@
       </fieldset>
     </form>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
   <script>
     
@@ -257,4 +261,17 @@ formData.append("zip_id",zip_id);
             });
   });
   </script>
-
+    <script>
+ $(function() {
+   $("input[name='RP-ADD']").click(function() {
+     if ($("#ad1").is(":checked")) {
+       $("#box1").show();
+       $("#box2").hide();
+     }
+      if($("#ad2").is(":checked")) {
+       $("#box2").show();
+       $("#box1").hide();
+     }
+   });
+ });
+</script>

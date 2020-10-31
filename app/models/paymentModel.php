@@ -33,6 +33,9 @@ function update($data){
         $tbls=array('order');
         $result=$this->db->cols($data)->settingcol()->table($tbls)->where("order_id","=","'".$id."'")->update()-> execute();
 }
+
+
+
 }
 
 ?>

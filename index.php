@@ -18,6 +18,7 @@ include("app/config/config.php");
 
 $url=isset($_GET['url'])?$_GET['url']:"home";
 //echo $url;
+Session::init();
 baseFunctions::Header($url);
 
 new Route($url);
@@ -25,4 +26,5 @@ new Route($url);
 baseFunctions::Footer($url);
 
 ?>
+ 
 
