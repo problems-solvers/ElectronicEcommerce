@@ -1,7 +1,7 @@
 <?PHP
 use coreAppNS\Controller;
 
-class admin_productController extends Controller{
+class   admin_productController extends Controller{
 public $controller;
 public $cat_model;
 
@@ -23,23 +23,9 @@ public $cat_model;
         $this->controller->view_object->create_view('admin/products', $items);
        }
        function addProduct(){
-        $parents=array();
-        $child=array();
-        $allcat=$this->cat_model->getAllCatData();
-        foreach ( $allcat as $row) {
-         if($row->parent =='0'){
-            array_push($parents,$row);
-         }
-         if($row->parent !='0'){
-            array_push($child,$row);
-         }
-
-   }
-  $categories=array('parents'=>$parents,'child'=> $child);
- $items=array(
-     'categories'=>$categories,
-     
-         );
+        $items=array(
+            'categories'=>$this->cat_model->getcat(),
+        );
           $this->controller->view_object->create_view('admin/addProduct',$items);
 
        }
@@ -90,24 +76,14 @@ public $cat_model;
         $main_img=baseFunctions::main_img($_FILES['main_img']);
         $data = array(
             'pro_id' =>"'".$_POST['pro_id']."'",
+            'main_img' =>"'".$main_img."'",
+            'pro_imgs' =>"'".$img."'"  ,
             'pro_name'=>"'". $_POST['pro_name']."'",
-            'brand' =>"'".$_POST['brand']."'" ,
+            'pro_price'=>"'".$_POST['pro_price']."'",
             'pro_quentity' =>"'".$_POST['pro_quentity']."'",
             'pro_details' =>"'".$_POST['pro_details']."'",
-            'pro_price'=>"'".$_POST['pro_price']."'",
-            'is_active'=>"'".$_POST['is_active']."'",
-            'main_img' =>"'".$main_img."'",
-            'pro_imgs' =>"'".$img."'"  
-                  );
-           $result=$this->cat_model->update($data);
-           print_r($result);
-          if( $result)
-           {
-            echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/';</script>";
-           }
-           else{
-            echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/updateProduct';</script>";
-           }
+            'brand' =>"'".$_POST['brand']."'"            );
+           $this->cat_model->update($data);
        }
 
        function updateProduct(){
@@ -123,7 +99,17 @@ public $cat_model;
         $this->cat_model->delete();
         
        }
-      
+       function child(){
+        $items=array(
+            'child'=>$this->cat_model->child(),
+
+        );
+                              
+ foreach($items as $row){
+
+        echo ('<option value="'.$row->cat_id.'">' . $row->cat_name . '</option>'); }
+
+       }
 
 }
 

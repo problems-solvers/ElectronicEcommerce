@@ -1,4 +1,3 @@
-
 <?PHP
 use coreAppNS\Model;
 
@@ -22,40 +21,29 @@ class paymentModel extends Model {
 }
     function  getordder(){
      
-        $tbls=array("orders");
+        $tbls=array("ordder");
         return  $this->db
         ->cols()
 		->table($tbls)
 		->get()
         ->execute()->fetch();
-        $id=$_SESSION['user_id'];where("user_id","=",$id);
+        $id=$_SESSION['user-id'];where("user-id","=",$id);
        
              
     }
     function  addordder($data){
      
-        $tbls=array("orders");
+        $tbls=array("ordder");
         $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
-        $id=$_SESSION['user_id'];where("user_id","=",$id);
+        $id=$_SESSION['user-id'];where("user-id","=",$id);
             
     }
-    
 
 function update($data){
-        $tbls=array('orders');
-        $id=$_REQUEST['order_id'];
-        $result=$this->db->clos($data)->table($tbls)->where("order_id","=",$id)->update()-> execute();
+        $tbls=array('ordder');
+        $id=$_REQUEST['ord_id'];
+        $result=$this->db->clos($data)->table($tbls)->where("ord_id","=",$id)->update()-> execute();
 }
-
-function  addNewAddress($data){
-     
-    $tbls=array("address");
-    $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
-        
-}
-
-
-
 }
 
 ?>
