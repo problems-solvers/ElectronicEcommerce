@@ -6,29 +6,32 @@ public $controller;
 public $model;
 
     function __construct($fun ='cart'){
-
         $this->controller =new Controller();
-        
-       
-
         $this->model=$this->controller->model_object->create_model('cart');
-      
-       $this->$fun();
+        $this->$fun();
 
        }
 
       
     function cart(){
-       
-        
-        $this->controller->view_object->create_view('cart');
-      
-    
+        if(isset($_SESSION['id'])){
+        $items = $this->model->getCartProducts();
+        $this->controller->view_object->create_view('cart',$items);
+        }
+        else{
+            $this->controller->view_object->create_view('cart');
+        }
+    }
+    function updateqty(){
+        $this->model->updateCart();
+    }
+    function deleteCartItem(){
+        $this->model->deleteCartItem();
     }
     function addCart(){
       
-      $featured=$this->product_model->addCats();
-      echo '<script> console.log("tt")</script>';
+      $this->model->addCats();
+     // echo '<script> console.log("tt")</script>';
     }
     
        }
