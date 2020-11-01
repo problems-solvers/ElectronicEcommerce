@@ -1,4 +1,3 @@
-
 <div class="container mar">
     <div class="py-5 text-center">
     </div>
@@ -152,7 +151,6 @@
               </div>
               <div class="card-body">
                 <div class="row d-flex justify-content-center ">
-
                   <div class="col-md-4 mb-3 ">
                     <div class="custom-control custom-radio">
                       <input id="com1" name="paymentMethod" type="radio" class="custom-control-input" checked required>

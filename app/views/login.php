@@ -15,17 +15,17 @@ $_SESSION['redirect']=$_SERVER['REQUEST_URL'];
 <div class="card  mx-auto p-3" >
   <h4 class="text-center my-3">Login</h4>
 <form action="run" method="post" id="form1" onchange="validation();">
-  <div class="form-group col-8 mx-auto my-5">
+  <div class="form-group col-md-6 col-sm-12 col-xs-12 mx-auto my-5">
     <!-- <label for="user_name">Email address:</label> -->
     <input type="text" class="form-control" placeholder="Enter Username"  id="user_name" name="user_name" required>
     <small id="helpId1" class="text-muted"></small>
   </div>
-  <div class="form-group  col-8 mx-auto my-5">
+  <div class="form-group  col-md-6 col-sm-12 col-xs-12 mx-auto my-5">
     <!-- <label for="password">Password:</label> -->
     <input type="password" class="form-control" placeholder="Enter Password" id="user_password" name="user_password" required>
     <small id="helpId2" class="text-muted"></small>
   </div>
-  <div class="inline-form form-check  col-8 mx-auto my-3">
+  <div class="inline-form form-check  col-8 col-sm-12 col-xs-12 mx-auto my-3">
     <label class="form-check-label px-3">
       <input class="form-check-input" type="checkbox">Remember me
     </label>
@@ -34,13 +34,13 @@ $_SESSION['redirect']=$_SERVER['REQUEST_URL'];
 <a  href="googlelogin">google</a> 
 <a href=' <?php echo  $loginUrl ;?>'>Log in with Facebook!</a>
 
-<div class="inlining-form  col-12 mx-auto  my-3 align-center text_center">
-  <div class=" inlining col-2 "></div>
-  <div class=" inlining col-4 mx-auto ">
-  <button type="submit" id="submit" class="bt mx-auto login_btn">login</button>
+<div class="inlining-form  col-md-12 col-sm-12 col-xs-12 mx-auto  my-3 align-center text_center">
+  <div class=" inlining col-md-2 col-sm-12 col-xs-12"></div>
+  <div class=" inlining col-md-4 col-sm-12 col-xs-12 mx-auto ">
+  <button type="submit" class="bt mx-auto login_btn">login</button>
 </div>
 
-  <div class="inlining col-4 mx-auto">
+  <div class="inlining col-md-4 col-sm-12 col-xs-12 mx-auto">
   <button type="button" class="bt1 mx-auto"><a href="http://localhost/mvcphp/user/register" >register</button></a>
 </div>
 
