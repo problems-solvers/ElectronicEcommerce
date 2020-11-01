@@ -4,7 +4,8 @@
         <head>
             <!-- Required meta tags -->
             <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
             <!-- Bootstrap CSS -->
             <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/vendor/bootstrap/css/bootstrap.min.css">
             <link href="/ElectronicEcommerce/app/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
@@ -20,7 +21,7 @@
             <title>ECOMMERCE Site</title>
         </head>
         
- <body>
+<body>
  <div id="CustTemplate">
   <nav class="navbar navbar-expand-lg navbar-dark ">
   <a class="navbar-brand" href="#">  <img src="http://placehold.it/64x64" class="float-left rounded-circle"></a>

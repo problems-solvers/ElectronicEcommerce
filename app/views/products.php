@@ -1,12 +1,12 @@
 <div class="email editor">
-     <div class="col-md-12 p-0">
+     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 p-0">
          <div class="form-group">
              <label class="control-label sr-only" for="summernote">Descriptions </label>
              <textarea class="form-control" id="summernote" name="editordata" rows="6" placeholder="Write Descriptions"></textarea>
          </div>
      </div>
      <div class="email action-send">
-         <div class="col-md-12 ">
+         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
              <div class="form-group">
                  <button class="btn btn-primary btn-space" type="submit"><i class="icon s7-mail"></i> Send</button>
                  <button class="btn btn-secondary btn-space" type="button"><i class="icon s7-close"></i> Cancel</button>

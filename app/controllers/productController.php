@@ -24,7 +24,7 @@ public $model;
     
        function products(){
         echo 'hiiiiiiii';
-        //$this->controller->view_object->create_view('products');
+        $this->controller->view_object->create_view('products');
 
     }
 

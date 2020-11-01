@@ -1,10 +1,10 @@
 <div class="continer">
 
-<div class="nam mx-auto  my-2 py-2 col-4 text-center text-light" style="background-color: #e0b9e4">
+<div class="nam mx-auto  my-2 py-2 col-4 col-md-4 col-sm-12 col-xs-12 text-center text-light" style="background-color: #ee802f;border:3px white solid;">
   <h3>This is a Product</h3>
 </div>
-<div class="col-md-12 row " >
-<div class="product col-md-5" style="margin-top:20px">
+<div class="col-md-12  col-sm-12  row " >
+<div class="product col-md-5 col-sm-12 col-xs-12" style="margin-top:20px">
 
 <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -31,30 +31,30 @@
     <span class="sr-only">Next</span>
   </a>
 
-<div class="prod col-md-12">
-<div class="prod1 col-md-3  d-inline-block">
+<div class="prod col-md-12 col-sm-12 col-xs-12">
+<div class="prod1 col-md-3 col-sm-8 col-xs-12 d-inline-block">
 <div class="newest-img"> <a href="#"><img src="../app/assets/images/3782994ce1439acd80b753ade7e7df57e64019e9753901218VT38EA_1_Classic.jpg" alt="" width="100%" height="100%"  /></a> </div>
 </div>
-<div class="prod2 col-md-3  d-inline-block">
+<div class="prod2 col-md-3  col-sm-8 col-xs-12 d-inline-block">
 <div class="newest-img"> <a href="#"><img src="../app/assets/images/3782994ce1439acd80b753ade7e7df57e64019e9753901218VT38EA_1_Classic.jpg" alt="" width="100%" height="100%" /></a> </div>
 </div>
-<div class="prod2 col-md-3  d-inline-block">
+<div class="prod2 col-md-3 col-sm-8 col-xs-12 d-inline-block">
 <div class="newest-img"> <a href="#"><img src="../app/assets/images/3782994ce1439acd80b753ade7e7df57e64019e9753901218VT38EA_1_Classic.jpg" alt="" width="100%" height="100%"  /></a> </div>
 </div>
-<div class="prod1 col-md-3  d-inline-block">
+<div class="prod1 col-md-3 col-sm-8 col-xs-12 d-inline-block">
 <div class="newest-img"> <a href="#"><img src="../app/assets/images/3782994ce1439acd80b753ade7e7df57e64019e9753901218VT38EA_1_Classic.jpg" alt="" width="100%" height="100%"  /></a> </div>
 </div>
-<div class="prod2 col-md-3  d-inline-block">
+<div class="prod2 col-md-3 col-sm-8 col-xs-12 d-inline-block">
 <div class="newest-img"> <a href="#"><img src="../app/assets/images/3782994ce1439acd80b753ade7e7df57e64019e9753901218VT38EA_1_Classic.jpg" alt="" width="100%" height="100%"/></a> </div>
 </div>
-<div class="prod2 col-md-3  d-inline-block">
+<div class="prod2 col-md-3 col-sm-8 col-xs-12 d-inline-block">
 <div class="newest-img"> <a href="#"><img src="../app/assets/images/3782994ce1439acd80b753ade7e7df57e64019e9753901218VT38EA_1_Classic.jpg" alt="" width="100%" height="100%"  /></a> </div>
 </div>
 
 
 </div>
 </div>
-<div class="pro col-md-6" style="margin-top:20px; ">
+<div class="pro col-md-6 col-sm-12 col-xs-12" style="margin-top:20px; ">
     
   
 
@@ -76,10 +76,10 @@
 </div>
 </div>        
   </div>
-<div class=" my-1 py-1 col-4 text-center text-light" >
+<div class=" my-1 py-1 col-4 col-sm-12 col-xs-12 text-center text-dark" >
 <h3>This is a describtion</h3>
 </div>
-<div class="descrip col-lg-11 mx-auto ">
+<div class="descrip col-lg-11 col-sm-12 col-xs-12 mx-auto ">
 
 <div>
 </div>
