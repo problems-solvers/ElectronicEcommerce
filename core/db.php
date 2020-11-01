@@ -139,7 +139,7 @@ class DB{
       
     }
     function execute(){
-     
+    
         try {
            $this->stmt = $this->connection->prepare($this->final_query);
            echo $this->final_query;

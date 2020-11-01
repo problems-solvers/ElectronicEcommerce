@@ -21,7 +21,7 @@ class userController extends Controller
 
 	}
 	function login(){
-        $this->controller->view_object->create_view('login');
+		$this->controller->view_object->create_view('login');
 
 	}
 function signup(){
@@ -52,14 +52,11 @@ function signup(){
 					}
 //  header('location:home');
 }
-
-	function run()
-	{    $this->controller->view_object->create_view('login');
-
+	function run(){
 		$this->model->login();
+		
 	//s	header('location: home');
 	}
-	
 	function logout()
 	{
 		Session::destroy();
@@ -100,37 +97,24 @@ function signup(){
 		$this->controller->view_object->create_view('forgotpassword');
 		
 	}
-	
-
-
-
 	public  function googlelogin(){
 			$client = new Google_Client();
-	
 			//Set the OAuth 2.0 Client ID
 			$client->setClientId('318750552418-n8to6u7i78qq2vbfmksb25k0r80bbic3.apps.googleusercontent.com');
-			
 			//Set the OAuth 2.0 Client Secret key
 			$client->setClientSecret('LT5navFfz7TOt3dqr-CgJluU');
-			
 			//Set the OAuth 2.0 Redirect URI
 			$client->setRedirectUri('http://localhost/ElectronicEcommerce/user/googlelogin');
-			
 			//
 			$client->addScope('email');
-			
 			$client->addScope('profile');
 			if(isset($_GET['code'])){
-
 				$token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
 				//if(!isset($token["error"])){
-			
 					$client->setAccessToken($token['access_token']);
-			
 					// getting profile information
 					$google_oauth = new Google_Service_Oauth2($client);
 					$google_account_info = $google_oauth->userinfo->get();
-				
 					// Storing data into database
 					$id = $google_account_info->id;
 					$full_name = trim($google_account_info->name);

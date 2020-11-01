@@ -72,6 +72,7 @@ function update($data){
         $tbls=array('orders');
         $result=$this->db->cols($data)->settingcol()->table($tbls)->where("order_id","=","'".$id."'")->update()-> execute();
 }
+<<<<<<< HEAD
 
 function delete(){
     $_SESSION['order_id']="eb6d3fd3-023b-409c-83fd-1605be";
@@ -80,6 +81,12 @@ function delete(){
         $result=$this->db->cols()->table($tbls)->where("order_id","=","'".$id."'")->delete()-> execute();
 
 }
+||||||| ebd206c
+=======
+
+
+
+>>>>>>> b8c11f8e0134ab234e97a901f8d4afbb6d5c215d
 }
 
 ?>

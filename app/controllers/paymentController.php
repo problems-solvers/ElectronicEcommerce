@@ -132,6 +132,26 @@ function addAdress(){
         $this->model->update($data);
        }
 
+function insertAddress(){
+    echo"looooool";
+    $uuid=baseFunctions::uuid();
+    $_POST['address_id']= $uuid;
+    $data = array(
+        'user_id'=>"'5e7d1872-6a31-482d-9f1b-64fd39'",
+        'address_id' =>"'".$_POST['address_id']."'",
+        'user_name' =>"'".$_POST['user_name']."'",
+        'address' =>"'adress2'",
+        'country'=>"'".$_POST['country']."'",
+        'city'=>"'".$_POST['city']."'",
+        'street' =>"'".$_POST['street']."'",
+        'zip_id' =>"'".$_POST['zip_id']."'",
+               
+        );
+        $this->model->addNewAddress($data);
+}
+
+			
+
 }
 
 
