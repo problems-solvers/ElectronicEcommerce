@@ -8,8 +8,8 @@
      <div class="email action-send">
          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
              <div class="form-group">
-                 <button class="btn btn-primary btn-space" type="submit"><i class="icon s7-mail"></i> Send</button>
-                 <button class="btn btn-secondary btn-space" type="button"><i class="icon s7-close"></i> Cancel</button>
+                 <button class="btn btn-primary btn-space bt" type="submit"><i class="icon s7-mail"></i> Send</button>
+                 <button class="btn btn-secondary btn-space bt1" type="button"><i class="icon s7-close"></i> Cancel</button>
              </div>
          </div>
      </div>

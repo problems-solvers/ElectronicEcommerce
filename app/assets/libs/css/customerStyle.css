@@ -191,7 +191,6 @@ payment
   border: 10px #ee802f solid;
   color: black;
   font-weight: bold;
-  border: 0 none;
   cursor: pointer;
   padding: 5px 5px;
   margin: 10px 5px;
@@ -203,10 +202,9 @@ payment
 #msform .action-button {
   width: 150px;
   background-color: whitesmoke;
-  border: 2px #ee802f solid;
+  border: 5px #ee802f solid;
   color: black;
   font-weight: bold;
-  border: 0 none;
   cursor: pointer;
   padding: 5px 5px;
   margin: 10px 5px;

@@ -144,7 +144,9 @@
      </div>
 </div>
 <button class="save" type="submit">save</button>
-<input type="button" name="next" class="next action-button " value="Next" />
+<input type="button" name="next" class="next action-button " style="  background-color: whitesmoke;
+  border: 2px #ee802f solid;
+  color: black;" value="Next" />
       </fieldset>
       <fieldset>
         <div class="row container">
@@ -234,13 +236,29 @@
               </div>
               </div>
               </div>  
-        <input type="button" name="previous" class="previous action-button" value="Previous" />
-        <input type="button" name="next" class="next action-button" value="Next" />
+        <input type="button" name="previous" class="previous action-button" style="  background-color: whitesmoke;
+  border: 2px #ee802f solid;
+  color: black;" value="Previous" />
+
+        <input type="button" name="next" class="next action-button" style="
+  width: 150px;
+  height: 27px;
+  text-align: center;
+  background: #f18f49;
+  color: white;
+  border: 0 none;
+  border-radius: 1px;
+  cursor: pointer;
+  padding: 2px 5px;
+  margin: 10px 5px;
+  border-radius: 20px;" value="Next" />
       </fieldset>
       <fieldset>
         
-            <input type="button" name="previous" class="previous action-button" value="Previous" />
-            <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+            <input type="button" name="previous" class="previous action-button " style="  background-color: whitesmoke;
+  border: 2px #ee802f solid;
+  color: black;" value="Previous" />
+            <button class="save" type="submit" value="submit">submit</button>
 
       </fieldset>
     </form>
