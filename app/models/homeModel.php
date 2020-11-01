@@ -21,6 +21,18 @@ class homeModel extends Model{
            ->fetch();
             return $result;
         }
+        function  sub_cat($id){
+            $cols=array();
+            $table=array("product");
+           $result=  $this->db->cols()
+           ->table($table)
+           ->where("cat_id","=","'".$id."'")
+           ->get()
+           ->execute()
+           ->fetch();
+    return $result;
+        }
+    
    
      function  getAllProCatData(){
         $this->db=new DB();
@@ -31,6 +43,8 @@ class homeModel extends Model{
            ->table($table)
            ->innerjoin("categories","product.cat_id","categories.cat_id")
            ->where("product.is_active","=","1")
+           ->where("product.cat_id","=","2")
+
            ->orderBy("categories.create_date","desc")
            ->get()
            ->execute()

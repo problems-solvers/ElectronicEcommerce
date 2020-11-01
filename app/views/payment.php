@@ -1,3 +1,8 @@
+
+<?php
+$_SESSION['redirect']=$_SERVER['REQUEST_URI'];
+echo $_SESSION['redirect'];
+?>
 <div class="container mar">
     <div class="py-5 text-center">
     </div>
@@ -232,6 +237,10 @@
             <!-- <input type="button" name="previous" class="previous action-button" value="Previous" /> -->
             <input type="submit" name="submit" class="submit action-button" value="Submit" />
       </fieldset>
+
+
+
+      <!--show oreder-->
     </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -468,17 +477,6 @@
   
   })
    
-    // $(".next").click(function(e) {
-    
-     // var formData = new FormData();
-
-/*formData.append("user_name",user_name);
-formData.append("country",country);
-formData.append("city",city);
-formData.append("street",street);
-formData.append("zip_id",zip_id);
-    console.log(formData);
-      e.preventDefault();*/ 
      
       
      

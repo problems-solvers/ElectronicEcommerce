@@ -4,7 +4,7 @@ include("app/config/config.php");
 $redirectTo="http://localhost/ElectronicEcommerce/user/facebooklogin";
 $data=["email"];
 $loginUrl = $helper->getLoginUrl($redirectTo, $data);
-$_SESSION['redirect']=$_SERVER['REQUEST_URL'];
+$_SESSION['redirect']=$_SERVER['REQUEST_URI'];
  //$user = $facebook->getUser();
 //page?<?php $_SERVER['REQUEST_URL']
 

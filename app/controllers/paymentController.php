@@ -21,6 +21,39 @@ public $model;
         );
         $this->controller->view_object->create_view('payment', $items);    
        }
+       function show_payment(){
+        $_SESSION['oreder_id']="eb6d3fd3-023b-409c-83fd-1605be";
+           $id=$_SESSION['oreder_id'];
+        //getpro
+        $items=array(
+            'order'=>$this->model->getorder(),
+            'product'=>$this->model->getpro($id),
+        );
+      
+        $this->controller->view_object->create_view('show_payment',$items);    
+       }
+
+       function updateorder(){
+        $data = array(
+    
+            
+            'order_status' =>"2"
+                   
+            );
+            print_r($data);
+
+            $this->model->update($data);
+        $this->controller->view_object->create_view('cart');
+        $_SESSION['order_id']='';
+    
+       }
+       function delete(){
+        
+
+            $this->model->delete();
+        $this->controller->view_object->create_view('cart');   
+        $_SESSION['order_id']='';
+       }
 
         
 function addBAccount(){
@@ -50,8 +83,6 @@ function addBAccount(){
        }   
        
 function addAdress(){
-    echo"hello";
-      echo "insert new";
       $uuid=baseFunctions::uuid();
 
     //  Session::set('address_id',$uuid);
@@ -76,7 +107,7 @@ function addAdress(){
      $result1=$this->model->update($data2);  
        }
        function updateOrderAddress(){
-       
+      
            $data2=array(
                 'address_id'=>"'".$_REQUEST['address_id']."'",
            );
