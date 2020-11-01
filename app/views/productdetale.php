@@ -73,12 +73,10 @@ foreach( $imgs as $img){
             <div class="row productCardbtns mx-0 my-3">
                 <div class="mx-auto"> <a href="#"><i class="fas fa-heart"></i></a></div>
                 <div class="mx-auto"> <a href="#"><i class="fas fa-exchange-alt"></i></a></div>
-                <a href="#" title="add to cart" class="attToCart fas fa-shopping-cart mx-auto"></a>
-            </div>
-        </div>
+                <a href="#" title="add to cart"  style="color:#714674" class="attToCart fas fa-shopping-cart mx-auto"></a>
+           
 
-    </div>
-    <div class="product-info-tabs">
+            <div class="product-info-tabs " style=" font-family:montserrat;" >
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab"
@@ -90,9 +88,13 @@ foreach( $imgs as $img){
             <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
                 <?php echo $row->pro_details; ?>
             </div>
-
+            </div>
         </div>
     </div>
+        </div>
+
+    </div>
+   
 </div>
 <?php
 }

@@ -31,7 +31,7 @@
  <body>
  <div id="CustTemplate">
   <nav class="navbar navbar-expand-lg navbar-dark ">
-  <a class="navbar-brand" href="#">  <img src="http://placehold.it/64x64" class="float-left rounded-circle"></a>
+  <a class="navbar-brand" href="#">  <img src="../app/assets/images/login_store_logos-1.png" class="float-left rounded-circle" style="width:70px; height:50px;"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

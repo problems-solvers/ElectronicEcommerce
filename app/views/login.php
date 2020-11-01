@@ -24,16 +24,17 @@ $_SESSION['redirect']=$_SERVER['REQUEST_URI'];
     <!-- <label for="password">Password:</label> -->
     <input type="password" class="form-control" placeholder="Enter Password" id="user_password" name="user_password" required>
     <small id="helpId2" class="text-muted"></small>
-  </div>
+  </div> 
   <div class="inline-form form-check  col-8 mx-auto my-3">
     <label class="form-check-label px-3">
       <input class="form-check-input" type="checkbox">Remember me
     </label>
   <span class="float-right"> <a href="http://localhost/mvcphp/user/forgotpassword">Forgot password?</a></span>
 </div>
-<a  href="googlelogin">google</a> 
-<a href=' <?php echo  $loginUrl ;?>'>Log in with Facebook!</a>
-
+<div class="col-md-9 mx-auto">
+<a  href="googlelogin"><img src="../app/assets/images/loging.png" class="mr-2"  width="200px"></a> 
+<a href=' <?php echo  $loginUrl ;?>'><img src="../app/assets/images/loginfb.png" class="ml-2" width="200px"></a>
+</div>
 <div class="inlining-form  col-12 mx-auto  my-3 align-center text_center">
   <div class=" inlining col-2 "></div>
   <div class=" inlining col-4 mx-auto ">
