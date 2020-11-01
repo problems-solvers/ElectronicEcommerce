@@ -32,7 +32,7 @@
 <?php  $rows=$data['featured'];
      foreach ($rows as $row) { echo ' 
 <div class="col-lg-3  col-md-4 col-sm-6 col-xm-12 my-2 mx-auto">
-
+<a href="http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id='.$row->pro_id.'">
  <div class="card productCard mx-auto " >
   <img class="card-img-top " src="'.$row->main_img.'" alt="Card image cap">
   <div class="row productCardbtns mx-0 mt-2">
@@ -48,6 +48,7 @@
     <span>'.$row->cat_name.'</span>
   </div>
  </div>
+ </a>
 </div> ';}  
     ?>
     </div> 

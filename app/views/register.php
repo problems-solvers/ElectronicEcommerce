@@ -1,17 +1,17 @@
 
 
-<div class="block d-flex  align-items-center m-auto">
-  <div class="col-6 col-md-6 col-sm-10 col-xs-10 mx-auto ">
+<div class="block d-flex  align-items-center col-12 col-md-12 col-sm-12 col-xs-12 m-auto">
+  <div class="col-6 col-md-6 col-sm-12 col-xs-12 mx-auto ">
 <div class="card  mx-auto p-3" >
   <h4 class="text-center my-3">Login</h4>
 <form action="signup" method="post" id="form1" onchange="validation();">
-<div class="col-12 mx-auto my-5 text-center">
-  <div class="inlining-form mx-auto col-4  "> 
-<input type="text" class="txt-form  "name="first_name" id="first_name" placeholder="First name" required/>
+<div class="col-12 col-sm-12 col-xs-12 mx-auto my-5 text-center">
+  <div class="inlining-form mx-auto col-4 col-md-4 col-sm-8 col-xs-8  "> 
+<input type="text" class="form-control" name="first_name" id="first_name" placeholder="First name" required/>
 <small id="helpId1" class="text-muted"></small>
 </div>
-<div class="inlining-form mx-auto col-4 "> 
-<input type="text" class="txt-form mx-auto " name="last_name" id="last_name" placeholder="Last name" required/>
+<div class="inlining-form mx-auto col-4 col-sm-12 col-xs-12 col-md-4 col-sm-8 col-xs-8  "> 
+<input type="text" class="form-control mx-auto " name="last_name" id="last_name" placeholder="Last name" required/>
 <small id="helpId2" class="text-muted"></small>
 </div>
 </div>
@@ -42,8 +42,11 @@
   <div class="inlining-form  col-12 mx-auto  my-3 align-center text_center">
   <div class=" inlining col-2 "></div>
   <div class=" inlining col-4 mx-auto ">
-  <button type="submit" class="bt mx-auto disabled" id="signup_btn">signup</button>
+  <button type="submit" class="bt mx-auto disabled" id="signup_btn" onclick="snackbarFunction()">signup</button>
+  <!-- The actual snackbar -->
 </div>
+  <!-- 
+  <div id="snackbar" class="hide">Some text some message..</div>-->
 
   <div class="inlining col-4 mx-auto">
   <button type="button" class="bt1 mx-auto"><a href="http://localhost/mvcphp/user/login" >login</button></a>
@@ -54,6 +57,23 @@
 </div>
 </div>
 </div>
+<!--
+<script>
+function snackbarFunction() {
+  // Get the snackbar DIV
+  var x = document.getElementById("snackbar");
+
+  // Add the "show" class to DIV
+  x.className = "show";
+
+  // After 3 seconds, remove the show class from DIV
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+</script>
+-->
+
+
+
   <!-- <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div> -->
