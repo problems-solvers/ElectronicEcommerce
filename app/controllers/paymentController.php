@@ -20,6 +20,39 @@ public $model;
         );
         $this->controller->view_object->create_view('payment', $items);    
        }
+       function show_payment(){
+        $_SESSION['oreder_id']="eb6d3fd3-023b-409c-83fd-1605be";
+           $id=$_SESSION['oreder_id'];
+        //getpro
+        $items=array(
+            'order'=>$this->model->getorder(),
+            'product'=>$this->model->getpro($id),
+        );
+      
+        $this->controller->view_object->create_view('show_payment',$items);    
+       }
+
+       function updateorder(){
+        $data = array(
+    
+            
+            'order_status' =>"2"
+                   
+            );
+            print_r($data);
+
+            $this->model->update($data);
+        $this->controller->view_object->create_view('cart');
+        $_SESSION['order_id']='';
+    
+       }
+       function delete(){
+        
+
+            $this->model->delete();
+        $this->controller->view_object->create_view('cart');   
+        $_SESSION['order_id']='';
+       }
 
        
        
@@ -27,8 +60,9 @@ function addAdress(){
     echo"hello";
     
 
-    if(isset($_POST['formData']))
+    if(isset($_POST['formValues']))
     {
+        if(isset($_POST['address'])=="new"){
       echo "insert new";
       $uuid=baseFunctions::uuid();
 
@@ -46,18 +80,22 @@ function addAdress(){
                    
             );
             $this->model->addNewAddress($data);
+            $data = array(
+                'address_id' =>"'".$_SESSION['address_id']."'",);
+            $this->model->updateupdate($data);
     }
     else{
         echo "insert ";
 
        echo $_POST['paymentMethod'];
        $_SESSION['address_id']=$_POST['paymentMethod'];
+       $data = array(
+        'address_id' =>"'".$_SESSION['address_id']."'");
+    $this->model->updateupdate($data);
     }
+
     
-    $data2=array(
-            'address_id'=> $_SESSION['address_id'],
-    );
-     $result1=$this->model->update($data2);
+}
           
        }
 
@@ -69,13 +107,13 @@ function addAdress(){
             $_GET['address_id']= $uuid;     
             $data = array(
     
-                'address_d' =>"'".$_GET['address_id']."'",
-                'user_name' =>"'".$_GET['user_name']."'",
+                'address_id' =>"jjjj",
+                'user_name' =>"hhhhh",
                 'user_id' =>"'".$_SESSION['user_id']."'",
-                'country'=>"'". $_GET['country']."'",
-                'city'=>"'".$_GET['city']."'",
-                'street' =>"'".$_GET['street']."'",
-                'zip_id' =>"'".$_GET['zip_id']."'"
+                'country'=>"jkjhk",
+                'city'=>"jgugu",
+                'street' =>"hvhg",
+                'zip_id' =>"355555"
                        
                 );
                 print_r($data);

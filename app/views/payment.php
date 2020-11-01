@@ -1,4 +1,7 @@
-
+<?php
+$_SESSION['redirect']=$_SERVER['REQUEST_URI'];
+echo $_SESSION['redirect'];
+?>
 <div class="container mar">
     <div class="py-5 text-center">
     </div>
@@ -222,6 +225,10 @@
             <input type="button" name="previous" class="previous action-button" value="Previous" />
             <input type="submit" name="submit" class="submit action-button" value="Submit" />
       </fieldset>
+
+
+
+      <!--show oreder-->
     </form>
     </div>
 
@@ -235,7 +242,7 @@
       var city=document.getElementById('city').value;
       var street=document.getElementById('street').value;
       var formValues= $('form').serialize();
-     // var formData = new FormData();
+       //var formData = new FormData();
 
 /*formData.append("user_name",user_name);
 formData.append("country",country);
@@ -246,14 +253,14 @@ formData.append("zip_id",zip_id);
       e.preventDefault();*/ 
       console.log(formValues);
 
-      var formData= $(this).closest('form').serialize();        //fetch form data
             $.ajax({
                 type: "POST",
-                url: "/ElectronicEcommerce/payment/addAdress",
-                data: formData,
-                success: function(result) {
-                  alert(data) 
-                }
+                url: "http://localhost/ElectronicEcommerce/ElectronicEcommerce/payment/addAdress/",
+                data:"formValues="+JSON.stringfile(formValues),
+                success: function(data){
+                  //console.log(data) 
+                },
+               
             });
   });
   </script>

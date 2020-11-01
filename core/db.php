@@ -142,6 +142,7 @@ class DB{
      
         try {
            $this->stmt = $this->connection->prepare($this->final_query);
+           echo $this->final_query;
            $this->stmt->execute();
            echo $this->final_query;
         } catch (PDOException $exception) { die($exception->getMessage()); }

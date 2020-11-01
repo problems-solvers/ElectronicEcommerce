@@ -14,11 +14,14 @@ public $cat_model;
         $this->$fun_name();
 
        }
-       function categories($cat_id='All'){
-        $parents=array();
-           $child=array();
+
+       function sub_cat(){
+           if(isset($_POST['id']))
+         {  $id=$_POST['id'];
+           $featured=$this->cat_model->sub_cat($id);
            $allcat=$this->cat_model->getAllCatData();
-           $featured=$this->product_model->getAllProCatData();
+           $parents=array();
+           $child=array();
            foreach ( $allcat as $row) {
             if($row->parent =='0'){
                array_push($parents,$row);
@@ -26,7 +29,35 @@ public $cat_model;
             if($row->parent !='0'){
                array_push($child,$row);
             }
+   
+      }}
+      $categories=array('parents'=>$parents,'child'=> $child);
+
+           $items=array(
+            'categories'=>$categories,
+            'featured'=>$featured,
+                );
+        $this->controller->view_object->create_view('categories',$items);
+
+       }
+       function categories($cat_id='All'){
+        $parents=array();
+           $child=array();
+           $allcat=$this->cat_model->getAllCatData();
+           $featured=$this->product_model->getAllProCatData();
+           $parents=array();
+           $child=array();
+           foreach ( $allcat as $row) {
+            if($row->parent =='0'){
+               array_push($parents,$row);
+            }
+            if($row->parent !='0'){
+               array_push($child,$row);
+            }
+   
       }
+   
+      
      $categories=array('parents'=>$parents,'child'=> $child);
     // print_r($categories);
     $items=array(
