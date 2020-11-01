@@ -10,6 +10,7 @@
             <!-- Bootstrap CSS -->
             <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/vendor/bootstrap/css/bootstrap.min.css">
             <link href="/ElectronicEcommerce/app/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+            <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/libs/css/style.css">
             <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
             <!-- <link rel="stylesheet" href="../app/assets/vendor/charts/chartist-bundle/chartist.css">
             <link rel="stylesheet" href="../app/assets/vendor/charts/morris-bundle/morris.css"> -->
@@ -27,8 +28,7 @@
  <!-- DataTables Select JS -->
             <script src="js/addons/datatables-select2.min.js" type="text/javascript"></script>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/libs/css/style.css">
-
+     
            
             <title>ECOMMERCE CONTROLE PANEL</title>
             <script>
@@ -88,7 +88,7 @@
                                         <div class="list-group">
                                             <a href="#" class="list-group-item list-group-item-action">
                                                 <div class="notification-info">
-                                                    <div class="notification-list-user-img"><img src="assets/images/avatar-5.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-img"><img src="../app/assets/images/login_store_logos-1.png"   style="width:70px; height:70px;" alt="" class="user-avatar-md rounded-circle"></div>
                                                     <div class="notification-list-user-block"><span class="notification-list-user-name">Jessica Caruso</span>accepted your invitation to join the team.
                                                         <div class="notification-date">2 min ago</div>
                                                     </div>
@@ -103,14 +103,14 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown nav-user">
-                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../app/assets/images/login_store_logos-1.png"   style="width:60px; height:50px;" alt="" class="user-avatar-md rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
                                 <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown nav-user">
-                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../app/assets/images/login_store_logos-1.png"   style="width:60px; height:50px;" alt="" class="user-avatar-md rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
@@ -142,39 +142,39 @@
                                         Menu
                                     </li>
                                     <li class="nav-item ">
-                                        <a class="nav-link active" href="#"><i class="fa fa-fw fa-user-circle"></i>Dashboard<span class="badge badge-success">6</span></a>
+                                        <a class="nav-link active" href="http://localhost/ElectronicEcommerce/admin/admin_dashboard"><i class="fa fa-fw fa-user-circle"></i>Dashboard<span class="badge badge-success">6</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#"><i class="fa fa-fw fa-rocket"></i>UI Elements</a>
+                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_uielements"><i class="fa fa-fw fa-rocket"></i>UI Elements</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#"><i class="fas fa-fw fa-chart-pie"></i>Reports</a>
+                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_reports"><i class="fas fa-fw fa-chart-pie"></i>Reports</a>
                                     
                                     </li>
                                     <li class="nav-item ">
-                                        <a class="nav-link" href="#"><i class="fab fa-fw fa-wpforms"></i>Users and Roles</a>
+                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_users"><i class="fab fa-fw fa-wpforms"></i>Users and Roles</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#"><i class="fas fa-fw fa-table"></i>Customers</a>
+                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_customers"><i class="fas fa-fw fa-table"></i>Customers</a>
                                     </li>
                                     <li class="nav-divider">
                                         Products Management
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#"><i class="fas fa-fw fa-file"></i> Categories and Tags </a>
+                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_categories"><i class="fas fa-fw fa-file"></i> Categories and Tags </a>
                                       
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#"><i class="fas fa-fw fa-inbox"></i>Products <span class="badge badge-secondary">New</span></a>
+                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_product"><i class="fas fa-fw fa-inbox"></i>Products <span class="badge badge-secondary">New</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#"><i class="fas fa-fw fa-columns"></i>Store Info</a>
+                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_storinformition"><i class="fas fa-fw fa-columns"></i>Store Info</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#"><i class="fas fa-fw fa-map-marker-alt"></i>Orders</a>
+                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_orders"><i class="fas fa-fw fa-map-marker-alt"></i>Orders</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#"><i class="fas fa-fw fa-map-marker-alt"></i>Offers</a>
+                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_offers"><i class="fas fa-fw fa-map-marker-alt"></i>Offers</a>
                                     </li>
                                 </ul>
                             </div>
