@@ -2,6 +2,7 @@
 /*-----------------------
 Top Header
 -------------------------*/
+
 body{
    background-color:#F6EBFC !important;
 
@@ -115,6 +116,34 @@ background-color: #f6f4f7;
    border-radius: 40%;
 }
 /*-----------------------
+login&signup
+ -------------------------*/ 
+ .bt{
+  height: 30px;
+  width:100%;
+  border-radius: 4vh;
+  background-color: #ee802f;
+  border: 2px #ee802f solid;
+  color: white;
+margin-right: -10%;
+}
+.bt1{
+  height: 30px;
+  width:100%;
+  border-radius: 4vh;
+  background-color: whitesmoke;
+  border: 2px #ee802f solid;
+  color: black;
+
+}
+.inlining{
+display: inline-block;
+}
+.inlining-form{
+  display: inline-block;
+  }
+
+/*-----------------------
 payment
 -------------------------*/
 
@@ -156,15 +185,28 @@ payment
   color: #2C3E50;
   font-size: 13px;
 }
+.action-button {
+  width: 150px;
+  background-color: white;
+  border: 10px #ee802f solid;
+  color: black;
+  font-weight: bold;
+  border: 0 none;
+  cursor: pointer;
+  padding: 5px 5px;
+  margin: 10px 5px;
+  border-radius: 20px;
+  height: 27px;
 
+}
 /*buttons*/
 #msform .action-button {
   width: 150px;
-  background: #f18f49;
+  background-color: whitesmoke;
+  border: 2px #ee802f solid;
+  color: black;
   font-weight: bold;
-  color: white;
   border: 0 none;
-  border-radius: 1px;
   cursor: pointer;
   padding: 5px 5px;
   margin: 10px 5px;
@@ -362,3 +404,77 @@ img {
 .mb-20 {
 	margin-bottom: 20px;
 }
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color:white;
+  color: black;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+

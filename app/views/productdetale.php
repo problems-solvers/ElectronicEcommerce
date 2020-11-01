@@ -76,7 +76,6 @@ foreach( $imgs as $img){
                 <a href="#" title="add to cart" class="attToCart fas fa-shopping-cart mx-auto"></a>
             </div>
         </div>
-
     </div>
     <div class="product-info-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">

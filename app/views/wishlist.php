@@ -1,4 +1,3 @@
-
 <div class="nam mx-auto  my-2 py-2 col-4 text-center text-light" style="background-color: #e0b9e4">
   <h3>This is a Wishlist</h3>
   

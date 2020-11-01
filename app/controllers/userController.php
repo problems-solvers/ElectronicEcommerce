@@ -44,7 +44,7 @@ function signup(){
 		'last_name' =>"'".$_POST['last_name']."'",
 		'user_name' =>"'".$_POST['user_name']."'",
 		'user_email' =>"'".$_POST['user_email']."'",
-		'user_role' =>"'".$_POST['user_role']."'",
+		'user_role' =>"'2'",
 		'create_date' =>"'".$_POST['create_date']."'",
 		'user_password' =>"'".md5($_POST['user_password'])."'"
 		);
