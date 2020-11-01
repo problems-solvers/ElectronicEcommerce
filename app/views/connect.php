@@ -1,24 +1,25 @@
    
 
      
-      <div class="nam mx-auto  my-2 py-2 col-4 text-center text-light" style="background-color:#c5aa59">
+      <div class="nam mx-auto  my-2 py-2 col-md-4 col-sm-12 col-xs-12 text-center text-light" style="background-color:#ee802f; border
+      :3px white solid;">
  
-      <h3 class="center  col-lg-12 mx-auto my-2 py-2  text-center">you can register by data input</h3>
+      <h4 class="center  col-lg-12 col-8-md col-sm-12 col-xs-12 mx-auto my-1  text-center">you can register by data input</h4>
   </div>
-  <div class="rowl col-lg-10 mx-auto my-2 py-2    ">
-        <div class="col-md-8 order-md-1   mx-auto my-2 py-2  text-center">
+  <div class="rowl col-lg-8 col-6 col-6-md col-sm-12 col-xs-12 mx-auto my-2 py-2    ">
+        <div class="col-6-md col-sm-12 col-xs-12 order-md-1   mx-auto my-2 py-2  text-center">
           <h4 class="mb-3">sing in</h4>
           <br>
           <form class="needs-validation" novalidate>
             <div class="row">
-              <div class="col-md-6 mb-3">
+              <div class="col-md-6 col-sm-12 col-xs-12 mb-3">
                 <label for="firstName">First name</label>
                 <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid first name is required.
                 </div>
               </div>
-              <div class="col-md-6 mb-3">
+              <div class="col-md-6  col-sm-12 col-xs-12 mb-3">
                 <label for="lastName">Last name</label>
                 <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
                 <div class="invalid-feedback">
@@ -55,7 +56,7 @@
             </div>
 
             <div class="row">
-              <div class="col-md-6 mb-3">
+              <div class="col-md-6  col-sm-12 col-xs-12 mb-3">
                 <label for="country">Country</label>
                 <select class="custom-select d-block w-100" id="country" required>
                   <option value="">Choose...</option>
@@ -67,7 +68,7 @@
                   Please select a valid country.
                 </div>
               </div>
-              <div class="col-md-6 mb-3">
+              <div class="col-md-6  col-sm-12 col-xs-12 mb-3">
                 <label for="state">city</label>
                 <select class="custom-select d-block w-100" id="state" required>
                   <option value="">Choose...</option>
@@ -85,10 +86,10 @@
               </div>
 
             </div>
-            <div class="input-group col-lg-6 mx-auto my-2 py-2  text-center">
+            <div class="input-group col-lg-6 col-md-4  col-sm-12 col-xs-12 mx-auto my-2 py-2  text-center">
 
 <div class="input-group-append   mx-auto my-2 py-2  text-center  ">
-<p> <button class="but"   style="background-color:#c5aa59" href="#" role="button"> supmit </button></a></p>
+<p> <button class="bt"    href="#" role="button"> submit </button></a></p>
 </div>
 </div>
         </div>
