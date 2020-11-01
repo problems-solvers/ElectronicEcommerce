@@ -18,7 +18,7 @@ if(isset($_SESSION['id'])){
 
 </div><div class="nam mx-auto  my-4 py-2 col-2 text-center text-light" >
   
-      <button class="but" >Loge in</button>
+      <button class="but" >Check Out</button>
   </div>
 <br><br><br>
 

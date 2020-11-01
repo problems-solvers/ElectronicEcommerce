@@ -5,7 +5,7 @@ Top Header
 
 body{
    background-color:#F6EBFC !important;
-
+   font-family: montserrat !important ;
 }
 #CustTemplate{
    overflow-x:hidden;
@@ -401,7 +401,10 @@ img {
 }
 
 .mb-20 {
-	margin-bottom: 20px;
+	margin-bottom: 20px !important;
+}
+.product-info-tabs{
+  font-size: 15px !important;
 }
 /* The snackbar - position it at the bottom and in the middle of the screen */
 #snackbar {
