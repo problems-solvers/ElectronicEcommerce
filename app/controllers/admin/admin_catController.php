@@ -68,6 +68,7 @@ public function __construct($function){
 
 
        function addTags(){
+              $tag_data='';
               if(!isset($_POST['tag_name'])){
                      
                      $this->controller->view_object->create_view('admin/addTags');
@@ -75,18 +76,21 @@ public function __construct($function){
               else{
              
                      print_r( $_POST);
-       //               $uuid=baseFunctions::uuid();
-
-       //               $_POST['tag_id']= $uuid;
-       //  $data = array(
-       //      'tag_id' =>"'".$_POST['tag_id']."'",
-       //      'tag_name' =>"'".$_POST['tag_name']."'",
-       //      'tag_type' =>"'".($_POST['tag_type'])."'",
-       //      'type_data' =>"'".($_POST['type_data'])."'"
-       //      );
-       //      $this->model->addTags($data);
-       //      $this->controller->view_object->create_view('admin/categoriesandTags');
-       //      $this->controller->view_object->create_view('admin/feedback');
+                     $uuid=baseFunctions::uuid();
+                     print_r( $_POST['field']);
+                     foreach( $_POST['field'] as $filed)
+                     {
+                            $tag_data.=$filed.',';
+                     }
+                     $_POST['tag_id']= $uuid;
+        $data = array(
+                'tag_id' =>"'".$_POST['tag_id']."'",
+               'tag_name' =>"'".$_POST['tag_name']."'",
+               'tag_data' =>"'".$tag_data."'"
+               );
+               $this->model->addTags($data);
+               $this->controller->view_object->create_view('admin/categoriesandTags');
+               $this->controller->view_object->create_view('admin/feedback');
 
        }
     

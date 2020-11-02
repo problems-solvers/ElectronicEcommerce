@@ -1,3 +1,15 @@
+<?php
+/*session_start();
+if(isset($_SESSION['user_id'])){
+    echo $_SESSION['user_id'];
+    header('location:/ElectronicEcommerce/admin/admin_dashboard');
+
+}else{
+header('location:/ElectronicEcommerce/user/login');
+exit();
+}*/
+?>
+
 <!doctype html>
         <html lang="en">
          
@@ -60,7 +72,7 @@
     <!-- ============================================================== -->
     <!-- main wrapper -->
     <!-- ============================================================== -->
-    <div class="dashboard-main-wrapper">
+    <div class="dashboard-main-wrapper ">
         <!-- ============================================================== -->
         <!-- navbar -->
         <!-- ============================================================== -->

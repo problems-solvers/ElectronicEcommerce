@@ -15,7 +15,7 @@
       </div>
       <div class="col-sm-2 mx-auto">
         <div class="mx-auto">
-         <img src="../app/assets/images/login_store_logos-2.png"   style="width:170px; height:50px;" class="mx-auto d-block ">
+         <img src="app/assets/images/login_store_logos-2.png"      class="mx-auto d-block ">
          </div>
          <div class="mx-auto my-2 text-center">
              <a href="#" class="mx-1" title="Facebook"><i class="fab fa-facebook-f"></i></a>

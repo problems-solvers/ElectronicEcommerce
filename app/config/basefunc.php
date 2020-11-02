@@ -26,7 +26,7 @@ class baseFunctions{
     $imgs='';
 
     $dir='app/assets/images/';
-foreach($img['tmp_name'] as $key=>$image)
+    foreach($img['tmp_name'] as $key=>$image)
 {
     $imgname=$img['name'][$key];
     $temp=$img['tmp_name'][$key];

@@ -1,16 +1,15 @@
-<!-- start add form-->
-<form class="form-horizontal" action="/ElectronicEcommerce/admin/admin_product/add" method="POST"
-    enctype="multipart/form-data">
-    <fieldset>
 
-        <!-- Form Name -->
-        <legend>PRODUCTS</legend>
+<form class="form-card"  id="programmer_form" action="/ElectronicEcommerce/admin/admin_product/add"  method="POST" enctype="multipart/form-data">
 
-
-        <!-- Text input-->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="product_name">PRODUCT NAME</label>
-            <div class="col-md-4">
+    <fieldset class="form-fieldset">
+    <legend class="text-center text-dark mb-0">ADD PRODUCTS</legend>
+        <div class="form-radio form-radio-inline">
+            
+          
+            
+            <div class="form-group">
+            <label class="control-label" for="product_name">PRODUCT NAME</label>
+            <div class="">
                 <input id="product_name" name="pro_name" placeholder="PRODUCT NAME" class="form-control input-md"
                     required="" type="text">
 
@@ -19,8 +18,8 @@
 
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="product_name">PRODUCT Brand</label>
-            <div class="col-md-4">
+            <label class=" control-label" for="product_name">PRODUCT Brand</label>
+            <div class="">
                 <input id="product_brand" name="brand" placeholder="PRODUCT BRAND" class="form-control input-md"
                     required="" type="text">
 
@@ -29,8 +28,8 @@
 
         <!-- Select Basic -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="product_categorie">PRODUCT CATEGORY</label>
-            <div class="col-md-4">
+            <label class=" control-label" for="product_categorie">PRODUCT CATEGORY</label>
+            <div class="">
                 <select class="form-control" id="cat1" name="cat_id">
                     <option value="">category</option>
 
@@ -55,11 +54,30 @@
                 </select>
             </div>
         </div>
-       
+        <div class="form-group">
+  <label class=" control-label" for="tag_name">Tag Name</label>  
+  <div class="">
+  <input id="tag_name" name="tag_name" placeholder="Tag Name" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+<div class="form-group">
+  <label class="control-label" for="tag_data">Tag data</label>  
+  <div class="">
+
+  <input type="hidden" name="count"  id="count" value="1" />
+    <div class="controls col-12" id="profs"> 
+      <div id="field" class=" form-inline">
+        <input autocomplete="off" class="input form-control" id="field1" name="field[1]" type="text" placeholder="Type something" data-items="8"/>
+        <button id="b1" class="btn add-more" type="button">+</button>
+      </div>
+                
+  </div>
+</div>
 
         <div class="form-group">
-            <label class="col-md-4 control-label" for="pro_imgs"></label>
-            <div class="col-md-4">
+            <label class=" control-label" for="pro_imgs"></label>
+            <div class="">
                 <input id="is_active" name="is_active" type="checkbox">IS_ACTIVE
             </div>
         </div>
@@ -73,22 +91,24 @@
             </div>
 
         </div>
+        <br />
+  
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="available_quantity">AVAILABLE QUANTITY</label>
-            <div class="col-md-4">
+            <label class=" control-label" for="available_quantity">AVAILABLE QUANTITY</label>
+            <div class="">
                 <input id="pro_quentity" name="pro_quentity" placeholder="AVAILABLE QUANTITY"
-                    class="form-control input-md" required="" type="text">
+                    class="form-control input-md" required="" type="number">
 
             </div>
         </div>
 
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="product_weight">PRODUCT PRICE</label>
-            <div class="col-md-4">
+            <label class=" control-label" for="product_weight">PRODUCT PRICE</label>
+            <div class="">
                 <input id="pro_price" name="pro_price" placeholder="PRODUCT PRICE" class="form-control input-md"
-                    required="" type="text">
+                    required="" type="number">
 
             </div>
         </div>
@@ -98,43 +118,58 @@
 
         <!-- File Button -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="main_img">main_image</label>
-            <div class="col-md-4">
+            <label class=" control-label" for="main_img">main_image</label>
+            <div class="">
                 <input id="main_img" name="main_img" class="input-file" type="file">
             </div>
         </div>
         <!-- File Button -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="pro_imgs">auxiliary_images</label>
-            <div class="col-md-4">
+            <label class=" control-label" for="pro_imgs">auxiliary_images</label>
+            <div class="">
                 <input id="pro_imgs" name="pro_imgs[]" multiple class="input-file" type="file">
             </div>
         </div>
 
-
-        <!-- Button -->
-        <div class="form-group">
-            <div class="col-md-4">
-                <button id="singlebutton" action="/ElectronicEcommerce/admin/admin_product/view" name="singlebutton"class="btn btn-primary mybtn" style="backgroun-color:none;">ADD PRODUCT</button>
-            </div>
+          
         </div>
+      
+        <div class="form-actions btn-sm">
+        <button class="form-btn  bt " action="/ElectronicEcommerce/admin/admin_product/view"  type="submit"> Add Product</button>
+    </div>
+        </div>
+    </fieldset>
+  
 </form>
-<script>
 
-    $('#cat1').change(function () {
-        var cat1 = $('#cat1').val();
-        if (cat1 != '') {
-            $.ajax({
-                url: "http://localhost/ElectronicEcommerce/admin/admin_product/child",
-                method: "POST",
-                data: { cat1: cat1 },
-                success: function (data) {
-                    $('#cat2').html(data);
-                }
+<script>
+            $(document).ready(function(){
+    var next = 1;
+    $(".add-more").click(function(e){
+        e.preventDefault();
+        var addto = "#field" + next;
+        var addRemove = "#field" + (next);
+        next = next + 1;
+        var newIn = '<input autocomplete="off" class="input form-control" id="field' + next + '" name="field[' + next + ']" type="text">';
+        var newInput = $(newIn);
+        var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me" >-</button></div><div id="field">';
+        var removeButton = $(removeBtn);
+        $(addto).after(newInput);
+        $(addRemove).after(removeButton);
+        $("#field" + next).attr('data-source',$(addto).attr('data-source'));
+        $("#count").val(next);  
+        
+            $('.remove-me').click(function(e){
+                e.preventDefault();
+                var fieldNum = this.id.charAt(this.id.length-1);
+                var fieldID = "#field" + fieldNum;
+                $(this).remove();
+                $(fieldID).remove();
+                next=next-1;
             });
-        }
-        else {
-            $('#cat2').html('<option value="">Select City</option>');
-        }
     });
-</script>
+    
+
+    
+});
+    </script>
