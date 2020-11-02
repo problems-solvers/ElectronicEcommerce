@@ -32,7 +32,7 @@
 <body>
  <div id="CustTemplate">
   <nav class="navbar navbar-expand-lg navbar-dark ">
-  <a class="navbar-brand" href="#">  <img src="../app/assets/images/login_store_logos-1.png" class="float-left rounded-circle" style="width:70px; height:50px;"></a>
+  <a class="navbar-brand" href="#">  <img src="/ElectronicEcommerce/app/assets/images/login_store_logos-1.png" class="float-left rounded-circle" style="width:70px; height:50px;"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -40,10 +40,10 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="http://localhost/ElectronicEcommerce/">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Categories</a>
+        <a class="nav-link" href="http://localhost/ElectronicEcommerce/categories/">Categories</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Offers</a>
@@ -60,7 +60,7 @@
     </form>
     <ul class="navbar-nav mt-2 mt-lg-0">
 
-        <a class="nav-link " href="#">
+        <a class="nav-link " href="http://localhost/ElectronicEcommerce/cart/">
         <div class="iconShopping">
 
         <i class="fa fa-shopping-cart"></i>

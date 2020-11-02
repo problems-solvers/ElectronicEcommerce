@@ -61,9 +61,10 @@ if(isset($_SESSION['id'])){
           
           loadData();
       
-        $(document).ready(function() {
-          $('.deletefromCart').click(function (e) {
-            console.log("empid")
+        $(document).ready(function() {$(document).delegate('.deletefromCart', 'click', function()
+{
+ //your code
+ console.log("empid")
             var cart_id = $(this).attr('id');
             var pro_id =  $(this).attr('pro_id');
             console.log(pro_id)
@@ -102,7 +103,13 @@ if(isset($_SESSION['id'])){
                      var mx= JSON.parse(localStorage.getItem('cart'))
                      console.log(localItems,found,'fds',mx)
               }
-            })
+ 
+});
+
+
+          /*$('.deletefromCart').click(function (e) {
+            
+            })*/
             $('.addqty').click(function (e) {
             console.log("empid")
               let cart = [];

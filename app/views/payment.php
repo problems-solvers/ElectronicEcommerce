@@ -284,9 +284,9 @@ echo $_SESSION['redirect'];
               var street=$('#street').val();      //fetch form data
               $.ajax({
                 async: false,
-             type: "POST",
-             global: false,
-             dataType: 'html',
+                type: "POST",
+                global: false,
+                dataType: 'html',
                   url: "/ElectronicEcommerce/payment/addAdress",
                   data: {zip_id:zip_id,user_name:user_name,country:country,city:city,street:street},
                   // success: function(result) {
@@ -294,7 +294,7 @@ echo $_SESSION['redirect'];
                   // }
               })
               .done(function (response) {
-              console.log('hhaha');
+                 console.log('hhaha');
                  nextmsg='go';
 
               })
@@ -313,13 +313,12 @@ echo $_SESSION['redirect'];
              dataType: 'html',
              url: "/ElectronicEcommerce/payment/updateOrderAddress",
              data: {address_id:address_id},
-            success: function(result,textStatus) {
+             success: function(result,textStatus) {
               nextmsg ='go';
-            }
+             }
            })
-            
-         }
-       }
+          }
+        }
        if(nextid==='next2'){
            nextmsg='stop';
           if ($("#add1").is(":checked")) {
@@ -332,40 +331,37 @@ echo $_SESSION['redirect'];
               
               $.ajax({
                 crossDomain: true,
-           headers: {  'Access-Control-Allow-Origin': 'http://192.168.1.101' },
-             type: "GET",
-             global: true,
-             url: "http://192.168.1.101/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date+"",
-               
-                
+              // headers: {  'Access-Control-Allow-Origin': 'http://192.168.1.101' },
+               type: "GET",
+                global: true,
+               url: "http://localhost:5320/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date+"",
+
                   // success: function(result) {
                   // //  alert(data) 
                   // }
               })
               .done(function (response) {
-              console.log(response);
-              //todo the money compare and the message for error 
+                 console.log(response);
+                 //todo the money compare and the message for error 
                 $.ajax({
-                async: false,
-             type: "POST",
-             global: false,
-             dataType: 'html',
-             url: "/ElectronicEcommerce/payment/addAdress",
+                  async: false,
+                  type: "POST",
+                  global: false,
+                  dataType: 'html',
+                  url: "/ElectronicEcommerce/payment/addAdress",
                   data: {full_name:full_name,bank_account:bank_account,Exp_date:Exp_date},
                   // success: function(result) {
                   // //  alert(data) 
                   // }
-              })
-              .done(function (response) {
-              console.log('hhaha');
+                })
+                .done(function (response) {
+                 console.log('hhaha');
                  nextmsg='go';
-
-              })
-              .fail(function () {
+                })
+               .fail(function () {
                 console.log('dss');
                   nextmsg='stop';
-              })  
-
+                })  
               })
               .fail(function () {
                 alert('no account like this one')
@@ -375,29 +371,27 @@ echo $_SESSION['redirect'];
             var payment_id=$("input[name='paymentAccounts']:checked").attr('id');
             $.ajax({
                 crossDomain: true,
-           headers: {  'Access-Control-Allow-Origin': 'http://192.168.1.101' },
-             type: "GET",
-             global: true,
-             url: "http://192.168.1.101/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date+"",
-               
-                
+             headers: {  'Access-Control-Allow-Origin': 'http://192.168.1.101' },
+               type: "GET",
+               global: true,
+              url: "http://192.168.1.101/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date+"",
                   // success: function(result) {
                   // //  alert(data) 
                   // }
-              })
-              .done(function (response) {
-            $.ajax({
+            })
+            .done(function (response) {
+             $.ajax({
              async: false,
              type: "Post",
              global: false,
              url: "/ElectronicEcommerce/payment/updateOrderBAccount",
              data: {payment_id:payment_id},
-            success: function(result,textStatus) {
+             success: function(result,textStatus) {
               nextmsg ='go';
               alert(nextmsg) 
-            }
+             }
+             })
            })
-              )}
          }
        }
        console.log(nextmsg)

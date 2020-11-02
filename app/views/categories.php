@@ -1,8 +1,6 @@
 
 <div class="form-group">
-<?php 
-    $s=$_SESSION['id'];
-    echo $s;?>
+
   <label class="col-md-4 control-label" for="product_categorie"> CATEGORY PARENT</label>
   <div class="col-md-4">
   <select class="form-control" id="parent" name='parent'>
@@ -31,24 +29,16 @@
 <div class="row w-75 mx-auto">
 <?php  $rows=$data['featured'];
      foreach ($rows as $row) { echo ' 
-<<<<<<< HEAD
 
-<div class="col-lg-3  col-md-4 col-sm-6 col-xm-12 my-2 mx-auto">
+<div class="col-lg-4  col-md-5 col-sm-6 col-xm-12 my-2 mx-auto">
 <a href="http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id='.$row->pro_id.'">
-||||||| merged common ancestors
-<div class="col-lg-3  col-md-4 col-sm-6 col-xm-12 my-2 mx-auto">
-
-=======
-<div class="col-lg-3  col-md-4 col-sm-6 col-xm-12 my-2 mx-auto">
-<a href="http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id='.$row->pro_id.'">
->>>>>>> 411d01f9c4c1758f1ff97008044df7ad7ea6a088
  <div class="card productCard mx-auto " >
   <img class="card-img-top " src="'.$row->main_img.'" alt="Card image cap">
   <div class="row productCardbtns mx-0 mt-2">
-  <a href="#" class="fas fa-heart addTowish mx-auto"></a>
+  <a class="fas fa-heart addTowish mx-auto"></a>
  
-  <a href="#" ><i class="fas fa-exchange-alt"></i></a>
-  <a href="#" title="add to cart" id="'.$row->pro_id.'" class="attToCart fas fa-shopping-cart mx-auto"></a>
+  <a  ><i class="fas fa-exchange-alt"></i></a>
+  <a title="add to cart" id="'.$row->pro_id.'" class="attToCart fas fa-shopping-cart mx-auto"></a>
   </div>
   <div class="card-body py-1">
     <h5 class="card-title">'.$row->pro_name.'</h5>
