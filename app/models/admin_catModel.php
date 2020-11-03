@@ -63,9 +63,15 @@ return $result;
     }
     function addTags($data){
         $this->db=new DB();
-
-        print_r($data);
          $tbls=array("tags");
+         $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
+ 
+             
+     }
+     function addTagsDetails($data){
+        $this->db=new DB();
+
+         $tbls=array("tag_details");
          $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
  
              
