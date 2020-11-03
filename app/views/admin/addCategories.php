@@ -13,23 +13,23 @@
         </div>
     </div>
 </div>
-<form class="form-horizontal"  action="/ElectronicEcommerce/admin/admin_cat/addCattegories"  method="POST" enctype="multipart/form-data">
+<form class="form-card"  action="/ElectronicEcommerce/admin/admin_cat/addCattegories"  method="POST" enctype="multipart/form-data">
 <fieldset>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="cat_name">Category Name</label>  
-  <div class="col-md-4">
-  <input id="cat_name" name="cat_name" placeholder="Category Name" class="form-control input-md" required="" type="text">
+  <label class="control-label mx-3" for="cat_name">Category Name</label>  
+  <div class="">
+  <input id="cat_name" name="cat_name" placeholder="Category Name" class="col-md-8  form-control input-md mx-3" required="" type="text">
     
   </div>
 </div>
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="product_categorie"> CATEGORY PARENT</label>
-  <div class="col-md-4">
-  <select class="form-control" id="input-select" name='parent'>
+  <label class="  control-label mx-3" for="product_categorie"> CATEGORY PARENT</label>
+  <div class="">
+  <select class="input form-control my-3 mx-3 col-md-8 " id="input-select" name='parent'>
   <option value='0'>Defualt</option>
     <?php
     
@@ -46,16 +46,16 @@
 
 
 <div class="form-group">
-  <label class="col-md-4 control-label" for="pro_imgs"></label>
-  <div class="col-md-4">
-    <input id="is_active" name="is_active"  type="checkbox">IS_ACTIVE
+  <label class="  control-label mx-3" for="pro_imgs"></label>
+  <div class="">
+    <input id="is_active" name="is_active"  class="mx-3 " type="checkbox">IS_ACTIVE
   </div>
 </div>
 
 <!-- Button -->
 <div class="form-group">
-  <div class="col-md-4">
-    <button id="singlebutton" action="/ElectronicEcommerce/admin/admin_cat" name="singlebutton" class="btn btn-primary">ADD Category</button>
+  <div class="">
+    <button id="singlebutton" action="/ElectronicEcommerce/admin/admin_cat" name="singlebutton" class="mx-3 btn bt">ADD Category</button>
   </div>
   </div>
   </form>

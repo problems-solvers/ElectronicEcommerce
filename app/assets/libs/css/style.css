@@ -4809,3 +4809,24 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+.hide{
+    display: hidden;
+}
+.active{
+    display: block;
+}
+.bt{
+    height: 30px;
+    border-radius: 4vh;
+    background-color: #ee802f;
+    border: 2px #ee802f solid;
+    color: white;
+  }
+  .bt1{
+    height: 30px;
+    border-radius: 4vh;
+    background-color: whitesmoke;
+    border: 2px #ee802f solid;
+    color: black;
+  
+  }
