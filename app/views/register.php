@@ -42,8 +42,10 @@
   <div class="inlining-form  col-12 mx-auto  my-3 align-center text_center">
   <div class=" inlining col-2 "></div>
   <div class=" inlining col-4 mx-auto ">
-  <button type="submit" class="bt mx-auto disabled" id="signup_btn" onclick="snackbarFunction()">signup</button>
-  <!-- The actual snackbar -->
+  <button type="submit" class="bt mx-auto disabled" id="signup_btn"  onclick="myFunction()">signup</button>
+  
+      <!-- The actual snackbar -->
+<div id="snackbar">Some text some message..</div><!-- The actual snackbar -->
 </div>
   <!-- 
   <div id="snackbar" class="hide">Some text some message..</div>-->
@@ -57,6 +59,19 @@
 </div>
 </div>
 </div>
+<script>
+
+function myFunction() {
+    // Get the snackbar DIV
+    var x = document.getElementById("snackbar")
+
+    // Add the "show" class to DIV
+    x.className = "show";
+
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+</script>
 <!--
 <script>
 function snackbarFunction() {
