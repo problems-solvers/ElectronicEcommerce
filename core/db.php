@@ -32,10 +32,7 @@ class DB{
        $this->orderBy.=",".$ordercol." ".$orderway." ";
        return $this;
     }
-    function count($col){
-        $this->count="Count(".$col.") " ;
-        return $this;
-    }
+   
     function groupBy($ordercol,$orderway){
         if(empty($this->groupBy))
         $this->groupBy="GROUP by ".$ordercol." ".$orderway." ";
@@ -95,7 +92,7 @@ class DB{
     }
     function get(){
         
-       $this->final_query="select ".$this->columns." from ".$this->tables.$this->join.$this->condation.$this->count.$this->orderBy.$this->groupBy.$this->limit;
+       $this->final_query="select ".$this->columns." from ".$this->tables.$this->join.$this->condation.$this->orderBy.$this->groupBy.$this->limit;
          return $this;
        // return $this;
 
