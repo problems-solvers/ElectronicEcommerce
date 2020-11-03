@@ -18,7 +18,6 @@ class admin_dashboardModel extends Model{
        $result=  $this->db->cols()
        ->table($table)
        ->get()
-       ->where("is_active","=",1)
        ->execute()
        ->fetch();
        print_r($result);
@@ -28,11 +27,10 @@ return $result;
     function Customer(){
         
         $table=array("user");
-        $col="user_id";
-       $result=  $this->db->cols()->count($col)
+        $col=array("count(user_id)");
+       $result=  $this->db->cols($col)
        ->table($table)
        ->get()
-       ->where("is_active","=",1)
        ->execute()
        ->fetch();
 return $result;
@@ -40,11 +38,10 @@ return $result;
     function product(){
         
         $table=array("product");
-        $col=array("count('pro_id')");
-       $result=  $this->db->cols()->count($col)
+        $col=array("count(pro_id)");
+       $result=  $this->db->cols($col)
        ->table($table)
        ->get()
-       ->where("is_active","=",1)
        ->execute()
        ->fetch();
 return $result;
@@ -52,14 +49,14 @@ return $result;
     function order(){
         
         $table=array("orders");
-        $col="order_id";
-       $result= $this->db->cols()->count($col)
+        $col=array("count(order_id)");
+       $result= $this->db->cols($col)
        ->table($table)
        ->get()
-       ->where("is_active","=",1)
        ->execute()
        ->fetch();
 return $result;
+print_r($result);
     }
 }
 
