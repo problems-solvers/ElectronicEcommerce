@@ -1,13 +1,27 @@
-
+<div class="row">
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="page-header">
+            <h2 class="pageheader-title">Categories and Tags </h2>
+           <div class="page-breadcrumb">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Categories and Tags</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container">
   <ul class="nav nav-tabs">
-    <li class="active"><a href="#home">Categories</a></li>
-    <li><a href="#menu1">Tags</a></li>
+    <li class=" nav-link active"><a href="#home">Categories</a></li>
+    <li class="nav-link"><a href="#menu1">Tags</a></li>
    
   </ul>
 
   <div class="tab-content">
-    <div id="home" class="tab-pane fade active ">
+    <div id="home" class="tab-pane fade active  show">
       <h3>Categories</h3>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                       <div class="card">
@@ -157,6 +171,8 @@
 $(document).ready(function(){
   $(".nav-tabs a").click(function(){
     $(this).tab('show');
+    $(this).tab('active');
+
   });
 });
 </script>
