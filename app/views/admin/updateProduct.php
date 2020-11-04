@@ -161,7 +161,7 @@ foreach($cat['parents'] as $ro){
                 <input type="hidden" name="pro_id" value="<?php echo $row->pro_id; ?>">
                 <input type="hidden" name="tag_id" value="<?php echo $row->tag_id; ?>">
                 <input type="hidden" name="tag_details_id" value="<?php echo $row->tag_details_id; ?>">
-        <button class="form-btn bt1 " action="/ElectronicEcommerce/admin/admin_product/view"  type="submit">Update</button>
+        <button class="form-btn bt " action="/ElectronicEcommerce/admin/admin_product/view"  type="submit">Update</button>
                 </div>
         </div>
         <?php

@@ -13,7 +13,7 @@
         </div>
     </div>
 </div>
-<form class="form-horizontal"  action="/ElectronicEcommerce/admin/admin_cat/addCattegories"  method="POST" enctype="multipart/form-data">
+<form class="form-card"  action="/ElectronicEcommerce/admin/admin_cat/addCattegories"  method="POST" enctype="multipart/form-data">
 <fieldset>
 
 <!-- Text input-->
@@ -55,7 +55,7 @@
 <!-- Button -->
 <div class="form-group">
   <div class="col-md-4">
-    <button id="singlebutton" action="/ElectronicEcommerce/admin/admin_cat" name="singlebutton" class="btn btn-primary">ADD Category</button>
+    <button id="singlebutton" action="/ElectronicEcommerce/admin/admin_cat" name="singlebutton" class="btn  bt">ADD Category</button>
   </div>
   </div>
   </form>

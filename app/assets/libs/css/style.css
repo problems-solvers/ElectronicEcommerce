@@ -4795,6 +4795,8 @@ select.form-element-field {
   transform: translateY(-50%) rotateX(180deg) rotate(45deg);
 }
 
+
+
 .form-element-field[type="number"] {
   -moz-appearance: textfield;
 }
@@ -4809,3 +4811,21 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+.bt{
+    height: 30px;
+    width:100%;
+    border-radius: 4vh;
+    background-color: #ee802f;
+    border: 2px #ee802f solid;
+    color: white;
+  margin-right: -10%;
+  }
+  .bt1{
+    height: 30px;
+    width:100%;
+    border-radius: 4vh;
+    background-color: whitesmoke;
+    border: 2px #ee802f solid;
+    color: black;
+  
+  }
