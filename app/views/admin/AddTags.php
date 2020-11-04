@@ -15,25 +15,25 @@
     </div>
 </div>
 
-<form  id="form" class="form-horizontal"  action="/ElectronicEcommerce/admin/admin_cat/addTags"  method="POST" enctype="multipart/form-data">
+<form  id="form" class="form-card"  action="/ElectronicEcommerce/admin/admin_cat/addTags"  method="POST" enctype="multipart/form-data">
 <fieldset>
 
 <!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="tag_name">Tag Name</label>  
-  <div class="col-md-4">
+<div class="form-group my-3">
+  <label class="col-md-10 control-label" for="tag_name">Tag Name</label>  
+  <div class="col-md-10">
   <input id="tag_name" name="tag_name" placeholder="Tag Name" class="form-control input-md" required="" type="text">
     
   </div>
 </div>
 <div class="form-group">
-  <label class="col-md-4 control-label" for="tag_data">Tag data</label>  
-  <div class="col-md-4">
+  <label class="col-md-10 control-label" for="tag_data">Tag data</label>  
+  <div class="col-md-10">
 
   <input type="hidden" name="count"  id="count" value="1" />
     <div class="controls" id="profs"> 
       <div id="field" class=" form-inline">
-        <input autocomplete="off" class="input form-control" id="field1" name="field1" type="text" placeholder="Type something" data-items="8"/>
+        <input autocomplete="off" class="input form-control my-3" id="field1" name="field[1]" type="text" placeholder="Type something" data-items="8"/>
         <button id="b1" class="btn add-more" type="button">+</button>
       </div>
                 
@@ -42,7 +42,7 @@
 <!-- Button -->
 <div class="form-group">
   <div class="col-md-4">
-    <button id="singlebutton" action="/ElectronicEcommerce/admin/admin_cat" name="singlebutton" class="btn btn-primary">ADD Tag</button>
+    <button id="singlebutton" action="/ElectronicEcommerce/admin/admin_cat" name="singlebutton" class="btn bt">ADD Tag</button>
   </div>
   </div>
   </form>
@@ -57,7 +57,7 @@
         var addto = "#field" + next;
         var addRemove = "#field" + (next);
         next = next + 1;
-        var newIn = '<input autocomplete="off" class="input form-control" id="field' + next + '" name="field' + next + '" type="text">';
+        var newIn = '<input autocomplete="off" class="input form-control" id="field' + next + '" name="field[' + next + ']" type="text">';
         var newInput = $(newIn);
         var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me" >-</button></div><div id="field">';
         var removeButton = $(removeBtn);
@@ -72,6 +72,7 @@
                 var fieldID = "#field" + fieldNum;
                 $(this).remove();
                 $(fieldID).remove();
+                next=next-1;
             });
     });
     

@@ -14,26 +14,18 @@ class admin_dashboardController extends Controller
        
     }
     function admin_dashboard(){
-        echo 'hiiiiiiii';
+     
         $items=array(
-            'search'=>$this->cat_model->search(),
+            //'search'=>$this->cat_model->search(),
+            'Customer'=>$this->cat_model->Customer(),
+            'product'=>$this->cat_model->product(),
+            'order'=>$this->cat_model->order(),
         );
           $this->controller->view_object->create_view('admin/dashboard',$items);
 
 
         
 	}	
-
-
- 
-
-
-
-
-
-
-
-
 
 
 }

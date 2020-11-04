@@ -1,5 +1,8 @@
 <?php $rows=$data['product'];
+//to do pro imgs
 foreach($rows as $row){
+ 
+
   ?>
 <div class="container">
 
@@ -12,7 +15,7 @@ foreach($rows as $row){
                 <div class="gallery__hero" style="height:400px">
 
 
-                    <img src="../../<?php echo $row->main_img ?>">
+                    <img src="../../<?php echo $row->main_img ?>" width="100%">
                 </div>
                 <!--Gallery Hero-->
 
@@ -44,40 +47,25 @@ foreach( $imgs as $img){
                         <?php echo $row->pro_name;?>
                     </div>
 
-                    <div class="product-price-discount"><span>
+                    <div><h3 >
                             <?php echo $row->pro_price;?>
-                        </span></div>
+                        </h3></div>
                 </div>
                 <div class="product-size border-bottom">
-                    <h3 class="d-inline-block">Categories : </h3>
-                    <div class="product-qty  d-inline-block">
-                        <div class="quantity  d-inline-block">
+                    <h3 class="d-inline-block mr-1">Categories :   </h3>
+                   
+                        <div class="quantity d-inline-block">
                             <?php echo $row->cat_name; ?>
-                        </div>
+                       
                     </div>
 
                 </div>
                 <div class="product-size border-bottom">
-                    <h3 class="d-inline-block"> <?php echo $row->tag_name; ?> : </h3>
-                    <div class="product-qty  d-inline-block">
+                    <h3 class="d-inline-block mr-1"> <?php echo $row->tag_name; ?> : </h3>
                         <div class="quantity  d-inline-block">
                             <?php echo $row->tag_data; ?>
-                        </div>
                     </div>
-
-                </div>
-                <a href="/ElectronicEcommerce/admin/admin_product/"><button id="singlebutton" name="singlebutton" class="btn btn-primary  btn-right">Back</button></a>
-                <a href='http://localhost/ElectronicEcommerce/admin/admin_product/updateProduct?action=update&pro_id=".$row->pro_id."' class='update'><button id="singlebutton" name="singlebutton" class="btn btn-primary  btn-left">Update</button></a>
-
-
-
-
-            </div>
-         
-        </div>
-
-    </div>
-    <div class="product-info-tabs">
+                    <div class="product-info-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab"
@@ -92,6 +80,20 @@ foreach( $imgs as $img){
 
         </div>
     </div>
+
+                </div>
+                <a href="/ElectronicEcommerce/admin/admin_product/"><button id="singlebutton" name="singlebutton" class="btn btn-primary  btn-right bt">Back</button></a>
+                <a href='http://localhost/ElectronicEcommerce/admin/admin_product/updateProduct?action=update&pro_id=<?php echo $row->pro_id ;?>'  class='update bt1'><button id="singlebutton" name="singlebutton" class="btn btn-primary  btn-left">Update</button></a>
+
+
+
+
+            </div>
+         
+        </div>
+
+    </div>
+  
 </div>
 <?php
 }

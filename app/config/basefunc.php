@@ -27,13 +27,13 @@ class baseFunctions{
     $imgs='';
 
     $dir='app/assets/images/';
-foreach($img['tmp_name'] as $key=>$image)
+    foreach($img['tmp_name'] as $key=>$image)
 {
     $imgname=$img['name'][$key];
     $temp=$img['tmp_name'][$key];
     $new_name=sha1(date("y-m-d-h-i-s")).rand();
-    $imgs.=$dir.$new_name.$imgname.',';
-    $result=move_uploaded_file($temp, $dir.$imgname);
+    $imgs.=$dir.$new_name.$img['name'].',';
+    $result=move_uploaded_file($temp,$dir.$new_name.$img['name']);
 }
 return  $imgs;
 } 

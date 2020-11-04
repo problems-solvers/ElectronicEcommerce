@@ -5,6 +5,7 @@ use coreAppNS\baseFunctions;
 class admin_productController extends Controller{
 public $controller;
 public $cat_model;
+public $tag_model;
 
 
 
@@ -12,6 +13,7 @@ public $cat_model;
 
         $this->controller=new Controller();
         $this->cat_model=$this->controller->model_object->create_model('product');
+        $this->tag_model=$this->controller->model_object->create_model('admin_cat');
         $this->$function();
         
        }
@@ -47,15 +49,19 @@ public $cat_model;
        public function view_product(){
  
         $items=array(
-            'product'=>$this->cat_model->view_product(),
+            'product'=>$this->cat_model->view_more(),
         );
         $this->controller->view_object->create_view('admin/view_product',$items);
        }
 
        function add(){
         $uuid=baseFunctions::uuid();
+        $tag=baseFunctions::uuid();
+        $tag_details_id=baseFunctions::uuid();
 
+        $_POST['tag_details_id']= $tag_details_id;
         $_POST['pro_id']= $uuid;
+        $_POST['tag_id']= $tag;
         $_POST['create_date']= date('Y-m-d H:i:s');
 
         $img=baseFunctions::img($_FILES['pro_imgs']);
@@ -74,14 +80,47 @@ public $cat_model;
             'create_date' =>"'".$_POST['create_date']."'",
             'pro_imgs' =>"'".$img."'"            
             );
-           $result= $this->cat_model->add($data);
-           if( $result)
+            $data2 = array(
+                'tag_id' =>"'".$_POST['tag_id']."'",
+                'tag_name' =>"'".$_POST['tag_name']."'"                );
+                $tag_data='';
+                if(!isset($_POST['tag_name'])){
+                       
+                       $this->controller->view_object->create_view('admin/addTags');
+                }
+                else{
+               
+                       print_r( $_POST);
+                       $uuid=baseFunctions::uuid();
+                       print_r( $_POST['field']);
+                       foreach( $_POST['field'] as $filed)
+                       {
+                              $tag_data.=$filed.',';
+                       }
+          $data3 = array(
+                  'tag_id' =>"'".$_POST['tag_id']."'",
+                  'pro_id' =>"'".$_POST['pro_id']."'",
+                 'tag_details_id' =>"'".$_POST['tag_details_id']."'",
+                 'tag_data' =>"'".$tag_data."'"
+                 );
+                
+           $result= $this->tag_model->addTags($data2);
+           $result2= $this->cat_model->add($data);
+
+           if(!$result)
+          { 
+            if(!$result2) {
+                $result3= $this->tag_model->addTagsDetails($data3);
+
+                 if( $result3)
            {
             echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/addProduct';</script>";
            }
            else{
             echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product';</script>";
-           }
+           }}
+        
+        }
           
        }
        function update(){
@@ -90,20 +129,31 @@ public $cat_model;
         $img=baseFunctions::img($_FILES['pro_imgs']);
         $main_img=baseFunctions::main_img($_FILES['main_img']);
         $data = array(
-            'pro_id' =>"'".$_POST['pro_id']."'",
-            'pro_name'=>"'". $_POST['pro_name']."'",
-            'brand' =>"'".$_POST['brand']."'" ,
-            'pro_quentity' =>"'".$_POST['pro_quentity']."'",
-            'pro_details' =>"'".$_POST['pro_details']."'",
-            'pro_price'=>"'".$_POST['pro_price']."'",
-            'is_active'=>"'".$_POST['is_active']."'",
-            'main_img' =>"'".$main_img."'",
-            'pro_imgs' =>"'".$img."'"  
-                  );
-                  print_r($data);
+            'product.pro_id' =>"'".$_POST['pro_id']."'",
+            'product.pro_name'=>"'". $_POST['pro_name']."'",
+            'product.brand' =>"'".$_POST['brand']."'" ,
+            'product.pro_quentity' =>"'".$_POST['pro_quentity']."'",
+            'product.pro_details' =>"'".$_POST['pro_details']."'",
+            'product.pro_price'=>"'".$_POST['pro_price']."'",
+            'product.is_active'=>"'".$_POST['is_active']."'",
+            'product.main_img' =>"'".$main_img."'",
+            'product.pro_imgs' =>"'".$img."'"  
 
+                  );
+
+                  $data2=array(
+                    'tags.tag_name'=>"'".$_POST['tag_name']."'",
+                    'tags.tag_id'=>"'".$_POST['tag_id']."'",
+                  );
+                  $data3=array( 
+                      'tag_details.tag_data'=>"'".$_POST['tag_data']."'",
+                  'tag_details.tag_details_id'=>"'".$_POST['tag_details_id']."'",
+                  'product.cat_id'=>"'".$_POST['cat_id']."'"
+                );
+                
            $result=$this->cat_model->update($data);
-           print_r($result);
+           $result=$this->cat_model->tagdetailUpdate($data3);
+           $result=$this->cat_model->tagUpdate($data2);
           if( $result)
            {
             echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/';</script>";
@@ -113,13 +163,29 @@ public $cat_model;
            }
        }
 
-       function updateProduct(){
-       $item=array(
-            'updateProduct'=>$this->cat_model->updateProduct(),
-            
-        );
-        $this->controller->view_object->create_view('admin/updateProduct',$item);
-       }
+    }
+    function updateProduct(){
+        $parents=array();
+        $child=array();
+        $allcat=$this->cat_model->getAllCatData();
+        foreach ( $allcat as $row) {
+         if($row->parent =='0'){
+            array_push($parents,$row);
+         }
+         if($row->parent !='0'){
+            array_push($child,$row);
+         }
+
+   }
+  $categories=array('parents'=>$parents,'child'=> $child);
+ 
+        $item=array(
+             'updateProduct'=>$this->cat_model->updateProduct(),
+             'categories'=>$categories,
+             
+         );
+         $this->controller->view_object->create_view('admin/updateProduct',$item);
+        }
  
 
        function delete(){

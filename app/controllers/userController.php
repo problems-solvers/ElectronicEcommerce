@@ -51,6 +51,8 @@ function signup(){
 		'user_password' =>"'".md5($_POST['user_password'])."'"
 		);
 		$this->model->signup($data);
+		$_SESSION['user_name']=$_POST['user_name'];
+		$_SESSION['user_role']=1;
 					}
 //  header('location:home');
 }
@@ -62,7 +64,7 @@ function signup(){
 	function logout()
 	{
 		Session::destroy();
-		header('location: ');
+		header('location:login');
 		exit;
 	}
 	function changepassword() {
