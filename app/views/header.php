@@ -27,9 +27,110 @@
             <!-- <link rel="stylesheet" type="text/css" href="app/assets/vendor/datatables/css/dataTables.bootstrap4.css">
             <link rel="stylesheet" href="app/assets/vendor/summernote/css/summernote-bs4.css"> -->
             <title>ECOMMERCE Site</title>
+
+
+            <style>
+div#loader{
+position:absolute;
+top:calc(50% - 12px);
+width:100%;
+text-align:center;
+}
+
+div#loader > span{
+font-family:'consolas';
+font-soize:25px;
+display:inline-block;
+transform:scale(1.5);
+letter-spacing:10px;
+animation:spin 02s linear infinite;
+transition:all 0.3s ease;
+opacity:1;
+color:#fff;
+}
+
+div#loader.clear{
+  opacity:0;
+}
+
+div#loader > span:nth-child(2){
+animation-delay:0.1s;
+}
+
+div#loader > span:nth-child(3){
+animation-delay:0.2s;
+}
+
+div#loader > span:nth-child(4){
+animation-delay:0.3s;
+}
+
+div#loader > span:nth-child(5){
+animation-delay:0.4s;
+}
+
+div#loader > span:nth-child(6){
+animation-delay:0.5s;
+}
+
+div#loader > span:nth-child(7){
+animation-delay:0.6s;
+}
+
+div#loader > span:nth-child(8){
+animation-delay:0.7s;
+}
+
+div#loader > span:nth-child(9){
+animation-delay:0.8s;
+}
+
+
+@keyframes spin{
+50%{
+transform:scaleY(1);
+opacity:0;
+}
+}
+
+.unfold-box {
+  background: #714674;
+  -webkit-transition: all 1s cubic-bezier(0.680, 0, 0.265, 1); /* older webkit */
+-webkit-transition: all 1s cubic-bezier(0.680, -2.550, 0.265, 3.550); 
+   -moz-transition: all 1s cubic-bezier(0.680, -2.550, 0.265, 3.550); 
+     -o-transition: all 1s cubic-bezier(0.680, -2.550, 0.265, 3.550); 
+        transition: all 1s cubic-bezier(0.680, -2.550, 0.265, 3.550); /* easeInOutBack */
+  box-sizing: border-box;
+  transform: scale(1);
+  opacity: 1;
+  display: inline-block;
+  float: left;
+}
+
+#unfold-block {
+  height: 100%;
+  width: 100vw;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transition: all 0.5s ease;
+}
+
+.unfold-box.clear {
+  transform: scale(0);
+  opacity: 0;
+}
+
+#unfold-block.clear {
+  background: transparent;
+}
+
+</style>
+
         </head>
         
 <body>
+<div>
  <div id="CustTemplate">
   <nav class="navbar navbar-expand-lg navbar-dark ">
   <a class="navbar-brand" href="#">  <img src="/ElectronicEcommerce/app/assets/images/login_store_logos-1.png" class="float-left rounded-circle" style="width:70px; height:50px;"></a>
