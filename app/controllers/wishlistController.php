@@ -1,5 +1,7 @@
 <?PHP
 use coreAppNS\Controller;
+use coreAppNS\baseFunctions;
+
 //include("app/models/category.php");
 class wishlistController extends Controller{
 public $controller;

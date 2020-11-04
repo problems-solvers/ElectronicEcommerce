@@ -1,6 +1,8 @@
 
 <?PHP
 use coreAppNS\Controller;
+use coreAppNS\baseFunctions;
+
 //include("app/models/category.php");
 class productController extends Controller{
 public $controller;

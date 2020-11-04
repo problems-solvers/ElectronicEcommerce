@@ -24,8 +24,8 @@ class paymentModel extends Model {
     ->get()
     ->execute()
     ->fetch();
- return $result;
-}
+    return $result;
+   }
 
 
 function  getpro($id){
@@ -49,13 +49,11 @@ function  getpro($id){
     $this->db=new DB();
 
     $user_id= Session::get('id');
-
-     $id=$_SESSION['user_id'];
     $tbls=array("address");
     return  $this->db
     ->cols()
     ->table($tbls)
-    ->where("user_id","=","'".$id."'")
+    ->where("user_id","=","'".$user_id."'")
     ->get()
     ->execute()->fetch();
 }
@@ -65,12 +63,11 @@ function  getPayments(){
 
     $user_id= Session::get('id');
 
-     $id=$_SESSION['user_id'];
-    $tbls=array("bank_details");
+    $tbls=array("payment");
     return  $this->db
     ->cols()
     ->table($tbls)
-    ->where("user_id","=","'".$id."'")
+    ->where("user_id","=","'".$user_id."'")
     ->get()
     ->execute()->fetch();
 }
@@ -79,30 +76,34 @@ function  addNewAddress($data){
    $tbls=array("address");
    return $this->db->cols($data)->table($tbls)->insert()->execute();  
 }
-function  addNewBAccount($data){
+function  addNewPayment($data){
     $this->db=new DB();
-   $tbls=array("bank_details");
+    echo 'sqqqqfsd';
+
+   $tbls=array("payment");
    return $this->db->cols($data)->table($tbls)->insert()->execute();  
 }
 
 function update($data){
     $this->db=new DB();
+    echo 'sfsd';
     Session::set('order_id',"b2d477ad-7c4e-4a13-bb2b-292b3e");
     $id= Session::get('order_id');
     echo $id;
         $tbls=array('orders');
         $updateResult=  $this->db->cols($data)->table($tbls)->settingcol()
         ->where("order_id","=","'".$id."'")->update()->execute();
-}
-
-
-function delete(){
-    $_SESSION['order_id']="eb6d3fd3-023b-409c-83fd-1605be";
-    $id=$_SESSION['order_id'];
-        $tbls=array('orders');
-        $result=$this->db->cols()->table($tbls)->where("order_id","=","'".$id."'")->delete()-> execute();
 
 }
+
+
+// function delete(){
+//     $_SESSION['order_id']="eb6d3fd3-023b-409c-83fd-1605be";
+//     $id=$_SESSION['order_id'];
+//         $tbls=array('orders');
+//         $result=$this->db->cols()->table($tbls)->where("order_id","=","'".$id."'")->delete()-> execute();
+
+// }
 }
 
 ?>
