@@ -1,5 +1,7 @@
 <?php
 use coreAppNS\Controller;
+use coreAppNS\baseFunctions;
+
 require_once("vendor/autoload.php");
 include("app/config/config.php");
 

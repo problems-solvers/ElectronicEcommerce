@@ -1,4 +1,5 @@
 <?php
+namespace coreAppNS;
 class baseFunctions{
     public static function Header($url){
         $clean_url=rtrim($url,'/');
