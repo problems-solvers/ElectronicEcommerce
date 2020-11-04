@@ -35,7 +35,6 @@ function signup(){
 
 					else{
 						$uuid=baseFunctions::uuid();
-
 						$_POST['user_id']= $uuid;
 						$_POST['create_date']= date('Y-m-d H:i:s');
 		$data = array(

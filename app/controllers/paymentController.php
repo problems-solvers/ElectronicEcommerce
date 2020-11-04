@@ -35,9 +35,7 @@ public $model;
 
        function updateorder(){
         $data = array(
-    
-            
-            'order_status' =>"2"
+             'order_status' =>"2"
                    
             );
             print_r($data);
@@ -48,8 +46,6 @@ public $model;
     
        }
        function delete(){
-        
-
             $this->model->delete();
         $this->controller->view_object->create_view('cart');   
         $_SESSION['order_id']='';
