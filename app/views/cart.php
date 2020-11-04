@@ -1,4 +1,5 @@
-<div class="nam mx-auto  my-2 py-2 col-4 text-center text-light" style="background-color: #e0b9e4">
+<div class="nam mx-auto  my-2 py-2 col-4 text-center text-light" style="background-color:#ee802f; border
+      :3px white solid;">
   <h3>This is a Wishlist</h3>
   
 <?php
@@ -18,7 +19,7 @@ if(isset($_SESSION['id'])){
 
 </div><div class="nam mx-auto  my-4 py-2 col-2 text-center text-light" >
   
-      <button class="but" >Check Out</button>
+      <button class="bt" >Check Out</button>
   </div>
 <br><br><br>
 

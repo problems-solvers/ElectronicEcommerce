@@ -85,7 +85,9 @@ echo $_SESSION['redirect'];
                         <div class="col-md-6 ">
                           <input type="text" class="form-control " name="zip_id"  id="zip_id" placeholder="zip id" required>
                         </div>
-                        <button class="save" type="submit">save</button>
+                        <button class="save" type="submit" onclick="myFunction()">save</button>
+  <!-- The actual snackbar -->
+<div id="snackbar">Some text some message..</div>
 
                       </div>
                   </div>
@@ -230,12 +232,16 @@ echo $_SESSION['redirect'];
               </div>
               </div>  
         <!-- <input type="button" name="previous" class="previous action-button" value="Previous" /> -->
-        <input type="button" name="next" id="next2" class="next action-button" value="Next" />
+        <input type="button" name="next" id="next2" class="next action-button save" value="Next" onclick="myFunction()" />
+                      <!-- The actual snackbar -->
+<div id="snackbar">Some text some message..</div>
       </fieldset>
       <fieldset>
         
             <!-- <input type="button" name="previous" class="previous action-button" value="Previous" /> -->
-            <input type="submit" name="submit" class="submit action-button" value="Submit" />
+            <input type="submit" name="submit" class="submit action-button save" value="Submit" onclick="myFunction()"/>
+              <!-- The actual snackbar -->
+<div id="snackbar">Some text some message..</div>
       </fieldset>
 
 
@@ -499,4 +505,16 @@ echo $_SESSION['redirect'];
      }
    });
  });
+</script>
+<script>
+  function myFunction() {
+    // Get the snackbar DIV
+    var x = document.getElementById("snackbar")
+
+    // Add the "show" class to DIV
+    x.className = "show";
+
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
 </script>
