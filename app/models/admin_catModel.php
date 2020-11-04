@@ -17,6 +17,7 @@ class admin_catModel extends Model{
        $result=  $this->db->cols()
        ->table($table)
        ->get()
+       ->orderBy("create_date","DESC")
        ->execute()
        ->fetch();
 return $result;
@@ -41,10 +42,11 @@ return $result;
     function  getAllTagsData(){
         $this->db=new DB();
 
-        $cols=array();
-        $table=array("tags");
-       $result=  $this->db->cols()
+        $cols=array("tags.tag_type","tags.tag_id" ,"tags.tag_name","tag_details.tag_data");
+        $table=array("tag_details");
+       $result=  $this->db->cols($cols)
        ->table($table)
+       ->innerjoin("tags","tag_details.tag_id","tags.tag_id")
        ->get()
        ->execute()
        ->fetch();
