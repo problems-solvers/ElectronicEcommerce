@@ -31,7 +31,7 @@ $_SESSION['redirect']=$_SERVER['REQUEST_URI'];
     <label class="form-check-label px-3">
       <input class="form-check-input" type="checkbox">Remember me
     </label>
-  <span class="float-right"> <a href="http://localhost/mvcphp/user/forgotpassword">Forgot password?</a></span>
+  <span class="float-right"> <a href="http://localhost/ElectronicEcommerce/user/forgotpassword">Forgot password?</a></span>
 </div>
 
 <div class="col-md-6 mx-auto">
@@ -45,7 +45,7 @@ $_SESSION['redirect']=$_SERVER['REQUEST_URI'];
 </div>
 
   <div class="inlining col-md-4 col-sm-12 col-xs-12 mx-auto">
-  <button type="button" class="bt1 mx-auto"><a href="http://localhost/mvcphp/user/register" >register</button></a>
+  <button type="button" class="bt1 mx-auto"><a href="http://localhost/ElectronicEcommerce/user/register" >register</button></a>
 </div>
 
 </div>
