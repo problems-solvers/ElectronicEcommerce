@@ -20,13 +20,12 @@
             <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
-<link rel="stylesheet" href="/ElectronicEcommerce/app/assets/libs/css/customerStyle.css">
 
             <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+            <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/libs/css/customerStyle.css">
 
-            <!-- <link rel="stylesheet" type="text/css" href="app/assets/vendor/datatables/css/dataTables.bootstrap4.css">
-            <link rel="stylesheet" href="app/assets/vendor/summernote/css/summernote-bs4.css"> -->
             <title>ECOMMERCE Site</title>
+       
         </head>
         
 <body>
@@ -74,7 +73,26 @@
 				<p class="">0</p>
 		</div>
      </a>
-        <a class="nav-link" href="#"><li class="fas fa-user-circle"></li></a>
+     <div class="dropdown">
+    <button class="dropbtn"> 
+      <i class="fas fa-user-circle"></i>
+    </button>
+    <div class="dropdown-content">
+      <?php
+      if(isset($_SESSION['user_name']))
+      {
+     
+     echo'<a href="#">Profile</a>
+      <a href="http://localhost/ElectronicEcommerce/user/logout">Log Out</a> ';}
+     else{
+       echo '<a href="http://localhost/ElectronicEcommerce/user/login">Log In</a>';
+     }
+    
+      ?>
+
+     
+    </div>
+  </div> 
    
      
     </ul>
