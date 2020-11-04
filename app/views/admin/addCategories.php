@@ -54,8 +54,8 @@
 
 <!-- Button -->
 <div class="form-group">
-  <div class="">
-    <button id="singlebutton" action="/ElectronicEcommerce/admin/admin_cat" name="singlebutton" class="mx-3 btn bt">ADD Category</button>
+  <div class="col-md-4">
+    <button id="singlebutton" action="/ElectronicEcommerce/admin/admin_cat" name="singlebutton" class="btn  bt">ADD Category</button>
   </div>
   </div>
   </form>

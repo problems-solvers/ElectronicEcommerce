@@ -15,7 +15,7 @@
 </div>
 <div class="container">
   <ul class="nav nav-tabs">
-    <li class=" nav-link active"><a href="#home">Categories</a></li>
+    <li class="active nav-link"><a href="#home">Categories</a></li>
     <li class="nav-link"><a href="#menu1">Tags</a></li>
    
   </ul>
@@ -28,7 +28,7 @@
                           <div class="card-header ">
                               <h5 class="mb-0  d-inline-block">Categories Table</h5>
                               <a href="/ElectronicEcommerce/admin/admin_cat/addCattegories"><button type="button"
-                                      class="d-inline-block btn  btn-sm bt btn-left"
+                                      class="d-inline-block btn  btn-sm  btn-left bt"
                                       style="float:right; 	border-radius:20px;">Add Categories</button></a>
   
                           </div>
@@ -172,7 +172,6 @@ $(document).ready(function(){
   $(".nav-tabs a").click(function(){
     $(this).tab('show');
     $(this).tab('active');
-
   });
 });
 </script>

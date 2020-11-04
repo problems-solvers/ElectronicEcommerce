@@ -42,7 +42,7 @@
 <!-- Button -->
 <div class="form-group">
   <div class="col-md-4">
-    <button id="singlebutton" action="/ElectronicEcommerce/admin/admin_cat" name="singlebutton" class="btn btn-primary">ADD Tag</button>
+    <button id="singlebutton" action="/ElectronicEcommerce/admin/admin_cat" name="singlebutton" class="btn bt">ADD Tag</button>
   </div>
   </div>
   </form>
