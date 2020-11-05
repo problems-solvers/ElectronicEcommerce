@@ -16,7 +16,7 @@
 
     <div class="row">
       <div class="col">
-      <form class="form-card"  id="programmer_form" action="/ElectronicEcommerce/admin/admin_product/add"  method="POST" enctype="multipart/form-data">
+      <form class="form-card"  id="programmer_form" action="/ElectronicEcommerce/admin/admin_offer/add"  method="POST" enctype="multipart/form-data">
 
 <fieldset class="form-fieldset">
 <legend class="text-center text-dark mb-0">ADD OFFERS</legend>
@@ -52,18 +52,17 @@
 
 
     
-    
+    <div class="radio">
     <legend class="text-center text-dark mb-0">OFFERS TYPE</legend>
 
         <div class="custom-control custom-radio">
-          <input id="dicount" name="Regarding" type="radio" class="custom-control-input" value="Discount" required>
+          <input id="dicount" name="Regarding" type="radio" class="custom-control-input" value="1" required>
           <label class="custom-control-label" for="dicount">Discount <span class="statusOther" style="visibility:visible"></span></label>
           <div id="divOther" class="collapse fade">
           <div class="form-group">
         <label class=" control-label" for="product_categorie">PRODUCT:</label>
         <div class="">
-            <select class="form-control" id="cat1" name="pro_id">
-                <option value="">Product </option>
+            <select class="form-control" id="cat1" name="prro_id">
 
                 <?php
 $rows=$data['product'];
@@ -71,7 +70,7 @@ $rows=$data['product'];
 foreach($rows as $ro){
   echo "
                                                    
-  <option value='$ro->pro_id' >$ro->pro_name</option>";  
+  <option value='$ro->pro_id' >$ro->name</option>";  
 
   
 
@@ -81,19 +80,21 @@ foreach($rows as $ro){
         </div>
     </div>
           <label for="ifOther"> Discount:</label>
-          <input id="pro_quentity" name="discout_amount" placeholder="Discount"
-                class="form-control input-md" required="" type="number">
+          <input id="pro_quentity" name="dicount_amont" placeholder="Discount"
+                class="form-control input-md" type="number">
         </div>
         </div>
+
+
+
         <div class="custom-control custom-radio">
-          <input id="ExtraItem" name="Regarding" type="radio" class="custom-control-input" value="ExtraItem" required>
+          <input id="ExtraItem" name="Regarding" type="radio" class="custom-control-input" value="2" required>
           <label class="custom-control-label" for="ExtraItem">Extra Item <span class="statusOther" style="visibility:visible"></span></label>
           <div id="NotdivOther" class="collapse fade">
           <div class="form-group">
         <label class=" control-label" for="product_categorie">PRODUCT:</label>
         <div class="">
-            <select class="form-control" id="cat1" name="pro_id">
-                <option value="">Product </option>
+            <select class="form-control" id="cat1" name="product_id">
 
                 <?php
 $rows=$data['product'];
@@ -113,8 +114,7 @@ foreach($rows as $ro){
     <div class="form-group">
         <label class=" control-label" for="product_categorie">Extra Item:</label>
         <div class="">
-            <select class="form-control" id="cat1" name="extra_item_id">
-                <option value="">extra </option>
+            <select class="form-control" id="cat1" name="extra_item">
 
                 <?php
 $rows=$data['product'];
@@ -133,8 +133,8 @@ foreach($rows as $ro){
     </div>
 
     <label for="ifOther"> Qunetity:</label>
-          <input id="pro_quentity" name="qunetity" placeholder="qunetity"
-                class="form-control input-md" required="" type="number">
+          <input id="pro_quentity" name="qnetity" placeholder="qunetity"
+                class="form-control input-md"  type="number">
        
 
 
@@ -142,7 +142,7 @@ foreach($rows as $ro){
     </div>
         </div>
         <div class="custom-control custom-radio">
-          <input id="giff" name="Regarding" type="radio" class="custom-control-input" value="ExtraItem" required>
+          <input id="giff" name="Regarding" type="radio" class="custom-control-input" value="3" required>
           <label class="custom-control-label" for="giff">Giff <span class="statusOther" style="visibility:visible"></span></label>
           <div id="giffOther" class="collapse fade">
           <div class="form-group">
@@ -174,7 +174,7 @@ foreach($rows as $ro){
         <div class="col-md-12 p-0">
             <div class="form-group">
                 <label class="control-label sr-only" for="summernote"> Descriptions </label>
-                <textarea class="form-control" id="summernote" name="descriptions" rows="6"
+                <textarea class="form-control" id="summernote" name="dscription" rows="6"
                     placeholder="Write Descriptions"></textarea>
             </div>
         </div>
@@ -184,11 +184,15 @@ foreach($rows as $ro){
     </div>
         </div>
        
-        
+     </div>
         
       </div>
+      <div class="form-actions btn-sm">
+    <button class="form-btn  bt " action="/ElectronicEcommerce/admin/admin_offer/"  type="submit"> Add Offer</button>
+</div>
     </div>
 
+  
   </div>
 </fieldset>
 

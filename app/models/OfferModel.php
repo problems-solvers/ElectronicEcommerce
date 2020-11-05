@@ -4,53 +4,73 @@ class OfferModel extends Model{
     function __construct(){
     }
  
-    
-        function  getRecentAddData(){
-            $this->db=new DB();
-
-            $cols=array('product.pro_id','product.pro_name','product.pro_price','product.main_img','categories.cat_id','categories.cat_name');
-            $table=array("product");
-           $result=  $this->db->cols($cols)
-           ->table($table)
-           ->innerjoin("categories","product.cat_id","categories.cat_id")
-           ->where("product.is_active","=","1")
-           ->orderBy("product.create_date","desc")
-           ->limit(0,15)
-           ->get()
-           ->execute()
-           ->fetch();
-            return $result;
-        }
-        function  sub_cat($id){
-            $cols=array();
-            $table=array("product");
-           $result=  $this->db->cols()
-           ->table($table)
-           ->where("cat_id","=","'".$id."'")
-           ->get()
-           ->execute()
-           ->fetch();
-    return $result;
-        }
-    
-   
-     function  getAllProCatData(){
+    function  getdiscount(){
         $this->db=new DB();
 
-            $cols=array('product.pro_id','product.pro_name','product.main_img','product.pro_price','categories.cat_id','categories.cat_name');
-            $table=array("product");
-           $result=  $this->db->cols($cols)
-           ->table($table)
-           ->innerjoin("categories","product.cat_id","categories.cat_id")
-           ->where("product.is_active","=","1")
-           ->where("product.cat_id","=","2")
+        $tbls=array("dicount");
+        $result=  $this->db->cols()->table($tbls) 
+        ->innerjoin("product","dicount.pro_id","product.pro_id")
+        ->get()
+        ->execute()
+        ->fetch();
+     return $result;
 
-           ->orderBy("categories.create_date","desc")
-           ->get()
-           ->execute()
-           ->fetch();
-        return $result;
-        }
+            
+    }
+    function  getextra(){
+        $this->db=new DB();
+
+        $tbls=array("extra_item");
+        $result=  $this->db->cols()->table($tbls) 
+        ->innerjoin("product","extra_item.pro_id","product.pro_id")
+        ->get()
+        ->execute()
+        ->fetch();
+     return $result;      
+    }
+    function  getgiff(){
+        $this->db=new DB();
+
+        $tbls=array("offer_item_out");
+        $result=  $this->db->cols()->table($tbls) 
+        ->innerjoin("product","offer_item_out.pro_id","product.pro_id")
+        ->get()
+        ->execute()
+        ->fetch();
+     return $result;      
+    }
+    function  addoffer($data){
+        $this->db=new DB();
+
+        $tbls=array("offers");
+        $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
+
+            
+    }
+    function  addodiscount($data){
+        $this->db=new DB();
+
+        $tbls=array("dicount");
+        $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
+
+            
+    }
+    function  addoextra($data){
+        $this->db=new DB();
+
+        $tbls=array("extra_item");
+        $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
+
+            
+    }
+    function  addogiff($data){
+        $this->db=new DB();
+
+        $tbls=array("offer_item_out");
+        $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
+
+            
+    }
     
     
     }
