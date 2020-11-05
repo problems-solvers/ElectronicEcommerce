@@ -49,6 +49,19 @@ return $result;
     }
 
 
+    function  getadd(){
+        $cols=array('product.pro_id','product.pro_name','product.pro_price','product.main_img','categories.cat_id','categories.cat_name');
+        $table=array("product");
+       $result=  $this->db->cols($cols)
+       ->table($table)
+       ->innerjoin("categories","product.cat_id","categories.cat_id")
+       ->where("product.is_active","=","1")
+       ->where("categories.cat_id","=",'"'.$_GET['cat_id'].'"')
+       ->get()
+       ->execute()
+       ->fetch();
+        return $result;
+    }
 
 //         $cols=array("cat_id"=>"8","cat_name"=>"labtop","parrent"=>"0");
 //         $table=array("categories");
