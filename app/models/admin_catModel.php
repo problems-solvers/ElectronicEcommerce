@@ -90,6 +90,18 @@ return $result;
  
              
      }
+     function  catHeader(){
+        $this->db=new DB();
+ 
+        $table=array("categories");
+       $result=  $this->db->cols()
+       ->table($table)
+       ->where("parent","=","0")
+       ->get()
+       ->execute()
+       ->fetch();
+return $result;
+    }
 //     function update(){
 
        
