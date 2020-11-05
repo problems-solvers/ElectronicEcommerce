@@ -1,5 +1,7 @@
 <?PHP
 use coreAppNS\Controller;
+use coreAppNS\baseFunctions;
+
 class orderController extends Controller{
 public $controller;
 public $model;
