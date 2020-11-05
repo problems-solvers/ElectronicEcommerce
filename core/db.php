@@ -15,6 +15,7 @@ class DB{
     public $groupBy;
     public $limit;
     public $join;
+    public $isSelect=false;
     function __construct(){
        // ECHO dataBase::$dbname;
         $dsn=dataBase::$driver.':host='.dataBase::$host.";dbname=".dataBase::$dbname;
@@ -32,7 +33,6 @@ class DB{
        $this->orderBy.=",".$ordercol." ".$orderway." ";
        return $this;
     }
-   
     function groupBy($ordercol,$orderway){
         if(empty($this->groupBy))
         $this->groupBy="GROUP by ".$ordercol." ".$orderway." ";
@@ -91,8 +91,8 @@ class DB{
 
     }
     function get(){
-        
-       $this->final_query="select ".$this->columns." from ".$this->tables.$this->join.$this->condation.$this->orderBy.$this->groupBy.$this->limit;
+        $this->isSelect=true;
+       $this->final_query="select ".$this->columns." from ".$this->tables.$this->join.$this->condation.$this->count.$this->orderBy.$this->groupBy.$this->limit;
          return $this;
        // return $this;
 
@@ -136,15 +136,27 @@ class DB{
       
     }
     function execute(){
-       // echo $this->final_query;
+  //   echo $this->final_query;
+       $result;
         try {
            $this->stmt = $this->connection->prepare($this->final_query);
-           //echo $this->final_query;
+        //    echo $this->final_query;
            $this->stmt->execute();
-           echo $this->final_query;
-        } catch (PDOException $exception) { die($exception->getMessage()); }
+           $result='done';
+           
+           //echo $this->final_query;
+        } catch (PDOException $exception) {  die($exception->getMessage()); }
        // $this->stmt = null;
+       
+       if($this->isSelect == false){
+        //   echo 'jj';
+        return $result;
+        }
+       if($this->isSelect == true){
+       // echo 'jaj';
+
         return $this;
+         }
     }
     function fetch(){
         $result= $this->stmt->fetchAll(PDO::FETCH_OBJ);

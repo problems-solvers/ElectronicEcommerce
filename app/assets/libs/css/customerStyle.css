@@ -6,6 +6,8 @@ Top Header
 body{
    background-color:#F6EBFC !important;
    font-family: montserrat !important ;
+   overflow-x:hidden;
+   overflow-y:scroll !important;
 }
 #CustTemplate{
    overflow-x:hidden;
@@ -318,7 +320,7 @@ img {
  .ir {
    text-indent: 100%;
    white-space: nowrap;
-   overflow: hidden;
+   /* overflow: hidden; */
  }
  
  
@@ -457,7 +459,7 @@ However, delay the fade out process for 2.5 seconds */
   to {bottom: 0; opacity: 0;}
 
 
-
+}
 
 
 .dropdown .dropbtn {

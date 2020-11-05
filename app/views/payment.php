@@ -1,7 +1,16 @@
 
 <?php
 $_SESSION['redirect']=$_SERVER['REQUEST_URI'];
-echo $_SESSION['redirect'];
+if(isset($_SESSION['order_id'])==''){
+    echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/';</script>";
+
+}
+echo $_SESSION['order_id'];
+            //$order=$data['order'];
+           // print_r($order);
+            $adminAccount=$data['adminAccount'];
+          // foreach($rows as $row){
+           
 ?>
 <div class="container mar">
     <div class="py-5 text-center">
@@ -19,26 +28,26 @@ echo $_SESSION['redirect'];
         <div class="row container">
           <div class="col-md-4 order-md-2 mb-4">
             <ul class="list-group">
-              <li class="list-group-item d-flex justify-content-between lh-condensed">
-                <span class="text-muted justify-content-between my-4">$12</span>
-                <h6 class="my-4">Product name</h6>
-                <img class="d-block mb-2" src="" alt="" width="72" height="72">
-              </li>
-              <li class="list-group-item d-flex justify-content-between lh-condensed">
-                <span class="text-muted justify-content-between my-4">$12</span>
-                <h6 class="my-4">Product name</h6>
-                <img class="d-block mb-2" src="" alt="" width="72" height="72">
-              </li>
-              <li class="list-group-item d-flex justify-content-between lh-condensed">
-                <span class="text-muted justify-content-between my-4">$12</span>
-                <h6 class="my-4">Product name</h6>
-                <img class="d-block mb-2" src="" alt="" width="72" height="72">
-              </li>
-             
-              <li class="list-group-item d-flex justify-content-between bg-light">
-                <span class="text-success">$50</span>
+            <?php
+            $rows=$data['products'];
+                  foreach($rows as $row){
+                   echo '<li class="list-group-item d-flex justify-content-between lh-condensed">
+                   <span class="text-muted justify-content-between my-4">'.$row->total_price.'</span>
+                   <h6 class="my-4">'.$row->pro_name.'</h6>
+                   <img class="d-block mb-2" src="'.$row->main_img.'" alt="" width="72" height="72">
+                 </li>';
+                  }?>
+               <li class="list-group-item d-flex justify-content-between bg-light">
+                <span class="text-success"><?php
+                $sum = 0;
+                 $rows=$data['products'];
+                 foreach($rows as $row){
+
+                     $sum+= $row->total_price;
+
+                   } echo $sum ?></span>
                 <div class="text-success">
-                  <h6 class="my-0">Total</h6>
+                  <h6 class="my-0"></h6>Total
                 </div>
               </li>
             </ul>
@@ -85,12 +94,6 @@ echo $_SESSION['redirect'];
                         <div class="col-md-6 ">
                           <input type="text" class="form-control " name="zip_id"  id="zip_id" placeholder="zip id" required>
                         </div>
-
-                        <button class="save" type="submit" onclick="myFunction()">save</button>
-  <!-- The actual snackbar -->
-<div id="snackbar">Some text some message..</div>
-
-
                       </div>
                   </div>
     
@@ -104,12 +107,15 @@ echo $_SESSION['redirect'];
                 </div>
            <div class="card-body" id="box2">
             <div class="row d-flex justify-content-center ">
-              <div class="custom-control mx-auto col-8 text-center">
+              <div class="custom-control mx-auto  text-center">
                             <?php 
                   $rows=$data['address'];
                   foreach($rows as $row){
-                    echo '<input  class="form-check-label" type="radio" id="'.$row->address_id.'" name="paymentMethod" value="'.$row->address_id.'" value="">';
-                    echo $row->user_name ,",&nbsp;". $row->country, ",&nbsp;".$row->city, ",&nbsp;".$row->street,",&nbsp;".$row->zip_id." ";
+                    echo '<div class="row"> 
+                    <div class="col-1"><input  class="form-check-input" type="radio" id="'.$row->address_id.'" name="paymentMethod" value="'.$row->address_id.'" /></div>';
+                    echo ' <div class="col-1"> <label class="form-check-label" for="radio">';
+
+                    echo $row->user_name ,",&nbsp;". $row->country, ",&nbsp;".$row->city, ",&nbsp;".$row->street,",&nbsp;".$row->zip_id." </label></div></div>";
                   }
                   ?>  
               </div>
@@ -128,23 +134,24 @@ echo $_SESSION['redirect'];
         <div class="row container">
           <div class="col-md-4 order-md-2 mb-4">
             <ul class="list-group">
-              <li class="list-group-item d-flex justify-content-between lh-condensed">
-                <span class="text-muted justify-content-between my-4">$12</span>
-                <h6 class="my-4">Product name</h6>
-                <img class="d-block mb-2" src="" alt="" width="72" height="72">
-              </li>
-              <li class="list-group-item d-flex justify-content-between lh-condensed">
-                <span class="text-muted justify-content-between my-4">$12</span>
-                <h6 class="my-4">Product name</h6>
-                <img class="d-block mb-2" src="" alt="" width="72" height="72">
-              </li>
-              <li class="list-group-item d-flex justify-content-between lh-condensed">
-                <span class="text-muted justify-content-between my-4">$12</span>
-                <h6 class="my-4">Product name</h6>
-                <img class="d-block mb-2" src="" alt="" width="72" height="72">
-              </li>
-              <li class="list-group-item d-flex justify-content-between bg-light">
-                <span class="text-success">$50</span>
+              <?php
+            $rows=$data['products'];
+                  foreach($rows as $row){
+                   echo '<li class="list-group-item d-flex justify-content-between lh-condensed">
+                   <span class="text-muted justify-content-between my-4">'.$row->total_price.'</span>
+                   <h6 class="my-4">'.$row->pro_name.'</h6>
+                   <img class="d-block mb-2" src="'.$row->main_img.'" alt="" width="72" height="72">
+                 </li>';
+                  }?>
+               <li class="list-group-item d-flex justify-content-between bg-light">
+                <span class="text-success"><?php
+                $sum = 0;
+                 $rows=$data['products'];
+                 foreach($rows as $row){
+
+                     $sum+= $row->total_price;
+
+                   } echo $sum ?></span>
                 <div class="text-success">
                   <h6 class="my-0"></h6>Total
                 </div>
@@ -179,7 +186,7 @@ echo $_SESSION['redirect'];
                <div class="card-header" style="background-color:whitesmoke">
                 <div class="custom-control custom-radio">
                     <input  type="radio" id="add1" name="RP-ADDD" class="custom-control-input" checked required>
-                    <label class="custom-control-label" for="add1"><h5>Add  New Payment Account</h5>
+                    <label class="custom-control-label" for="add1"><h5>Add New Payment Account</h5>
                     </label>
                 </div>
                </div>
@@ -212,12 +219,14 @@ echo $_SESSION['redirect'];
                 </div>
            <div class="card-body" id="boxx2">
             <div class="row d-flex justify-content-center ">
-              <div class="custom-control mx-auto col-8 text-center">
+              <div class="custom-control mx-auto text-center">
                             <?php 
                   $rows=$data['paymentAccounts'];
                   foreach($rows as $row){
-                   echo '<input  class="form-check-label" type="radio" id="'.$row->payment_id.'" full_name="'.$row->full_name.'" exp_date="'.$row->ex_date.'" name="paymentAccounts" value="'.$row->userbank_id.'">';
-                   echo $row->full_name ,",&nbsp;". $row->ex_date." ";
+                   echo '<div class="row"> 
+                   <div class="col-1"><input  class="form-check-input" type="radio" id="'.$row->payment_id.'" full_name="'.$row->full_name.'" exp_date="'.$row->ex_date.'" name="paymentAccounts" value="'.$row->userbank_id.'"></div>';
+                   echo ' <div> <label class="form-check-label" for="radio">';
+                   echo $row->full_name ,",&nbsp;". $row->ex_date."</label></div></div> ";
                   }
                   ?>  
               </div>
@@ -234,16 +243,92 @@ echo $_SESSION['redirect'];
               </div>
               </div>  
         <!-- <input type="button" name="previous" class="previous action-button" value="Previous" /> -->
-        <input type="button" name="next" id="next2" class="next action-button save" value="Next" onclick="myFunction()" />
-                      <!-- The actual snackbar -->
-<div id="snackbar">Some text some message..</div>
+        <input type="button" name="next" id="next2" class="next action-button" value="Next" />
       </fieldset>
       <fieldset>
-        
+        <h3>Products</h3>
+                  <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quntity </th>
+                            <th class="text-center">Price</th>
+                            <th class="text-center">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      
+                     <?php 
+                     $pro=$data['products'];
+                     foreach($pro as $product){
+                     ?>
+                        <tr>
+                            <td class="col-md-9">
+                            <img class="d-block mb-2" src="<?php echo $product->main_img; ?>" alt="" width="72" height="72">
+                            <em><?php echo $product->pro_name; ?></em></h4>
+                            </td>
+                            <td class="col-md-1" style="text-align: center"> <?php echo $product->quentity; ?> </td>
+                            <td class="col-md-1 text-center"><?php echo $product->pro_price; ?></td>
+                            <td class="col-md-1 text-center"><?php echo $product->total_price; ?></td>
+                        </tr>
+                        <?php } ?>
+                        <tr>
+                            <td>   </td>
+                            <td>   </td>
+                            <td class="text-right">
+                                <strong>ToTal: </strong>
+                            </td>
+                            <td class="text-right">
+                                <strong id="tblTotalPrice"> </strong>
+                            </td>
+                            
+                        </tr>
+                    </tbody>
+                  </table>
+                
+               <div class="row">
+                 <div class="col-6">
+                 <address >
+                    <div class="text-center">
+                    <h1>Address Information</h1>
+                      </div>
+                     
+                        <!-- <strong>ElectronicEcommerce</strong> -->
+                        <h5 class="ml-3" id="username3"></h5>
+                        <br>
+                        <h5 title="Phone" id="country3"></h5> 
+                         
+                        <h5 title="Phone" id="city3" class="ml-5"> </h5>
+                         <br>
+                          <br>
+                          <h5 title="Phone" id="street3"></h5> 
+                     
+                        <h5 title="Phone" id="zip_id3" class="ml-5"> </h5>
+                  </address>
+                 </div>
+                 <div class="col-6">
+                 <address >
+                    <div class="text-center">
+                    <h1>Payment Information</h1>
+                      </div> 
+                        <!-- <strong>ElectronicEcommerce</strong> -->
+                        <h5 class="ml-3" id="bankid3"></h5>
+                        <br>
+                        <h5 title="Phone" id="expDate3" ></h5>
+                         
+                        <h5 title="Phone" id="full_name" class="ml-5"></h5>
+                         <br>
+                          <br>
+                          <h5 title="Phone" id="total_price" ></h5>
+                     
+                  </address>
+                 </div>
+               </div>
+                  
+                 
+   
             <!-- <input type="button" name="previous" class="previous action-button" value="Previous" /> -->
-            <input type="submit" name="submit" class="submit action-button save" value="Submit" onclick="myFunction()"/>
-              <!-- The actual snackbar -->
-<div id="snackbar">Some text some message..</div>
+            <input type="submit" name="submit" class="submit action-button" value="Submit" />
       </fieldset>
 
 
@@ -278,6 +363,7 @@ echo $_SESSION['redirect'];
         var current_fs, next_fs, previous_fs; //fieldsets
       var left, opacity, scale; //fieldset properties which we will animate
       var animating; //flag to prevent quick multi-click glitches
+      var orderData;
 
       $(".next").click(function (e) {
         var nextid=$(this).attr('id');
@@ -298,12 +384,25 @@ echo $_SESSION['redirect'];
                   data: {zip_id:zip_id,user_name:user_name,country:country,city:city,street:street},
               })
               .done(function (response) {
-                alert('hhhaa')
-                 nextmsg='go';
+                if(response[0]=='noorder'){
+                  //todo Message or ROute
+                  alert('hhhaa')
+                }
+                // }
+                // if(response[0]=='done'){
+                //   //todo Message or ROute
+                //   nextmsg='go';
+                // }
+                else{
+                 
+                  nextmsg='go';
+                }
+
 
               })
               .fail(function () {
-                console.log('dss');
+                //todo Message or ROute
+                //console.log('rr')
                   nextmsg='stop';
               })  
            }
@@ -316,14 +415,26 @@ echo $_SESSION['redirect'];
              global: false,
              url: "/ElectronicEcommerce/payment/updateOrderAddress",
              data: {address_id:address_id},
-             success: function(result,textStatus) {
-              nextmsg ='go';
+             success: function(response) {
+              if(response[0]=='noorder'){
+                  //todo Message or ROute
+                alert('hhhaa')
+                }else{
+                  //todo Message or ROute
+                  nextmsg='go';
+                }
+             
              }
            })
           }
         }
        if(nextid==='next2'){
            nextmsg='stop';
+           var totalprice=<?php
+            $rows=$data['products']; $sum = 0;
+            foreach ($rows as $item) {
+                $sum += $item->total_price;
+            }echo $sum; ?>;
           if ($("#add1").is(":checked")) {
               var full_name=$('#full_name').val();
               var bank_account=$('#bank_account').val();
@@ -339,11 +450,12 @@ echo $_SESSION['redirect'];
                 global: true,
                 async: false,
                 dataType: 'json',
-               url: "http://localhost:5320/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date+"",
+               url: "http://localhost:5320/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date+"&totalPrice="+totalprice,
               
               })
               .done(function (response) {
                  if(response.available==false){
+                   //todo Error MEssage
                    alert('hhhaa')
                  }
                  if(response.available==true){
@@ -356,18 +468,36 @@ echo $_SESSION['redirect'];
                   data: {full_name:full_name,bank_account:bank_account,Exp_date:Exp_date},
               })
               .done(function (response) {
+                if(response[0]=='noorder'){
+                  //todo Message or ROute
                 alert('hhhaa')
-                 nextmsg='go';
 
+                }
+                else{
+                  orderData =JSON.parse(response);
+                console.log(orderData,orderData[0].user_name)
+                      $('#username3').text('Name: '+orderData[0].user_name);
+               $('#country3').text('country:'+orderData[0].country);
+                  $('#city3').text('city:'+orderData[0].city);
+                $('#street3').text('street:'+orderData[0].street);
+                $('#zip_id3').text('zip id:'+orderData[0].zip_id);
+                $('#bankid3').text('Bank Card Id: '+orderData[0].userbank_id);
+               $('#expDate3').text('Expiry Date: '+orderData[0].ex_date);
+              $('#full_name').text('Full Name: '+orderData[0].full_name);
+            $('#total_price').text('Total Price: '+orderData[0].total_price);
+          $('#tblTotalPrice').text(orderData[0].total_price);
+                 nextmsg='go';
+                }
               })
               .fail(function () {
-                console.log('dss');
+                //todo message
                   nextmsg='stop';
               })  
                 
                  }
               })
               .fail(function () {
+                //todo error message
                 alert('no account like this one')
               })  
              
@@ -383,7 +513,7 @@ echo $_SESSION['redirect'];
                type: "GET",
                 global: true,
                 dataType: 'json',
-              url: "http://localhost:5320/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date,
+              url: "http://localhost:5320/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date+"&totalPrice="+totalprice,
                   // success: function(result) {
                   // //  alert(data) 
                   // }
@@ -391,6 +521,7 @@ echo $_SESSION['redirect'];
             .done(function (response) {
               console.log(response)
                  if(response.available==false){
+                   //todo error message
                    alert('hhhaa')
                  }
                  if(response.available==true){
@@ -398,11 +529,29 @@ echo $_SESSION['redirect'];
                     async: false,
                     type: "Post",
                     global: false,
+                    datType:'json',
                     url: "/ElectronicEcommerce/payment/updateOrderBAccount",
                     data: {payment_id:payment_id},
-                    success: function(result,textStatus) {
+                    success: function(response) {
+                      if(response[0]=='noorder'){
+                      //todo Message or ROute
+                      alert('hhhaa')
+
+                      }else{
+                      orderData =JSON.parse(response);
+                      console.log(orderData,orderData[0].user_name)
+                      $('#username3').text('Name: '+orderData[0].user_name);
+               $('#country3').text('country:'+orderData[0].country);
+                  $('#city3').text('city:'+orderData[0].city);
+                $('#street3').text('street:'+orderData[0].street);
+                $('#zip_id3').text('zip id:'+orderData[0].zip_id);
+                $('#bankid3').text('Bank Card Id: '+orderData[0].userbank_id);
+               $('#expDate3').text('Expiry Date: '+orderData[0].ex_date);
+              $('#full_name').text('Full Name: '+orderData[0].full_name);
+            $('#total_price').text('Total Price: '+orderData[0].total_price);
+          $('#tblTotalPrice').text(orderData[0].total_price);
                      nextmsg ='go';
-                     alert(nextmsg) 
+                     }
                     }
                   })
                  }
@@ -481,11 +630,97 @@ echo $_SESSION['redirect'];
       });
 
       $(".submit").click(function () {
+        var full_name =orderData[0].full_name;
+;
+        var userBank =orderData[0].userbank_id;
+        var totalprice =orderData[0].total_price;
+        var exp_date =orderData[0].ex_date;
+        var recievedAccount =<?php echo $adminAccount[0]->userbank_id;?>;
+        $.ajax({
+                crossDomain: true,
+              // headers: {  'Access-Control-Allow-Origin': 'http://192.168.1.101' },
+               type: "GET",
+               global: true,
+               async: false,
+               dataType: 'json',
+               url: "http://localhost:5320/api/getcurrentaccount?userName="+full_name+"&BankNo="+userBank+"&expDate="+exp_date+"&totalPrice="+totalprice,
+              
+              })
+              .done(function (response) {
+                 if(response.available==false){
+                   //to do error message
+                   if(response.errorMessage==1){
+                     //no  money
+                    alert('hhhaa')
+
+                   }
+                   if(response.errorMessage==2){
+                     //no enough money
+
+                    alert('hhhaa')
+
+                   }
+                   if(response.errorMessage==3){
+                     //noaccount
+                    alert('hhhaa')
+
+                   }
+                 }
+                 if(response.available==true){
+                 
+                 $.ajax({
+                  type: "POST",
+                global: true,
+                async: false,
+                dataType: 'json',
+               url: "http://localhost:5320/api/InsertNewTransaction",
+                  data: {recievedAccount:recievedAccount,paiedAccount:userBank,createdAt:Date.now(),transReason:'buying from log store',money:totalprice},
+              })
+              .done(function (response) {
+                if(response.insertId){
+                  $.ajax({
+                  type: "POST",
+                  global: true,
+                  async: false,
+                  dataType: 'json',
+                  url: "/ElectronicEcommerce/payment/updateStatus",
+                  data: {status:'2'},
+                 })
+                 .done(function (response) {
+                   if(response[0]=='done'){
+                     //todo go to feedback page
+                     alert('success')
+                     
+                    nextmsg='go';
+                   }else{
+                     //error message
+                   }
+                 })
+                 .fail(function () {
+                   console.log('dss');
+                   //todo error message
+                     nextmsg='stop';
+                 }) 
+               }
+                
+
+              })
+              .fail(function () {
+                //NOTDONE FROM BANK 
+                //todo error messages
+                console.log('dss');
+                  nextmsg='stop';
+              })  
+                
+                 }
+              })
+              .fail(function () {
+                //todo error messages
+                alert('no account like this one')
+              })  
+             
         return false;
       })
-      function paymentUpdate(){
-       
-      }
   
   })
    
@@ -517,16 +752,4 @@ echo $_SESSION['redirect'];
      }
    });
  });
-</script>
-<script>
-  function myFunction() {
-    // Get the snackbar DIV
-    var x = document.getElementById("snackbar")
-
-    // Add the "show" class to DIV
-    x.className = "show";
-
-    // After 3 seconds, remove the show class from DIV
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-}
 </script>
