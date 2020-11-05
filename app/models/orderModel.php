@@ -32,9 +32,7 @@ class orderModel extends Model {
             
     }
     function  orederdetails($data){
-     
         $tbls=array("oreder_details");
-        
         $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
             
     }

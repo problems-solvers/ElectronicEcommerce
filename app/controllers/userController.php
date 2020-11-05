@@ -49,20 +49,27 @@ function signup(){
 		'user_password' =>"'".md5($_POST['user_password'])."'"
 		);
 		$this->model->signup($data);
-		$_SESSION['user_name']=$_POST['user_name'];
-		$_SESSION['user_role']=1;
-					}
-//  header('location:home');
+		echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/user/login/';</script>";	
+	}
 }
 	function run(){
-		$this->model->login();
 		
-	//s	header('location: home');
+		$result=$this->model->login();
+		print_r($_SESSION);
+		echo Session::get('user_role');
+		//print_r($result);
+		//echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/';</script>";	
+		if(isset($_SESSION['user_role']) && $_SESSION['user_role']==2)
+		echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_dashboard/';</script>";
+		if(isset($_SESSION['user_role']) && $_SESSION['user_role']==1)
+		echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/';</script>";
+  
+		
 	}
 	function logout()
 	{
 		Session::destroy();
-		header('location:login');
+		echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/user/login/';</script>";	
 		exit;
 	}
 	function changepassword() {

@@ -9,6 +9,7 @@ public $model;
 
         $this->controller=new Controller();
         $this->model=$this->controller->model_object->create_model('home');
+        $this->cat=$this->controller->model_object->create_model('admin_cat');
         $this->$function();
 
 
@@ -17,7 +18,8 @@ public $model;
 
         $items=array(
             'Recent'=> $this->model->getRecentAddData(),
-            'Featured'=>$this->model->getAllProCatData()
+            'Featured'=>$this->model->getAllProCatData(),
+            'categories'=>$this->cat->getAllCatData()
          ); 
        
          

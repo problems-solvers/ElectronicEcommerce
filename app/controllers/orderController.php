@@ -48,7 +48,7 @@ function addorder(){
            //print_r($cart_detail);    
                    if($result)
 {         
-    echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/cart';</script>";
+    echo "<script type='text/javascript'>window.location.href='http://localhost/ElectronicEcommerce/cart';</script>";
 
 }
 else{
@@ -71,16 +71,15 @@ else{
 
         $order_details=$this->model->orederdetails($data1);
     }
-    if( !$order_details)
-{$items=array(
-    'order_id'=>$_POST['order_id'],
-
-);
+    if(!$order_details)
+{
+    $items=array(
+       'order_id'=>$_POST['order_id'],);
        $this->controller->view_object->create_view('payment', $items);    
 }
-}
-          
-       }}
+
+}       
+} }
        else{
         echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/user/login/';</script>";
        }

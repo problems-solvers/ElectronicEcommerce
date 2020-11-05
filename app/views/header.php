@@ -28,6 +28,7 @@
 
 
             <style>
+              
 div#loader{
 position:absolute;
 top:calc(50% - 12px);
@@ -98,7 +99,7 @@ opacity:0;
    -moz-transition: all 1s cubic-bezier(0.680, -2.550, 0.265, 3.550); 
      -o-transition: all 1s cubic-bezier(0.680, -2.550, 0.265, 3.550); 
         transition: all 1s cubic-bezier(0.680, -2.550, 0.265, 3.550); /* easeInOutBack */
-  box-sizing: border-box;
+ box-sizing: border-box;
   transform: scale(1);
   opacity: 1;
   display: inline-block;
@@ -126,7 +127,10 @@ opacity:0;
 </style>
 
         </head>
-        
+        <?php 
+$_SESSION['redirect']=$_SERVER['REQUEST_URI'];
+
+?>
 <body>
 <div>
  <div id="CustTemplate">
@@ -143,6 +147,7 @@ opacity:0;
       </li>
       <li class="nav-item">
         <a class="nav-link" href="http://localhost/ElectronicEcommerce/categories/">Categories</a>
+    
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Offers</a>
@@ -179,8 +184,8 @@ opacity:0;
     </button>
     <div class="dropdown-content">
       <?php
-      if(isset($_SESSION['user_name']))
-      {
+		if(isset($_SESSION['user_role']) && $_SESSION['user_role']==1)
+    {
      
      echo'<a href="#">Profile</a>
       <a href="http://localhost/ElectronicEcommerce/user/logout">Log Out</a> ';}
