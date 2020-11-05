@@ -2,6 +2,8 @@
 use coreAppNS\Controller;
  
 class baseFunctions extends Controller{
+//namespace coreAppNS;
+//class baseFunctions{
     public static function Header($url){
          $controller;
         $clean_url=rtrim($url,'/');

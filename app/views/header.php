@@ -27,9 +27,12 @@
             <!-- <link rel="stylesheet" type="text/css" href="app/assets/vendor/datatables/css/dataTables.bootstrap4.css">
             <link rel="stylesheet" href="app/assets/vendor/summernote/css/summernote-bs4.css"> -->
             <title>ECOMMERCE Site</title>
-        
+
         </head>
-        
+        <?php 
+$_SESSION['redirect']=$_SERVER['REQUEST_URI'];
+
+?>
 <body>
  <div id="CustTemplate">
   <nav class="navbar navbar-expand-lg navbar-dark ">
@@ -90,7 +93,26 @@
 				<p class="">0</p>
 		</div>
      </a>
-        <a class="nav-link" href="#"><li class="fas fa-user-circle"></li></a>
+     <div class="dropdown">
+    <button class="dropbtn"> 
+      <i class="fas fa-user-circle"></i>
+    </button>
+    <div class="dropdown-content">
+      <?php
+		if(isset($_SESSION['user_role']) && $_SESSION['user_role']==1)
+    {
+     
+     echo'<a href="#">Profile</a>
+      <a href="http://localhost/ElectronicEcommerce/user/logout">Log Out</a> ';}
+     else{
+       echo '<a href="http://localhost/ElectronicEcommerce/user/login">Log In</a>';
+     }
+    
+      ?>
+
+     
+    </div>
+  </div> 
    
      
     </ul>

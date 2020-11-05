@@ -1,5 +1,7 @@
 <?PHP
 use coreAppNS\Controller;
+use coreAppNS\baseFunctions;
+
 class paymentController extends Controller{
 public $controller;
 public $model;
@@ -10,9 +12,7 @@ public $model;
         $this->controller=new Controller();
         $this->model=$this->controller->model_object->create_model('payment');
         $this->$fun();    
-       }
-
-    
+       }    
        function payment(){
 
         $items=array(
@@ -48,17 +48,14 @@ public $model;
     
        }
        function delete(){
-        
-
             $this->model->delete();
         $this->controller->view_object->create_view('cart');   
         $_SESSION['order_id']='';
        }
 
         
-function addBAccount(){
-    echo"hello";
-      echo "insert new";
+   function addBAccount(){
+    
       $uuid=baseFunctions::uuid();
 
      // Session::set('address_id',$uuid);
@@ -79,51 +76,9 @@ function addBAccount(){
        $data2=array(
             'payment_id'=>"'".$uuid."'",
        );
-     $result1=$this->model->update($data2);  
-       }   
-       
-function addAdress(){
-      $uuid=baseFunctions::uuid();
+       $result1=$this->model->update($data2);  
+   }   
 
-    //  Session::set('address_id',$uuid);
-      $user_id= Session::get('id');  
-       
-        $data = array(
-            'address_id' =>"'".$uuid."'",
-            'user_name' =>"'".$_REQUEST['user_name']."'",
-            'country'=>"'". $_REQUEST['country']."'",
-            'city'=>"'".$_REQUEST['city']."'",
-            'street' =>"'".$_REQUEST['street']."'",
-            'zip_id' =>"'".$_REQUEST['zip_id']."'",
-            'user_id'=>"'".$user_id."'"
-                   
-            );
-        $this->model->addNewAddress($data);
-   
-    
-       $data2=array(
-            'address_id'=>"'".$uuid."'",
-       );
-     $result1=$this->model->update($data2);  
-       }
-       function updateOrderAddress(){
-      
-           $data2=array(
-                'address_id'=>"'".$_REQUEST['address_id']."'",
-           );
-         $result1=$this->model->update($data2);
-              
-       }
-       function updateOrderBAccount(){
-       
-        $data2=array(
-             'payment_id'=>"'".$_REQUEST['payment_id']."'",
-        );
-      $result1=$this->model->update($data2);
-           
-    }
-
-     
        function updateAdress(){
         $data = array(
             'address_id' =>"'".$_POST['address_id']."'",
@@ -134,25 +89,63 @@ function addAdress(){
         $this->model->update($data);
        }
 
-// function insertAddress(){
-//     echo"looooool";
-//     $uuid=baseFunctions::uuid();
-//     $_POST['address_id']= $uuid;
-//     $data = array(
-//         'user_id'=>"'5e7d1872-6a31-482d-9f1b-64fd39'",
-//         'address_id' =>"'".$_POST['address_id']."'",
-//         'user_name' =>"'".$_POST['user_name']."'",
-//         'address' =>"'adress2'",
-//         'country'=>"'".$_POST['country']."'",
-//         'city'=>"'".$_POST['city']."'",
-//         'street' =>"'".$_POST['street']."'",
-//         'zip_id' =>"'".$_POST['zip_id']."'",
-               
-//         );
-//         $this->model->addNewAddress($data);
-// }
-
-			
+       function addAdress(){
+        $uuid=baseFunctions::uuid();
+       //  Session::set('address_id',$uuid);
+        $user_id= Session::get('id'); 
+          $data = array(
+              'address_id' =>"'".$uuid."'",
+              'user_name' =>"'".$_REQUEST['user_name']."'",
+              'country'=>"'". $_REQUEST['country']."'",
+              'city'=>"'".$_REQUEST['city']."'",
+              'street' =>"'".$_REQUEST['street']."'",
+              'zip_id' =>"'".$_REQUEST['zip_id']."'",
+              'user_id'=>"'".$user_id."'"
+                     
+              );
+          $this->model->addNewAddress($data);
+         $data2=array(
+              'address_id'=>"'".$uuid."'",
+         );
+          $result1=$this->model->update($data2);  
+      }
+      function updateOrderAddress(){
+          $data2=array(
+               'address_id'=>"'".$_REQUEST['address_id']."'",
+          );
+        $result1=$this->model->update($data2);    
+      }
+  
+     function addPayment(){
+          $uuid=baseFunctions::uuid();
+        //  Session::set('address_id',$uuid);
+          $user_id= Session::get('id'); 
+  
+            $data = array(
+                'payment_id' =>"'".$uuid."'",
+                'full_name' =>"'".$_REQUEST['full_name']."'",
+                'userbank_id'=>"'". $_REQUEST['bank_account']."'",
+                'ex_date'=>"'".$_REQUEST['Exp_date']."'",
+                'user_id' =>"'". $user_id."'",
+                'is_admin' =>"0",
+                'user_id'=>"'".$user_id."'"
+                       
+                );
+            $this->model->addNewPayment($data);
+           $data2=array(
+                'payment_id'=>"'".$uuid."'",
+           );
+            $result1=$this->model->update($data2);  
+        }
+  
+         function updateOrderBAccount(){
+         
+          $data2=array(
+               'payment_id'=>"'".$_REQUEST['payment_id']."'",
+          );
+        $result1=$this->model->update($data2);
+             
+      }
 
 }
 

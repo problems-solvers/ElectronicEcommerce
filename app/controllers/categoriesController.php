@@ -1,5 +1,7 @@
 <?PHP
 use coreAppNS\Controller;
+use coreAppNS\baseFunctions;
+
 class categoriesController extends Controller{
 public $controller;
 public $cat_model;

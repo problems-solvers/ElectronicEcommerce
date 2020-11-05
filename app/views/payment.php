@@ -85,9 +85,11 @@ echo $_SESSION['redirect'];
                         <div class="col-md-6 ">
                           <input type="text" class="form-control " name="zip_id"  id="zip_id" placeholder="zip id" required>
                         </div>
+
                         <button class="save" type="submit" onclick="myFunction()">save</button>
   <!-- The actual snackbar -->
 <div id="snackbar">Some text some message..</div>
+
 
                       </div>
                   </div>
@@ -194,7 +196,7 @@ echo $_SESSION['redirect'];
                         <input type="text" class="form-control" id="bank_account" name="bank_account" placeholder="full name" value="12121212"required>
                          </div>
                         <div class="col-md-6 ">
-                        <input type="text" class="form-control" id="Exp_date" name="Exp_date" placeholder="full name" value="021-05-31T21:00:00.000Z"required>
+                        <input type="text" class="form-control" id="Exp_date" name="Exp_date" placeholder="full name" value="2021-06-01"required>
                            </div>
 
                       </div>
@@ -214,8 +216,8 @@ echo $_SESSION['redirect'];
                             <?php 
                   $rows=$data['paymentAccounts'];
                   foreach($rows as $row){
-                   echo '<input  class="form-check-label" type="radio" id="'.$row->bank_detail_id.'" name="paymentAccounts" value="'.$row->bank_detail_id.'">';
-                   echo $row->full_name ,",&nbsp;". $row->Exp_date." ";
+                   echo '<input  class="form-check-label" type="radio" id="'.$row->payment_id.'" full_name="'.$row->full_name.'" exp_date="'.$row->ex_date.'" name="paymentAccounts" value="'.$row->userbank_id.'">';
+                   echo $row->full_name ,",&nbsp;". $row->ex_date." ";
                   }
                   ?>  
               </div>
@@ -292,15 +294,11 @@ echo $_SESSION['redirect'];
                 async: false,
                 type: "POST",
                 global: false,
-                dataType: 'html',
                   url: "/ElectronicEcommerce/payment/addAdress",
                   data: {zip_id:zip_id,user_name:user_name,country:country,city:city,street:street},
-                  // success: function(result) {
-                  // //  alert(data) 
-                  // }
               })
               .done(function (response) {
-                 console.log('hhaha');
+                alert('hhhaa')
                  nextmsg='go';
 
               })
@@ -316,7 +314,6 @@ echo $_SESSION['redirect'];
              async: false,
              type: "POST",
              global: false,
-             dataType: 'html',
              url: "/ElectronicEcommerce/payment/updateOrderAddress",
              data: {address_id:address_id},
              success: function(result,textStatus) {
@@ -340,63 +337,76 @@ echo $_SESSION['redirect'];
               // headers: {  'Access-Control-Allow-Origin': 'http://192.168.1.101' },
                type: "GET",
                 global: true,
+                async: false,
+                dataType: 'json',
                url: "http://localhost:5320/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date+"",
-
-                  // success: function(result) {
-                  // //  alert(data) 
-                  // }
+              
               })
               .done(function (response) {
-                 console.log(response);
+                 if(response.available==false){
+                   alert('hhhaa')
+                 }
+                 if(response.available==true){
                  //todo the money compare and the message for error 
-                $.ajax({
-                  async: false,
-                  type: "POST",
-                  global: false,
-                  dataType: 'html',
-                  url: "/ElectronicEcommerce/payment/addAdress",
+                 $.ajax({
+                async: false,
+                type: "POST",
+                global: false,
+                  url: "/ElectronicEcommerce/payment/addPayment",
                   data: {full_name:full_name,bank_account:bank_account,Exp_date:Exp_date},
-                  // success: function(result) {
-                  // //  alert(data) 
-                  // }
-                })
-                .done(function (response) {
-                 console.log('hhaha');
+              })
+              .done(function (response) {
+                alert('hhhaa')
                  nextmsg='go';
-                })
-               .fail(function () {
+
+              })
+              .fail(function () {
                 console.log('dss');
                   nextmsg='stop';
-                })  
+              })  
+                
+                 }
               })
               .fail(function () {
                 alert('no account like this one')
               })  
+             
            }
           if($("#add2").is(":checked")) {
-            var payment_id=$("input[name='paymentAccounts']:checked").attr('id');
+            var payment_id =$("input[name='paymentAccounts']:checked").attr('id');
+            var bank_account=$("input[name='paymentAccounts']:checked").attr('value');
+            var full_name=$("input[name='paymentAccounts']:checked").attr('full_name');
+            var Exp_date=$("input[name='paymentAccounts']:checked").attr('exp_date');
             $.ajax({
-                crossDomain: true,
-             headers: {  'Access-Control-Allow-Origin': 'http://192.168.1.101' },
+              crossDomain: true,
+              async: false,
                type: "GET",
-               global: true,
-              url: "http://192.168.1.101/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date+"",
+                global: true,
+                dataType: 'json',
+              url: "http://localhost:5320/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date,
                   // success: function(result) {
                   // //  alert(data) 
                   // }
             })
             .done(function (response) {
-             $.ajax({
-             async: false,
-             type: "Post",
-             global: false,
-             url: "/ElectronicEcommerce/payment/updateOrderBAccount",
-             data: {payment_id:payment_id},
-             success: function(result,textStatus) {
-              nextmsg ='go';
-              alert(nextmsg) 
-             }
-             })
+              console.log(response)
+                 if(response.available==false){
+                   alert('hhhaa')
+                 }
+                 if(response.available==true){
+                  $.ajax({
+                    async: false,
+                    type: "Post",
+                    global: false,
+                    url: "/ElectronicEcommerce/payment/updateOrderBAccount",
+                    data: {payment_id:payment_id},
+                    success: function(result,textStatus) {
+                     nextmsg ='go';
+                     alert(nextmsg) 
+                    }
+                  })
+                 }
+             
            })
          }
        }
@@ -473,7 +483,9 @@ echo $_SESSION['redirect'];
       $(".submit").click(function () {
         return false;
       })
-
+      function paymentUpdate(){
+       
+      }
   
   })
    

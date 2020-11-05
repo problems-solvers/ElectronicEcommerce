@@ -1,5 +1,7 @@
 <?php
 use coreAppNS\Controller;
+use coreAppNS\baseFunctions;
+
 class admin_dashboardController extends Controller
 {
     public $controller;

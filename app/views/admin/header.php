@@ -1,6 +1,6 @@
 <?php
-if(isset($_SESSION['user_role'])&&$_SESSION['user_role']==2)
-echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_dashboard/';</script>";
+		if(isset($_SESSION['user_role']) && $_SESSION['user_role']==2)
+        echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_dashboard/';</script>";
 else
 echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/user/login/';</script>";
 

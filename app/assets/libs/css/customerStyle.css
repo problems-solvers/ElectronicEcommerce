@@ -4,8 +4,9 @@ Top Header
 -------------------------*/
 
 body{
-  background-color:#F6EBFC !important;
-  font-family: montserrat !important ;
+   background-color:#F6EBFC !important;
+   font-family: montserrat !important ;
+   overflow-y:scroll;
 }
 #CustTemplate{
   overflow-x:hidden;
@@ -311,15 +312,12 @@ end payment
 -------------------------*/
 
 img {
-  max-width: 100%;
-  /* 2 */
-}
-
-
-.gallery {
- overflow: hidden;
-}
-.gallery__hero {
+   max-width: 100%;
+   /* 2 */
+ }
+ 
+ 
+ .gallery {
   overflow: hidden;
   position: relative;
   padding: 2em;
@@ -440,6 +438,15 @@ body{
  animation: spin 2s linear infinite;
 }
 
+/* .dropdown .dropbtn {
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 20px;
+  background-color: inherit;
+ 
+} */
+/*
 @-webkit-keyframes spin {
  0% { -webkit-transform: rotate(0deg); }
  100% { -webkit-transform: rotate(360deg); }
