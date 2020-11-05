@@ -1,13 +1,26 @@
 <?php
-namespace coreAppNS;
-class baseFunctions{
+use coreAppNS\Controller;
+ 
+class baseFunctions extends Controller{
+//namespace coreAppNS;
+//class baseFunctions{
     public static function Header($url){
+         $controller;
         $clean_url=rtrim($url,'/');
         $clean_url=explode('/',$clean_url);
         if($clean_url[0]=='admin')
         require_once("app/views/admin/header.php");
         else
+        {
+           $controller=new Controller();
+            $cat=$controller->model_object->create_model('admin_cat');
+            $items=array(
+                'categories'=>$cat->catHeader()
+             ); 
+            $controller->view_object->create_view('header',$items);
+ 
         require_once("app/views/header.php");
+        }
     }
     public static function Footer($url){
         $clean_url=rtrim($url,'/');
@@ -27,13 +40,13 @@ class baseFunctions{
     $imgs='';
 
     $dir='app/assets/images/';
-    foreach($img['tmp_name'] as $key=>$image)
+foreach($img['tmp_name'] as $key=>$image)
 {
     $imgname=$img['name'][$key];
     $temp=$img['tmp_name'][$key];
     $new_name=sha1(date("y-m-d-h-i-s")).rand();
-    $imgs.=$dir.$new_name.$img['name'].',';
-    $result=move_uploaded_file($temp,$dir.$new_name.$img['name']);
+    $imgs.=$dir.$new_name.$imgname.',';
+    $result=move_uploaded_file($temp, $dir.$imgname);
 }
 return  $imgs;
 } 

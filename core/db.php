@@ -146,6 +146,8 @@ class DB{
            
            //echo $this->final_query;
         } catch (PDOException $exception) {  die($exception->getMessage()); }
+
+          
        // $this->stmt = null;
        
        if($this->isSelect == false){
