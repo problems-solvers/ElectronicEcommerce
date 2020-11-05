@@ -24,6 +24,19 @@ public $model;
             $this->controller->view_object->create_view('cart');
         }
     }
+    function getCart(){
+        if(isset($_SESSION['id'])){
+           $items = $this->model->getCartProducts();
+          if(count($items)>=1){
+                $res=json_encode($items);
+                 echo $res; 
+          }else{
+            $s=array("nothingonCart");
+            $res=json_encode($s);
+            echo $res;
+          }
+        }
+    }
     function updateqty(){
         $this->model->updateCart();
     }
