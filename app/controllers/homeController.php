@@ -29,9 +29,10 @@ public $model;
         $this->controller->view_object->create_view('home',$items);
        
     }
-  
-
-
+    function getCategories(){
+       $items= $this->cat->catHeader();
+     print_r(json_encode($items)) ;
+   }
        
 }
 

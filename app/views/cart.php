@@ -11,21 +11,26 @@ if(isset($_SESSION['id'])){
 <!-- <h4>heddin</h4> -->
 <div class="row">
 <div class="col-5 my-8 mx-auto cartBox">
-         
-         
 <div class="show">
 
+</div> 
+        
 </div>
 
+<div class="col-5 my-8 mx-auto cartBox">
 
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">The Total Amount Of The Cart is </h5>
+    <h6 class="card-subtitle mb-2 text-muted" id="totalPrice"></h6>
+     <button class="bt" id="checkoutbtn">Check Out</button>
 
-</div>
-</div>
-<div class="nam mx-auto  my-4 py-2 col-2 text-center text-light" >
-  
-      <button class="bt" id="checkoutbtn">Check Out</button>
   </div>
-<br><br><br>
+
+</div>
+
+  </div>
+
 
 <script>
 //adding cartbox data in table
@@ -86,19 +91,19 @@ if(isset($_SESSION['id'])){
             var pro_id =  $(this).attr('pro_id');
             console.log(pro_id)
               if (<?php echo isset($_SESSION['id'])?'true':'false'; ?>) {
-                <?php
-                  $x= json_encode($data); 
-                 ?>
+                // <?php
+                //   $x= json_encode($data); 
+                //  ?>
                 console.log('hi')
-                var cartdata = <?php echo $x; ?>;
+               // var cartdata = ;
                 $.ajax({
                     type: 'POST',
                     url: 'http://localhost/ElectronicEcommerce/cart/deleteCartItem',
                     data: {cart_id:cart_id }
                     })
                     .done(function (response) {
-                      const index = cartdata.findIndex((x)=> x.cart_id === cart_id);
-                      cartdata.splice(index, 1);
+                     // const index = cartdata.findIndex((x)=> x.cart_id === cart_id);
+                     // cartdata.splice(index, 1);
                       loadData();
                     })
                     .fail(function () {
