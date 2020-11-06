@@ -95,7 +95,7 @@ if(isset($_SESSION['id'])){
                 //   $x= json_encode($data); 
                 //  ?>
                 console.log('hi')
-               // var cartdata = <?php echo $x; ?>;
+               // var cartdata = ;
                 $.ajax({
                     type: 'POST',
                     url: 'http://localhost/ElectronicEcommerce/cart/deleteCartItem',

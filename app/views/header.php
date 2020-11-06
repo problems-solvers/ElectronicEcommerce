@@ -48,20 +48,12 @@ $_SESSION['redirect']=$_SERVER['REQUEST_URI'];
       </li>
       <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
-                                <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/categories" id="parent">All Categories</a></li>
-                                <?php
-      
-      $rows=$data['categories'];
-      foreach($rows as $row)
-     { echo '
-      <li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/categories/show?action=get&cat_id='.$row->cat_id.'">'.$row->cat_name.'</a></li>
+                                <ul class="dropdown-menu" id="allCategories">
+                                <!-- <li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/categories" id="parent">All Categories</a></li>
+              
+      <li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/categories/show?action=get&cat_id='.$row->cat_id.'">'.$row->cat_name.'</a></li>-->
 
   
-      ';
-    
-    }
-      ?>
                                 </ul>
                             </li> 
       <li class="nav-item">
@@ -118,5 +110,27 @@ $_SESSION['redirect']=$_SERVER['REQUEST_URI'];
     </ul>
   </div>
 </nav>
+<script>
+  
+  // window.onload = function(){
+  // $(document).ready(function(){
+  //   console.log('hi')
+  //      $.ajax({
+  //                   type: 'POST',
+  //                   url: 'http://localhost/ElectronicEcommerce/home/getCategories',
+  //                   data: {cart_id:cart_id }
+  //                   })
+  //                   .done(function (response) {
+  //                     console.log(response)
+  //                     ('#allCategories').val()
+  //                   })
+  //                   .fail(function () {
+                     
+  //                   })   
 
-<select class=" my-2 mx-2  cloudtranslation-selection" style="width: 100px;"></select>
+
+  // })
+  // }
+
+</script>
+<!-- <select class=" my-2 mx-2  cloudtranslation-selection" style="width: 100px;"></select> -->
