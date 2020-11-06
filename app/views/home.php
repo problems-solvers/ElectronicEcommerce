@@ -28,7 +28,7 @@
   </a>
 </div>
 <div class="mx-auto  my-2 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
-  <h2>This is a title</h2>
+  <h3 class="titel">NEW ARRAIVALS</h3>
 </div>
 <div id="owl-one" class=" owl-carousel owl-theme mx-auto">
 <?php  $rows=$data['Recent'];
@@ -63,8 +63,8 @@
     <button class="btn btn-sm">SHOP NOW</button>
   </div>
 </div>
-<div class="mx-auto my-2 py-2 col-md-4 col-sm-12 col-xs-12 text-center text-light" style="background-color:#CC8B79">
-  <h3>This is a title</h3>
+<div class="mx-auto  my-2 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
+  <h3 class="titel">TOP SELLERS</h3>
 </div>
 
 <div id="owl-two" class=" owl-carousel owl-theme mx-auto">
