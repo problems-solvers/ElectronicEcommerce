@@ -1,5 +1,7 @@
 <?PHP
 use coreAppNS\Controller;
+use coreAppNS\baseFunctions;
+
 //include("app/models/category.php");
 class cartController extends Controller{
 public $controller;
@@ -20,6 +22,19 @@ public $model;
         }
         else{
             $this->controller->view_object->create_view('cart');
+        }
+    }
+    function getCart(){
+        if(isset($_SESSION['id'])){
+           $items = $this->model->getCartProducts();
+          if(count($items)>=1){
+                $res=json_encode($items);
+                 echo $res; 
+          }else{
+            $s=array("nothingonCart");
+            $res=json_encode($s);
+            echo $res;
+          }
         }
     }
     function updateqty(){

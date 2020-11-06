@@ -1,5 +1,7 @@
 <?php
 use coreAppNS\Controller;
+use coreAppNS\baseFunctions;
+
 require_once("vendor/autoload.php");
 include("app/config/config.php");
 
@@ -35,7 +37,6 @@ function signup(){
 
 					else{
 						$uuid=baseFunctions::uuid();
-
 						$_POST['user_id']= $uuid;
 						$_POST['create_date']= date('Y-m-d H:i:s');
 		$data = array(
@@ -49,20 +50,19 @@ function signup(){
 		'user_password' =>"'".md5($_POST['user_password'])."'"
 		);
 		$this->model->signup($data);
-		$_SESSION['user_name']=$_POST['user_name'];
-		$_SESSION['user_role']=1;
-					}
-//  header('location:home');
+		echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/user/login/';</script>";	
+	}
 }
 	function run(){
-		$this->model->login();
 		
-	//s	header('location: home');
+		$result=$this->model->login();
+	
+		
 	}
 	function logout()
 	{
 		Session::destroy();
-		header('location:login');
+		echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/user/login/';</script>";	
 		exit;
 	}
 	function changepassword() {

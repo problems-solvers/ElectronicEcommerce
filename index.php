@@ -3,6 +3,7 @@ use coreAppNS\Route;
 use coreAppNS\Controller;
 use coreAppNS\View;
 use coreAppNS\model;
+use coreAppNS\baseFunctions;
 
 
 include('vendor/src/facebook/autoload.php');
@@ -19,11 +20,11 @@ include("app/config/config.php");
 $url=isset($_GET['url'])?$_GET['url']:"home";
 //echo $url;
 Session::init();
-baseFunctions::Header($url);
+
 
 new Route($url);
 
-baseFunctions::Footer($url);
+
 
 ?>
  
