@@ -43,8 +43,6 @@ class homeModel extends Model{
            ->table($table)
            ->innerjoin("categories","product.cat_id","categories.cat_id")
            ->where("product.is_active","=","1")
-           ->where("product.cat_id","=","2")
-
            ->orderBy("categories.create_date","desc")
            ->get()
            ->execute()
