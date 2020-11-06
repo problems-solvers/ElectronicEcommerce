@@ -1,6 +1,8 @@
 <div class="container" id="jar">
 <div class="row w-75 mx-auto ">
-<?php  $rows=$data['categories'];
+<?php 
+ $rows=$data['categories'];
+ if(count($rows)){
      foreach ($rows as $row) { echo ' 
 
 <div class="col-lg-4  col-md-5 col-sm-6 col-xm-12 my-2 mx-auto content">
@@ -21,7 +23,11 @@
 </div>
 </div>
  </a>
-</div> ';}  
+</div> ';} }
+else{
+  //todo image to show no data
+  echo 'no data available for this category';
+} 
     ?>
     </div>
 </div>

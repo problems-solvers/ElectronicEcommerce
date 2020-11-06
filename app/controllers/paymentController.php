@@ -37,17 +37,7 @@ public $model;
        }
        function updateStatus(){
         $data = array(
-<<<<<<< HEAD
-             'order_status' =>"2"
-                   
-||||||| f2d44ff
-    
-            
-            'order_status' =>"2"
-                   
-=======
             'order_status' =>$_REQUEST['status']  
->>>>>>> 8986d52115b77c0dcfbb7983c2bd7f4ada9001cd
             );
            
 
