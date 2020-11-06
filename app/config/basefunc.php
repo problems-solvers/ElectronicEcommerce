@@ -1,6 +1,6 @@
 <?php
 use coreAppNS\Controller;
- 
+namespace coreAppNS;
 class baseFunctions extends Controller{
 //namespace coreAppNS;
 //class baseFunctions{

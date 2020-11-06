@@ -104,6 +104,7 @@ return $result;
        ->table($table)
        ->where('user_id','=', "'".$user_id."'" )
        ->where('pro_id','=',"'". $a->pro_id."'" )
+       ->where('type','=',"1" )
        ->get()
        ->execute()
        ->fetch();

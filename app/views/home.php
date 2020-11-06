@@ -37,16 +37,17 @@
 
  <div class="card productCard mx-auto " >
   <img class="card-img-top" src="'.$row->main_img.'" alt="Card image cap">
-  <div class="row productCardbtns mx-0">
-    <a href="#" class="fas fa-heart addTowish mx-auto"></a>
-    <a href="#" ><i class="fas fa-exchange-alt"></i></a>
-    <a href="#" title="add to cart" id="'.$row->pro_id.'" class="attToCart fas fa-shopping-cart mx-auto"></a>          
-  </div>
+  
   <div class="card-body py-1">
     <h5 class="card-title">'.$row->pro_name.'</h5>
-    <span >'.$row->pro_price.'</span>
-    <br>
+    <span style="float:right; color:#5F3870; font-weight:bold;">'.$row->pro_price.'</span>
+
     <span>'.$row->cat_name.'</span>
+  </div>
+  <div class="row productCardbtns mx-0">
+    <a  title="add to wishlist" id="'.$row->pro_id.'" class="mdi mdi-heart-outline addTowish mx-auto"></a>
+    <a  title="add to compare" id="'.$row->pro_id.'" class="fas fa-exchange-alt addTocompare mx-auto" ></a>
+    <a  title="add to cart" id="'.$row->pro_id.'" class="attToCart mdi  mdi-cart-outline mx-auto"></a>          
   </div>
  </div>
 </div> ';}  
@@ -65,23 +66,24 @@
 <div id="owl-two" class=" owl-carousel owl-theme mx-auto">
 <?php  $rows=$data['Featured'];
      foreach ($rows as $row) { echo ' 
-<div class="item mx-2">
+      <div class="item mx-2">
 
- <div class="card productCard mx-auto " >
-  <img class="card-img-top" src="'.$row->main_img.'" alt="Card image cap">
-  <div class="row productCardbtns mx-0">
-  <a href="#" class="fas fa-heart addTowish mx-auto"></a>
-  <a href="#" ><i class="fas fa-exchange-alt"></i></a>
-  <a href="#" title="add to cart" id="'.$row->pro_id.'" class="attToCart fas fa-shopping-cart mx-auto"></a>          
-</div>
-  <div class="card-body py-1">
-    <h5 class="card-title">'.$row->pro_name.'</h5>
-    <span >'.$row->pro_price.'</span>
-    <br>
-    <span>'.$row->cat_name.'</span>
-  </div>
- </div>
-</div> ';}  
+      <div class="card productCard mx-auto " >
+       <img class="card-img-top" src="'.$row->main_img.'" alt="Card image cap">
+       
+       <div class="card-body py-1">
+         <h5 class="card-title">'.$row->pro_name.'</h5>
+         <span style="float:right; color:#5F3870; font-weight:bold;">'.$row->pro_price.'</span>
+     
+         <span>'.$row->cat_name.'</span>
+       </div>
+       <div class="row productCardbtns mx-0">
+         <a  title="add to wishlist" id="'.$row->pro_id.'" class="mdi mdi-heart-outline addTowish mx-auto"></a>
+         <a  title="add to compare" id="'.$row->pro_id.'" class="fas fa-exchange-alt addTocompare mx-auto" ></a>
+         <a  title="add to cart" id="'.$row->pro_id.'" class="attToCart mdi  mdi-cart-outline mx-auto"></a>          
+       </div>
+      </div>
+     </div> ';}  
     ?>
   
 </div>
@@ -95,45 +97,64 @@
 
  <script>
       
-      window.onload = function(){
+     //text cut
+  window.onload = function(){
+     text_truncate = function(str, length, ending) {
+      if (length == null) {
+        length = 100;
+      }
+      if (ending == null) {
+        ending = '...';
+      }
+      if (str.length > length) {
+        return str.substring(0, length - ending.length) + ending;
+      } else {
+        return str;
+      }
+    };
+    const titles = document.getElementsByClassName('card-title')
+    console.log(titles)
+    for(i=0;i<titles.length; i++ ){
+     x= titles[i].innerText
+     titles[i].innerText=text_truncate(x,16)
+    }
         //cart box
-        const iconShopping = document.querySelector('.iconShopping');
-        const cartBox = document.querySelector('.cartBox');
-        iconShopping.addEventListener("click",function(){
-            cartBox.classList.add('active');
-        });
-        $(document).ready(function() {
+      //  const iconShopping = document.querySelector('.iconShopping');
+        // const cartBox = document.querySelector('.cartBox');
+        // iconShopping.addEventListener("click",function(){
+        //     cartBox.classList.add('active');
+        // });
+    $(document).ready(function() {
             console.log("empid")
-            $('.attToCart').click(function (e) {
-              let cart = [];
-            var empid = $(this).attr('id');
-            let item = {
-                         pro_id:empid,
-                         pro_img:e.target.parentElement.parentElement.children[0].src,
-                         pro_name:e.target.parentElement.parentElement.children[2].children[0].textContent,
-                         total_price:e.target.parentElement.parentElement.children[2].children[1].textContent,
-                         catgory:    e.target.parentElement.parentElement.children[2].children[2].textContent,
-                         quentity:1
-                     };
-    if (<?php echo isset($_SESSION['id'])?'true':'false'; ?>) {
+      $('.attToCart').click(function (e) {
+          let cart = [];
+          var empid = $(this).attr('id');
+          let item = {
+                   pro_id:empid,
+                   pro_img:e.target.parentElement.parentElement.children[0].src,
+                   pro_name:e.target.parentElement.parentElement.children[1].children[0].textContent,
+                   total_price:e.target.parentElement.parentElement.children[1].children[1].textContent,
+                   catgory:    e.target.parentElement.parentElement.children[1].children[2].textContent,
+                   quentity:1
+                  };
+          console.log(item)
+          if (<?php echo isset($_SESSION['id'])?'true':'false'; ?>) {
                 cart.push(item)
                 $.ajax({
                     type: 'POST',
                     url: 'http://localhost/ElectronicEcommerce/cart/addCart',
                     data:  "cartdata="+JSON.stringify(cart) 
-                    })
-                    .done(function (response) {
-                        console.log('hhaha');
-                    })
-                    .fail(function () {
-                       console.log('dss');
-                    })   
-            
-    } else {
-      
+                })
+                .done(function (response) {
+                    console.log('hhaha');
+                })
+                .fail(function () {
+                   console.log('dss');
+                })      
+          } else {
                  if(JSON.parse(localStorage.getItem('cart')) === null){
                      localStorage.setItem("cart",JSON.stringify(cart));
-                 }else{
+                  }else{
                      const localItems = JSON.parse(localStorage.getItem("cart"));
                      localItems.map(data=>{
                          if(item.pro_id == data.pro_id){
@@ -149,12 +170,115 @@
                      var mx= JSON.parse(localStorage.getItem('cart'))
                      console.log('fds',mx)
                   }
-                cart = [];
-              
+                   cart = [];
                 const iconShoppingP = document.querySelector('.iconShopping p');
-        var cartdata = JSON.parse(localStorage.getItem('cart'))
-        iconShoppingP.innerHTML = cartdata.length;
-              }
+                var cartdata = JSON.parse(localStorage.getItem('cart'))
+                iconShoppingP.innerHTML = cartdata.length;
+          }
 
-            }) })}
+      }) 
+      $('.addTocompare').click(function (e) {
+          let compare = [];
+          var empid = $(this).attr('id');
+          let item = {
+                   pro_id:empid,
+                   pro_img:e.target.parentElement.parentElement.children[0].src,
+                   pro_name:e.target.parentElement.parentElement.children[1].children[0].textContent,
+                   total_price:e.target.parentElement.parentElement.children[1].children[1].textContent,
+                   catgory:    e.target.parentElement.parentElement.children[1].children[2].textContent,
+                   quentity:1
+                  };
+          console.log(item)
+          if (<?php echo isset($_SESSION['id'])?'true':'false'; ?>) {
+            compare.push(item)
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost/ElectronicEcommerce/compare/addCompare',
+                    data:  "comparedata="+JSON.stringify(compare) 
+                })
+                .done(function (response) {
+                    console.log('hhaha');
+                })
+                .fail(function () {
+                   console.log('dss');
+                })      
+          } else {
+                 if(JSON.parse(localStorage.getItem('compare')) === null){
+                     localStorage.setItem("compare",JSON.stringify(compare));
+                  }else{
+                     const localItems = JSON.parse(localStorage.getItem("compare"));
+                     localItems.map(data=>{
+                         if(item.pro_id == data.pro_id){
+                             item.quentity = data.quentity + 1;
+                             
+                         }else{
+                          compare.push(data);
+                         }
+                         localStorage.setItem("compare",JSON.stringify(compare));
+                     });
+                     compare.push(item);
+                     localStorage.setItem('compare',JSON.stringify(compare));
+                     var mx= JSON.parse(localStorage.getItem('compare'))
+                     console.log('fds',mx)
+                  }
+                  compare = [];
+                const iconShoppingP = document.querySelector('.iconShopping p');
+                var comparedata = JSON.parse(localStorage.getItem('compare'))
+                iconShoppingP.innerHTML = comparedata.length;
+          }
+
+      }) 
+      $('.addTowish').click(function (e) {
+          let cart = [];
+          var empid = $(this).attr('id');
+          let item = {
+                   pro_id:empid,
+                   pro_img:e.target.parentElement.parentElement.children[0].src,
+                   pro_name:e.target.parentElement.parentElement.children[1].children[0].textContent,
+                   total_price:e.target.parentElement.parentElement.children[1].children[1].textContent,
+                   catgory:    e.target.parentElement.parentElement.children[1].children[2].textContent,
+                   quentity:1
+                  };
+          console.log(item)
+          if (<?php echo isset($_SESSION['id'])?'true':'false'; ?>) {
+                cart.push(item)
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost/ElectronicEcommerce/wishlist/addtoWishlist',
+                    data:  "wishlistdata="+JSON.stringify(cart) 
+                })
+                .done(function (response) {
+                    console.log('hhaha');
+                })
+                .fail(function () {
+                   console.log('dss');
+                })      
+          } else {
+                 if(JSON.parse(localStorage.getItem('wishlist')) === null){
+                     localStorage.setItem("wishlist",JSON.stringify(cart));
+                  }else{
+                     const localItems = JSON.parse(localStorage.getItem("wishlist"));
+                     localItems.map(data=>{
+                         if(item.pro_id == data.pro_id){
+                             item.quentity = data.quentity + 1;
+                             
+                         }else{
+                             cart.push(data);
+                         }
+                         localStorage.setItem("wishlist",JSON.stringify(cart));
+                     });
+                     cart.push(item);
+                     localStorage.setItem('wishlist',JSON.stringify(cart));
+                     var mx= JSON.parse(localStorage.getItem('wishlist'))
+                     console.log('fds',mx)
+                  }
+                   cart = [];
+                const iconShoppingP = document.querySelector('.iconShopping p');
+                var cartdata = JSON.parse(localStorage.getItem('wishlist'))
+                iconShoppingP.innerHTML = cartdata.length;
+          }
+
+      }) 
+    })
+  }
     </script>
