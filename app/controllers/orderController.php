@@ -5,12 +5,17 @@ use coreAppNS\baseFunctions;
 class orderController extends Controller{
 public $controller;
 public $model;
+public $Cartmodel;
+public $paymentmodel;
+
 
 
     function __construct($fun='order'){
 
         $this->controller=new Controller();
         $this->model=$this->controller->model_object->create_model('order');
+        $this->Cartmodel=$this->controller->model_object->create_model('cart');
+        $this->paymentmodel=$this->controller->model_object->create_model('payment');
         $this->$fun();    
        }
 
@@ -22,70 +27,93 @@ public $model;
 
        
        
-function addorder(){
-    $_SESSION['user_id']="4e8f4455-1163-11eb-9632-f81654";
-   $_SESSION['total_price']=55654;
-    if(isset($_SESSION['user_id']))
+ function addorder(){
+    if(isset($_SESSION['id']))
     {
-        $order_details ='';
-        $cart_detail=$this->model->getAllcartData($_SESSION['user_id']); 
-        if($cart_detail>0)
+    
+    $user_id= $_SESSION['id'];
+    $order_details = null;
+        $cart_detail=$this->model->getAllcartData($user_id); 
+        if(count($cart_detail)>0)
         {
-                $total= $_SESSION['total_price'];
-             
+         
             //print_r($cart_detail);
-        $uuid=baseFunctions::uuid();
-        $_POST['order_id']= $uuid; 
-        $_POST['start_date']=date('Y-m-d H:i:s');
-        $_POST['total_price']  =$total; 
-        $data = array(
+           $uuid=baseFunctions::uuid();
+           $_POST['order_id']= $uuid; 
+           $_POST['start_date']=date('Y-m-d H:i:s');
+         
+           $data = array(
             'order_id' =>"'".$_POST['order_id']."'",
             'start_date' =>"'".$_POST['start_date']."'",
-            'total_price' =>"'".$_POST['total_price']."'"
-                   
+                
             );
-
+          //  echo 'hii order';
             $result=$this->model->addordder($data);
-
-           //print_r($cart_detail);    
-                   if($result)
-{         
-    echo "<script type='text/javascript'>window.location.href='http://localhost/ElectronicEcommerce/cart';</script>";
-
-}
-else{
-
-    foreach( $cart_detail as $cart){
-        $pro_id=$cart->pro_id;
-        $total_price=$cart->total_price;
-        $quentity=$cart->quentity;
-        $order_id= $_POST['order_id'];
-        $uuid=baseFunctions::uuid();
-        $_POST['details_id']= $uuid; 
-        $data1=array(
-            'details_id' =>"'".$_POST['details_id']."'",
-            'pro_id' =>"'".$pro_id."'",
-            'quentity' =>"'". $quentity."'",
-            'total_price' =>"'". $total_price."'",
-            'order_id' =>"'". $order_id."'"
-                   
-        );
-
-        $order_details=$this->model->orederdetails($data1);
+           // echo '<br> ahaaa', $result;
+             //print_r($cart_detail);    
+            if($result!='done'){    
+                $myObj =array("faildaddedtoOrder");
+                $res=json_encode($myObj);;
+        
+                 echo $res;
+              //echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/cart';</script>";
+            }else{
+                Session::set('order_id',$_POST['order_id']);
+                
+               foreach( $cart_detail as $cart){
+                $_REQUEST['cart_id']=$cart->cart_id;
+                 $pro_id=$cart->pro_id;
+                 $total_price=$cart->total_price;
+                 $quentity=$cart->quentity;
+                 $order_id= $_POST['order_id'];
+                 $uuid=baseFunctions::uuid();
+                 $_POST['details_id']= $uuid; 
+                 $data1=array(
+                'details_id' =>"'".$_POST['details_id']."'",
+                'pro_id' =>"'".$pro_id."'",
+                'quentity' =>"'". $quentity."'",
+                'total_price' =>"'". $total_price."'",
+                'order_id' =>"'". $order_id."'"
+                       
+                 );
+                 $order_details=$this->model->orederdetails($data1);
+                 
+                 if( $order_details== 'done')
+                 $this->Cartmodel->deleteCartItem();
+              }
+              //  echo $order_details;
+            if( $order_details=='done'){
+                //$_SESSION['total_price']=55654;
+              // $total= $_SESSION['total_price'];
+              $totalPrice =  $this->model->orderTotalPrice();
+                $items=array(
+                  'total_price' =>"'".$totalPrice[0]->total."'"
+                );
+                $result1=$this->paymentmodel->updatestatus($items);
+                if($result1== 'done'){
+                //   $this->controller->view_object->create_view('payment', $items); 
+                $myObj =array("gotopayment");
+                $res=json_encode($myObj);;
+        
+                 echo $res;     
+                }
+            }
+          }
+        }
+        else{
+            $myObj =array("nothingtoadd");
+            $res=json_encode($myObj);;
+    
+             echo $res;
+        }
     }
-    if(!$order_details)
-{
-    $items=array(
-       'order_id'=>$_POST['order_id'],);
-       $this->controller->view_object->create_view('payment', $items);    
-}
+    else{
+        $myObj =array("notlogedin");
+        $result=json_encode($myObj);;
 
-}       
-} }
-       else{
-        echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/user/login/';</script>";
-       }
+         echo $result;
     }
+ }
 }
 
 

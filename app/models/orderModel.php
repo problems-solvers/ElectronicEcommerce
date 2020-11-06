@@ -8,10 +8,10 @@ class orderModel extends Model {
     
 
     function __construct(){
-        $this->db=new DB();
    }
   
     function  getordder(){
+        $this->db=new DB();
         $id=$_SESSION['user_id'];
         $tbls=array("ordder");
         return  $this->db
@@ -25,22 +25,40 @@ class orderModel extends Model {
              
     }
     function  addordder($data){
-     
+        $this->db=new DB();
         $tbls=array("orders");
-        
-        $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
-            
+        return $this->db->cols($data)->table($tbls)->insert()->execute();
     }
     function  orederdetails($data){
+        $this->db=new DB();
+     
         $tbls=array("oreder_details");
-        $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
+        
+        return $this->db->cols($data)->table($tbls)->insert()->execute();
+        
+            
+    }
+    function  orderTotalPrice(){
+        $this->db=new DB();
+        $table=array("oreder_details");
+        $col=array("sum(total_price) as total");
+        $order_id=Session::get('order_id');
+       $result= $this->db->cols($col)
+       ->table($table)
+       ->where("order_id","=","'".$order_id."'")
+       ->get()
+       ->execute()
+       ->fetch();
+return $result;
             
     }
     function  getAllcartData($id){
+        $this->db=new DB();
         $table=array("cart");
        $result= $this->db->cols()
        ->table($table)
        ->where("user_id","=","'".$id."'")
+       ->where("type","=","1")
        ->get()
        ->execute()
        ->fetch();
@@ -48,7 +66,8 @@ return $result;
     }
    
 function update($data){
-        $tbls=array('ordder');
+    $this->db=new DB();
+    $tbls=array('ordder');
         $id=$_REQUEST['ord_id'];
         $result=$this->db->clos($data)->table($tbls)->where("ord_id","=",$id)->update()-> execute();
 }

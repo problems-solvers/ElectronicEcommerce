@@ -20,111 +20,13 @@
             <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
-
+<link rel="stylesheet" href="/ElectronicEcommerce/app/assets/libs/css/customerStyle.css">
+<link rel="stylesheet" href="/ElectronicEcommerce/app/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
             <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-            <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/libs/css/customerStyle.css">
 
+            <!-- <link rel="stylesheet" type="text/css" href="app/assets/vendor/datatables/css/dataTables.bootstrap4.css">
+            <link rel="stylesheet" href="app/assets/vendor/summernote/css/summernote-bs4.css"> -->
             <title>ECOMMERCE Site</title>
-
-
-            <style>
-              
-div#loader{
-position:absolute;
-top:calc(50% - 12px);
-width:100%;
-text-align:center;
-}
-
-div#loader > span{
-font-family:'consolas';
-font-soize:25px;
-display:inline-block;
-transform:scale(1.5);
-letter-spacing:10px;
-animation:spin 02s linear infinite;
-transition:all 0.3s ease;
-opacity:1;
-color:#fff;
-}
-
-div#loader.clear{
-  opacity:0;
-}
-
-div#loader > span:nth-child(2){
-animation-delay:0.1s;
-}
-
-div#loader > span:nth-child(3){
-animation-delay:0.2s;
-}
-
-div#loader > span:nth-child(4){
-animation-delay:0.3s;
-}
-
-div#loader > span:nth-child(5){
-animation-delay:0.4s;
-}
-
-div#loader > span:nth-child(6){
-animation-delay:0.5s;
-}
-
-div#loader > span:nth-child(7){
-animation-delay:0.6s;
-}
-
-div#loader > span:nth-child(8){
-animation-delay:0.7s;
-}
-
-div#loader > span:nth-child(9){
-animation-delay:0.8s;
-}
-
-
-@keyframes spin{
-50%{
-transform:scaleY(1);
-opacity:0;
-}
-}
-
-.unfold-box {
-  background: #714674;
-  -webkit-transition: all 1s cubic-bezier(0.680, 0, 0.265, 1); /* older webkit */
--webkit-transition: all 1s cubic-bezier(0.680, -2.550, 0.265, 3.550); 
-   -moz-transition: all 1s cubic-bezier(0.680, -2.550, 0.265, 3.550); 
-     -o-transition: all 1s cubic-bezier(0.680, -2.550, 0.265, 3.550); 
-        transition: all 1s cubic-bezier(0.680, -2.550, 0.265, 3.550); /* easeInOutBack */
- box-sizing: border-box;
-  transform: scale(1);
-  opacity: 1;
-  display: inline-block;
-  float: left;
-}
-
-#unfold-block {
-  height: 100%;
-  width: 100vw;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  transition: all 0.5s ease;
-}
-
-.unfold-box.clear {
-  transform: scale(0);
-  opacity: 0;
-}
-
-#unfold-block.clear {
-  background: transparent;
-}
-
-</style>
 
         </head>
         <?php 
@@ -132,7 +34,6 @@ $_SESSION['redirect']=$_SERVER['REQUEST_URI'];
 
 ?>
 <body>
-<div>
  <div id="CustTemplate">
   <nav class="navbar navbar-expand-lg navbar-dark ">
   <a class="navbar-brand" href="#">  <img src="/ElectronicEcommerce/app/assets/images/login_store_logos-1.png" class="float-left rounded-circle" style="width:70px; height:50px;"></a>
@@ -145,10 +46,16 @@ $_SESSION['redirect']=$_SERVER['REQUEST_URI'];
       <li class="nav-item active">
         <a class="nav-link" href="http://localhost/ElectronicEcommerce/">Home<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://localhost/ElectronicEcommerce/categories/">Categories</a>
-    
-      </li>
+      <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
+                                <ul class="dropdown-menu" id="allCategories">
+                                <!-- <li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/categories" id="parent">All Categories</a></li>
+              
+      <li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/categories/show?action=get&cat_id='.$row->cat_id.'">'.$row->cat_name.'</a></li>-->
+
+  
+                                </ul>
+                            </li> 
       <li class="nav-item">
         <a class="nav-link" href="#">Offers</a>
       </li>
@@ -203,5 +110,27 @@ $_SESSION['redirect']=$_SERVER['REQUEST_URI'];
     </ul>
   </div>
 </nav>
+<script>
+  
+  // window.onload = function(){
+  // $(document).ready(function(){
+  //   console.log('hi')
+  //      $.ajax({
+  //                   type: 'POST',
+  //                   url: 'http://localhost/ElectronicEcommerce/home/getCategories',
+  //                   data: {cart_id:cart_id }
+  //                   })
+  //                   .done(function (response) {
+  //                     console.log(response)
+  //                     ('#allCategories').val()
+  //                   })
+  //                   .fail(function () {
+                     
+  //                   })   
 
-<select class=" my-2 mx-2  cloudtranslation-selection" style="width: 100px;"></select>
+
+  // })
+  // }
+
+</script>
+<!-- <select class=" my-2 mx-2  cloudtranslation-selection" style="width: 100px;"></select> -->
