@@ -62,8 +62,8 @@ echo '<a href="http://localhost/ElectronicEcommerce/user/login">Log In</a>';
 
 ?>
 
-  
-</div>
+
+    </div>
 </div>
 
 
