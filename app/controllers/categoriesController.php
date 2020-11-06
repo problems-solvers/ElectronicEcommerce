@@ -71,11 +71,19 @@ public $cat_model;
     }
 
     function show(){
+      if(isset($_GET['cat_id'])){
       echo $_GET['cat_id'];
       $items=array(
         'categories'=>$this->cat_model->getadd(),
-   );
+     );
      $this->controller->view_object->create_view('categories',$items);
+     }
+     else{
+      $featured=array(
+         'categories'=>$this->product_model->getAllProCatData(),
+      );
+      $this->controller->view_object->create_view('categories',$featured);
+     }
    }
     
     //    function index(){

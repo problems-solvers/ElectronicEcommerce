@@ -2,29 +2,29 @@
 
 <footer id="footer">
     <div class="main-footer text-center ">
-    <div class="container">
+    <div class="container-flude">
     <div class="row">
       
-    <div class="col-xs-12 col-sm-6 col-md-4 text-center mt-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3  text-center mt-4">
     <img src="/ElectronicEcommerce/app/assets/images/login_store_logos-1.png"
                     style="width:100px; height:100px;" class="mx-auto d-block ">
            
     </div>
     
-    <div class="col-xs-12 col-sm-6 col-md-4  text-center mt-4">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 text-center mt-4">
     <div class="widget no-box">
     <div class="d-inline-block text-center">
-                    <ul class="list-unstyled mx-auto text-light align-items-center  my-0 col-12">
-                        <li><a href="http://localhost/ElectronicEcommerce/whoare/" class="text-white">About Us</a></li>
-                        <li><a href="http://localhost/ElectronicEcommerce/contact/" class="text-white">Contact Us</a></li>
-                    </ul>
-</div>
-<div class="d-inline-block text-center">
-                    <ul class="list-unstyled mx-auto text-light align-items-center  my-0 list-inline">
-                        <li><a href="#" class="text-white">Team Of Usage</a></li>
-                        <li><a href="#" class="text-white">Privacy and Policy</a></li>
-                    </ul>
-                </div>
+       <ul class="list-unstyled mx-auto text-light align-items-center  my-0 mx-2 col-12">
+           <li class="my-2"><a href="http://localhost/ElectronicEcommerce/whoare/" class="text-white  ">About Us</a></li>
+           <li class="my-2"><a href="http://localhost/ElectronicEcommerce/contact/" class="text-white  ">Contact Us</a></li>
+       </ul>
+   </div>
+   <div class="d-inline-block text-center">
+      <ul class="list-unstyled mx-auto text-light align-items-center  my-0 mx-2  list-inline">
+          <li class="my-2"><a href="#" class="text-white">Team Of Usage</a></li>
+          <li class="my-2"><a href="#" class="text-white">Privacy and Policy</a></li>
+      </ul>
+   </div>
     </div>
     </div>
     
@@ -100,7 +100,7 @@
                     })
                     .done(function (response) {
                       var x=JSON.parse(response);
-                      var m='<li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/categories" id="parent">All Categories</a></li>';
+                      var m='<li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/categories/show" id="parent">All Categories</a></li>';
                       x.forEach(element => {
                       
                         
@@ -118,7 +118,6 @@
 
      
      //text cut
-     window.onload = function(){
      text_truncate = function(str, length, ending) {
       if (length == null) {
         length = 100;
@@ -133,7 +132,7 @@
       }
     };
     const titles = document.getElementsByClassName('card-title')
-    console.log(titles)
+  
     for(i=0;i<titles.length; i++ ){
      x= titles[i].innerText
      titles[i].innerText=text_truncate(x,16)
@@ -299,8 +298,9 @@
           }
 
       }) 
+      
     })
-  }
+  
 
 </script>
 

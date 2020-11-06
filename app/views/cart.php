@@ -35,7 +35,7 @@ if(isset($_SESSION['id'])){
 <script>
 //adding cartbox data in table
         //show item in cart
-        function loadData(){
+      function loadData(){
           console.log(' i am here rererere')
           let tableData = '';
           const cartBox = document.querySelector('.cartBox');
@@ -80,13 +80,13 @@ if(isset($_SESSION['id'])){
           }
         }
         cardBoxTable.innerHTML = tableData;
-          }
+      }
       window.onload = function(){
-          
+          console.log('gg')
           loadData();
       
-        $(document).ready(function() {$(document).delegate('.deletefromCart', 'click', function()
-{
+        $(document).ready(function() {
+          $(document).delegate('.deletefromCart', 'click', function(){
             var cart_id = $(this).attr('id');
             var pro_id =  $(this).attr('pro_id');
             console.log(pro_id)
@@ -126,13 +126,9 @@ if(isset($_SESSION['id'])){
                      console.log(localItems,found,'fds',mx)
               }
  
-});
+          });
 
-
-          /*$('.deletefromCart').click(function (e) {
-            
-            })*/
-            $('.addqty').click(function (e) {
+         $('.addqty').click(function (e) {
             console.log("empid")
               let cart = [];
             var cart_id = $(this).attr('id');
@@ -191,8 +187,8 @@ if(isset($_SESSION['id'])){
               //   iconShoppingP.innerHTML = cartdata.length;
               // }
               }
-            }) 
-            $('.decreseqty').click(function (e) {
+         }) 
+        $('.decreseqty').click(function (e) {
             console.log("empid")
               let cart = [];
             var cart_id = $(this).attr('id');
@@ -254,8 +250,8 @@ if(isset($_SESSION['id'])){
               //   iconShoppingP.innerHTML = cartdata.length;
               // }
               }
-            })
-            $('#checkoutbtn').click(function (e) {
+        })
+        $('#checkoutbtn').click(function (e) {
           $.ajax({
                     type: 'POST',
                     url: 'http://localhost/ElectronicEcommerce/order/addorder',
@@ -285,7 +281,7 @@ if(isset($_SESSION['id'])){
                     .fail(function () {
                         console.log('dss');
                     })  
-          })
+        })
             
           })
          
