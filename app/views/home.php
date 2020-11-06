@@ -1,6 +1,6 @@
+<style>
 
-
-
+</style>
 <div id="carouselExampleIndicators" class=" col-md-8 col-sm-12 col-xs-12 mx-auto carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -27,8 +27,8 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-<div class="mx-auto  my-2 py-2 col-md-4 col-sm-12 col-xs-12 text-center text-light" style="background-color:#CC8B79">
-  <h3>This is a title</h3>
+<div class="mx-auto  my-2 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
+  <h2>This is a title</h2>
 </div>
 <div id="owl-one" class=" owl-carousel owl-theme mx-auto">
 <?php  $rows=$data['Recent'];
@@ -55,9 +55,13 @@
   
 </div>
 
-<div class="row mx-auto my-2" style="height:300px;">
-    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> <img class="card-img-top "  height="50%" src="http://placehold.it/64x64" alt="Card image cap"></div>
-    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto ">  <img class="card-img-top" height="50%" src="http://placehold.it/64x64" alt="Card image cap"></div>
+<div class="row mx-auto my-2 show" style="height:300px;">
+    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> <img class="card-img-top "  height="50%" src="http://placehold.it/64x64" alt="Card image cap">
+    <button class="btn btn-sm">SHOP NOW</button>
+  </div>
+    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto ">  <img class="card-img-top" height="50%" src="http://placehold.it/64x64" alt="Card image cap">
+    <button class="btn btn-sm">SHOP NOW</button>
+  </div>
 </div>
 <div class="mx-auto my-2 py-2 col-md-4 col-sm-12 col-xs-12 text-center text-light" style="background-color:#CC8B79">
   <h3>This is a title</h3>
@@ -88,10 +92,18 @@
   
 </div>
 
-<div class="row mx-auto my-2" style="height:300px;">
-    <div class="col-md-3 col-sm-12 col-xs-12 mx-auto "> <img class="card-img-top "  height="50%" src="http://placehold.it/64x64" alt="Card image cap"></div>
-    <div class="col-md-3 col-sm-12 col-xs-12 mx-auto ">  <img class="card-img-top" height="50%" src="http://placehold.it/64x64" alt="Card image cap"></div>
-    <div class="col-md-3 col-sm-12 col-xs-12 mx-auto ">  <img class="card-img-top" height="50%" src="http://placehold.it/64x64" alt="Card image cap"></div>
+<div class="row mx-auto my-2 show" style="height:300px;">
+    <div class="col-md-3 col-sm-12 col-xs-12 mx-auto "> <img class="card-img-top "  height="50%" src="http://placehold.it/64x64" alt="Card image cap">
+    <button class="btn btn-sm">SHOP NOW</button>
+
+  </div>
+    <div class="col-md-3 col-sm-12 col-xs-12 mx-auto ">  <img class="card-img-top" height="50%" src="http://placehold.it/64x64" alt="Card image cap">
+    <button class="btn btn-sm">SHOP NOW</button>
+
+  </div>
+    <div class="col-md-3 col-sm-12 col-xs-12 mx-auto ">  <img class="card-img-top" height="50%" src="http://placehold.it/64x64" alt="Card image cap">
+    <button class="btn btn-sm">SHOP NOW</button>
+</div>
 </div>
 
 
