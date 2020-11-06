@@ -131,12 +131,12 @@ echo '<li class="nav-item text-dark"><a class="nav-link" href="http://localhost/
 
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Who we are</a>
+                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/home/whoare">Who we are</a>
 
                         </li>
                        
                         <li class="nav-item">
-                        <a class="nav-link" href="#">contact us</a>
+                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/home/connect">contact us</a>
  </li>
                     </ul>
                 </div>
