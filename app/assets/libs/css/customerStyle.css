@@ -704,7 +704,6 @@ ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: cent
 
 .show .btn {
   position: absolute;
-  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color:#714674;

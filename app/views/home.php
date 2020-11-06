@@ -36,7 +36,7 @@
 <div class="item mx-2">
 
  <div class="card productCard mx-auto " >
-  <img class="card-img-top" src="'.$row->main_img.'" alt="Card image cap">
+  <img class="card-img-top" src="../'.$row->main_img.'" alt="Card image cap">
   
   <div class="card-body py-1">
     <h5 class="card-title">'.$row->pro_name.'</h5>
@@ -56,11 +56,41 @@
 </div>
 
 <div class="row mx-auto my-2 show" style="height:300px;">
-    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> <img class="card-img-top "  height="50%" src="http://placehold.it/64x64" alt="Card image cap">
-    <button class="btn btn-sm">SHOP NOW</button>
+    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> 
+      <?php
+ $rows=$data['adver'];
+ $img='';
+ foreach ($rows as $row) {
+   if($row ->adver_namber==1)
+   $img=$row->adver_img;}
+
+   if(empty($img))
+   {
+     echo '<img class="card-img-top "  height="250px" src="http://placehold.it/64x64" alt="Card image cap">';
+   }
+   else 
+   echo '<img class="card-img-top "  height="250px" src="'.$img.'" alt="Card image cap">';
+
+      ?>
+    <button class="btn btn-sm" style="top: 240px;">SHOP NOW</button>
   </div>
-    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto ">  <img class="card-img-top" height="50%" src="http://placehold.it/64x64" alt="Card image cap">
-    <button class="btn btn-sm">SHOP NOW</button>
+    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto ">  
+    <?php
+ $rows=$data['adver'];
+ $img='';
+ foreach ($rows as $row) {
+   if($row ->adver_namber==2)
+   $img=$row->adver_img;}
+
+   if(empty($img))
+   {
+     echo '<img class="card-img-top "  height="250px" src="http://placehold.it/64x64" alt="Card image cap">';
+   }
+   else 
+   echo '<img class="card-img-top "  height="250px" src="'.$img.'" alt="Card image cap">';
+
+      ?>
+    <button class="btn btn-sm" style="top: 240px;">SHOP NOW</button>
   </div>
 </div>
 <div class="mx-auto  my-2 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
@@ -73,7 +103,7 @@
       <div class="item mx-2">
 
       <div class="card productCard mx-auto " >
-       <img class="card-img-top" src="'.$row->main_img.'" alt="Card image cap">
+       <img class="card-img-top" src="../'.$row->main_img.'" alt="Card image cap">
        
        <div class="card-body py-1">
          <h5 class="card-title">'.$row->pro_name.'</h5>
@@ -93,16 +123,59 @@
 </div>
 
 <div class="row mx-auto my-2 show" style="height:300px;">
-    <div class="col-md-3 col-sm-12 col-xs-12 mx-auto "> <img class="card-img-top "  height="50%" src="http://placehold.it/64x64" alt="Card image cap">
-    <button class="btn btn-sm">SHOP NOW</button>
+    <div class="col-md-3 col-sm-12 col-xs-12 mx-auto ">  <?php
+ $rows=$data['adver'];
+ $img='';
+ foreach ($rows as $row) {
+   if($row ->adver_namber==3)
+   $img=$row->adver_img;}
+
+   if(empty($img))
+   {
+     echo '<img class="card-img-top " height="250px" src="http://placehold.it/64x64" alt="Card image cap">';
+   }
+   else 
+   echo '<img class="card-img-top "  height="250px" src="'.$img.'" alt="Card image cap">';
+
+      ?>
+    <button class="btn btn-sm" style="top:240px;">SHOP NOW</button>
 
   </div>
-    <div class="col-md-3 col-sm-12 col-xs-12 mx-auto ">  <img class="card-img-top" height="50%" src="http://placehold.it/64x64" alt="Card image cap">
-    <button class="btn btn-sm">SHOP NOW</button>
+    <div class="col-md-3 col-sm-12 col-xs-12 mx-auto "> 
+    <?php
+ $rows=$data['adver'];
+ $img='';
+ foreach ($rows as $row) {
+   if($row ->adver_namber==4)
+   $img=$row->adver_img;}
 
+   if(empty($img))
+   {
+     echo '<img class="card-img-top "  height="250px" src="http://placehold.it/64x64" alt="Card image cap">';
+   }
+   else 
+   echo '<img class="card-img-top "  height="250px" src="'.$img.'" alt="Card image cap">';
+
+      ?>
+    <button class="btn btn-sm" style="top: 240px;">SHOP NOW</button>
   </div>
-    <div class="col-md-3 col-sm-12 col-xs-12 mx-auto ">  <img class="card-img-top" height="50%" src="http://placehold.it/64x64" alt="Card image cap">
-    <button class="btn btn-sm">SHOP NOW</button>
+    <div class="col-md-3 col-sm-12 col-xs-12 mx-auto ">
+    <?php
+ $rows=$data['adver'];
+ $img='';
+ foreach ($rows as $row) {
+   if($row ->adver_namber==5)
+   $img=$row->adver_img;}
+
+   if(empty($img))
+   {
+     echo '<img class="card-img-top "  height="250px" src="http://placehold.it/64x64" alt="Card image cap">';
+   }
+   else 
+   echo '<img class="card-img-top "  height="250px" src="'.$img.'" alt="Card image cap">';
+
+      ?>
+    <button class="btn btn-sm" style="top: 240px;">SHOP NOW</button>
 </div>
 </div>
 

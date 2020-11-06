@@ -19,9 +19,12 @@ public $model;
        function home(){
 
         $items=array(
+            
             'Recent'=> $this->model->getRecentAddData(),
             'Featured'=>$this->model->getAllProCatData(),
-            'categories'=>$this->cat->getAllCatData()
+            'adver'=>$this->model->getAllAdver(),
+            'categories'=>$this->cat->getAllCatData(),
+            
          ); 
        
          
