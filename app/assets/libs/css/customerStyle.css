@@ -4,7 +4,6 @@ Top Header
 -------------------------*/
 
 body{
-   background-color:#F6EBFC !important;
    font-family: montserrat !important ;
    overflow-x:hidden;
    overflow-y:scroll !important;
@@ -14,13 +13,15 @@ body{
   min-height: 100vh;
 }
 #CustTemplate nav{
-   background-color: #714674 !important;
-   border-bottom:3px solid #ff8d1e;
+   background-color: #836691 !important;
+   border-bottom:3px solid #F37C21;
 }
 .productCard{
   width: 13rem; 
   height:350px;
   padding:5px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px #8888;
 
 }
 .productCardbtns{
@@ -51,7 +52,7 @@ content: '';
 width: 100%;
 height: 80%;
 position: absolute;
-background: linear-gradient(to top, #CC8B79, #714674);
+background: linear-gradient(to top, #E1B199, #836691);
 z-index: -1;
 
 transform: skew(0deg, -5deg)
@@ -63,7 +64,7 @@ transform: skew(0deg, -5deg)
   overflow-x:hidden; 
 }
 #CustTemplate #footer .mainfooter{
-  background-color: #714674 !important;
+  background-color: #836691 !important;
   color:#fff;
 }
 #CustTemplate #footer .mainfooter a{
@@ -71,7 +72,7 @@ transform: skew(0deg, -5deg)
   text-decoration: none;
 }
 #CustTemplate #footer .copyright, .productCardbtns a , .productCardbtnsV  div a{
-  color:#714674 !important ;
+  color:#836691 !important ;
   text-decoration: none;
 content:'|'
 
@@ -110,7 +111,7 @@ padding-left: 20px;
 
  height: 400px;
 
- border:solid #641d6d;
+ border:solid #836691;
 background-color: #f6f4f7;
 
 
@@ -133,8 +134,8 @@ login&signup
  height: 30px;
  width:100%;
  border-radius: 4vh;
- background-color: #ee802f;
- border: 2px #ee802f solid;
+ background-color: #E1B199;
+ border: 2px #E1B199 solid;
  color: white;
 margin-right: -10%;
 }
@@ -143,7 +144,7 @@ margin-right: -10%;
  width:100%;
  border-radius: 4vh;
  background-color: whitesmoke;
- border: 2px #ee802f solid;
+ border: 2px #E1B199 solid;
  color: black;
 
 }
@@ -199,7 +200,7 @@ payment
 .action-button {
  width: 150px;
  background-color: white;
- border: 10px #ee802f solid;
+ border: 10px #E1B199 solid;
  color: black;
  font-weight: bold;
  border: 0 none;
@@ -214,7 +215,7 @@ payment
 #msform .action-button {
  width: 150px;
  background-color: whitesmoke;
- border: 2px #ee802f solid;
+ border: 2px #E1B199 solid;
  color: black;
  font-weight: bold;
  border: 0 none;
@@ -230,7 +231,7 @@ payment
  width: 150px;
  height: 27px;
  text-align: center;
- background: #f18f49;
+ background: #E1B199;
  color: white;
  border: 0 none;
  border-radius: 1px;
@@ -242,7 +243,7 @@ payment
 
 #msform .action-button:hover,
 #msform .action-button:focus {
- box-shadow: 0 0 0 2px white, 0 0 0 3px #ee802f;
+ box-shadow: 0 0 0 2px white, 0 0 0 3px #E1B199;
  border-radius: 20px;
 
 }
@@ -287,7 +288,7 @@ payment
  display: block;
  font-size: 10px;
  color: white;
- background: #ee802f;
+ background: #E1B199;
  border-radius: 3px;
  margin: 0 auto 5px auto;
 }
@@ -314,7 +315,7 @@ payment
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before,
 #progressbar li.active:after {
- background: #714674;
+ background: #836691;
  color: white;
 }
 /*-----------------------
@@ -528,7 +529,7 @@ However, delay the fade out process for 2.5 seconds */
   text-align:center;
 }
 .dropdown-content a:hover {
-  background-color:#714674;
+  background-color:#836691;
 }
 @keyframes spin {
  0% { transform: rotate(0deg); }
@@ -569,7 +570,7 @@ However, delay the fade out process for 2.5 seconds */
    border-radius: 0px;
    box-shadow: none;
    margin: 0px;
-   background: #641d6d;
+   background: #E1B199;
    box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1); }
    @media (min-width: 992px) {
 .submenu ul {
@@ -652,7 +653,7 @@ However, delay the fade out process for 2.5 seconds */
     text-align:center;
   }
   .dropdown-content a:hover {
-    background-color:#714674;
+    background-color:#836691;
   }
   
   
@@ -673,25 +674,27 @@ However, delay the fade out process for 2.5 seconds */
   justify-content: center;
   align-items: center;
   text-align: center;
-  color:#ff8d1e;
+  color:#514F62;
 
 }
 
 .titel:before,
 .titel:after {
   content: '';
-  border-top: 2px  dashed #ff8d1e; 
+  border-top: 2px  dashed #E1B199; 
   margin: 0 20px 0 0;
   flex: 1 0 20px;
 }
 
 /* Main Footer */
 footer{ position:sticky; }
-footer .main-footer{padding: 20px 0;background: #252525;}
+footer .main-footer{padding: 20px 0;
+  background: rgb(118,62,155);
+  background: linear-gradient(293deg, rgba(118,62,155,1) 0%, rgba(195,192,190,1) 82%, rgba(235,235,235,1) 100%);}
 .footer-copyright {padding: 5px 0;}
 ul.social-footer2 {	margin: 0;padding: 0;	width: auto;}
 ul.social-footer2 li {display: inline-block;padding: 0;}
-ul.social-footer2 li a:hover {background-color:#ff8d1e;}
+ul.social-footer2 li a:hover {background-color:#E1B199;}
 ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: center;}
 
 /*advertisment img */
@@ -704,9 +707,10 @@ ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: cent
 
 .show .btn {
   position: absolute;
+  bottom: -35PX;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color:#714674;
+  background-color:#836691;
   color: white;
   font-size: 15px;
   padding: 7px 0px;
@@ -716,7 +720,7 @@ ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: cent
 }
 
 .show .btn:hover {
-  background-color: #d426e0;
+  background-color: #E1B199;
 }
 /*contact us form */
 
