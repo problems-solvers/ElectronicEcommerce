@@ -32,11 +32,17 @@
 </div>
 <div id="owl-one" class=" owl-carousel owl-theme mx-auto">
 <?php  $rows=$data['Recent'];
-     foreach ($rows as $row) { echo ' 
+     foreach ($rows as $row) {
+      
+       echo ' 
+      
 <div class="item mx-2">
 
- <div class="card productCard mx-auto " >
-  <img class="card-img-top" src="../'.$row->main_img.'" alt="Card image cap">
+ <div class="card productCard mx-auto " >';
+ echo "<a  href='http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id=".$row->pro_id."' class='update'>
+ ";
+ echo'
+  <img class="card-img-top" src="../'.$row->main_img.'" alt="Card image cap"></a>
   
   <div class="card-body py-1">
     <h5 class="card-title">'.$row->pro_name.'</h5>
