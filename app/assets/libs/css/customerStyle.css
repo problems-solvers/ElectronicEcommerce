@@ -14,7 +14,8 @@ body{
   min-height: 100vh;
 }
 #CustTemplate nav{
-  background-color: #714674 !important;
+   background-color: #714674 !important;
+   border-bottom:3px solid #ff8d1e;
 }
 .productCard{
   width: 13rem; 
@@ -32,8 +33,6 @@ margin:5px 0;
   height:200px !important;
 }
 .productCardbtns{
-width:100%; 
-margin-top:-25px; 
 font-size:26px;
 }
 .productCardbtnsV div{
@@ -503,7 +502,6 @@ However, delay the fade out process for 2.5 seconds */
   outline: none;
   color: white;
   padding: 14px 20px;
-  background-color: inherit;
  
 } */
 /*
@@ -512,6 +510,26 @@ However, delay the fade out process for 2.5 seconds */
  100% { -webkit-transform: rotate(360deg); }
 }
 
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:#fff;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color:#000;
+  padding:5px 5px;
+  text-decoration: none;
+  display: block;
+  text-align:center;
+}
+.dropdown-content a:hover {
+  background-color:#714674;
+}
 @keyframes spin {
  0% { transform: rotate(0deg); }
  100% { transform: rotate(360deg); }
@@ -608,3 +626,62 @@ However, delay the fade out process for 2.5 seconds */
    margin-top: 0px; }
 
 
+.dropdown:hover .dropdown-content {
+  display: block !important;
+}
+
+/*dashed header*/
+
+ /*to do color of border dashed */
+h2 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color:#ff8d1e;
+
+}
+
+h2:before,
+h2:after {
+  content: '';
+  border-top: 3px  dashed #ff8d1e; 
+  margin: 0 20px 0 0;
+  flex: 1 0 20px;
+}
+
+/* Main Footer */
+footer{ position:sticky; }
+footer .main-footer{padding: 20px 0;background: #252525;}
+.footer-copyright {padding: 5px 0;}
+ul.social-footer2 {	margin: 0;padding: 0;	width: auto;}
+ul.social-footer2 li {display: inline-block;padding: 0;}
+ul.social-footer2 li a:hover {background-color:#ff8d1e;}
+ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: center;}
+
+/*advertisment img */
+.show {
+  position: relative;
+  width: 100%;
+}
+
+
+
+.show .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:#714674;
+  color: white;
+  font-size: 15px;
+  padding: 7px 0px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.show .btn:hover {
+  background-color: #d426e0;
+}
