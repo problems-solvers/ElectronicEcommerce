@@ -1,5 +1,8 @@
 <?php $rows=$data['product'];
+//to do pro imgs
 foreach($rows as $row){
+ 
+
   ?>
 <div class="container">
 
@@ -12,7 +15,7 @@ foreach($rows as $row){
                 <div class="gallery__hero" style="height:400px">
 
 
-                    <img src="../<?php echo $row->main_img ?>">
+                    <img src="../<?php echo $row->main_img ?>" width="100%">
                 </div>
                 <!--Gallery Hero-->
 
@@ -44,45 +47,31 @@ foreach( $imgs as $img){
                         <?php echo $row->pro_name;?>
                     </div>
 
-                    <div class="product-price-discount"><span>
+                    <div><h3 style="color:red;" >
                             <?php echo $row->pro_price;?>
-                        </span></div>
+                        </h3></div>
                 </div>
                 <div class="product-size border-bottom">
-                    <h3 class="d-inline-block">Categories : </h3>
-                    <div class="product-qty  d-inline-block">
-                        <div class="quantity  d-inline-block">
+                    <h3 class="d-inline-block mr-1">Categories :   </h3>
+                   
+                        <div class="quantity d-inline-block">
                             <?php echo $row->cat_name; ?>
-                        </div>
+                       
                     </div>
 
                 </div>
                 <div class="product-size border-bottom">
-                    <h3 class="d-inline-block"> <?php echo $row->tag_name; ?> : </h3>
-                    <div class="product-qty  d-inline-block">
+                    <h3 class="d-inline-block mr-1"> <?php echo $row->tag_name; ?> : </h3>
                         <div class="quantity  d-inline-block">
                             <?php echo $row->tag_data; ?>
-                        </div>
                     </div>
-
-                </div>
-
-
-
-            </div>
-            <div class="row productCardbtns mx-0 my-3">
-                <div class="mx-auto"> <a href="#"><i class="fas fa-heart"></i></a></div>
-                <div class="mx-auto"> <a href="#"><i class="fas fa-exchange-alt"></i></a></div>
-                <a href="#" title="add to cart"  style="color:#714674" class="attToCart fas fa-shopping-cart mx-auto"></a>
-           
-
-        </div>
-
-    </div>
-   
-        </div>
-    </div>
-    <div class="product-info-tabs">
+                    <div class="row productCardbtns mx-0 mt-2">
+  <a href="#" class="fas fa-heart addTowish mx-auto"></a>
+ 
+  <a href="#" ><i class="fas fa-exchange-alt"></i></a>
+  <a href="#" title="add to cart" id="'.$row->pro_id.'" class="attToCart fas fa-shopping-cart mx-auto"></a>
+  </div>
+                    <div class="product-info-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab"
@@ -94,13 +83,19 @@ foreach( $imgs as $img){
             <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
                 <?php echo $row->pro_details; ?>
             </div>
-            </div>
+
         </div>
     </div>
+
+                </div>
+             
+
+            </div>
+         
         </div>
 
     </div>
-   
+  
 </div>
 <?php
 }

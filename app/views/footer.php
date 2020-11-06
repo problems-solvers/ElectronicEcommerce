@@ -91,10 +91,218 @@
 <script src="/ElectronicEcommerce/app/assets/libs/js/jquery.easing.min.js"></script>
 <script src="/ElectronicEcommerce/app/assets/libs/js/CustomerScript.js"></script>
 
+<script>
+
+       $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost/ElectronicEcommerce/home/getCategories',
+                   
+                    })
+                    .done(function (response) {
+                      var x=JSON.parse(response);
+                      var m='<li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/categories" id="parent">All Categories</a></li>';
+                      x.forEach(element => {
+                      
+                        
+                        m+= '<li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/categories/show?action=get&cat_id='+element.cat_id+'">'+element.cat_name+'</a></li>';
+                      });
+                      const a = document.querySelector('#allCategories');
+                    a.innerHTML = m;
+                  //  s=  ('#allCategories').val()
+
+                    })
+                    .fail(function () {
+                     
+                    })   
 
 
+     
+     //text cut
+     window.onload = function(){
+     text_truncate = function(str, length, ending) {
+      if (length == null) {
+        length = 100;
+      }
+      if (ending == null) {
+        ending = '...';
+      }
+      if (str.length > length) {
+        return str.substring(0, length - ending.length) + ending;
+      } else {
+        return str;
+      }
+    };
+    const titles = document.getElementsByClassName('card-title')
+    console.log(titles)
+    for(i=0;i<titles.length; i++ ){
+     x= titles[i].innerText
+     titles[i].innerText=text_truncate(x,16)
+    }
+        //cart box
+      //  const iconShopping = document.querySelector('.iconShopping');
+        // const cartBox = document.querySelector('.cartBox');
+        // iconShopping.addEventListener("click",function(){
+        //     cartBox.classList.add('active');
+        // });
+    $(document).ready(function() {
+            console.log("empid")
+      $('.attToCart').click(function (e) {
+          let cart = [];
+          var empid = $(this).attr('id');
+          let item = {
+                   pro_id:empid,
+                   pro_img:e.target.parentElement.parentElement.children[0].src,
+                   pro_name:e.target.parentElement.parentElement.children[1].children[0].textContent,
+                   total_price:e.target.parentElement.parentElement.children[1].children[1].textContent,
+                   catgory:    e.target.parentElement.parentElement.children[1].children[2].textContent,
+                   quentity:1
+                  };
+          console.log(item)
+          if (<?php echo isset($_SESSION['id'])?'true':'false'; ?>) {
+                cart.push(item)
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost/ElectronicEcommerce/cart/addCart',
+                    data:  "cartdata="+JSON.stringify(cart) 
+                })
+                .done(function (response) {
+                    console.log('hhaha');
+                })
+                .fail(function () {
+                   console.log('dss');
+                })      
+          } else {
+                 if(JSON.parse(localStorage.getItem('cart')) === null){
+                     localStorage.setItem("cart",JSON.stringify(cart));
+                  }else{
+                     const localItems = JSON.parse(localStorage.getItem("cart"));
+                     localItems.map(data=>{
+                         if(item.pro_id == data.pro_id){
+                             item.quentity = data.quentity + 1;
+                             
+                         }else{
+                             cart.push(data);
+                         }
+                         localStorage.setItem("cart",JSON.stringify(cart));
+                     });
+                     cart.push(item);
+                     localStorage.setItem('cart',JSON.stringify(cart));
+                     var mx= JSON.parse(localStorage.getItem('cart'))
+                     console.log('fds',mx)
+                  }
+                   cart = [];
+                const iconShoppingP = document.querySelector('.iconShopping p');
+                var cartdata = JSON.parse(localStorage.getItem('cart'))
+                iconShoppingP.innerHTML = cartdata.length;
+          }
 
+      }) 
+      $('.addTocompare').click(function (e) {
+          let compare = [];
+          var empid = $(this).attr('id');
+          let item = {
+                   pro_id:empid,
+                   pro_img:e.target.parentElement.parentElement.children[0].src,
+                   pro_name:e.target.parentElement.parentElement.children[1].children[0].textContent,
+                   total_price:e.target.parentElement.parentElement.children[1].children[1].textContent,
+                   catgory:    e.target.parentElement.parentElement.children[1].children[2].textContent,
+                   quentity:1
+                  };
+          console.log(item)
+          if (<?php echo isset($_SESSION['id'])?'true':'false'; ?>) {
+            compare.push(item)
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost/ElectronicEcommerce/compare/addCompare',
+                    data:  "comparedata="+JSON.stringify(compare) 
+                })
+                .done(function (response) {
+                    console.log('hhaha');
+                })
+                .fail(function () {
+                   console.log('dss');
+                })      
+          } else {
+                 if(JSON.parse(localStorage.getItem('compare')) === null){
+                     localStorage.setItem("compare",JSON.stringify(compare));
+                  }else{
+                     const localItems = JSON.parse(localStorage.getItem("compare"));
+                     localItems.map(data=>{
+                         if(item.pro_id == data.pro_id){
+                             item.quentity = data.quentity + 1;
+                             
+                         }else{
+                          compare.push(data);
+                         }
+                         localStorage.setItem("compare",JSON.stringify(compare));
+                     });
+                     compare.push(item);
+                     localStorage.setItem('compare',JSON.stringify(compare));
+                     var mx= JSON.parse(localStorage.getItem('compare'))
+                     console.log('fds',mx)
+                  }
+                  compare = [];
+                const iconShoppingP = document.querySelector('.iconShopping p');
+                var comparedata = JSON.parse(localStorage.getItem('compare'))
+                iconShoppingP.innerHTML = comparedata.length;
+          }
 
+      }) 
+      $('.addTowish').click(function (e) {
+          let cart = [];
+          var empid = $(this).attr('id');
+          let item = {
+                   pro_id:empid,
+                   pro_img:e.target.parentElement.parentElement.children[0].src,
+                   pro_name:e.target.parentElement.parentElement.children[1].children[0].textContent,
+                   total_price:e.target.parentElement.parentElement.children[1].children[1].textContent,
+                   catgory:    e.target.parentElement.parentElement.children[1].children[2].textContent,
+                   quentity:1
+                  };
+          console.log(item)
+          if (<?php echo isset($_SESSION['id'])?'true':'false'; ?>) {
+                cart.push(item)
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost/ElectronicEcommerce/wishlist/addtoWishlist',
+                    data:  "wishlistdata="+JSON.stringify(cart) 
+                })
+                .done(function (response) {
+                    console.log('hhaha');
+                })
+                .fail(function () {
+                   console.log('dss');
+                })      
+          } else {
+                 if(JSON.parse(localStorage.getItem('wishlist')) === null){
+                     localStorage.setItem("wishlist",JSON.stringify(cart));
+                  }else{
+                     const localItems = JSON.parse(localStorage.getItem("wishlist"));
+                     localItems.map(data=>{
+                         if(item.pro_id == data.pro_id){
+                             item.quentity = data.quentity + 1;
+                             
+                         }else{
+                             cart.push(data);
+                         }
+                         localStorage.setItem("wishlist",JSON.stringify(cart));
+                     });
+                     cart.push(item);
+                     localStorage.setItem('wishlist',JSON.stringify(cart));
+                     var mx= JSON.parse(localStorage.getItem('wishlist'))
+                     console.log('fds',mx)
+                  }
+                   cart = [];
+                const iconShoppingP = document.querySelector('.iconShopping p');
+                var cartdata = JSON.parse(localStorage.getItem('wishlist'))
+                iconShoppingP.innerHTML = cartdata.length;
+          }
+
+      }) 
+    })
+  }
+
+</script>
 
 </body>
 

@@ -89,12 +89,27 @@
             <div class="input-group col-lg-6 col-md-4  col-sm-12 col-xs-12 mx-auto my-2 py-2  text-center">
 
 <div class="input-group-append   mx-auto my-2 py-2  text-center  ">
-<p> <button class="bt"    href="#" role="button"> submit </button></a></p>
+<p> <button class="bt"    href="#" role="button" onclick="myFunction()"> submit </button></a></p>
+
+      <!-- The actual snackbar -->
+      <div id="snackbar">Some text some message..</div>
 </div>
 </div>
         </div>
   
     <br>
 
+    <script>
 
+function myFunction() {
+    // Get the snackbar DIV
+    var x = document.getElementById("snackbar")
+
+    // Add the "show" class to DIV
+    x.className = "show";
+
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+</script>
  

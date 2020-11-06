@@ -18,24 +18,46 @@ class admin_dashboardModel extends Model{
        $result=  $this->db->cols()
        ->table($table)
        ->get()
-       ->where("is_active","=",1)
        ->execute()
        ->fetch();
        print_r($result);
 return $result;
     }
-
-
-//     function update(){
-
-       
-
-
-//     }
-//     function deleteData($id){
-//         $this->db->where("cat_id","=",$id)->delete("categories");
-
-//     }
+    
+    function Customer(){
+        
+        $table=array("user");
+        $col=array("count(user_id)");
+       $result=  $this->db->cols($col)
+       ->table($table)
+       ->get()
+       ->execute()
+       ->fetch();
+return $result;
+    }
+    function product(){
+        
+        $table=array("product");
+        $col=array("count(pro_id)");
+       $result=  $this->db->cols($col)
+       ->table($table)
+       ->get()
+       ->execute()
+       ->fetch();
+return $result;
+    }
+    function order(){
+        
+        $table=array("orders");
+        $col=array("count(order_id)");
+       $result= $this->db->cols($col)
+       ->table($table)
+       ->get()
+       ->execute()
+       ->fetch();
+return $result;
+print_r($result);
+    }
 }
 
 ?>

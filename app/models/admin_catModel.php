@@ -17,6 +17,7 @@ class admin_catModel extends Model{
        $result=  $this->db->cols()
        ->table($table)
        ->get()
+       ->orderBy("create_date","DESC")
        ->execute()
        ->fetch();
 return $result;
@@ -41,10 +42,23 @@ return $result;
     function  getAllTagsData(){
         $this->db=new DB();
 
-        $cols=array();
-        $table=array("tags");
+        $cols=array("tags.tag_type","tags.tag_id" ,"tags.tag_name","tag_details.tag_data");
+        $table=array("tag_details");
+       $result=  $this->db->cols($cols)
+       ->table($table)
+       ->innerjoin("tags","tag_details.tag_id","tags.tag_id")
+       ->get()
+       ->execute()
+       ->fetch();
+return $result;
+    }
+    function  catHeader(){
+        $this->db=new DB();
+
+        $table=array("categories");
        $result=  $this->db->cols()
        ->table($table)
+       ->where("parent","=","0")
        ->get()
        ->execute()
        ->fetch();
@@ -63,13 +77,20 @@ return $result;
     }
     function addTags($data){
         $this->db=new DB();
-
-        print_r($data);
          $tbls=array("tags");
          $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
  
              
      }
+     function addTagsDetails($data){
+        $this->db=new DB();
+
+         $tbls=array("tag_details");
+         $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
+ 
+             
+     }
+   
 //     function update(){
 
        

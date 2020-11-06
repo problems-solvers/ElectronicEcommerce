@@ -1,5 +1,6 @@
 <?PHP
 use coreAppNS\Controller;
+use coreAppNS\baseFunctions;
 
 class admin_catController extends Controller{
 public $controller;
