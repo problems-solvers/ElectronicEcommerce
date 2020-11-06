@@ -23,10 +23,7 @@
 <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/libs/css/customerStyle.css">
 <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
             <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-
-            <!-- <link rel="stylesheet" type="text/css" href="app/assets/vendor/datatables/css/dataTables.bootstrap4.css">
-            <link rel="stylesheet" href="app/assets/vendor/summernote/css/summernote-bs4.css"> -->
-            <title>ECOMMERCE Site</title>
+          <title>ECOMMERCE Site</title>
 
         </head>
 
@@ -65,7 +62,83 @@ echo '<a href="http://localhost/ElectronicEcommerce/user/login">Log In</a>';
 
 ?>
 
-        
+  
+</div>
+</div>
+
+
+<a class="nav-link mx-2" href="http://localhost/ElectronicEcommerce/cart/">
+    <div class="iconShopping">
+
+        <i class="fa fa-shopping-cart" style="color:#714674 ;"></i>
+        <p class="" style="color:#714674 ;">0</p>
+    </div>
+</a>
+<a class="nav-link mx-2" href="#">
+    <div class="iconheart">
+
+        <i class="fa fa-heart" style="color:#714674 ;"></i>
+        <p class="" style="color:#714674 ;">0</p>
+    </div>
+</a>
+</ul>
+
+                    
+
+</div>
+</div>
+
+</div>
+    <div id="CustTemplate">
+    
+        <nav class="navbar navbar-expand-lg navbar-dark  "
+                style="background-color: rgba(0, 0, 0, 0.692); z-index:999;">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item active">
+                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/">Home<span
+                                class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
+                                <ul class="dropdown-menu" id="allCategories"> -->
+                                 <li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/categories" id="parent">All Categories</a></li>
+              
+                                 <li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/categories/show?action=get&cat_id='.$row->cat_id.'">'.$row->cat_name.'</a></li>
+                                 <li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/categories/show?action=get&cat_id='.$row->cat_id.'">'.$row->cat_name.'</a></li>-->
+
+  
+                             </ul>
+                            </li> 
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Offers</a>
+
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Who we are</a>
+
+                        </li>
+                       
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">contact us</a>
+ </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+  </div> 
+   
+     
+    </ul>
+  </div>
+</nav>      
 <!--  <div id="CustTemplate">
   <nav class="navbar navbar-expand-lg navbar-dark ">
   <a class="navbar-brand" href="#">  <img src="/ElectronicEcommerce/app/assets/images/login_store_logos-1.png" class="float-left rounded-circle" style="width:70px; height:50px;"></a>
@@ -86,7 +159,7 @@ echo '<a href="http://localhost/ElectronicEcommerce/user/login">Log In</a>';
       <li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/categories/show?action=get&cat_id='.$row->cat_id.'">'.$row->cat_name.'</a></li>-->
 
 <!--   
-<!--                                 </ul>
+                             </ul>
                             </li> 
       <li class="nav-item">
         <a class="nav-link" href="#">Offers</a>
@@ -134,72 +207,6 @@ echo '<a href="http://localhost/ElectronicEcommerce/user/login">Log In</a>';
     
       ?>
 
-    </div>
-</div>
-
-
-<a class="nav-link mx-2" href="http://localhost/ElectronicEcommerce/cart/">
-    <div class="iconShopping">
-
-        <i class="fa fa-shopping-cart" style="color:#714674 ;"></i>
-        <p class="" style="color:#714674 ;">0</p>
-    </div>
-</a>
-<a class="nav-link mx-2" href="#">
-    <div class="iconheart">
-
-        <i class="fa fa-heart" style="color:#714674 ;"></i>
-        <p class="" style="color:#714674 ;">0</p>
-    </div>
-</a>
-</ul>
-
-                    
-
-</div>
-</div>
-
-</div>
-    <div id="CustTemplate">
-    
-        <nav class="navbar navbar-expand-lg navbar-dark  "
-                style="background-color: rgba(0, 0, 0, 0.692); z-index:999;">
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item active">
-                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/">Home<span
-                                class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Offers</a>
-
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Who we are</a>
-
-                        </li>
-                       
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">contact us</a>
- </li>
-                    </ul>
-                </div>
-            </nav>
-
-
-  </div> 
-   
-     
-    </ul>
-  </div>
-</nav>
 <script>
   
   // window.onload = function(){
