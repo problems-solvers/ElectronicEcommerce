@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-         
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -31,7 +31,9 @@
     <title>ECOMMERCE Site</title>
 
 </head>
+
 <body>
+
 <div class="col-12">
 <div class="row">
             <div class="col-3 mx-2">
@@ -109,6 +111,7 @@ echo '<a href="http://localhost/ElectronicEcommerce/user/login">Log In</a>';
                         <a class="nav-link" href="http://localhost/ElectronicEcommerce/">Home<span
                                 class="sr-only">(current)</span></a>
                         </li>
+                        
                         <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
                                 <ul class="dropdown-menu" id="allCategories"> 
@@ -135,104 +138,4 @@ echo '<a href="http://localhost/ElectronicEcommerce/user/login">Log In</a>';
                     </ul>
                 </div>
             </nav>
-
-
-  </div> 
-   
-     
-    </ul>
-  </div>
-</nav>      
-<!--  <div id="CustTemplate">
-  <nav class="navbar navbar-expand-lg navbar-dark ">
-  <a class="navbar-brand" href="#">  <img src="/ElectronicEcommerce/app/assets/images/login_store_logos-1.png" class="float-left rounded-circle" style="width:70px; height:50px;"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar-nav mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="http://localhost/ElectronicEcommerce/">Home<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
-                                <ul class="dropdown-menu" id="allCategories"> -->
-                                <!-- <li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/categories" id="parent">All Categories</a></li>
-              
-      <li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/categories/show?action=get&cat_id='.$row->cat_id.'">'.$row->cat_name.'</a></li>-->
-
-<!--   
-                             </ul>
-                            </li> 
-      <li class="nav-item">
-        <a class="nav-link" href="#">Offers</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Who we are</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">contact us</a>
-      </li>
-    </ul>
-    <form class=" mx-auto my-2 my-lg-0">
-      <input class="form-control " type="search" placeholder="Search">
-    </form> -->
-<!--     <ul class="navbar-nav mt-2 mt-lg-0">
-
-        <a class="nav-link " href="http://localhost/ElectronicEcommerce/cart/">
-        <div class="iconShopping">
-
-        <i class="fa fa-shopping-cart"></i>
-				<p class="">0</p>
-		</div>
-     </a>
-     <a class="nav-link " href="#">
-        <div class="iconheart">
-
-        <i class="fa fa-heart"></i>
-				<p class="">0</p>
-		</div>
-     </a>
-     <div class="dropdown">
-    <button class="dropbtn"> 
-      <i class="fas fa-user-circle"></i>
-    </button>
-    <div class="dropdown-content"> --> -->
-      <?php
-// 		if(isset($_SESSION['user_role']) && $_SESSION['user_role']==1)
-//     {
-     
-//      echo'<a href="#">Profile</a>
-//       <a href="http://localhost/ElectronicEcommerce/user/logout">Log Out</a> ';}
-//      else{
-//        echo '<a href="http://localhost/ElectronicEcommerce/user/login">Log In</a>';
-//      }
-    
-      ?>
-
-<script>
-  
-  // window.onload = function(){
-  // $(document).ready(function(){
-  //   console.log('hi')
-  //      $.ajax({
-  //                   type: 'POST',
-  //                   url: 'http://localhost/ElectronicEcommerce/home/getCategories',
-  //                   data: {cart_id:cart_id }
-  //                   })
-  //                   .done(function (response) {
-  //                     console.log(response)
-  //                     ('#allCategories').val()
-  //                   })
-  //                   .fail(function () {
-                     
-  //                   })   
-
-
-  // })
-  // }
-
-</script>
-<!-- <select class=" my-2 mx-2  cloudtranslation-selection" style="width: 100px;"></select> -->
 
