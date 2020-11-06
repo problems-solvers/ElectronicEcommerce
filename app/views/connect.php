@@ -1,8 +1,8 @@
  
-    <h1 class="text-center text-dark"> Contact Us</h1>	
+    <h1 class="text-center text-dark "> Contact Us</h1>	
 
 
-<div class="wrapper">
+<div class="wrapper bg-light">
     <form method="post" action="" class="ccform">
     <div class="ccfield-prepend">
         <span class="ccform-addon"><i class="fa fa-user fa-2x"></i></span>

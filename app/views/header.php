@@ -54,21 +54,31 @@
 
                    
 
+
+<a class="nav-link mx-2" href="http://localhost/ElectronicEcommerce/wishlist/">
+    <div class="iconheart">
+    <span class="badge badge-light">4</span>
+            <i class=" mdi  mdi-heart-outline" style="color:#714674 ;"></i>
+    </div>
+</a>
+
+<a class="nav-link mx-2" href="http://localhost/ElectronicEcommerce/compare/">
+    <div class="compare">
+    <span class="badge badge-light">4</span>
+
+        <i class=" fas fa-exchange-alt" style="color:#714674 ;"></i>
+    </div>
+</a>
 <a class="nav-link mx-2" href="http://localhost/ElectronicEcommerce/cart/">
     <div class="iconShopping">
-
-        <i class="fa fa-shopping-cart" style="color:#714674 ;"></i>
-        <p class="" style="color:#714674 ;">0</p>
+    <span class="badge badge-light">4</span>
+        <i class="mdi mdi-cart-outline" style="color:#714674 ;"></i>
     </div>
 </a>
-<a class="nav-link mx-2" href="#">
-    <div class="iconheart">
 
-        <i class="fa fa-heart" style="color:#714674 ;"></i>
-        <p class="" style="color:#714674 ;">0</p>
-    </div>
-</a>
 <li class="nav-item submenu dropdown">
+<span class="badge badge-light"> </span>
+
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">        <i class="fas fa-user-circle mx-2" style="color:#714674 ;"></i>
 </a>
                                 <ul class="dropdown-menu" > 

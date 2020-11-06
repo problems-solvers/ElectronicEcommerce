@@ -12,12 +12,10 @@ ABOUT US
  <p  class="text-center">
 Delivery of the product as soon as possible ,Set the lowest prices , Customer first
 </p>
-  <h3 class="text-center" >Our ambitions:</h3>
+  <h3 class="text-center" >Our Ambitions:</h3>
  
   <p  class="text-center">
-   We aspire to continuous excellence , 
-      satisfy customers ,
-  achieve success
+   We aspire to continuous excellence , satisfy customers , achieve success
   </p>
    </div>
 </article>
