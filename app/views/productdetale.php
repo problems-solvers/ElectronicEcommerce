@@ -73,14 +73,24 @@
                     <div class="quantity  d-inline-block">
                         <?php echo $row->tag_data; ?>
                     </div>
-                    <div class="row productCardbtns mx-0">
-                        <a title="add to wishlist" id="'.$row->pro_id.'"
-                            class="mdi mdi-heart-outline addTowish mx-auto"></a>
-                        <a title="add to compare" id="'.$row->pro_id.'"
-                            class="fas fa-exchange-alt addTocompare mx-auto"></a>
-                        <a title="add to cart" id="'.$row->pro_id.'"
-                            class="attToCart mdi  mdi-cart-outline mx-auto"></a>
+                    <div>
+                        <div>
+                        <img style="visibility:hidden;" height="0px" width="0px" src="../<?php echo $row->main_img;?>"> 
+
+                            <div style="visibility:hidden; width:0px;height:0px;" >
+                                <h5 style="width:0px;height:0px;" ><?php echo $row->pro_name;?></h5>
+                                <span style="width:0px;height:0px;" ><?php echo $row->pro_price;?></span>
+
+                                <span style="width:0px;height:0px;"> <?php echo $row->cat_name; ?></span>
+                            </div>
+                            <div class="row productCardbtns mx-0">
+                                <a title="add to wishlist" id="'.$row->pro_id.'"class="mdi mdi-heart-outline addTowish mx-auto"></a>
+                                <a title="add to compare" id="'.$row->pro_id.'"class="fas fa-exchange-alt addTocompare mx-auto"></a>
+                                <a title="add to cart" id="'.$row->pro_id.'" class="attToCart mdi  mdi-cart-outline mx-auto"></a>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="product-info-tabs">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item">
@@ -116,74 +126,74 @@
 <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.js'></script>
 <script>
-   var App = (function () {
+    var App = (function () {
 
-//=== Use Strict ===//
-'use strict';
+        //=== Use Strict ===//
+        'use strict';
 
-//=== Private Variables ===//
-var gallery = $('#js-gallery');
-$('.gallery__hero').zoom();
-
-
-//=== Gallery Object ===//
-var Gallery = {
-  zoom: function(imgContainer, img) {
-    var containerHeight = imgContainer.outerHeight(),
-    src = img.attr('src');
-  
-  },
-  switch: function(trigger, imgContainer) {
-    var src = trigger.attr('href'),
-    thumbs = trigger.siblings(),
-          img = trigger.parent().prev().children();
-    
-    // Add active class to thumb
-    trigger.addClass('is-active');
-    
-    // Remove active class from thumbs
-    thumbs.each(function() {
-      if( $(this).hasClass('is-active') ) {
-        $(this).removeClass('is-active');
-      }
-    });
+        //=== Private Variables ===//
+        var gallery = $('#js-gallery');
+        $('.gallery__hero').zoom();
 
 
-    // Switch image source
-    img.attr('src', src);
-  }
-};
+        //=== Gallery Object ===//
+        var Gallery = {
+            zoom: function (imgContainer, img) {
+                var containerHeight = imgContainer.outerHeight(),
+                    src = img.attr('src');
 
-//=== Public Methods ===//
-function init() {
+            },
+            switch: function (trigger, imgContainer) {
+                var src = trigger.attr('href'),
+                    thumbs = trigger.siblings(),
+                    img = trigger.parent().prev().children();
+
+                // Add active class to thumb
+                trigger.addClass('is-active');
+
+                // Remove active class from thumbs
+                thumbs.each(function () {
+                    if ($(this).hasClass('is-active')) {
+                        $(this).removeClass('is-active');
+                    }
+                });
 
 
- // Listen for clicks on anchors within gallery
-  gallery.delegate('a', 'click', function(event) {
-    var trigger = $(this);
-    var triggerData = trigger.data("gallery");
+                // Switch image source
+                img.attr('src', src);
+            }
+        };
 
-    if ( triggerData === 'zoom') {
-      var imgContainer = trigger.parent(),
-      img = trigger.siblings();
-      Gallery.zoom(imgContainer, img);
-    } else if ( triggerData === 'thumb') {
-      var imgContainer = trigger.parent().siblings();
-      Gallery.switch(trigger, imgContainer);
-    } else {
-      return;
-    }
+        //=== Public Methods ===//
+        function init() {
 
-    event.preventDefault();
-  });
-}
 
-//=== Make Methods Public ===//
-return {
-  init: init
-};
+            // Listen for clicks on anchors within gallery
+            gallery.delegate('a', 'click', function (event) {
+                var trigger = $(this);
+                var triggerData = trigger.data("gallery");
 
-})();
+                if (triggerData === 'zoom') {
+                    var imgContainer = trigger.parent(),
+                        img = trigger.siblings();
+                    Gallery.zoom(imgContainer, img);
+                } else if (triggerData === 'thumb') {
+                    var imgContainer = trigger.parent().siblings();
+                    Gallery.switch(trigger, imgContainer);
+                } else {
+                    return;
+                }
 
-App.init();
+                event.preventDefault();
+            });
+        }
+
+        //=== Make Methods Public ===//
+        return {
+            init: init
+        };
+
+    })();
+
+    App.init();
 </script>
