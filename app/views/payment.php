@@ -242,7 +242,7 @@ echo $_SESSION['order_id'];
 
               </div>
               </div>  
-        <!-- <input type="button" name="previous" class="previous action-button" value="Previous" /> -->
+         <input type="button" name="previous" class="previous action-button" value="Previous" /> 
         <input type="button" name="next" id="next2" class="next action-button" value="Next" />
       </fieldset>
       <fieldset>
@@ -337,7 +337,7 @@ echo $_SESSION['order_id'];
     </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
     $(document).ready(function() {
       if ($("#ad1").is(":checked")) {
@@ -376,6 +376,7 @@ echo $_SESSION['order_id'];
               var country=$('#country').val();
               var city=$('#city').val();
               var street=$('#street').val();      //fetch form data
+              if(user_name!=''&& country!=''&& city!=''&& street!=''){
               $.ajax({
                 async: false,
                 type: "POST",
@@ -383,10 +384,15 @@ echo $_SESSION['order_id'];
                   url: "/ElectronicEcommerce/payment/addAdress",
                   data: {zip_id:zip_id,user_name:user_name,country:country,city:city,street:street},
               })
+            
               .done(function (response) {
                 if(response[0]=='noorder'){
                   //todo Message or ROute
-                  alert('hhhaa')
+                 // alert('hhhaa')
+                 swal({
+                     text: 'ther is no order !',
+                     });
+           
                 }
                 // }
                 // if(response[0]=='done'){
@@ -403,11 +409,20 @@ echo $_SESSION['order_id'];
               .fail(function () {
                 //todo Message or ROute
                 //console.log('rr')
+                swal({
+                     text: 'something went wrong ..!',
+                     });
                   nextmsg='stop';
-              })  
+              }) 
+              }
+              else{ swal({
+     text: 'please, fill the fields!',
+       });
+           } 
            }
           if($("#ad2").is(":checked")) {
             var address_id=$("input[name='paymentMethod']:checked").attr('id');
+            if(address_id){
             console.log(address_id)
             $.ajax({
              async: false,
@@ -418,14 +433,23 @@ echo $_SESSION['order_id'];
              success: function(response) {
               if(response[0]=='noorder'){
                   //todo Message or ROute
-                alert('hhhaa')
+               // alert('hhhaa')
+               swal({
+                     text: 'ther is no order !',
+                     });
                 }else{
                   //todo Message or ROute
+                  window.location.replace('http://localhost/ElectronicEcommerce/cart');
                   nextmsg='go';
                 }
              
              }
            })
+          }
+          else{ swal({
+     text: 'please, choose one address!',
+       });
+           }
           }
         }
        if(nextid==='next2'){
@@ -442,7 +466,7 @@ echo $_SESSION['order_id'];
               //var formValues= $('form').serialize();
               //console.log(formValues);
               //var formData= $(this).closest('form').serialize();        //fetch form data
-              
+              if(full_name!=''&& bank_account!=''&& Exp_date!=''){
               $.ajax({
                 crossDomain: true,
               // headers: {  'Access-Control-Allow-Origin': 'http://192.168.1.101' },
@@ -456,7 +480,30 @@ echo $_SESSION['order_id'];
               .done(function (response) {
                  if(response.available==false){
                    //todo Error MEssage
-                   alert('hhhaa')
+                   //alert('hhhaa')
+                   if(response.errorMessage==1){
+                     //no money
+                   // alert('hhhaa')
+                   swal({
+                    text: 'there is no money in your account..!',
+                     
+                     });
+                   }
+                   if(response.errorMessage==2){
+                     //no account
+                    //alert('hhhaa')
+                    swal({
+                      text: 'there is no account..!',
+                     });
+                   }
+                   if(response.errorMessage==3){
+                     //no enough money
+                    //alert('hhhaa')
+                    swal({
+                      text: 'there is no enough money in your account..!',
+                     
+                     });
+                   }
                  }
                  if(response.available==true){
                  //todo the money compare and the message for error 
@@ -470,8 +517,10 @@ echo $_SESSION['order_id'];
               .done(function (response) {
                 if(response[0]=='noorder'){
                   //todo Message or ROute
-                alert('hhhaa')
-
+                //alert('hhhaa')
+                swal({
+                     text: 'there is no order..!',
+                     });
                 }
                 else{
                   orderData =JSON.parse(response);
@@ -491,6 +540,9 @@ echo $_SESSION['order_id'];
               })
               .fail(function () {
                 //todo message
+                swal({
+                     text: 'something went wrong ..!',
+                     });
                   nextmsg='stop';
               })  
                 
@@ -498,15 +550,23 @@ echo $_SESSION['order_id'];
               })
               .fail(function () {
                 //todo error message
-                alert('no account like this one')
+
+                swal({
+                     text: 'no account like this one..!',
+                     });
               })  
-             
+              }
+              else{ swal({
+     text: 'please, fill these fields!',
+       });
+           }
            }
           if($("#add2").is(":checked")) {
             var payment_id =$("input[name='paymentAccounts']:checked").attr('id');
             var bank_account=$("input[name='paymentAccounts']:checked").attr('value');
             var full_name=$("input[name='paymentAccounts']:checked").attr('full_name');
             var Exp_date=$("input[name='paymentAccounts']:checked").attr('exp_date');
+            if(payment_id!=''&& bank_account!=''&& full_name!=''&& Exp_date!=''){
             $.ajax({
               crossDomain: true,
               async: false,
@@ -522,7 +582,10 @@ echo $_SESSION['order_id'];
               console.log(response)
                  if(response.available==false){
                    //todo error message
-                   alert('hhhaa')
+                   //alert('hhhaa')
+                   swal({
+                     text: 'something went wrong..!',
+                     });
                  }
                  if(response.available==true){
                   $.ajax({
@@ -535,8 +598,10 @@ echo $_SESSION['order_id'];
                     success: function(response) {
                       if(response[0]=='noorder'){
                       //todo Message or ROute
-                      alert('hhhaa')
-
+                     // alert('hhhaa')
+                     swal({
+                     text: 'there is no order..!',
+                     });
                       }else{
                       orderData =JSON.parse(response);
                       console.log(orderData,orderData[0].user_name)
@@ -558,6 +623,12 @@ echo $_SESSION['order_id'];
              
            })
          }
+         else{ swal({
+     text: 'these can not be empty..plese, fill them!',
+       });
+           }
+        }
+  
        }
        console.log(nextmsg)
        if(nextmsg ==='go'){
@@ -636,6 +707,7 @@ echo $_SESSION['order_id'];
         var totalprice =orderData[0].total_price;
         var exp_date =orderData[0].ex_date;
         var recievedAccount =<?php echo $adminAccount[0]->userbank_id;?>;
+        //if(full_name.!=''&& userBank!=''&& totalprice!=''&& exp_date!=''&& recievedAccount!=''){
         $.ajax({
                 crossDomain: true,
               // headers: {  'Access-Control-Allow-Origin': 'http://192.168.1.101' },
@@ -650,20 +722,27 @@ echo $_SESSION['order_id'];
                  if(response.available==false){
                    //to do error message
                    if(response.errorMessage==1){
-                     //no  money
-                    alert('hhhaa')
-
+                     //no money
+                   // alert('hhhaa')
+                   swal({
+                    text: 'there is no money in your account..!',
+                     
+                     });
                    }
                    if(response.errorMessage==2){
-                     //no enough money
-
-                    alert('hhhaa')
-
+                     //no account
+                    //alert('hhhaa')
+                    swal({
+                      text: 'there is no account like this..!',
+                     });
                    }
                    if(response.errorMessage==3){
-                     //noaccount
-                    alert('hhhaa')
-
+                     //no enough money
+                    //alert('hhhaa')
+                    swal({
+                      text: 'there is no enough money in your account..!',
+                     
+                     });
                    }
                  }
                  if(response.available==true){
@@ -689,16 +768,22 @@ echo $_SESSION['order_id'];
                  .done(function (response) {
                    if(response[0]=='done'){
                      //todo go to feedback page
-                     alert('success')
-                     
+                     //alert('success')
+                     window.location.replace('http://localhost/ElectronicEcommerce/feedback');
                     nextmsg='go';
                    }else{
                      //error message
+                     swal({
+                     text: 'sorry, field ..!',
+                     });
                    }
                  })
                  .fail(function () {
                    console.log('dss');
                    //todo error message
+                   swal({
+                     text: 'something went wrong ..!',
+                     });
                      nextmsg='stop';
                  }) 
                }
@@ -708,6 +793,9 @@ echo $_SESSION['order_id'];
               .fail(function () {
                 //NOTDONE FROM BANK 
                 //todo error messages
+                swal({
+                     text: 'something went wrong ..please check your internet..!',
+                     });
                 console.log('dss');
                   nextmsg='stop';
               })  
@@ -716,10 +804,19 @@ echo $_SESSION['order_id'];
               })
               .fail(function () {
                 //todo error messages
-                alert('no account like this one')
+                swal({
+                     text: 'there is an error with your internet connection.!',
+                     });
               })  
              
         return false;
+      //}
+     // else{
+     //   swal({
+     //text: 'something went wrong.. please, check your internet connection!',
+      // });
+           
+     // }
       })
   
   })
