@@ -764,8 +764,11 @@ ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: cent
 .ccbtn:hover{
  
  background:#f8ae45;
-
 }
+ .pro-text{
+   line-height:30px;
+   word-spacing:2px;
+ }
 .cardtitle{
  font-size: 1.1rem !important;
 }

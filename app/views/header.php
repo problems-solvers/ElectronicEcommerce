@@ -33,7 +33,7 @@
 
 </head>
 
-<body>
+<body class="d-flex flex-column">
 
 <div class="col-12">
 <div class="row">

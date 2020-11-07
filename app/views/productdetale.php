@@ -1,18 +1,23 @@
+<div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light">
+    <h3 class="titel">Product Details</h3>
+</div>
 <?php $rows=$data['product'];
-//to do pro imgs
-foreach($rows as $row){
- 
-
-  ?>
+  //to do pro imgs
+  foreach($rows as $row){
+   
+  
+    ?>
 <div class="container mt-4">
 
     <div class="row">
         <div class="col-md-6">
             <!--Gallery Thumbs-->
-            <div id="js-gallery" class="gallery" style="height:600px">
+            <!-- Gallery -->
+            <div id="js-gallery" class="gallery">
 
                 <!--Gallery Hero-->
-                <div class="gallery__hero" style="height:400px">
+                <div class="gallery__hero">
+
 
 
                     <img src="../<?php echo $row->main_img ?>" width="100%">
@@ -25,80 +30,97 @@ foreach($rows as $row){
                         <img src="../<?php echo $row->main_img ?>">
                     </a>
                     <?php
-$imgs=explode(',',$row->pro_imgs);
-
-foreach( $imgs as $img){
-?>
+  $imgs=explode(',',$row->pro_imgs);
+  
+  foreach( $imgs as $img){
+  ?>
                     <a href="../<?php echo $img ?>" data-gallery="thumb">
                         <img src="../<?php echo $img ?>">
                     </a>
                     <?php
-}
-?>
+  }
+  ?>
                 </div>
                 <!--Gallery Thumbs-->
 
             </div>
+            <!--.gallery-->
         </div>
-        <div class="col-md-6">
+        <div class="col-md-5 m-2 bx-2 pro-text">
             <div class="product-dtl">
                 <div class="product-info">
-                    <div class="product-name text-center mb-3">
+                    <div class="product-name  mb-3">
                         <?php echo $row->pro_name;?>
                     </div>
 
-                    <div><h3 style="color:red;" >
-                            <?php echo $row->pro_price;?>  $
-                        </h3></div>
+                    <div>
+                        <h4>
+                            <?php echo $row->pro_price;?> $
+                        </h4>
+                    </div>
                 </div>
                 <div class="product-size border-bottom">
-                    <h3 class="d-inline-block mr-1">Categories :   </h3>
-                   
-                        <div class="quantity d-inline-block">
-                            <?php echo $row->cat_name; ?>
-                       
+                    <h5 class="d-inline-block mr-1">Categories : </h5>
+
+                    <div class="quantity d-inline-block">
+                        <?php echo $row->cat_name; ?>
+
                     </div>
 
                 </div>
                 <div class="product-size border-bottom">
-                    <h3 class="d-inline-block mr-1"> <?php echo $row->tag_name; ?> : </h3>
-                        <div class="quantity  d-inline-block">
-                            <?php echo $row->tag_data; ?>
+                    <h5 class="d-inline-block mr-1"> <?php echo $row->tag_name; ?> : </h5>
+                    <div class="quantity  d-inline-block">
+                        <?php echo $row->tag_data; ?>
                     </div>
-                    <div class="row productCardbtns mx-0">
-         <a  title="add to wishlist" id="'.$row->pro_id.'" class="mdi mdi-heart-outline addTowish mx-auto"></a>
-         <a  title="add to compare" id="'.$row->pro_id.'" class="fas fa-exchange-alt addTocompare mx-auto" ></a>
-         <a  title="add to cart" id="'.$row->pro_id.'" class="attToCart mdi  mdi-cart-outline mx-auto"></a>          
-       </div>
+                    <div>
+                        <div>
+                        <img style="visibility:hidden;" height="0px" width="0px" src="../<?php echo $row->main_img;?>"> 
+
+                            <div style="visibility:hidden; width:0px;height:0px;" >
+                                <h5 style="width:0px;height:0px;" ><?php echo $row->pro_name;?></h5>
+                                <span style="width:0px;height:0px;" ><?php echo $row->pro_price;?></span>
+
+                                <span style="width:0px;height:0px;"> <?php echo $row->cat_name; ?></span>
+                            </div>
+                            <div class="row productCardbtns mx-0">
+                                <a title="add to wishlist" id="'.$row->pro_id.'"class="mdi mdi-heart-outline addTowish mx-auto"></a>
+                                <a title="add to compare" id="'.$row->pro_id.'"class="fas fa-exchange-alt addTocompare mx-auto"></a>
+                                <a title="add to cart" id="'.$row->pro_id.'" class="attToCart mdi  mdi-cart-outline mx-auto"></a>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="product-info-tabs">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab"
-                    aria-controls="description" aria-selected="true">Description</a>
-            </li>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description"
+                                    role="tab" aria-controls="description" aria-selected="true">Description</a>
+                            </li>
 
-        </ul>
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-                <?php echo $row->pro_details; ?>
-            </div>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="description" role="tabpanel"
+                                aria-labelledby="description-tab">
+                                <?php echo $row->pro_details; ?>
+                            </div>
 
-        </div>
-    </div>
+                        </div>
+                    </div>
 
                 </div>
-             
+
 
             </div>
-         
+
         </div>
 
     </div>
-  
+
 </div>
 <?php
-}
-?>
+  }
+  ?>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>

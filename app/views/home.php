@@ -56,16 +56,9 @@
   
 </div>
 
-<div class="row mx-auto my-2 show" >
-  <!--     <div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> <img class="card-img-top "  height="100%" src="/ElectronicEcommerce/app/assets/images/1ad.png" alt="Card image cap">
-    <button class="btn btn-sm px-3">SHOP NOW</button>
-  </div>
-    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto ">  <img class="card-img-top" height="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap">
-    <button class="btn btn-sm px-3">SHOP NOW</button> -->
-
-<div class="row mx-auto my-2 show" style="height:300px;">
-    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> 
-      <?php
+<div class="row mx-auto my-4 show "  >
+<div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> 
+    <?php
  $rows=$data['adver'];
  $img='';
  foreach ($rows as $row) {
@@ -74,14 +67,14 @@
 
    if(empty($img))
    {
-     echo '<img class="card-img-top "  height="250px" src="http://placehold.it/64x64" alt="Card image cap">';
+     echo ' <img class="card-img-top" height="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
    }
    else 
-   echo '<img class="card-img-top "  height="250px" src="'.$img.'" alt="Card image cap">';
+   echo '<img class="card-img-top" height="100%" src="'.$img.'" alt="Card image cap">';
 
-      ?>
- <button class="btn btn-sm px-3">SHOP NOW</button>  </div>
-    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto ">  
+      ?>    <button class="btn btn-sm px-3">SHOP NOW</button>
+  </div>
+    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> 
     <?php
  $rows=$data['adver'];
  $img='';
@@ -91,14 +84,15 @@
 
    if(empty($img))
    {
-     echo '<img class="card-img-top "  height="250px" src="http://placehold.it/64x64" alt="Card image cap">';
+     echo ' <img class="card-img-top" height="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
    }
    else 
-   echo '<img class="card-img-top "  height="250px" src="'.$img.'" alt="Card image cap">';
+   echo '<img class="card-img-top" height="100%" src="'.$img.'" alt="Card image cap">';
 
       ?>
- <button class="btn btn-sm px-3">SHOP NOW</button>  </div>
-</div>
+    <button class="btn btn-sm px-3">SHOP NOW</button>
+  </div> 
+  </div>
 <div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
   <h3 class="titel">Featured Items</h3>
 </div>
@@ -108,12 +102,9 @@
 <?php  $rows=$data['Featured'];
      foreach ($rows as $row) { echo ' 
       <div class="item mx-2">
-
       <div class="card productCard mx-auto " >
       <a href="http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id='.$row->pro_id.'" style="color:#303030; height:100%; text-decoration:none;">
-
        <img class="card-img-top" src="../'.$row->main_img.'" alt="Card image cap">
-       
        <div class="card-body py-1">
          <h5 class="cardtitle">'.$row->pro_name.'</h5>
          <span style="float:right; color:#836691; font-weight:bold;">'.$row->pro_price.'$</span>
