@@ -39,7 +39,7 @@ foreach($img['tmp_name'] as $key=>$image)
     $temp=$img['tmp_name'][$key];
     $new_name=sha1(date("y-m-d-h-i-s")).rand();
     $imgs.=$dir.$new_name.$imgname.',';
-    $result=move_uploaded_file($temp, $dir.$imgname);
+    $result=move_uploaded_file($temp,$dir.$new_name.$imgname);
 }
 return  $imgs;
 } 

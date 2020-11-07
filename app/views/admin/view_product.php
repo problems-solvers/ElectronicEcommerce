@@ -40,7 +40,7 @@ foreach( $imgs as $img){
 
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-5 m-2 bx-2 pro-text">
             <div class="product-dtl">
                 <div class="product-info">
                     <div class="product-name">
