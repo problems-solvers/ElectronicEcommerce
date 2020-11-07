@@ -33,19 +33,19 @@
       
 <div class="item mx-2">
 
- <div class="card productCard mx-auto " >';
- echo "<a  href='http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id=".$row->pro_id."' class='update'>
- ";
- echo'
-  <img class="card-img-top" src="../'.$row->main_img.'" alt="Card image cap"></a>
+ <div class="card productCard mx-auto " >
+ <a href="http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id='.$row->pro_id.'" style="color:#303030; height:100%; text-decoration:none;">
+
+  <img class="card-img-top" src="../'.$row->main_img.'" alt="Card image cap">
   
   <div class="card-body py-1">
-    <h5 class="card-title">'.$row->pro_name.'</h5>
-    <span style="float:right; color:#5F3870; font-weight:bold;">'.$row->pro_price.'</span>
+    <h5 class="cardtitle">'.$row->pro_name.'</h5>
+    <span style="float:right; color:#836691; font-weight:bold;">'.$row->pro_price.'$</span>
 
     <span>'.$row->cat_name.'</span>
   </div>
-  <div class="row productCardbtns mx-0">
+ </a>
+ <div class="row productCardbtns mx-0">
     <a  title="add to wishlist" id="'.$row->pro_id.'" class="mdi mdi-heart-outline addTowish mx-auto"></a>
     <a  title="add to compare" id="'.$row->pro_id.'" class="fas fa-exchange-alt addTocompare mx-auto" ></a>
     <a  title="add to cart" id="'.$row->pro_id.'" class="attToCart mdi  mdi-cart-outline mx-auto"></a>          
@@ -112,15 +112,18 @@
       <div class="item mx-2">
 
       <div class="card productCard mx-auto " >
+      <a href="http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id='.$row->pro_id.'" style="color:#303030; height:100%; text-decoration:none;">
+
        <img class="card-img-top" src="../'.$row->main_img.'" alt="Card image cap">
        
        <div class="card-body py-1">
-         <h5 class="card-title">'.$row->pro_name.'</h5>
-         <span style="float:right; color:#5F3870; font-weight:bold;">'.$row->pro_price.'</span>
+         <h5 class="cardtitle">'.$row->pro_name.'</h5>
+         <span style="float:right; color:#836691; font-weight:bold;">'.$row->pro_price.'$</span>
      
          <span>'.$row->cat_name.'</span>
        </div>
-       <div class="row productCardbtns mx-0">
+      </a>
+      <div class="row productCardbtns mx-0">
          <a  title="add to wishlist" id="'.$row->pro_id.'" class="mdi mdi-heart-outline addTowish mx-auto"></a>
          <a  title="add to compare" id="'.$row->pro_id.'" class="fas fa-exchange-alt addTocompare mx-auto" ></a>
          <a  title="add to cart" id="'.$row->pro_id.'" class="attToCart mdi  mdi-cart-outline mx-auto"></a>          
@@ -202,5 +205,23 @@
 
 
  <script>
- 
+    text_truncate = function(str, length, ending) {
+      if (length == null) {
+        length = 100;
+      }
+      if (ending == null) {
+        ending = '...';
+      }
+      if (str.length > length) {
+        return str.substring(0, length - ending.length) + ending;
+      } else {
+        return str;
+      }
+    };
+    const titles = document.getElementsByClassName('cardtitle')
+  
+    for(i=0;i<titles.length; i++ ){
+     x= titles[i].innerText
+     titles[i].innerText=text_truncate(x,16)
+    }
     </script>

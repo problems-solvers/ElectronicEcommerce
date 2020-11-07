@@ -11,8 +11,8 @@
 <img class="card-img-top" src="'.$row->main_img.'" alt="Card image cap">
 
 <div class="card-body py-1">
-  <h5 class="card-title">'.$row->pro_name.'</h5>
-  <span style="float:right; color:#5F3870; font-weight:bold;">'.$row->pro_price.'</span>
+  <h5 class="cardtitle">'.$row->pro_name.'</h5>
+  <span style="float:right; color:#836691; font-weight:bold;">'.$row->pro_price.'$</span>
 
   <span>'.$row->cat_name.'</span>
 </div>
@@ -106,6 +106,25 @@ else{
   
 
     <script>
+     text_truncate = function(str, length, ending) {
+      if (length == null) {
+        length = 100;
+      }
+      if (ending == null) {
+        ending = '...';
+      }
+      if (str.length > length) {
+        return str.substring(0, length - ending.length) + ending;
+      } else {
+        return str;
+      }
+    };
+    const titles = document.getElementsByClassName('cardtitle')
+  
+    for(i=0;i<titles.length; i++ ){
+     x= titles[i].innerText
+     titles[i].innerText=text_truncate(x,16)
+    }
 $('#parent').change(function () {
                 var id=$('#parent').val();
                 console.log(id);

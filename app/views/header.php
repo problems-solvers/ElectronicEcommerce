@@ -57,19 +57,19 @@
 <a class="nav-link mx-2" href="http://localhost/ElectronicEcommerce/cart/">
     <div class="iconShopping">
 
-        <i class="fa fa-shopping-cart" style="color:#714674 ;"></i>
-        <p class="" style="color:#714674 ;">0</p>
+        <i class="fa fa-shopping-cart" style="color:#836691 ;"></i>
+        <p class="" style="color:#836691 ;">0</p>
     </div>
 </a>
-<a class="nav-link mx-2" href="#">
+<a class="nav-link mx-2" href="http://localhost/ElectronicEcommerce/wishlist/">
     <div class="iconheart">
 
-        <i class="fa fa-heart" style="color:#714674 ;"></i>
-        <p class="" style="color:#714674 ;">0</p>
+        <i class="fa fa-heart" style="color:#836691;"></i>
+        <p class="" style="color:#836691 ;">0</p>
     </div>
 </a>
 <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">        <i class="fas fa-user-circle mx-2" style="color:#714674 ;"></i>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">        <i class="fas fa-user-circle mx-2" style="color:#836691 ;"></i>
 </a>
                                 <ul class="dropdown-menu" > 
                                  
@@ -101,7 +101,7 @@ echo '<li class="nav-item text-dark"><a class="nav-link" href="http://localhost/
     <div id="CustTemplate">
     
         <nav class="navbar navbar-expand-lg navbar-dark  "
-                style="background-color: rgba(0, 0, 0, 0.692); z-index:999;">
+                style="background-color:#836691; z-index:999;">
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">

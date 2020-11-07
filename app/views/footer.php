@@ -92,7 +92,88 @@
 <script src="/ElectronicEcommerce/app/assets/libs/js/CustomerScript.js"></script>
 
 <script>
-
+      function totalqtycart(){
+          console.log(' i am here rererere')
+          //cardBoxTable.innerHTML = tableData;
+          const iconShoppingP = document.querySelector('.iconShopping p');
+                
+          var cartdata;
+            if (<?php echo isset($_SESSION['id'])?'true':'false'; ?>) {
+              $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost/ElectronicEcommerce/cart/getCart',
+                    global: true,
+                async: false,
+                dataType: 'json',
+                    })
+                    .done(function (response) {
+                      cartdata=response;
+                    })
+                    .fail(function () {
+                     
+                    })  
+            // <?php
+            // $x= json_encode($data); 
+            //   ?>
+          console.log('hi')
+        // var cartdata = 
+        <?php //echo $x; ?>;
+        console.log(cartdata);
+         if(cartdata[0] === 'nothingonCart'){
+            iconShoppingP.innerHTML = 0;
+          }else{
+            iconShoppingP.innerHTML = cartdata.length;
+         }
+        }
+        else{
+          if(JSON.parse(localStorage.getItem('cart')) === null){
+                iconShoppingP.innerHTML = 0;
+          }else{
+            var cartdata = JSON.parse(localStorage.getItem('cart'))
+            iconShoppingP.innerHTML = cartdata.length;
+          }
+        }
+       
+      }
+      function totalqtywishlist(){
+          console.log(' i am here rererere')
+          const iconHeartP = document.querySelector('.iconheart p');
+         
+          var wishlistdata;
+            if (<?php echo isset($_SESSION['id'])?'true':'false'; ?>) {
+              $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost/ElectronicEcommerce/wishlist/getWishlist',
+                    global: true,
+                    async: false,
+                    dataType: 'json',
+                    })
+                    .done(function (response) {
+                      wishlistdata=response;
+                    })
+                    .fail(function () {
+                     
+                    })  
+            // <?php
+            // $x= json_encode($data); 
+            //   ?>
+          console.log('hi')
+        <?php //echo $x; ?>;
+         if(wishlistdata[0] === 'nothingonWishlist'){
+            iconHeartP.innerHTML = 0;
+          }else{
+          iconHeartP.innerHTML = wishlistdata.length;
+          }
+        }
+        else{
+          if(JSON.parse(localStorage.getItem('wishlist')) === null){
+            iconHeartP.innerHTML =0
+          }else{
+            var cartdata = JSON.parse(localStorage.getItem('wishlist'))
+            iconHeartP.innerHTML = cartdata.length;
+          }
+        }
+          }
        $.ajax({
                     type: 'POST',
                     url: 'http://localhost/ElectronicEcommerce/home/getCategories',
@@ -118,25 +199,7 @@
 
      
      //text cut
-     text_truncate = function(str, length, ending) {
-      if (length == null) {
-        length = 100;
-      }
-      if (ending == null) {
-        ending = '...';
-      }
-      if (str.length > length) {
-        return str.substring(0, length - ending.length) + ending;
-      } else {
-        return str;
-      }
-    };
-    const titles = document.getElementsByClassName('card-title')
   
-    for(i=0;i<titles.length; i++ ){
-     x= titles[i].innerText
-     titles[i].innerText=text_truncate(x,16)
-    }
         //cart box
       //  const iconShopping = document.querySelector('.iconShopping');
         // const cartBox = document.querySelector('.cartBox');
@@ -144,16 +207,19 @@
         //     cartBox.classList.add('active');
         // });
     $(document).ready(function() {
+        totalqtycart()
+       // totalqtycompare()
+        totalqtywishlist()
             console.log("empid")
       $('.attToCart').click(function (e) {
           let cart = [];
           var empid = $(this).attr('id');
           let item = {
                    pro_id:empid,
-                   pro_img:e.target.parentElement.parentElement.children[0].src,
-                   pro_name:e.target.parentElement.parentElement.children[1].children[0].textContent,
-                   total_price:e.target.parentElement.parentElement.children[1].children[1].textContent,
-                   catgory:    e.target.parentElement.parentElement.children[1].children[2].textContent,
+                   pro_img:e.target.parentElement.parentElement.children[0].children[0].src,
+                   pro_name:e.target.parentElement.parentElement.children[0].children[1].children[0].textContent,
+                   total_price:e.target.parentElement.parentElement.children[0].children[1].children[1].textContent.substring(0, e.target.parentElement.parentElement.children[0].children[1].children[1].textContent.length - 1),
+                   catgory:    e.target.parentElement.parentElement.children[0].children[1].children[2].textContent,
                    quentity:1
                   };
           console.log(item)
@@ -190,9 +256,7 @@
                      console.log('fds',mx)
                   }
                    cart = [];
-                const iconShoppingP = document.querySelector('.iconShopping p');
-                var cartdata = JSON.parse(localStorage.getItem('cart'))
-                iconShoppingP.innerHTML = cartdata.length;
+                   totalqtycart()
           }
 
       }) 
@@ -201,10 +265,10 @@
           var empid = $(this).attr('id');
           let item = {
                    pro_id:empid,
-                   pro_img:e.target.parentElement.parentElement.children[0].src,
-                   pro_name:e.target.parentElement.parentElement.children[1].children[0].textContent,
-                   total_price:e.target.parentElement.parentElement.children[1].children[1].textContent,
-                   catgory:    e.target.parentElement.parentElement.children[1].children[2].textContent,
+                   pro_img:e.target.parentElement.parentElement.children[0].children[0].src,
+                   pro_name:e.target.parentElement.parentElement.children[0].children[1].children[0].textContent,
+                   total_price:e.target.parentElement.parentElement.children[0].children[1].children[1].textContent.substring(0, e.target.parentElement.parentElement.children[0].children[1].children[1].textContent.length - 1),
+                   catgory:    e.target.parentElement.parentElement.children[0].children[1].children[2].textContent,
                    quentity:1
                   };
           console.log(item)
@@ -241,9 +305,7 @@
                      console.log('fds',mx)
                   }
                   compare = [];
-                const iconShoppingP = document.querySelector('.iconShopping p');
-                var comparedata = JSON.parse(localStorage.getItem('compare'))
-                iconShoppingP.innerHTML = comparedata.length;
+                  totalqtycompare()
           }
 
       }) 
@@ -252,10 +314,10 @@
           var empid = $(this).attr('id');
           let item = {
                    pro_id:empid,
-                   pro_img:e.target.parentElement.parentElement.children[0].src,
-                   pro_name:e.target.parentElement.parentElement.children[1].children[0].textContent,
-                   total_price:e.target.parentElement.parentElement.children[1].children[1].textContent,
-                   catgory:    e.target.parentElement.parentElement.children[1].children[2].textContent,
+                   pro_img:e.target.parentElement.parentElement.children[0].children[0].src,
+                   pro_name:e.target.parentElement.parentElement.children[0].children[1].children[0].textContent,
+                   total_price:e.target.parentElement.parentElement.children[0].children[1].children[1].textContent.substring(0, e.target.parentElement.parentElement.children[0].children[1].children[1].textContent.length - 1),
+                   catgory:    e.target.parentElement.parentElement.children[0].children[1].children[2].textContent,
                    quentity:1
                   };
           console.log(item)
@@ -292,9 +354,7 @@
                      console.log('fds',mx)
                   }
                    cart = [];
-                const iconShoppingP = document.querySelector('.iconShopping p');
-                var cartdata = JSON.parse(localStorage.getItem('wishlist'))
-                iconShoppingP.innerHTML = cartdata.length;
+                   totalqtywishlist()
           }
 
       }) 
