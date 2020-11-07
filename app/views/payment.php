@@ -327,7 +327,7 @@ echo $_SESSION['order_id'];
                   
                  
    
-            <!-- <input type="button" name="previous" class="previous action-button" value="Previous" /> -->
+            <input type="button" name="previous" class="previous action-button" value="Previous" /> 
             <input type="submit" name="submit" class="submit action-button" value="Submit" />
       </fieldset>
 
@@ -389,9 +389,8 @@ echo $_SESSION['order_id'];
                 if(response[0]=='noorder'){
                   //todo Message or ROute
                  // alert('hhhaa')
-                 swal({
-                     text: 'ther is no order !',
-                     });
+                 window.location.replace('http://localhost/ElectronicEcommerce/cart');
+
            
                 }
                 // }
@@ -422,8 +421,9 @@ echo $_SESSION['order_id'];
            }
           if($("#ad2").is(":checked")) {
             var address_id=$("input[name='paymentMethod']:checked").attr('id');
+            console.log(address_id);
             if(address_id){
-            console.log(address_id)
+              console.log(address_id);
             $.ajax({
              async: false,
              type: "POST",
@@ -434,12 +434,10 @@ echo $_SESSION['order_id'];
               if(response[0]=='noorder'){
                   //todo Message or ROute
                // alert('hhhaa')
-               swal({
-                     text: 'ther is no order !',
-                     });
-                }else{
-                  //todo Message or ROute
                   window.location.replace('http://localhost/ElectronicEcommerce/cart');
+
+                }else{
+                 
                   nextmsg='go';
                 }
              
@@ -702,12 +700,14 @@ echo $_SESSION['order_id'];
 
       $(".submit").click(function () {
         var full_name =orderData[0].full_name;
-;
         var userBank =orderData[0].userbank_id;
         var totalprice =orderData[0].total_price;
         var exp_date =orderData[0].ex_date;
         var recievedAccount =<?php echo $adminAccount[0]->userbank_id;?>;
-        //if(full_name.!=''&& userBank!=''&& totalprice!=''&& exp_date!=''&& recievedAccount!=''){
+        swal({
+  icon: "success",
+  text: 'Its done successfully..',
+});
         $.ajax({
                 crossDomain: true,
               // headers: {  'Access-Control-Allow-Origin': 'http://192.168.1.101' },
@@ -718,6 +718,7 @@ echo $_SESSION['order_id'];
                url: "http://localhost:5320/api/getcurrentaccount?userName="+full_name+"&BankNo="+userBank+"&expDate="+exp_date+"&totalPrice="+totalprice,
               
               })
+
               .done(function (response) {
                  if(response.available==false){
                    //to do error message
@@ -769,7 +770,7 @@ echo $_SESSION['order_id'];
                    if(response[0]=='done'){
                      //todo go to feedback page
                      //alert('success')
-                     window.location.replace('http://localhost/ElectronicEcommerce/feedback');
+                    // window.location.replace('http://localhost/ElectronicEcommerce/feedback');
                     nextmsg='go';
                    }else{
                      //error message
@@ -810,15 +811,10 @@ echo $_SESSION['order_id'];
               })  
              
         return false;
-      //}
-     // else{
-     //   swal({
-     //text: 'something went wrong.. please, check your internet connection!',
-      // });
-           
-     // }
-      })
-  
+ 
+      
+    
+    })
   })
    
      
