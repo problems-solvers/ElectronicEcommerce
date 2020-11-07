@@ -1,18 +1,21 @@
-<?php $rows=$data['product'];
-//to do pro imgs
-foreach($rows as $row){
- 
 
-  ?>
-<div class="container">
+<?php $rows=$data['product'];
+  //to do pro imgs
+  foreach($rows as $row){
+   
+  
+    ?>
+<div class="container mt-4">
 
     <div class="row">
         <div class="col-md-6">
             <!--Gallery Thumbs-->
-            <div id="js-gallery" class="gallery" style="height:600px">
+            <!-- Gallery -->
+            <div id="js-gallery" class="gallery">
 
                 <!--Gallery Hero-->
-                <div class="gallery__hero" style="height:400px">
+                <div class="gallery__hero">
+
 
 
                     <img src="../../<?php echo $row->main_img ?>" width="100%">
@@ -25,79 +28,80 @@ foreach($rows as $row){
                         <img src="../../<?php echo $row->main_img ?>">
                     </a>
                     <?php
-$imgs=explode(',',$row->pro_imgs);
-
-foreach( $imgs as $img){
-?>
+  $imgs=explode(',',$row->pro_imgs);
+  
+  foreach( $imgs as $img){
+  ?>
                     <a href="../../<?php echo $img ?>" data-gallery="thumb">
                         <img src="../../<?php echo $img ?>">
                     </a>
                     <?php
-}
-?>
+  }
+  ?>
                 </div>
                 <!--Gallery Thumbs-->
 
             </div>
+            <!--.gallery-->
         </div>
         <div class="col-md-5 m-2 bx-2 pro-text">
             <div class="product-dtl">
                 <div class="product-info">
-                    <div class="product-name">
+                    <div class="product-name  mb-3">
                         <?php echo $row->pro_name;?>
                     </div>
 
-                    <div><h3 >
-                            <?php echo $row->pro_price;?>
-                        </h3></div>
+                    <div>
+                        <h4>
+                            <?php echo $row->pro_price;?> $
+                        </h4>
+                    </div>
                 </div>
                 <div class="product-size border-bottom">
-                    <h3 class="d-inline-block mr-1">Categories :   </h3>
+                    <h5 class="d-inline-block mr-1">Categories : </h5>
+
+                    <div class="quantity d-inline-block">
+                        <?php echo $row->cat_name; ?>
+
+                    </div>
+
+                </div>
+                <div class="product-size border-bottom">
+                    <h5 class="d-inline-block mr-1"> <?php echo $row->tag_name; ?> : </h5>
+                    <div class="quantity  d-inline-block">
+                        <?php echo $row->tag_data; ?>
+                    </div>
                    
-                        <div class="quantity d-inline-block">
-                            <?php echo $row->cat_name; ?>
-                       
-                    </div>
-
-                </div>
-                <div class="product-size border-bottom">
-                    <h3 class="d-inline-block mr-1"> <?php echo $row->tag_name; ?> : </h3>
-                        <div class="quantity  d-inline-block">
-                            <?php echo $row->tag_data; ?>
-                    </div>
                     <div class="product-info-tabs">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab"
-                    aria-controls="description" aria-selected="true">Description</a>
-            </li>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description"
+                                    role="tab" aria-controls="description" aria-selected="true">Description</a>
+                            </li>
 
-        </ul>
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-                <?php echo $row->pro_details; ?>
-            </div>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="description" role="tabpanel"
+                                aria-labelledby="description-tab">
+                                <?php echo $row->pro_details; ?>
+                            </div>
 
-        </div>
-    </div>
+                        </div>
+                    </div>
 
                 </div>
-                <a href="/ElectronicEcommerce/admin/admin_product/"><button id="singlebutton" name="singlebutton" class="btn btn-primary  btn-right bt">Back</button></a>
-                <a href='http://localhost/ElectronicEcommerce/admin/admin_product/updateProduct?action=update&pro_id=<?php echo $row->pro_id ;?>'  class='update bt1'><button id="singlebutton" name="singlebutton" class="btn btn-primary  btn-left">Update</button></a>
-
-
 
 
             </div>
-         
+
         </div>
 
     </div>
-  
+
 </div>
 <?php
-}
-?>
+  }
+  ?>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>

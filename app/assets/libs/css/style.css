@@ -4829,3 +4829,7 @@ input[type=number] {
     color: black;
   
   }
+  .pro-text{
+    line-height:30px;
+    word-spacing:2px;
+  }

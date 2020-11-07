@@ -116,74 +116,74 @@
 <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.js'></script>
 <script>
-    var App = (function () {
+   var App = (function () {
 
-        //=== Use Strict ===//
-        'use strict';
+//=== Use Strict ===//
+'use strict';
 
-        //=== Private Variables ===//
-        var gallery = $('#js-gallery');
-        $('.gallery__hero').zoom();
-
-
-        //=== Gallery Object ===//
-        var Gallery = {
-            zoom: function (imgContainer, img) {
-                var containerHeight = imgContainer.outerHeight(),
-                    src = img.attr('src');
-
-            },
-            switch: function (trigger, imgContainer) {
-                var src = trigger.attr('href'),
-                    thumbs = trigger.siblings(),
-                    img = trigger.parent().prev().children();
-
-                // Add active class to thumb
-                trigger.addClass('is-active');
-
-                // Remove active class from thumbs
-                thumbs.each(function () {
-                    if ($(this).hasClass('is-active')) {
-                        $(this).removeClass('is-active');
-                    }
-                });
+//=== Private Variables ===//
+var gallery = $('#js-gallery');
+$('.gallery__hero').zoom();
 
 
-                // Switch image source
-                img.attr('src', src);
-            }
-        };
+//=== Gallery Object ===//
+var Gallery = {
+  zoom: function(imgContainer, img) {
+    var containerHeight = imgContainer.outerHeight(),
+    src = img.attr('src');
+  
+  },
+  switch: function(trigger, imgContainer) {
+    var src = trigger.attr('href'),
+    thumbs = trigger.siblings(),
+          img = trigger.parent().prev().children();
+    
+    // Add active class to thumb
+    trigger.addClass('is-active');
+    
+    // Remove active class from thumbs
+    thumbs.each(function() {
+      if( $(this).hasClass('is-active') ) {
+        $(this).removeClass('is-active');
+      }
+    });
 
-        //=== Public Methods ===//
-        function init() {
+
+    // Switch image source
+    img.attr('src', src);
+  }
+};
+
+//=== Public Methods ===//
+function init() {
 
 
-            // Listen for clicks on anchors within gallery
-            gallery.delegate('a', 'click', function (event) {
-                var trigger = $(this);
-                var triggerData = trigger.data("gallery");
+ // Listen for clicks on anchors within gallery
+  gallery.delegate('a', 'click', function(event) {
+    var trigger = $(this);
+    var triggerData = trigger.data("gallery");
 
-                if (triggerData === 'zoom') {
-                    var imgContainer = trigger.parent(),
-                        img = trigger.siblings();
-                    Gallery.zoom(imgContainer, img);
-                } else if (triggerData === 'thumb') {
-                    var imgContainer = trigger.parent().siblings();
-                    Gallery.switch(trigger, imgContainer);
-                } else {
-                    return;
-                }
+    if ( triggerData === 'zoom') {
+      var imgContainer = trigger.parent(),
+      img = trigger.siblings();
+      Gallery.zoom(imgContainer, img);
+    } else if ( triggerData === 'thumb') {
+      var imgContainer = trigger.parent().siblings();
+      Gallery.switch(trigger, imgContainer);
+    } else {
+      return;
+    }
 
-                event.preventDefault();
-            });
-        }
+    event.preventDefault();
+  });
+}
 
-        //=== Make Methods Public ===//
-        return {
-            init: init
-        };
+//=== Make Methods Public ===//
+return {
+  init: init
+};
 
-    })();
+})();
 
-    App.init();
+App.init();
 </script>
