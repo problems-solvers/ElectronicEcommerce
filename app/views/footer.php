@@ -1,6 +1,7 @@
 <!-- to do color of footer and havor li and responsive -->
-
-<footer id="footer">
+<div class="flex-grow-1 flex-shrink-0">
+</div>
+<footer id="footer" class="flex-shrink-0">
     <div class="main-footer text-center ">
     <div class="container-flude">
     <div class="row">

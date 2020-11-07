@@ -1,8 +1,11 @@
- 
-    <h1 class="text-center text-dark "> Contact Us</h1>	
+<div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
+  <h3 class="titel">Contact Us</h3>
+</div>
+ <div style="background: rgb(120,76,18);
+      background: linear-gradient(293deg, rgba(120,76,18,0.1) 0%, rgba(145,122,33,0.1) 82%, rgba(247,81,185,0.1) 100%);">
+    
 
-
-<div class="wrapper bg-light">
+<div class="wrapper">
     <form method="post" action="" class="ccform">
     <div class="ccfield-prepend">
         <span class="ccform-addon"><i class="fa fa-user fa-2x"></i></span>
@@ -29,6 +32,7 @@
     </div>
 
     </form>
+</div>
 </div>
 
 

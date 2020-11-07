@@ -1,3 +1,6 @@
+<div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
+  <h3 class="titel">Categories </h3>
+</div>
 <div class="container" id="jar">
 <div class="row w-75 mx-auto ">
 <?php 
@@ -26,7 +29,8 @@
 </div> ';} }
 else{
   //todo image to show no data
-  echo 'no data available for this category';
+  echo '<img src="/ElectronicEcommerce/app/assets/images/no.jpg" class="img-rounded">
+  <p class="text-center col-12 mb-5">no data available for this category</p>';
 } 
     ?>
     </div>

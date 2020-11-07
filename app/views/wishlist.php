@@ -1,6 +1,8 @@
+<div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
+  <h3 class="titel col-12"> Wishlist</h3>
+</div> 
 <div class="nam mx-auto  my-2 py-2 col-4 text-center text-light" >
-  <h3>This is a Wishlist</h3>
-  
+ 
 <?php
 if(isset($_SESSION['id'])){
   $x= json_encode($data); 

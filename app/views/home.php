@@ -56,16 +56,9 @@
   
 </div>
 
-<div class="row mx-auto my-2 show" >
-  <!--     <div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> <img class="card-img-top "  height="100%" src="/ElectronicEcommerce/app/assets/images/1ad.png" alt="Card image cap">
-    <button class="btn btn-sm px-3">SHOP NOW</button>
-  </div>
-    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto ">  <img class="card-img-top" height="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap">
-    <button class="btn btn-sm px-3">SHOP NOW</button> -->
-
-<div class="row mx-auto my-2 show" style="height:300px;">
-    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> 
-      <?php
+<div class="row mx-auto my-4 show "  >
+<div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> 
+    <?php
  $rows=$data['adver'];
  $img='';
  foreach ($rows as $row) {
@@ -74,14 +67,14 @@
 
    if(empty($img))
    {
-     echo '<img class="card-img-top "  height="250px" src="http://placehold.it/64x64" alt="Card image cap">';
+     echo ' <img class="card-img-top" height="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
    }
    else 
-   echo '<img class="card-img-top "  height="250px" src="'.$img.'" alt="Card image cap">';
+   echo '<img class="card-img-top" height="100%" src="'.$img.'" alt="Card image cap">';
 
-      ?>
- <button class="btn btn-sm px-3">SHOP NOW</button>  </div>
-    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto ">  
+      ?>    <button class="btn btn-sm px-3">SHOP NOW</button>
+  </div>
+    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> 
     <?php
  $rows=$data['adver'];
  $img='';
@@ -91,14 +84,15 @@
 
    if(empty($img))
    {
-     echo '<img class="card-img-top "  height="250px" src="http://placehold.it/64x64" alt="Card image cap">';
+     echo ' <img class="card-img-top" height="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
    }
    else 
-   echo '<img class="card-img-top "  height="250px" src="'.$img.'" alt="Card image cap">';
+   echo '<img class="card-img-top" height="100%" src="'.$img.'" alt="Card image cap">';
 
       ?>
- <button class="btn btn-sm px-3">SHOP NOW</button>  </div>
-</div>
+    <button class="btn btn-sm px-3">SHOP NOW</button>
+  </div> 
+  </div>
 <div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
   <h3 class="titel">Featured Items</h3>
 </div>

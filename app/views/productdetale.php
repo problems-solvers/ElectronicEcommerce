@@ -1,3 +1,6 @@
+<div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
+  <h3 class="titel">Product  Details</h3>
+</div>
 <?php $rows=$data['product'];
 //to do pro imgs
 foreach($rows as $row){
