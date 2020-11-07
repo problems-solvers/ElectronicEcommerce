@@ -7,13 +7,15 @@ class productModel extends Model {
 
     function __construct(){
         $this->db=new DB();
+
    }
    function  getQuery(){
-     
-    $tbls=array("product");
+
+    $tbls=array("product ");
     return  $this->db
     ->cols()
     ->table($tbls)
+    ->orderBy("create_date","desc")
     ->get()
     ->execute()->fetch();      
 }
@@ -85,24 +87,53 @@ function  getcatchiled($id){
     function  updateProduct(){
         $id=$_GET['pro_id'];
         $tbls=array("product");
+        $cols=array("product.pro_name", "product.pro_id","product.pro_price" ,"product.pro_quentity","product.pro_details","product.brand","product.main_img","product.pro_imgs","product.is_active","product.cat_id","categories.cat_name","tags.tag_id" ,"tags.tag_name","tag_details.tag_details_id","tag_details.tag_data");
         return  $this->db
-        ->cols()
+        ->cols($cols)
         ->table($tbls)
-        ->where("pro_id","=","'".$id."'")
+        ->innerjoin("categories","product.cat_id","categories.cat_id")
+        ->innerjoin("tag_details","product.pro_id","tag_details.pro_id")
+        ->innerjoin("tags","tag_details.tag_id","tags.tag_id")
+        ->where("product.pro_id","=","'".$id."'")
 		->get()
 		->execute()->fetch();      
     }
     function update($data){
         $tbls=array('product');
         $id=$_POST['pro_id'];
-        return $this->db->cols($data)->settingcol()->table($tbls)->where("pro_id","=","'".$id."'")->update()->execute();
+        $tbls=array('product');
+        $id=$_POST['pro_id'];
+        $tag_details_id=$_POST['tag_details_id'];
+        return $this->db->cols($data)->settingcol()->table($tbls)->where("product.pro_id","=","'".$id."'")->where("tags.tag_id","=","'".$tag_id."'")->where("tag_details.tag_details_id","=","'".$tag_details_id."'")->update()->execute();
+   
+    }
+    function tagUpdate($data){
+        $tbls=array('tags');
+        $tag_id=$_POST['tag_id'];
+        $tbls=array('tags');
+        return $this->db->cols($data)->settingcol()->table($tbls)->where("tag_id","=","'".$tag_id."'")->update()->execute();
+   
+    }
+    function tagdetailUpdate($data){
+        $tbls=array('tag_details');
+        $tag_details_id=$_POST['tag_details_id'];
+        return $this->db->cols($data)->settingcol()->table($tbls)->where("tag_details_id","=","'".$tag_details_id."'")->update()->execute();
+   
     }
 
 function view_more(){
-    $tbls=array('product');
     $id=$_REQUEST['pro_id'];
-    return $this->db->clos()->table($tbls)->where("pro_id","=","'".$id."'")->get()-> execute();
-    print_r($result);
+    $tbls=array("product");
+    $cols=array("product.pro_name", "product.pro_id","product.pro_price" ,"product.pro_quentity","product.pro_details","product.brand","product.main_img","product.pro_imgs","product.is_active","product.cat_id","categories.cat_name","tags.tag_id" ,"tags.tag_name","tag_details.tag_details_id","tag_details.tag_data");
+    return  $this->db
+    ->cols($cols)
+    ->table($tbls)
+    ->innerjoin("categories","product.cat_id","categories.cat_id")
+    ->innerjoin("tag_details","product.pro_id","tag_details.pro_id")
+    ->innerjoin("tags","tag_details.tag_id","tags.tag_id")
+    ->where("product.pro_id","=","'".$id."'")
+    ->get()
+    ->execute()->fetch();  
 }
 }
 

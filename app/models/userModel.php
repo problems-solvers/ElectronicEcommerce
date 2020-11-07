@@ -27,16 +27,7 @@ class userModel extends Model
 	}
 	public function login()
 	{
-		 $table=array('user');
-		// $count=json_encode('
-		// 	<script>
-		// 		JSON.parse(localStorage.getItem("cart")) 
-		// 	</script>');
-
-		// echo '<script> document.cookie = "myJavascriptVar = " + JSON.parse(localStorage.getItem("cart"))  </script>';
-		
-		// //$count= $_COOKIE['myJavascriptVar'];
-		
+		 $table=array('user');		
 		$user_name=$_POST['user_name'];
 		$user_password=md5($_POST['user_password']);
 		$res= $this->db->cols()
@@ -46,25 +37,32 @@ class userModel extends Model
 		->execute()
 		->fetch();
 		$count = count($res);
-		echo 'ffsdf';
-		
+		echo "count ".$count;
+		print_r($res);
 		if ($count > 0) {
 			$s=$res[0];
 			Session::init();
 			
-			Session::set('role',$s->user_role);
+			Session::set('user_role',$s->user_role );
 			Session::set('id', $s->user_id);
 			Session::set('loggedIn', true);
 			Session::set('user_name', $user_name);
 			Session::set('user_password', $s->user_password);  
-			echo 'loged in';  
 			$this->cartm=new cartModel();
 			$this->cartm->addCats();		
-	    	return ;
+			
+			print_r($_SESSION);
+			echo Session::get('user_role');
+			//print_r($result);
+			//echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/';</script>";	
+			if(isset($_SESSION['user_role']) && $_SESSION['user_role']==1)
+			echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_dashboard/';</script>";
+			if(isset($_SESSION['user_role']) && $_SESSION['user_role']==2)
+			echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/';</script>";
+	  
 		} 
 		   else {
 			Session::set('loggedIn', false);
-			echo 'nots in';
 			return ;
 		}
 		

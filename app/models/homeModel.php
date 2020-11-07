@@ -43,8 +43,6 @@ class homeModel extends Model{
            ->table($table)
            ->innerjoin("categories","product.cat_id","categories.cat_id")
            ->where("product.is_active","=","1")
-           ->where("product.cat_id","=","2")
-
            ->orderBy("categories.create_date","desc")
            ->get()
            ->execute()
@@ -53,6 +51,19 @@ class homeModel extends Model{
         }
     
     
+        function getAllAdver(){
+            $this->db=new DB();
+    
+                $table=array("advertisement");
+               $result=  $this->db->cols()
+               ->table($table)
+               ->get()
+               ->execute()
+               ->fetch();
+            return $result;
+            }
+        
+        
     }
     
     ?>

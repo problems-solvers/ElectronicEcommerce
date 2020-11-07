@@ -1,5 +1,6 @@
 <?PHP
 use coreAppNS\Model;
+use coreAppNS\baseFunctions;
 class cartModel extends Model{
 
 
@@ -63,6 +64,7 @@ return $result;
     }
     function deleteCartItem(){
         $this->db=new DB();
+        //echo $_REQUEST['cart_id'];
         $id=$_REQUEST['cart_id'];
         $tbls=array("cart");
         $result=  $this->db->table($tbls)->where("cart_id","=","'".$id."'")->delete()->execute();
@@ -89,8 +91,8 @@ return $result;
     
    function  addCats(){
        $s= json_decode($_REQUEST['cartdata']);
-       print_r($s);
-       echo 'fff';
+    //    print_r($s);
+    //    echo 'fff';
       $user_id= Session::get('id');
     if($user_id!=null ){
 
@@ -102,6 +104,7 @@ return $result;
        ->table($table)
        ->where('user_id','=', "'".$user_id."'" )
        ->where('pro_id','=',"'". $a->pro_id."'" )
+       ->where('type','=',"1" )
        ->get()
        ->execute()
        ->fetch();

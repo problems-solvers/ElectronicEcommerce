@@ -1,3 +1,12 @@
+<?php
+	/*	if(isset($_SESSION['user_role']) && $_SESSION['user_role']==2)
+        echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_dashboard/';</script>";
+else
+echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/user/login/';</script>";
+*/
+
+?>
+
 <!doctype html>
         <html lang="en">
          
@@ -103,14 +112,14 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown nav-user">
-                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../app/assets/images/login_store_logos-1.png"   style="width:60px; height:50px;" alt="" class="user-avatar-md rounded-circle"></a>
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/ElectronicEcommerce/app/assets/images/login_store_logos-1.png"   style="width:60px; height:50px;" alt="" class="user-avatar-md rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
                                 <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown nav-user">
-                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../app/assets/images/login_store_logos-1.png"   style="width:60px; height:50px;" alt="" class="user-avatar-md rounded-circle"></a>
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/ElectronicEcommerce/app/assets/images/avatar-5.jpg"   style="width:60px; height:50px;" alt="" class="user-avatar-md rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
@@ -161,7 +170,7 @@
                                         Products Management
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_categories"><i class="fas fa-fw fa-file"></i> Categories and Tags </a>
+                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_cat"><i class="fas fa-fw fa-file"></i> Categories and Tags </a>
                                       
                                     </li>
                                     <li class="nav-item">

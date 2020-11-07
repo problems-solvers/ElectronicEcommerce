@@ -1,9 +1,13 @@
 
-
+<div class="col-6 text-center mx-auto mt-3">
+<a class="navbar-brand" href="#"> <img
+                        src="/ElectronicEcommerce/app/assets/images/login_store_logos-2.png" class="float-left "
+                        style="width:300px; height:50px;"></a>
+</div>
 <div class="block d-flex  align-items-center col-12 col-md-12 col-sm-12 col-xs-12 m-auto">
   <div class="col-6 col-md-6 col-sm-12 col-xs-12 mx-auto ">
 <div class="card  mx-auto p-3" >
-  <h4 class="text-center my-3">Login</h4>
+  <h4 class="text-center my-3">Register</h4>
 <form action="signup" method="post" id="form1" onchange="validation();">
 <div class="col-12 col-sm-12 col-xs-12 mx-auto my-5 text-center">
   <div class="inlining-form mx-auto col-4 col-md-4 col-sm-8 col-xs-8  "> 
@@ -42,14 +46,16 @@
   <div class="inlining-form  col-12 mx-auto  my-3 align-center text_center">
   <div class=" inlining col-2 "></div>
   <div class=" inlining col-4 mx-auto ">
-  <button type="submit" class="bt mx-auto disabled" id="signup_btn" onclick="snackbarFunction()">signup</button>
-  <!-- The actual snackbar -->
+  <button type="submit" class="bt mx-auto disabled" id="signup_btn"  onclick="myFunction()">signup</button>
+  
+      <!-- The actual snackbar -->
+<div id="snackbar">Some text some message..</div><!-- The actual snackbar -->
 </div>
   <!-- 
   <div id="snackbar" class="hide">Some text some message..</div>-->
 
   <div class="inlining col-4 mx-auto">
-  <button type="button" class="bt1 mx-auto"><a href="http://localhost/mvcphp/user/login" >login</button></a>
+  <button type="button" class="bt1 mx-auto"><a href="http://localhost/ElectronicEcommerce/user/login" >login</button></a>
 </div>
 
 </div>
@@ -57,6 +63,19 @@
 </div>
 </div>
 </div>
+<script>
+
+function myFunction() {
+    // Get the snackbar DIV
+    var x = document.getElementById("snackbar")
+
+    // Add the "show" class to DIV
+    x.className = "show";
+
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+</script>
 <!--
 <script>
 function snackbarFunction() {

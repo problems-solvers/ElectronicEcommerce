@@ -1,5 +1,7 @@
 <?PHP
 use coreAppNS\Controller;
+use coreAppNS\baseFunctions;
+
 class categoryController extends Controller{
 public $controller;
 public $model;

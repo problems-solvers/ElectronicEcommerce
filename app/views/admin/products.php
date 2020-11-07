@@ -3,11 +3,11 @@
         <div class="card-header ">
             <h5 class="mb-0  d-inline-block">Product Table</h5>
             <a href="http://localhost/ElectronicEcommerce/admin/admin_product/addProduct"><button type="button"
-                    class="d-inline-block btn btn-success btn-left mybtn" style="float:right; ">Add Product</button></a>
+                    class="d-inline-block btn btn-success btn-left bt" style="float:right; ">Add Product</button></a>
 
         </div>
         <div class="card-body">
-            <div class="table-responsive">
+            <div class="table-responsive col-12 w-100">
                 <table id="example" class="table table-striped table-bordered second" style="width:100%">
                     <thead>
                         <tr>
@@ -53,8 +53,8 @@ echo "<td>
 <a  href='http://localhost/ElectronicEcommerce/admin/admin_product/view_product?action=view&pro_id=".$row->pro_id."' class='update'>
 <i class='btn fas fa-info-circle ' style='font-size:24px;'></i></a>
 
-<a href='http://localhost/ElectronicEcommerce/admin/admin_product/updateProduct?action=update&pro_id=".$row->pro_id."' class='update'>
-<i class='btn fa fa-pencil text-primary' style='font-size:24px;'></i></a>
+<a  href='http://localhost/ElectronicEcommerce/admin/admin_product/updateProduct?action=update&pro_id=".$row->pro_id."' class='update'>
+	  <i class='btn fa fa-pencil text-primary' style='font-size:24px;'></i></a>
 
 <a class='delete_employee' data-emp-id='$row->pro_id' href='javascript:void(0)'>
 <i  class=' btn fa fa-trash-o text-danger' style='font-size:24px;' ></i></a>
@@ -87,51 +87,3 @@ $index+=1;
         <script src="https://cdn.datatables.net/autofill/2.3.5/js/dataTables.autoFill.min.js"></script>
         <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
-
-        <script>
-            $(document).ready(function () {
-                //Pagination numbers
-                $('#example').DataTable({
-                    "pagingType": "simple_numbers",
-                    "ordering": false
-                });
-                $('.dataTables_length').addClass('bs-select');
-
-                $('.delete_employee').click(function (e) {
-                    e.preventDefault();
-                    var empid = $(this).attr('data-emp-id');
-                    var parent = $(this).parent("td").parent("tr");
-                    bootbox.dialog({
-                        message: "Are you sure you want to Delete ?",
-                        title: "<i class='glyphicon glyphicon-trash'></i> Delete !",
-                        buttons: {
-                            success: {
-                                label: "No",
-                                className: "btn-success",
-                                callback: function () {
-                                    $('.bootbox').modal('hide');
-                                }
-                            },
-                            danger: {
-                                label: "Delete!",
-                                className: "btn-danger",
-                                callback: function () {
-                                    $.ajax({
-                                        type: 'POST',
-                                        url: 'http://localhost/ElectronicEcommerce/admin/admin_product/delete',
-                                        data: 'empid=' + empid
-                                    })
-                                        .done(function (response) {
-                                            bootbox.alert("Delete sucssful");
-                                            parent.fadeOut('slow');
-                                        })
-                                        .fail(function () {
-                                            bootbox.alert('Error....');
-                                        })
-                                }
-                            }
-                        }
-                    });
-                });
-            });
-        </script>

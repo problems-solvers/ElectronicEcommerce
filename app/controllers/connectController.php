@@ -1,5 +1,7 @@
 <?PHP
 use coreAppNS\Controller;
+use coreAppNS\baseFunctions;
+
 //include("app/models/category.php");
 class connectController extends Controller{
 public $controller;

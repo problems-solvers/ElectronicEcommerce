@@ -4,12 +4,16 @@ include("app/config/config.php");
 $redirectTo="http://localhost/ElectronicEcommerce/user/facebooklogin";
 $data=["email"];
 $loginUrl = $helper->getLoginUrl($redirectTo, $data);
-$_SESSION['redirect']=$_SERVER['REQUEST_URI'];
+
  //$user = $facebook->getUser();
 //page?<?php $_SERVER['REQUEST_URL']
 
 ?>
-
+<div class="col-6 text-center mx-auto mt-3">
+<a class="navbar-brand" href="#"> <img
+                        src="/ElectronicEcommerce/app/assets/images/login_store_logos-2.png" class="float-left "
+                        style="width:300px; height:50px;"></a>
+</div>
 <div class="block d-flex  align-items-center m-auto">
   <div class="col-6 col-md-6 col-sm-10 col-xs-10 mx-auto ">
 <div class="card  mx-auto p-3" >
@@ -31,21 +35,23 @@ $_SESSION['redirect']=$_SERVER['REQUEST_URI'];
     <label class="form-check-label px-3">
       <input class="form-check-input" type="checkbox">Remember me
     </label>
-  <span class="float-right"> <a href="http://localhost/mvcphp/user/forgotpassword">Forgot password?</a></span>
+  <span class="float-right"> <a href="http://localhost/ElectronicEcommerce/user/forgotpassword">Forgot password?</a></span>
 </div>
 
-<div class="col-md-6 mx-auto">
+<div class="col-md-7 mx-auto">
 <a  href="googlelogin"><img src="../app/assets/images/loging.png"  class=" mx-auto"  width="150px"></a> 
 <a href=' <?php echo  $loginUrl ;?>'><img src="../app/assets/images/loginfb.png" class=" flex-end" width="150px"></a>
 </div>
 <div class="inlining-form  col-md-12 col-sm-12 col-xs-12 mx-auto  my-3 align-center text_center">
   <div class=" inlining col-md-2 col-sm-12 col-xs-12"></div>
   <div class=" inlining col-md-4 col-sm-12 col-xs-12 mx-auto ">
-  <button type="submit" class="bt mx-auto login_btn">login</button>
+  <button type="submit" class="bt mx-auto login_btn" onclick="myFunction()">login</button>
+      <!-- The actual snackbar -->
+<div id="snackbar">Some text some message..</div>
 </div>
 
   <div class="inlining col-md-4 col-sm-12 col-xs-12 mx-auto">
-  <button type="button" class="bt1 mx-auto"><a href="http://localhost/mvcphp/user/register" >register</button></a>
+  <button type="button" class="bt1 mx-auto"><a href="http://localhost/ElectronicEcommerce/user/register" >register</button></a>
 </div>
 
 </div>
@@ -53,6 +59,19 @@ $_SESSION['redirect']=$_SERVER['REQUEST_URI'];
 </div>
 </div>
 </div>
+<script>
+
+function myFunction() {
+    // Get the snackbar DIV
+    var x = document.getElementById("snackbar")
+
+    // Add the "show" class to DIV
+    x.className = "show";
+
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+</script>
 <script>
 
 $(document).ready(function() {

@@ -1,5 +1,7 @@
 <?PHP
 use coreAppNS\Controller;
+use coreAppNS\baseFunctions;
+
 class categoriesController extends Controller{
 public $controller;
 public $cat_model;
@@ -8,7 +10,7 @@ public $cat_model;
     function __construct($fun_name="categories"){
 
         $this->controller=new Controller();
-        $this->cat_model=$this->controller->model_object->create_model('admin_cat');
+        $this->cat_model=$this->controller->model_object->create_model('category');
         $this->product_model=$this->controller->model_object->create_model('home');
 
         $this->$fun_name();
@@ -67,6 +69,23 @@ public $cat_model;
     $this->controller->view_object->create_view('categories',$items);
 
     }
+
+    function show(){
+      if(isset($_GET['cat_id'])){
+      echo $_GET['cat_id'];
+      $items=array(
+        'categories'=>$this->cat_model->getadd(),
+     );
+     $this->controller->view_object->create_view('categories',$items);
+     }
+     else{
+      $featured=array(
+         'categories'=>$this->product_model->getAllProCatData(),
+      );
+      $this->controller->view_object->create_view('categories',$featured);
+     }
+   }
+    
     //    function index(){
     //     $this->cat_model=$this->controller->model_object->create_model('category');
     //    }

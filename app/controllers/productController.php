@@ -1,6 +1,8 @@
 
 <?PHP
 use coreAppNS\Controller;
+use coreAppNS\baseFunctions;
+
 //include("app/models/category.php");
 class productController extends Controller{
 public $controller;
@@ -23,7 +25,7 @@ function __construct($fun ='product'){
    public function productdetale(){
  
     $items=array(
-        'product'=>$this->cat_model->view_product(),
+        'product'=>$this->cat_model->view_more(),
     );
     $this->controller->view_object->create_view('productdetale',$items);
    }
