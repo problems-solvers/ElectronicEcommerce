@@ -58,7 +58,7 @@
 <a class="nav-link mx-2" href="http://localhost/ElectronicEcommerce/wishlist/">
     <div class="iconheart">
     <span class="badge badge-light">4</span>
-            <i class=" mdi  mdi-heart-outline" style="color:#714674 ;"></i>
+            <i class=" mdi  mdi-heart-outline" style="color:#836691 ;"></i>
     </div>
 </a>
 
@@ -66,20 +66,22 @@
     <div class="compare">
     <span class="badge badge-light">4</span>
 
-        <i class=" fas fa-exchange-alt" style="color:#714674 ;"></i>
+        <i class=" fas fa-exchange-alt" style="color:#836691 ;"></i>
     </div>
 </a>
 <a class="nav-link mx-2" href="http://localhost/ElectronicEcommerce/cart/">
     <div class="iconShopping">
     <span class="badge badge-light">4</span>
-        <i class="mdi mdi-cart-outline" style="color:#714674 ;"></i>
+        <i class="mdi mdi-cart-outline" style="color:#836691 ;"></i>
     </div>
 </a>
 
 <li class="nav-item submenu dropdown">
+
 <span class="badge badge-light"> </span>
 
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">        <i class="fas fa-user-circle mx-2" style="color:#714674 ;"></i>
+   <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">        <i class="fas fa-user-circle mx-2" style="color:#836691 ;"></i>
+
 </a>
                                 <ul class="dropdown-menu" > 
                                  
@@ -111,7 +113,7 @@ echo '<li class="nav-item text-dark"><a class="nav-link" href="http://localhost/
     <div id="CustTemplate">
     
         <nav class="navbar navbar-expand-lg navbar-dark  "
-                style="background-color: rgba(0, 0, 0, 0.692); z-index:999;">
+                style="background-color:#836691; z-index:999;">
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
