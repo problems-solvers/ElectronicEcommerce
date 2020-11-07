@@ -691,7 +691,7 @@ footer{ position:sticky; }
 footer .main-footer{padding: 20px 0;
   background: rgb(118,62,155);
   background: linear-gradient(293deg, rgba(118,62,155,1) 0%, rgba(195,192,190,1) 82%, rgba(235,235,235,1) 100%);}
-.footer-copyright {padding: 5px 0;}
+.footer-copyright {padding: 5px 0; text-align: center;}
 ul.social-footer2 {	margin: 0;padding: 0;	width: auto;}
 ul.social-footer2 li {display: inline-block;padding: 0;}
 ul.social-footer2 li a:hover {background-color:#E1B199;}
@@ -722,3 +722,50 @@ ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: cent
 .show .btn:hover {
   background-color: #E1B199;
 }
+/*contact us form */
+
+.ccform {
+  margin: 0 auto;
+   width: 800px;
+}
+.ccfield-prepend{
+ margin-bottom:10px;
+ width:100%;
+}
+
+.ccform-addon{
+ color:#f8ae45; 
+ float:left;
+ padding:8px;
+ width:8%;
+ text-align:center;	
+}
+
+.ccformfield {
+ color:#000000; 
+ border:none;
+ padding:15.5px;
+ width:91.9%;
+ display:block;
+ font-size:14px;
+}
+
+
+.ccbtn{
+ display:block;
+ border:none;
+ background:#ff8d1e;
+ color:#FFFFFF;
+ padding:12px 25px;
+ cursor:pointer;
+ text-decoration:none;
+ font-weight:bold;
+}
+.ccbtn:hover{
+ 
+ background:#f8ae45;
+}
+ .pro-text{
+   line-height:30px;
+   word-spacing:2px;
+ }

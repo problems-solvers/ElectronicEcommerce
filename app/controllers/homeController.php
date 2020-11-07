@@ -19,14 +19,32 @@ public $model;
        function home(){
 
         $items=array(
+            
             'Recent'=> $this->model->getRecentAddData(),
             'Featured'=>$this->model->getAllProCatData(),
-            'categories'=>$this->cat->getAllCatData()
+            'adver'=>$this->model->getAllAdver(),
+            'categories'=>$this->cat->getAllCatData(),
+            
          ); 
        
          
 
         $this->controller->view_object->create_view('home',$items);
+       
+    }
+
+    function whoare(){
+
+      
+        $this->controller->view_object->create_view('whoare');
+       
+    }
+
+    
+    function connect(){
+
+      
+        $this->controller->view_object->create_view('connect');
        
     }
     function getCategories(){

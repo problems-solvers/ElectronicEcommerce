@@ -51,6 +51,19 @@ class homeModel extends Model{
         }
     
     
+        function getAllAdver(){
+            $this->db=new DB();
+    
+                $table=array("advertisement");
+               $result=  $this->db->cols()
+               ->table($table)
+               ->get()
+               ->execute()
+               ->fetch();
+            return $result;
+            }
+        
+        
     }
     
     ?>

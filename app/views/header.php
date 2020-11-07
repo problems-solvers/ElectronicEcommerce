@@ -33,7 +33,7 @@
 
 </head>
 
-<body>
+<body class="d-flex flex-column">
 
 <div class="col-12">
 <div class="row">
@@ -54,21 +54,31 @@
 
                    
 
+
+<a class="nav-link mx-2" href="http://localhost/ElectronicEcommerce/wishlist/">
+    <div class="iconheart">
+    <span class="badge badge-light">4</span>
+            <i class=" mdi  mdi-heart-outline" style="color:#714674 ;"></i>
+    </div>
+</a>
+
+<a class="nav-link mx-2" href="http://localhost/ElectronicEcommerce/compare/">
+    <div class="compare">
+    <span class="badge badge-light">4</span>
+
+        <i class=" fas fa-exchange-alt" style="color:#714674 ;"></i>
+    </div>
+</a>
 <a class="nav-link mx-2" href="http://localhost/ElectronicEcommerce/cart/">
     <div class="iconShopping">
-
-        <i class="fa fa-shopping-cart" style="color:#714674 ;"></i>
-        <p class="" style="color:#714674 ;">0</p>
+    <span class="badge badge-light">4</span>
+        <i class="mdi mdi-cart-outline" style="color:#714674 ;"></i>
     </div>
 </a>
-<a class="nav-link mx-2" href="#">
-    <div class="iconheart">
 
-        <i class="fa fa-heart" style="color:#714674 ;"></i>
-        <p class="" style="color:#714674 ;">0</p>
-    </div>
-</a>
 <li class="nav-item submenu dropdown">
+<span class="badge badge-light"> </span>
+
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">        <i class="fas fa-user-circle mx-2" style="color:#714674 ;"></i>
 </a>
                                 <ul class="dropdown-menu" > 
@@ -131,12 +141,12 @@ echo '<li class="nav-item text-dark"><a class="nav-link" href="http://localhost/
 
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Who we are</a>
+                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/home/whoare">Who we are</a>
 
                         </li>
                        
                         <li class="nav-item">
-                        <a class="nav-link" href="#">contact us</a>
+                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/home/connect">contact us</a>
  </li>
                     </ul>
                 </div>

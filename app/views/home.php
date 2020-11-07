@@ -27,11 +27,17 @@
 <div id="owl-one" class=" owl-carousel owl-theme mx-auto py-4"   style="background: rgb(120,76,18);
       background: linear-gradient(293deg, rgba(120,76,18,0.1) 0%, rgba(145,122,33,0.1) 82%, rgba(247,81,185,0.1) 100%);">
 <?php  $rows=$data['Recent'];
-     foreach ($rows as $row) { echo ' 
+     foreach ($rows as $row) {
+      
+       echo ' 
+      
 <div class="item mx-2">
 
- <div class="card productCard mx-auto " >
-  <img class="card-img-top" src="'.$row->main_img.'" alt="Card image cap">
+ <div class="card productCard mx-auto " >';
+ echo "<a  href='http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id=".$row->pro_id."' class='update'>
+ ";
+ echo'
+  <img class="card-img-top" src="../'.$row->main_img.'" alt="Card image cap"></a>
   
   <div class="card-body py-1">
     <h5 class="card-title">'.$row->pro_name.'</h5>
@@ -50,14 +56,43 @@
   
 </div>
 
-<div class="row mx-auto my-2 show" >
-    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> <img class="card-img-top "  height="100%" src="/ElectronicEcommerce/app/assets/images/1ad.png" alt="Card image cap">
-    <button class="btn btn-sm px-3">SHOP NOW</button>
+<div class="row mx-auto my-4 show "  >
+<div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> 
+    <?php
+ $rows=$data['adver'];
+ $img='';
+ foreach ($rows as $row) {
+   if($row ->adver_namber==1)
+   $img=$row->adver_img;}
+
+   if(empty($img))
+   {
+     echo ' <img class="card-img-top" height="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
+   }
+   else 
+   echo '<img class="card-img-top" height="100%" src="'.$img.'" alt="Card image cap">';
+
+      ?>    <button class="btn btn-sm px-3">SHOP NOW</button>
   </div>
-    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto ">  <img class="card-img-top" height="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap">
+    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> 
+    <?php
+ $rows=$data['adver'];
+ $img='';
+ foreach ($rows as $row) {
+   if($row ->adver_namber==2)
+   $img=$row->adver_img;}
+
+   if(empty($img))
+   {
+     echo ' <img class="card-img-top" height="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
+   }
+   else 
+   echo '<img class="card-img-top" height="100%" src="'.$img.'" alt="Card image cap">';
+
+      ?>
     <button class="btn btn-sm px-3">SHOP NOW</button>
+  </div> 
   </div>
-</div>
 <div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
   <h3 class="titel">Featured Items</h3>
 </div>
@@ -68,8 +103,11 @@
      foreach ($rows as $row) { echo ' 
       <div class="item mx-2">
 
-      <div class="card productCard mx-auto " >
-       <img class="card-img-top" src="'.$row->main_img.'" alt="Card image cap">
+      <div class="card productCard mx-auto " >';
+      echo "<a  href='http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id=".$row->pro_id."' class='update'>
+ ";
+ echo'
+       <img class="card-img-top" src="../'.$row->main_img.'" alt="Card image cap"></a>
        
        <div class="card-body py-1">
          <h5 class="card-title">'.$row->pro_name.'</h5>
@@ -91,18 +129,43 @@
 <div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> <img class="card-img-top "  height="100%" width="100%" src="/ElectronicEcommerce/app/assets/images/2ad.png" alt="Card image cap">
     <button class="btn btn-sm px-3">SHOP NOW</button>
     </div>
-
 </div>
-<div class="row mx-auto my-4 show" >
-    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> <img class="card-img-top "  height="100%" src="/ElectronicEcommerce/app/assets/images/1ad.png" alt="Card image cap">
-    <button class="btn btn-sm px-3">SHOP NOW</button>
-  </div>
-    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto ">  <img class="card-img-top" height="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap">
-    <button class="btn btn-sm px-3">SHOP NOW</button>
-  </div>
-</div>
+<div class="row mx-auto my-4 show "  >
+<div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> 
+    <?php
+ $rows=$data['adver'];
+ $img='';
+ foreach ($rows as $row) {
+   if($row ->adver_namber==1)
+   $img=$row->adver_img;}
 
+   if(empty($img))
+   {
+     echo ' <img class="card-img-top" height="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
+   }
+   else 
+   echo '<img class="card-img-top" height="100%" src="'.$img.'" alt="Card image cap">';
 
- <script>
+      ?>    <button class="btn btn-sm px-3">SHOP NOW</button>
+  </div>
+    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> 
+    <?php
+ $rows=$data['adver'];
+ $img='';
+ foreach ($rows as $row) {
+   if($row ->adver_namber==2)
+   $img=$row->adver_img;}
+
+   if(empty($img))
+   {
+     echo ' <img class="card-img-top" height="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
+   }
+   else 
+   echo '<img class="card-img-top" height="100%" src="'.$img.'" alt="Card image cap">';
+
+      ?>
+    <button class="btn btn-sm px-3">SHOP NOW</button>
+  </div> 
+  </div>
+
  
-    </script>
