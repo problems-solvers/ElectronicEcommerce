@@ -1,5 +1,5 @@
 <div class="nam mx-auto  my-2 py-2 col-4 text-center text-light" >
-  <h3>This is a Wishlist</h3>
+  <h3>This is a Cart</h3>
   
 <?php
 if(isset($_SESSION['id'])){

@@ -80,8 +80,7 @@
    echo '<img class="card-img-top "  height="250px" src="'.$img.'" alt="Card image cap">';
 
       ?>
-    <button class="btn btn-sm" style="top: 240px;">SHOP NOW</button>
-  </div>
+ <button class="btn btn-sm px-3">SHOP NOW</button>  </div>
     <div class="col-md-5 col-sm-12 col-xs-12 mx-auto ">  
     <?php
  $rows=$data['adver'];
@@ -98,8 +97,7 @@
    echo '<img class="card-img-top "  height="250px" src="'.$img.'" alt="Card image cap">';
 
       ?>
-    <button class="btn btn-sm" style="top: 240px;">SHOP NOW</button>
-  </div>
+ <button class="btn btn-sm px-3">SHOP NOW</button>  </div>
 </div>
 <div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
   <h3 class="titel">Featured Items</h3>
@@ -138,71 +136,43 @@
     <button class="btn btn-sm px-3">SHOP NOW</button>
     </div>
 </div>
-<div class="row mx-auto my-4 show" >
-<!--     <div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> <img class="card-img-top "  height="100%" src="/ElectronicEcommerce/app/assets/images/1ad.png" alt="Card image cap">
-    <button class="btn btn-sm px-3">SHOP NOW</button>
-  </div>
-    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto ">  <img class="card-img-top" height="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap">
-    <button class="btn btn-sm px-3">SHOP NOW</button>
-  </div> -->
-
-<div class="row mx-auto my-2 show" style="height:300px;">
-    <div class="col-md-3 col-sm-12 col-xs-12 mx-auto ">  <?php
- $rows=$data['adver'];
- $img='';
- foreach ($rows as $row) {
-   if($row ->adver_namber==3)
-   $img=$row->adver_img;}
-
-   if(empty($img))
-   {
-     echo '<img class="card-img-top " height="250px" src="http://placehold.it/64x64" alt="Card image cap">';
-   }
-   else 
-   echo '<img class="card-img-top "  height="250px" src="'.$img.'" alt="Card image cap">';
-
-      ?>
-    <button class="btn btn-sm" style="top:240px;">SHOP NOW</button>
-
-  </div>
-    <div class="col-md-3 col-sm-12 col-xs-12 mx-auto "> 
+<div class="row mx-auto my-4 show "  >
+<div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> 
     <?php
  $rows=$data['adver'];
  $img='';
  foreach ($rows as $row) {
-   if($row ->adver_namber==4)
+   if($row ->adver_namber==1)
    $img=$row->adver_img;}
 
    if(empty($img))
    {
-     echo '<img class="card-img-top "  height="250px" src="http://placehold.it/64x64" alt="Card image cap">';
+     echo ' <img class="card-img-top" height="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
    }
    else 
-   echo '<img class="card-img-top "  height="250px" src="'.$img.'" alt="Card image cap">';
+   echo '<img class="card-img-top" height="100%" src="'.$img.'" alt="Card image cap">';
 
-      ?>
-    <button class="btn btn-sm" style="top: 240px;">SHOP NOW</button>
+      ?>    <button class="btn btn-sm px-3">SHOP NOW</button>
   </div>
-    <div class="col-md-3 col-sm-12 col-xs-12 mx-auto ">
+    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> 
     <?php
  $rows=$data['adver'];
  $img='';
  foreach ($rows as $row) {
-   if($row ->adver_namber==5)
+   if($row ->adver_namber==2)
    $img=$row->adver_img;}
 
    if(empty($img))
    {
-     echo '<img class="card-img-top "  height="250px" src="http://placehold.it/64x64" alt="Card image cap">';
+     echo ' <img class="card-img-top" height="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
    }
    else 
-   echo '<img class="card-img-top "  height="250px" src="'.$img.'" alt="Card image cap">';
+   echo '<img class="card-img-top" height="100%" src="'.$img.'" alt="Card image cap">';
 
       ?>
-    <button class="btn btn-sm" style="top: 240px;">SHOP NOW</button>
-</div>
-</div>
-
+    <button class="btn btn-sm px-3">SHOP NOW</button>
+  </div> 
+  </div>
 
  <script>
     text_truncate = function(str, length, ending) {

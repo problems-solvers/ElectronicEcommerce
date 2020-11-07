@@ -691,7 +691,7 @@ footer{ position:sticky; }
 footer .main-footer{padding: 20px 0;
   background: rgb(118,62,155);
   background: linear-gradient(293deg, rgba(118,62,155,1) 0%, rgba(195,192,190,1) 82%, rgba(235,235,235,1) 100%);}
-.footer-copyright {padding: 5px 0;}
+.footer-copyright {padding: 5px 0; text-align: center;}
 ul.social-footer2 {	margin: 0;padding: 0;	width: auto;}
 ul.social-footer2 li {display: inline-block;padding: 0;}
 ul.social-footer2 li a:hover {background-color:#E1B199;}

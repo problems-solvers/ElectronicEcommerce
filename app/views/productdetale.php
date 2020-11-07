@@ -4,7 +4,7 @@ foreach($rows as $row){
  
 
   ?>
-<div class="container">
+<div class="container mt-4">
 
     <div class="row">
         <div class="col-md-6">
@@ -43,12 +43,12 @@ foreach( $imgs as $img){
         <div class="col-md-6">
             <div class="product-dtl">
                 <div class="product-info">
-                    <div class="product-name">
+                    <div class="product-name text-center mb-3">
                         <?php echo $row->pro_name;?>
                     </div>
 
                     <div><h3 style="color:red;" >
-                            <?php echo $row->pro_price;?>
+                            <?php echo $row->pro_price;?>  $
                         </h3></div>
                 </div>
                 <div class="product-size border-bottom">
@@ -65,12 +65,11 @@ foreach( $imgs as $img){
                         <div class="quantity  d-inline-block">
                             <?php echo $row->tag_data; ?>
                     </div>
-                    <div class="row productCardbtns mx-0 mt-2">
-  <a href="#" class="fas fa-heart addTowish mx-auto"></a>
- 
-  <a href="#" ><i class="fas fa-exchange-alt"></i></a>
-  <a href="#" title="add to cart" id="'.$row->pro_id.'" class="attToCart fas fa-shopping-cart mx-auto"></a>
-  </div>
+                    <div class="row productCardbtns mx-0">
+         <a  title="add to wishlist" id="'.$row->pro_id.'" class="mdi mdi-heart-outline addTowish mx-auto"></a>
+         <a  title="add to compare" id="'.$row->pro_id.'" class="fas fa-exchange-alt addTocompare mx-auto" ></a>
+         <a  title="add to cart" id="'.$row->pro_id.'" class="attToCart mdi  mdi-cart-outline mx-auto"></a>          
+       </div>
                     <div class="product-info-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">

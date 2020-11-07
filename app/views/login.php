@@ -9,7 +9,11 @@ $loginUrl = $helper->getLoginUrl($redirectTo, $data);
 //page?<?php $_SERVER['REQUEST_URL']
 
 ?>
-
+<div class="col-6 text-center mx-auto mt-3">
+<a class="navbar-brand" href="#"> <img
+                        src="/ElectronicEcommerce/app/assets/images/login_store_logos-2.png" class="float-left "
+                        style="width:300px; height:50px;"></a>
+</div>
 <div class="block d-flex  align-items-center m-auto">
   <div class="col-6 col-md-6 col-sm-10 col-xs-10 mx-auto ">
 <div class="card  mx-auto p-3" >
@@ -34,7 +38,7 @@ $loginUrl = $helper->getLoginUrl($redirectTo, $data);
   <span class="float-right"> <a href="http://localhost/ElectronicEcommerce/user/forgotpassword">Forgot password?</a></span>
 </div>
 
-<div class="col-md-6 mx-auto">
+<div class="col-md-7 mx-auto">
 <a  href="googlelogin"><img src="../app/assets/images/loging.png"  class=" mx-auto"  width="150px"></a> 
 <a href=' <?php echo  $loginUrl ;?>'><img src="../app/assets/images/loginfb.png" class=" flex-end" width="150px"></a>
 </div>
