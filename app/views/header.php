@@ -91,7 +91,7 @@
 if(isset($_SESSION['user_name']))
 {
 
-echo'<li class="nav-item text-dark"> <a href="#" class="nav-link">Profile</a></li>
+echo'<li class="nav-item text-dark"> <a href="http://localhost/ElectronicEcommerce/userprofiel/" class="nav-link">Profile</a></li>
 <li class="nav-item text-dark"><a class="nav-link" href="http://localhost/ElectronicEcommerce/user/logout">Log Out</a></li> ';}
 else{
 echo '<li class="nav-item text-dark"><a class="nav-link" href="http://localhost/ElectronicEcommerce/user/login">Log In</a></li>';
