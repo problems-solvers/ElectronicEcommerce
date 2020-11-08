@@ -75,17 +75,21 @@ public function __construct($function){
               }
               else{
              
-                     print_r( $_POST);
-       //               $uuid=baseFunctions::uuid();
+                     //print_r( $_POST);
+                      $uuid=baseFunctions::uuid();
 
-       //               $_POST['tag_id']= $uuid;
-       //  $data = array(
-       //      'tag_id' =>"'".$_POST['tag_id']."'",
-       //      'tag_name' =>"'".$_POST['tag_name']."'",
-       //      'tag_type' =>"'".($_POST['tag_type'])."'",
-       //      'type_data' =>"'".($_POST['type_data'])."'"
-       //      );
-       //      $this->model->addTags($data);
+                     $_POST['tag_id']= $uuid;
+                     $tag_data='';
+                     foreach ($_POST['field'] as $key=>$val)
+                     {
+                         $tag_data .=$val.',';
+                     }
+        $data = array(
+           'tag_id' =>"'".$_POST['tag_id']."'",
+           'tag_name' =>"'".$_POST['tag_name']."'",
+            'tag_data' =>"'".$tag_data."'"
+            );
+             $this->model->addTags($data);
        //      $this->controller->view_object->create_view('admin/categoriesandTags');
        //      $this->controller->view_object->create_view('admin/feedback');
 

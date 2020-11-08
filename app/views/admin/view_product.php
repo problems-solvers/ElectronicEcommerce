@@ -88,6 +88,8 @@
 
                         </div>
                     </div>
+                    <a style="float:right" class="bt ml-auto" href="/ElectronicEcommerce/admin/admin_product/update"  type="submit">Update</a>
+        <a style="float:left" class="bt1 mr-auto" href="/ElectronicEcommerce/admin/admin_product/"  type="submit">Back</a>
 
                 </div>
 
@@ -95,10 +97,11 @@
             </div>
 
         </div>
-
+        
     </div>
 
 </div>
+
 <?php
   }
   ?>

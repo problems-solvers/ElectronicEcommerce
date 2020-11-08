@@ -123,37 +123,41 @@ public $tag_model;
         }
           
        }
-       function update(){
+
+    }
+    function update(){
         $_POST['create_date']='NOW()';
+        $tag_data='';
+        foreach ($_POST['field'] as $key=>$val)
+        {
+            $tag_data .=$val.',';
+        }
 
         $img=baseFunctions::img($_FILES['pro_imgs']);
         $main_img=baseFunctions::main_img($_FILES['main_img']);
         $data = array(
-            'product.pro_id' =>"'".$_POST['pro_id']."'",
-            'product.pro_name'=>"'". $_POST['pro_name']."'",
-            'product.brand' =>"'".$_POST['brand']."'" ,
-            'product.pro_quentity' =>"'".$_POST['pro_quentity']."'",
-            'product.pro_details' =>"'".$_POST['pro_details']."'",
-            'product.pro_price'=>"'".$_POST['pro_price']."'",
-            'product.is_active'=>"'".$_POST['is_active']."'",
-            'product.main_img' =>"'".$main_img."'",
-            'product.pro_imgs' =>"'".$img."'"  
+            'pro_name'=>"'". $_POST['pro_name']."'",
+            'brand' =>"'".$_POST['brand']."'" ,
+            'pro_imgs' =>"'".$img."'" ,
+            'pro_quentity' =>"'".$_POST['pro_quentity']."'",
+            'pro_details' =>"'".$_POST['pro_details']."'",
+            'pro_price'=>"'".$_POST['pro_price']."'",
+            'is_active'=>"'".$_POST['is_active']."'",
+            'main_img' =>"'".$main_img."'",
+             
 
                   );
 
                   $data2=array(
-                    'tags.tag_name'=>"'".$_POST['tag_name']."'",
-                    'tags.tag_id'=>"'".$_POST['tag_id']."'",
+                    'tag_name'=>"'".$_POST['tag_name']."'",
                   );
                   $data3=array( 
-                      'tag_details.tag_data'=>"'".$_POST['tag_data']."'",
-                  'tag_details.tag_details_id'=>"'".$_POST['tag_details_id']."'",
-                  'product.cat_id'=>"'".$_POST['cat_id']."'"
+                      'tag_data'=>"'".$tag_data."'",
                 );
                 
            $result=$this->cat_model->update($data);
-           $result=$this->cat_model->tagdetailUpdate($data3);
-           $result=$this->cat_model->tagUpdate($data2);
+           $result1=$this->cat_model->tagdetailUpdate($data3);
+           $result2=$this->cat_model->tagUpdate($data2);
           if( $result)
            {
             echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/';</script>";
@@ -162,8 +166,6 @@ public $tag_model;
             echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/updateProduct';</script>";
            }
        }
-
-    }
     function updateProduct(){
         $parents=array();
         $child=array();

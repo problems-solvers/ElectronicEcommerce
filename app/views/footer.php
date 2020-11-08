@@ -192,7 +192,7 @@
                      console.log('fds',mx)
                   }
                    cart = [];
-                const iconShoppingP = document.querySelector('.iconShopping p');
+                const iconShoppingP = document.querySelector('.iconShopping span');
                 var cartdata = JSON.parse(localStorage.getItem('cart'))
                 iconShoppingP.innerHTML = cartdata.length;
           }
@@ -243,7 +243,7 @@
                      console.log('fds',mx)
                   }
                   compare = [];
-                const iconShoppingP = document.querySelector('.iconShopping p');
+                const iconShoppingP = document.querySelector('.iconShopping span');
                 var comparedata = JSON.parse(localStorage.getItem('compare'))
                 iconShoppingP.innerHTML = comparedata.length;
           }

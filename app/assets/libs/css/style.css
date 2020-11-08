@@ -4813,20 +4813,30 @@ input[type=number] {
 }
 
 .bt{
-    height: 30px;
+   
     border-radius: 4vh;
     background-color: #ee802f;
     border: 2px #ee802f solid;
     color: white;
+    padding: 4px;
 
-  margin-right: -10%;
+  }
+  .bt:hover{
+    background-color: #ee802f;
+    border: 2px #ee802f solid;
+      
+  }
+  .bt:active{
+    background-color: #ee802f;
+    border: 2px #ee802f solid;
+      
   }
   .bt1{
-    height: 30px;
     border-radius: 4vh;
     background-color: whitesmoke;
     border: 2px #ee802f solid;
     color: black;
+    padding:4px;
   
   }
   .pro-text{

@@ -135,7 +135,7 @@ foreach($rows['parents'] as $ro){
     </div>
   
     <div class="form-actions btn-sm">
-    <button class="form-btn  bt " action="/ElectronicEcommerce/admin/admin_product/view"  type="submit"> Add Product</button>
+    <button class=" bt " action="/ElectronicEcommerce/admin/admin_product/view"  type="submit"> Add Product</button>
 </div>
     </div>
 </fieldset>

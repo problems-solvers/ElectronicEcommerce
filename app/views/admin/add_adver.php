@@ -23,7 +23,6 @@
         <label class=" control-label" for="product_categorie">PRODUCT CATEGORY</label>
         <div class="">
             <select class="form-control" id="cat1" name="offer_id">
-                <option value="">category</option>
 
                 <?php
 
@@ -43,7 +42,7 @@ foreach($rows as $ro){
     </div>
    
     <div class="form-group">
-        <label class=" control-label" for="product_categorie">PRODUCT CATEGORY</label>
+        <label class=" control-label" for="product_categorie">Advertisment Number</label>
         <div class="">
             <select class="form-control" id="cat1" name="adver_namber">
                 <option value="1">1</option>
@@ -92,7 +91,7 @@ foreach($rows as $ro){
    
   
     <div class="form-actions btn-sm">
-    <button class="form-btn  bt " action="/ElectronicEcommerce/admin/admin_advertiment/"  type="submit"> Add Product</button>
+    <button class=" bt " action="/ElectronicEcommerce/admin/admin_advertiment/"  type="submit"> Add Advertisment</button>
 </div>
     </div>
 </fieldset>
