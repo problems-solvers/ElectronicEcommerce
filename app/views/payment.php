@@ -1,4 +1,6 @@
-
+<?php
+$_SESSION['url'] = $_SERVER['REQUEST_URI'];
+?>
 <?php
 $_SESSION['redirect']=$_SERVER['REQUEST_URI'];
 if(isset($_SESSION['order_id'])==''){

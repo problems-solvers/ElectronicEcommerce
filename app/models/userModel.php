@@ -58,7 +58,14 @@ class userModel extends Model
 			if(isset($_SESSION['user_role']) && $_SESSION['user_role']==1)
 			echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_dashboard/';</script>";
 			if(isset($_SESSION['user_role']) && $_SESSION['user_role']==2)
-			echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/';</script>";
+			{
+				if(isset($_SESSION['url'])) 
+   $url = $_SESSION['url']; // holds url for last page visited.
+else 
+   $url ='http://localhost/ElectronicEcommerce/' ;
+   echo "<script type='text/javascript'>window.location.href ='". $url."';</script>";
+
+			}
 		} 
 		else {
 			Session::set('loggedIn', false);

@@ -1,4 +1,6 @@
-
+<?php
+$_SESSION['url'] = $_SERVER['REQUEST_URI'];
+?>
                 <!-- <div class="container mx-auto">
     <div class="row"> -->
         <!-- <div class="well col-xs-10 col-sm-10 col-md-8 col-xs-offset-1 col-sm-offset-1 col-md-offset-3"> -->
