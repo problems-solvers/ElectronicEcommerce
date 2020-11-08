@@ -107,9 +107,8 @@ foreach($cat['parents'] as $ro){
     <div class="form-group">
         <label class=" control-label" for="available_quantity">AVAILABLE QUANTITY</label>
         <div class="">
-            <input id="pro_quentity" name="pro_quentity"  value="<?php echo $row->pro_quentity; ?>"
+            <input id="pro_quentity" name="pro_quentity" value="<?php echo $row->pro_quentity; ?>"
                 class="form-control input-md" required="" type="number">
-
         </div>
     </div>
 
@@ -161,7 +160,7 @@ foreach($cat['parents'] as $ro){
                 <input type="hidden" name="pro_id" value="<?php echo $row->pro_id; ?>">
                 <input type="hidden" name="tag_id" value="<?php echo $row->tag_id; ?>">
                 <input type="hidden" name="tag_details_id" value="<?php echo $row->tag_details_id; ?>">
-        <button class="bt " action="/ElectronicEcommerce/admin/admin_product/view"  type="submit">Update</button>
+        <button class="bt col-12 btn-fulied " action="/ElectronicEcommerce/admin/admin_product/view"  type="submit">Update</button>
                 </div>
         </div>
         <?php

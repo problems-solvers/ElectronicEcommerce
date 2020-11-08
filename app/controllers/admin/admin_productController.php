@@ -151,12 +151,12 @@ public $tag_model;
                   $data2=array(
                     'tag_name'=>"'".$_POST['tag_name']."'",
                   );
-                  $data3=array( 
+                 /* $data3=array( 
                       'tag_data'=>"'".$tag_data."'",
-                );
+                );*/
                 
            $result=$this->cat_model->update($data);
-           $result1=$this->cat_model->tagdetailUpdate($data3);
+           //$result1=$this->cat_model->tagdetailUpdate($data3);
            $result2=$this->cat_model->tagUpdate($data2);
           if( $result)
            {

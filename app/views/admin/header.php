@@ -186,6 +186,9 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                                     <li class="nav-item">
                                         <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_offers"><i class="fas fa-fw fa-map-marker-alt"></i>Offers</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_advertiment/add_adver"><i class="fas fa-fw fa-table"></i>Advertisment</a>
+                                    </li>
                                 </ul>
                             </div>
                         </nav>
