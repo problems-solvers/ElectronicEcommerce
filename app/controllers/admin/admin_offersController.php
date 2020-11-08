@@ -41,7 +41,7 @@ public function __construct($function){
        }
 
        function add(){
-              if(isset($_POST['Regarding']) && $_POST['Regarding']!='')
+              if(isset($_POST['Regarding']) &  & $_POST['Regarding']!='')
              { 
               $discount_id=baseFunctions::uuid();
               $offer=baseFunctions::uuid();
