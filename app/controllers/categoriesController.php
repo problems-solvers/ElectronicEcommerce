@@ -72,7 +72,7 @@ public $cat_model;
 
     function show(){
       if(isset($_GET['cat_id'])){
-      echo $_GET['cat_id'];
+      
       $items=array(
         'categories'=>$this->cat_model->getadd(),
      );

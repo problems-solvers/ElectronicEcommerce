@@ -472,8 +472,12 @@ However, delay the fade out process for 2.5 seconds */
  left: 50%;
  bottom: 30px;
  font-size: 17px;
+ position: absolute;
 }
+.dropdown .dropdown-menu{
+ position: absolute;
 
+}
 #snackbar.show {
  visibility: visible;
  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
@@ -780,6 +784,12 @@ text-align: center;
 }
 .swal-button:hover{
   background-color:#705f79 ;
+}
+.custom-radio .custom-control-input:checked~.custom-control-label::before{
+  background-color: #705f79;
+}
+.form-check-input{
+  background-color: #705f79;
 }
 /*.custom-control-input{
   background-color: #836691;

@@ -1,16 +1,22 @@
 <div class="row">
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="page-header">
-            <h2 class="pageheader-title">Categories and Tags </h2>
-           <div class="page-breadcrumb">
+          
+            <h2 class="pageheader-title">Offers</h2>
+            
+            <div class="page-breadcrumb">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Categories and Tags</li>
+                        <li class="breadcrumb-item active" aria-current="page">SHOW OFFERS</li>
                     </ol>
                 </nav>
             </div>
         </div>
+        <a href="/ElectronicEcommerce/admin/admin_offers/addOffer"><button type="button"
+                                      class="d-inline-block btn  btn-sm  btn-left bt"
+                                      style="float:right; 	border-radius:20px;">Add Offers</button></a>
+                                      
     </div>
 </div>
 <div class="container">
@@ -20,19 +26,16 @@
     <li class="nav-link"><a href="#menu2">Giff Item</a></li>
    
   </ul>
-  <a href="/ElectronicEcommerce/admin/admin_offer/addOffer"><button type="button"
-                                      class="d-inline-block btn  btn-sm  btn-left bt"
-                                      style="float:right; 	border-radius:20px;">Add Offers</button></a>
+  
   
                         
   <div class="tab-content">
-    <div id="home" class="tab-pane fade active  show">
-      <h3>Offers</h3>
+    <div id="home" class="tab-pane fade active py-5  show">
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                       <div class="card">
                           <div class="card-header ">
                               <h5 class="mb-0  d-inline-block">Discount Offer</h5>
-                              
+                            
                           </div>
                           <div class="card-body">
                               <div class="table-responsive col-12 w-100">

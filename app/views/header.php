@@ -35,20 +35,20 @@
 
 <body class="d-flex flex-column">
 
-<div class="col-12">
+<div class="">
 <div class="row">
-            <div class="col-lg-3 col-sm-12 mx-2">
+            <div class="col-lg-3 col-md-4 col-sm-12 mx-2">
                 <a class="navbar-brand" href="#"> <img
                         src="/ElectronicEcommerce/app/assets/images/login_store_logos-2.png" class="float-left "
                         style="width:300px; height:50px;"></a>
             </div>
-<div class="col-lg-6 col-sm-12">
+<div class="col-lg-5 col-md-4 col-sm-12">
 <div class="input-group col-lg-12 col-sm-12 mt-2 ">
      <input type="search" name="search" id="" placeholder="Search..." class="form-control">
      <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
                                         </div>
 </div>
-            <div class="col-2 mx-5">
+            <div class="col-lg-3 col-md-3 col-sm-12 ml-auto">
            
                     <ul class="navbar-nav mt-2 col-12 ml-auto " style="flex-direction:inherit;">
 
@@ -57,51 +57,53 @@
 
 <a class="nav-link mx-2" href="http://localhost/ElectronicEcommerce/wishlist/">
     <div class="iconheart">
-    <span class="badge badge-light">4</span>
-            <i class=" mdi  mdi-heart-outline" style="color:#836691 ;"></i>
+    <span class="badge badge-light" style="color:#836691 ;font-size:16px;">
+            <i class=" mdi  mdi-heart-outline" style="color:#836691 ;"></i>0</span>
     </div>
 </a>
 
 <a class="nav-link mx-2" href="http://localhost/ElectronicEcommerce/compare/">
-    <div class="compare">
-    <span class="badge badge-light">4</span>
+    <div class="compare" style="heignt:10px;">
+    
+    <span class="badge badge-light" style="color:#836691 ;font-size:16px;">
 
-        <i class=" fas fa-exchange-alt" style="color:#836691 ;"></i>
+        <i class=" fas fa-exchange-alt " ></i>0</span>
     </div>
 </a>
 <a class="nav-link mx-2" href="http://localhost/ElectronicEcommerce/cart/">
     <div class="iconShopping">
-    <span class="badge badge-light">4</span>
-        <i class="mdi mdi-cart-outline" style="color:#836691 ;"></i>
+    <span class="badge badge-light" style="color:#836691 ;font-size:16px;">
+        <i class="mdi mdi-cart-outline" ></i>0</span>
     </div>
 </a>
 
-<li class="nav-item submenu dropdown">
 
-<span class="badge badge-light"> </span>
 
-   <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">        <i class="fas fa-user-circle mx-2" style="color:#836691 ;"></i>
 
-</a>
-                                <ul class="dropdown-menu" > 
+
+<li class="nav-item submenu dropdown" >
+<span class="badge badge-light" style="color:#836691 ;font-size:16px;">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  style="color:#836691 ;"><i class="fas fa-user-circle mx-2" style="color:#836691 ;"></i></a></span>
+                                <ul class="dropdown-menu"  > 
+                          
+                           
+
                                  
 
 
         <?php
-if(isset($_SESSION['user_name']))
+if(isset($_SESSION['id']))
 {
 
-echo'<li class="nav-item text-dark"> <a href="http://localhost/ElectronicEcommerce/userprofiel/" class="nav-link">Profile</a></li>
-<li class="nav-item text-dark"><a class="nav-link" href="http://localhost/ElectronicEcommerce/user/logout">Log Out</a></li> ';}
+echo' <li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/userprofiel/" class="nav-link">Profile</a></li>
+<li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/user/logout">Log Out</a></li> ';}
 else{
-echo '<li class="nav-item text-dark"><a class="nav-link" href="http://localhost/ElectronicEcommerce/user/login">Log In</a></li>';
+echo ' <li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/user/login">Log In</a></li>';
 }
 
 ?>
-
-
-</ul>
-</li>
+  </ul>
+                            </li> 
 </ul>
 
                     
