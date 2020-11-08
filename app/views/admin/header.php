@@ -125,7 +125,7 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                                     <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
                                 </div>
                                 <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
-                                <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/user/logout"><i class="fas fa-power-off mr-2"></i>Logout</a>
                             </div>
                         </li>
                     </ul>

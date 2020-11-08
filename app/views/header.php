@@ -75,6 +75,14 @@
         <i class="mdi mdi-cart-outline" style="color:#836691 ;"></i>
     </div>
 </a>
+             
+
+
+        <?php
+if(isset($_SESSION['user_name']))
+{
+
+echo' 
 
 <li class="nav-item submenu dropdown">
 
@@ -84,24 +92,35 @@
 
 </a>
                                 <ul class="dropdown-menu" > 
-                                 
+                    <div class="nav-user-info">
+<h5 class="mb-0 text-white nav-user-name">'.$_SESSION['user_name'].'
+</h5>
+</div>
+<li class="nav-item text-dark"> <a href="http://localhost/ElectronicEcommerce/userprofiel/" class="nav-link">Profile</a></li>
+<li class="nav-item text-dark"><a class="nav-link" href="http://localhost/ElectronicEcommerce/user/logout">Log Out</a></li> 
 
-
-        <?php
-if(isset($_SESSION['user_name']))
-{
-
-echo'<li class="nav-item text-dark"> <a href="http://localhost/ElectronicEcommerce/userprofiel/" class="nav-link">Profile</a></li>
-<li class="nav-item text-dark"><a class="nav-link" href="http://localhost/ElectronicEcommerce/user/logout">Log Out</a></li> ';}
+</ul>
+</li>';}
 else{
-echo '<li class="nav-item text-dark"><a class="nav-link" href="http://localhost/ElectronicEcommerce/user/login">Log In</a></li>';
+echo '
+
+<li class="nav-item submenu dropdown">
+
+<span class="badge badge-light"> </span>
+
+   <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">        <i class="fas fa-user-circle mx-2" style="color:#836691 ;"></i>
+
+</a>
+                                <ul class="dropdown-menu" > 
+                    <li class="nav-item text-dark"><a class="nav-link" href="http://localhost/ElectronicEcommerce/user/login">Log In</a></li>
+                    
+</ul>
+</li>';
 }
 
 ?>
 
 
-</ul>
-</li>
 </ul>
 
                     
