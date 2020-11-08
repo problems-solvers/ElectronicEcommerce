@@ -14,8 +14,13 @@ if(isset($_SESSION['id'])){
 </div>
 <br>
 <!-- <h4>heddin</h4> -->
-<div class="row">
-<div class="col-5 my-8 mx-auto wishlistBox">
+
+
+<div class="col-12">
+<!-- wishlist -->
+  
+<div class="row col-8 d-inline-block">
+<div class="col-10  mx-auto wishlistBox">
 
 <div class="show">
 
@@ -23,6 +28,25 @@ if(isset($_SESSION['id'])){
         
 </div>
 
+</div>
+<!-- Advertisment -->
+
+<div class="row col-4  d-inline-block">
+  
+<div class="row mx-auto my-4 show "  >
+<div class="col-md-12 col-sm-12 col-xs-12 mx-auto ">
+<img class="card-img-top" height="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> 
+ 
+       <button class="btn btn-sm px-3">SHOP NOW</button>
+  </div>
+  </div>
+  <div class="row mx-auto my-4 show "  >
+    <div class="col-md-12 col-sm-12 col-xs-12 mx-auto "> 
+  <img class="card-img-top" height="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> 
+   <button class="btn btn-sm px-3">SHOP NOW</button>
+  </div> 
+  </div>
+</div>
 
 <script>
 //adding wishlistbox data in table

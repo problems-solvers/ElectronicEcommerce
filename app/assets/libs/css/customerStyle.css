@@ -772,3 +772,17 @@ ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: cent
 .cardtitle{
  font-size: 1.1rem !important;
 }
+.swal-footer{
+text-align: center;
+}
+.swal-button{
+  background-color:#705f79 ;
+}
+.swal-button:hover{
+  background-color:#705f79 ;
+}
+/*.custom-control-input{
+  background-color: #836691;
+  color: #836691;
+}*/
+
