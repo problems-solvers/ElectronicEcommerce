@@ -20,7 +20,7 @@
     <li class="nav-link"><a href="#menu2">Giff Item</a></li>
    
   </ul>
-  <a href="/ElectronicEcommerce/admin/admin_offer/addOffer"><button type="button"
+  <a href="/ElectronicEcommerce/admin/admin_offers/addOffer"><button type="button"
                                       class="d-inline-block btn  btn-sm  btn-left bt"
                                       style="float:right; 	border-radius:20px;">Add Offers</button></a>
   

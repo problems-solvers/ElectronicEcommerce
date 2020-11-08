@@ -188,7 +188,7 @@ foreach($rows as $ro){
         
       </div>
       <div class="form-actions btn-sm">
-    <button class="form-btn  bt " action="/ElectronicEcommerce/admin/admin_offer/"  type="submit"> Add Offer</button>
+    <button class="bt" action="/ElectronicEcommerce/admin/admin_offer/"  type="submit"> Add Offer</button>
 </div>
     </div>
 

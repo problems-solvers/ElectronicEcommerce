@@ -2,7 +2,7 @@
 use coreAppNS\Controller;
 use coreAppNS\baseFunctions;
 
-class admin_offerController extends Controller{
+class admin_offersController extends Controller{
 public $controller;
 public $model;
 public $cat_model;
@@ -18,7 +18,7 @@ public function __construct($function){
         $this->$function();
         
        }
-       function admin_offer(){
+       function admin_offers(){
              
               $items=array(
                      'discount'=>$this->model->getdiscount(),
