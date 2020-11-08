@@ -44,7 +44,7 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
     $(document).ready(function(){
     $('input.typeahead').typeahead({
         name: 'typeahead',
-        remote:'http://localhost/ElectronicEcommerce/admin/admin_dashboard?key=%QUERY',
+        remote:'http://localhost/ElectronicEcommerce/admin/admin_dashboard/search?key=%QUERY',
         limit : 10,
 		 success: function(data){
  
