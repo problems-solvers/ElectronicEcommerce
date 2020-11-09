@@ -29,6 +29,7 @@ class userModel extends Model
 	{
 		 $table=array('user');		
 		$user_name=$_POST['user_name'];
+	
 		$user_password=md5($_POST['user_password']);
 		$res= $this->db->cols()
 		->table($table)->where('user_name','=',"'".$user_name."'")
@@ -44,6 +45,7 @@ class userModel extends Model
 			Session::init();
 			
 			Session::set('user_role',$s->user_role );
+			Session::set('user_img',$s->user_img );
 			Session::set('id', $s->user_id);
 			Session::set('loggedIn', true);
 			Session::set('user_name', $user_name);
@@ -58,12 +60,18 @@ class userModel extends Model
 			if(isset($_SESSION['user_role']) && $_SESSION['user_role']==1)
 			echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_dashboard/';</script>";
 			if(isset($_SESSION['user_role']) && $_SESSION['user_role']==2)
-			echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/';</script>";
-	  
+			{
+				if(isset($_SESSION['url'])) 
+   $url = $_SESSION['url']; // holds url for last page visited.
+else 
+   $url ='http://localhost/ElectronicEcommerce/' ;
+   echo "<script type='text/javascript'>window.location.href ='". $url."';</script>";
+
+			}
 		} 
-		   else {
+		else {
 			Session::set('loggedIn', false);
-			return ;
+			echo "<script type='text/javascript'>window.location.href ='http://localhost/ElectronicEcommerce/user/login';</script>";
 		}
 		
 		

@@ -1,6 +1,9 @@
 <div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
   <h3 class="titel">Categories </h3>
 </div>
+<?php
+$_SESSION['url'] = $_SERVER['REQUEST_URI'];
+?>
 <div class="container" id="jar">
 <div class="row w-75 mx-auto ">
 <?php 
@@ -14,8 +17,8 @@
 <img class="card-img-top" src="'.$row->main_img.'" alt="Card image cap">
 
 <div class="card-body py-1">
-  <h5 class="card-title">'.$row->pro_name.'</h5>
-  <span style="float:right; color:#5F3870; font-weight:bold;">'.$row->pro_price.'</span>
+  <h5 class="cardtitle">'.$row->pro_name.'</h5>
+  <span style="float:right; color:#836691; font-weight:bold;">'.$row->pro_price.'$</span>
 
   <span>'.$row->cat_name.'</span>
 </div>
@@ -35,11 +38,22 @@ else{
     ?>
     </div>
 </div>
-<nav>
-  <ul class="pagination justify-content-center pagination-sm">
-  </ul>
 
-</nav>
+  <ul style="color:#836691;" class="pagination justify-content-center pagination-sm">
+  </ul>
+  <style>
+    .pagination{
+      color:#836691;
+    }
+    .pagination li.active{
+      background-color: #836691;
+    }
+    .page-item{
+      color:#836691;
+    }
+  </style>
+
+
     <script>
       
     //   window.onload = function(){
@@ -110,6 +124,25 @@ else{
   
 
     <script>
+     text_truncate = function(str, length, ending) {
+      if (length == null) {
+        length = 100;
+      }
+      if (ending == null) {
+        ending = '...';
+      }
+      if (str.length > length) {
+        return str.substring(0, length - ending.length) + ending;
+      } else {
+        return str;
+      }
+    };
+    const titles = document.getElementsByClassName('cardtitle')
+  
+    for(i=0;i<titles.length; i++ ){
+     x= titles[i].innerText
+     titles[i].innerText=text_truncate(x,16)
+    }
 $('#parent').change(function () {
                 var id=$('#parent').val();
                 console.log(id);

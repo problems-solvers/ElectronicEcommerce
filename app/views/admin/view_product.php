@@ -29,13 +29,18 @@
                     </a>
                     <?php
   $imgs=explode(',',$row->pro_imgs);
-  
+  $image=sizeof( $imgs);
+  //print_r($image);
   foreach( $imgs as $img){
+     if($image >1){
+      
   ?>
                     <a href="../../<?php echo $img ?>" data-gallery="thumb">
                         <img src="../../<?php echo $img ?>">
                     </a>
                     <?php
+                     $image=$image-1;}
+                    
   }
   ?>
                 </div>
@@ -88,6 +93,8 @@
 
                         </div>
                     </div>
+                    <a style="float:right;text-align:center;font-size:18px" class="bt ml-auto col-3" href="/ElectronicEcommerce/admin/admin_product/update"  type="submit">Update</a>
+        <a style="float:left ;text-align:center;font-size:18px" class="bt1 mr-auto col-3" href="/ElectronicEcommerce/admin/admin_product/"  type="submit">Back</a>
 
                 </div>
 
@@ -95,10 +102,11 @@
             </div>
 
         </div>
-
+        
     </div>
 
 </div>
+
 <?php
   }
   ?>

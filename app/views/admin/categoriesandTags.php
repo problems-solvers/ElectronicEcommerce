@@ -1,28 +1,28 @@
 <div class="row">
-<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-        <div class="page-header">
-            <h2 class="pageheader-title">Categories and Tags </h2>
-           <div class="page-breadcrumb">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Categories and Tags</li>
-                    </ol>
-                </nav>
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="page-header">
+              
+                <h2 class="pageheader-title">Categories</h2>
+                
+                <div class="page-breadcrumb">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Categories And Tags </li>
+                        </ol>
+                    </nav>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
 <div class="container">
-  <ul class="nav nav-tabs">
-    <li class="active nav-link"><a href="#home">Categories</a></li>
-    <li class="nav-link"><a href="#menu1">Tags</a></li>
-   
-  </ul>
+   <ul class="nav nav-tabs">
+    <li class="nav-link active"><a href="#home">Categories</a></li>
+    <li class="nav-link"><a href="#menu1">Tag</a></li>
+    </ul>
 
   <div class="tab-content">
-    <div id="home" class="tab-pane fade active  show">
-      <h3>Categories</h3>
+    <div id="home" class="tab-pane fade in active show">
+    
+    <h3>Categories</h3>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                       <div class="card">
                           <div class="card-header ">
@@ -100,8 +100,12 @@
                           </div>
 
     </div>
-    <div id="menu1" class="tab-pane fade ">
-      <h3>Tags</h3>
+    </div>
+
+</div>
+    <div id="menu1" class="tab-pane fade">
+     
+    <h3>Tags</h3>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                               <div class="card">
                                   <div class="card-header ">
@@ -166,6 +170,11 @@
    
   </div>
 </div>
+   
+    
+  </div>
+   
+</div>
 
 <script>
 $(document).ready(function(){
@@ -173,5 +182,8 @@ $(document).ready(function(){
     $(this).tab('show');
     $(this).tab('active');
   });
+  
+
+  
 });
 </script>

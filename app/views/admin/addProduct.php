@@ -115,27 +115,41 @@ foreach($rows['parents'] as $ro){
 
 
 
-
-    <!-- File Button -->
     <div class="form-group">
-        <label class=" control-label" for="main_img">main_image</label>
+        <label class=" control-label" for="pro_imgs">Main_image</label>
         <div class="">
             <input id="main_img" name="main_img" class="input-file" type="file">
-        </div>
-    </div>
+<img id="myImg" src="#" alt="your image" name="main_img" width="20px" height="20px" />
+
+
+
+<!-- Post Info -->
+<div style='position:fixed;bottom:0;left:0;    
+            background:lightgray;width:100%;'>
+     <a href='http://stackoverflow.com/q/19866677/1366033'></a>
+     </div>
+     </div>
+     </div>
     <!-- File Button -->
+
+
+
     <div class="form-group">
         <label class=" control-label" for="pro_imgs">auxiliary_images</label>
         <div class="">
-            <input id="pro_imgs" name="pro_imgs[]" multiple class="input-file" type="file">
+        <input type="file" multiple id="gallery-photo-add" name="pro_imgs[]">
+<div class="gallery" width="20px" height="20px"></div>
+
+<!-- Post Info -->
+
         </div>
     </div>
 
       
-    </div>
+    
   
     <div class="form-actions btn-sm">
-    <button class="form-btn  bt " action="/ElectronicEcommerce/admin/admin_product/view"  type="submit"> Add Product</button>
+    <button class=" bt " action="/ElectronicEcommerce/admin/admin_product/view"  type="submit"> Add Product</button>
 </div>
     </div>
 </fieldset>
@@ -144,6 +158,40 @@ foreach($rows['parents'] as $ro){
 
 <script>
         $(document).ready(function(){
+            $(function () {
+    $(":file").change(function () {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = imageIsLoaded;
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+});
+
+function imageIsLoaded(e) {
+    $('#myImg').attr('src', e.target.result);
+};
+var imagesPreview = function(input, placeToInsertImagePreview) {
+
+if (input.files) {
+    var filesAmount = input.files.length;
+
+    for (i = 0; i < filesAmount; i++) {
+        var reader = new FileReader();
+
+        reader.onload = function(event) {
+            $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+        }
+
+        reader.readAsDataURL(input.files[i]);
+    }
+}
+
+};
+
+$('#gallery-photo-add').on('change', function() {
+imagesPreview(this, 'div.gallery');
+});
 var next = 1;
 $(".add-more").click(function(e){
     e.preventDefault();

@@ -48,53 +48,80 @@ public function __construct($function){
        }
        function addCats(){
               $uuid=baseFunctions::uuid();
+              //print_r($__REQUEST);
+    if(isset($_REQUEST['is_active']))
+    {
+           $active=1;
+    }
+    else{
+           $active=0;
+    }
 
         $_POST['cat_id']= $uuid;
         $_POST['create_date']= date('Y-m-d H:i:s');
         $data = array(
             'cat_id' =>"'".$_POST['cat_id']."'",
-            'cat_name' =>"'".$_POST['cat_name']."'",
-            'parent' =>"'".($_POST['parent'])."'",
-            'create_date' =>"'".($_POST['create_date'])."'",
-            'is_active' =>"'".($_POST['is_active'])."'"
+            'cat_name' =>"'".$_REQUEST['cat_name']."'",
+            'parent' =>"'".$_REQUEST['parent']."'",
+            'create_date' =>"'".$_POST['create_date']."'",
+            'is_active' =>"'".$active."'"
             );
-            $this->model->addCats($data);
-       //   $this->controller->view_object->create_view('admin/categoriesandTags');
-      // header('http://localhost/ElectronicEcommerce/admin/admin_cat/categoriesandTags');
-         // $this->controller->view_object->create_view('admin/feedback');
-       //   header_remove('http://localhost/ElectronicEcommerce/admin/admin_cat/addCattegories');
-       //   header("Location:https://www.psychocodes.in");
-                   
+            $result=$this->model->addCats($data);
+            //print_r($_POST);
+            if($result=='done') {
+              echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_cat/addCattegories';</script>";
+             }
+             else{
+              echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_cat/';</script>";
+
+             }
+            
        }
+                 
+       
 
 
        function addTags(){
-              if(!isset($_POST['tag_name'])){
+              if(!isset($_REQUEST['tag_name'])){
                      
                      $this->controller->view_object->create_view('admin/addTags');
               }
               else{
              
-                     print_r( $_POST);
-       //               $uuid=baseFunctions::uuid();
+                     //print_r( $_POST);
+                      $uuid=baseFunctions::uuid();
 
-       //               $_POST['tag_id']= $uuid;
-       //  $data = array(
-       //      'tag_id' =>"'".$_POST['tag_id']."'",
-       //      'tag_name' =>"'".$_POST['tag_name']."'",
-       //      'tag_type' =>"'".($_POST['tag_type'])."'",
-       //      'type_data' =>"'".($_POST['type_data'])."'"
-       //      );
-       //      $this->model->addTags($data);
-       //      $this->controller->view_object->create_view('admin/categoriesandTags');
-       //      $this->controller->view_object->create_view('admin/feedback');
+                     $_POST['tag_id']= $uuid;
+                     $tag_data='';
+                     foreach ($_REQUEST['field'] as $key=>$val)
+                     {
+                         $tag_data .=$val.',';
+                     }
+        $data = array(
+           'tag_id' =>"'".$_POST['tag_id']."'",
+           'tag_name' =>"'".$_REQUEST['tag_name']."'",
+            'tag_data' =>"'".$tag_data."'"
+            );
+            $result=$this->model->addTags($data);
+             if($result=='done') {
+              echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_cat/addCattegories';</script>";
 
+
+             }
+             else{
+              echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_cat/';</script>";
+
+             }
        }
     
 
        }
 
 
+       function delcat(){
+              $this->cat_model->delete();
+              
+             }
 
 }
 
