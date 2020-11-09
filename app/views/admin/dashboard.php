@@ -1,3 +1,17 @@
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="page-header">
+              
+                <h2 class="pageheader-title">Dashboard</h2>
+                
+                <div class="page-breadcrumb">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
 <?php
 $customer=$data['Customer'];
 $product=$data['product'];
@@ -27,9 +41,7 @@ $order=$data['order'];
                                            
                                             ?></h1>
                                         </div>
-                                        <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                            <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">5.86%</span>
-                                        </div>
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -50,9 +62,7 @@ $order=$data['order'];
                                             }}
                                             ?></h1>
                                         </div>
-                                        <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                            <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">10%</span>
-                                        </div>
+                                      
                                     </div>
                                 </div>
                             </div>
@@ -73,9 +83,7 @@ $order=$data['order'];
                                           }
                                             ?></h1>
                                         </div>
-                                        <div class="metric-label d-inline-block float-right text-danger font-weight-bold">
-                                            <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">4%</span>
-                                        </div>
+                                      
                                     </div>
                                 </div>
                             </div>

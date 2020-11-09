@@ -31,7 +31,7 @@ if(isset($_SESSION['id'])){
 </div>
 <!-- Advertisment -->
 
-<div class="row col-4  d-inline-block">
+<div class="row col-4  d-inline-block" style="position:absolute;">
   
 <div class="row mx-auto my-4 show "  >
 <div class="col-md-12 col-sm-12 col-xs-12 mx-auto ">

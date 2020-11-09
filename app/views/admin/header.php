@@ -75,7 +75,7 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="index.html">Concept</a>
+                <a class="navbar-brand" href="index.html"><img src="/ElectronicEcommerce/app/assets/images/login_store_logos-2.png"   style=" height:50px;" alt="" class=""></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -88,44 +88,23 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
 		 <div id="output"></div>
     </div>                            </div>
                         </li>
-                        <li class="nav-item dropdown notification">
-                            <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i> <span class="indicator"></span></a>
-                            <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
-                                <li>
-                                    <div class="notification-title"> Notification</div>
-                                    <div class="notification-list">
-                                        <div class="list-group">
-                                            <a href="#" class="list-group-item list-group-item-action">
-                                                <div class="notification-info">
-                                                    <div class="notification-list-user-img"><img src="../app/assets/images/login_store_logos-1.png"   style="width:70px; height:70px;" alt="" class="user-avatar-md rounded-circle"></div>
-                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Jessica Caruso</span>accepted your invitation to join the team.
-                                                        <div class="notification-date">2 min ago</div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="list-footer"> <a href="#">View all notifications</a></div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown nav-user">
+                  
+                        <!-- <li class="nav-item dropdown nav-user">
                             <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/ElectronicEcommerce/app/assets/images/login_store_logos-1.png"   style="width:60px; height:50px;" alt="" class="user-avatar-md rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
                                 <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
                             </div>
-                        </li>
+                        </li> -->
                         <li class="nav-item dropdown nav-user">
-                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/ElectronicEcommerce/app/assets/images/avatar-5.jpg"   style="width:60px; height:50px;" alt="" class="user-avatar-md rounded-circle"></a>
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?php echo $_SESSION['user_img']; ?>"   style="width:30px; height:30px;" alt="" class="user-avatar-md rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
-                                    <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
+                                    <h5 class="mb-0 text-white nav-user-name"><?php echo $_SESSION['user_name']; ?> </h5>
                                 </div>
                                 <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
-                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/user/logout"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/"><i class="fas fa-power-off mr-2"></i>Web Site</a>
+                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/user/logout/"><i class="fas fa-power-off mr-2"></i>Logout</a>
                             </div>
                         </li>
                     </ul>
@@ -153,9 +132,7 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                                     <li class="nav-item ">
                                         <a class="nav-link active" href="http://localhost/ElectronicEcommerce/admin/admin_dashboard"><i class="fa fa-fw fa-user-circle"></i>Dashboard<span class="badge badge-success">6</span></a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_uielements"><i class="fa fa-fw fa-rocket"></i>UI Elements</a>
-                                    </li>
+                                    
                                     <li class="nav-item">
                                         <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_reports"><i class="fas fa-fw fa-chart-pie"></i>Reports</a>
                                     
@@ -166,7 +143,9 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                                     <li class="nav-item">
                                         <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_customers"><i class="fas fa-fw fa-table"></i>Customers</a>
                                     </li>
-                                    
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_advertiment/add_adver"><i class="fas fa-fw fa-table"></i>Advertisment</a>
+                                    </li>
                                     <li class="nav-divider">
                                         Products Management
                                     </li>
@@ -186,9 +165,7 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                                     <li class="nav-item">
                                         <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_offers"><i class="fas fa-fw fa-map-marker-alt"></i>Offers</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_advertiment/add_adver"><i class="fas fa-fw fa-table"></i>Advertisment</a>
-                                    </li>
+                                    
                                 </ul>
                             </div>
                         </nav>

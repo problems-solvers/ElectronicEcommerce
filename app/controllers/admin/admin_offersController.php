@@ -36,7 +36,7 @@ public function __construct($function){
               $items=array(
                      'product'=>$this->cat_model->getQuery(),
                  );
-         $this->controller->view_object->create_view('admin/AddOffer',$items);
+                 $this->controller->view_object->create_view('admin/addOffer',$items);
               
        }
 
@@ -98,10 +98,10 @@ public function __construct($function){
                      
                      if( $result2)
                  {
-                  echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_offer/Addoffer';</script>";
+                  echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_offers/Addoffer';</script>";
                  }
                  else{
-                  echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_offer/';</script>";
+                  echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_offers/';</script>";
                }
                 
        }

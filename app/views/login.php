@@ -39,8 +39,8 @@ $loginUrl = $helper->getLoginUrl($redirectTo, $data);
 </div>
 
 <div class="col-md-7 mx-auto">
-<a  href="googlelogin"><img src="../app/assets/images/loging.png"  class=" mx-auto"  width="150px"></a> 
-<a href=' <?php echo  $loginUrl ;?>'><img src="../app/assets/images/loginfb.png" class=" flex-end" width="150px"></a>
+<a  href="googlelogin"><img src="/ElectronicEcommerce/app/assets/images/loging.png"  class=" mx-auto"  width="150px"></a> 
+<a href=' <?php echo  $loginUrl ;?>'><img src="/ElectronicEcommerce/app/assets/images/loginfb.png" class=" flex-end" width="150px"></a>
 </div>
 <div class="inlining-form  col-md-12 col-sm-12 col-xs-12 mx-auto  my-3 align-center text_center">
   <div class=" inlining col-md-2 col-sm-12 col-xs-12"></div>

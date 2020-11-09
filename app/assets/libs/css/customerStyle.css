@@ -472,8 +472,12 @@ However, delay the fade out process for 2.5 seconds */
  left: 50%;
  bottom: 30px;
  font-size: 17px;
+ position: absolute;
 }
+.dropdown .dropdown-menu{
+ position: absolute;
 
+}
 #snackbar.show {
  visibility: visible;
  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
@@ -634,7 +638,9 @@ However, delay the fade out process for 2.5 seconds */
     padding: 14px 20px;
    
   }
-  
+  .dropdown .dropdown-menu{
+  position: absolute;
+  }
   
   
   .dropdown-content {
@@ -781,8 +787,22 @@ text-align: center;
 .swal-button:hover{
   background-color:#705f79 ;
 }
+.custom-radio .custom-control-input:checked~.custom-control-label::before{
+  background-color: #705f79;
+}
+.form-check-input{
+  background-color: #705f79;
+}
 /*.custom-control-input{
   background-color: #836691;
   color: #836691;
 }*/
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index:99999;
+  background: rgb(131, 102, 145);
+   background: linear-gradient(293deg, rgb(131, 102, 145) 0%, rgba(145,122,33,0.1) 82%, rgba(247,81,185,0.1) 100%);
+}

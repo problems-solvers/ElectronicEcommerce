@@ -38,11 +38,22 @@ else{
     ?>
     </div>
 </div>
-<nav>
-  <ul class="pagination justify-content-center pagination-sm">
-  </ul>
 
-</nav>
+  <ul style="color:#836691;" class="pagination justify-content-center pagination-sm">
+  </ul>
+  <style>
+    .pagination{
+      color:#836691;
+    }
+    .pagination li.active{
+      background-color: #836691;
+    }
+    .page-item{
+      color:#836691;
+    }
+  </style>
+
+
     <script>
       
     //   window.onload = function(){

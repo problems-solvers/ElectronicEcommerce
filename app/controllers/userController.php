@@ -19,11 +19,24 @@ class userController extends Controller
     function user(){
 	}
 	function register(){
-        $this->controller->view_object->create_view('register');
+		if(!isset($_SESSION['id'])){
+		$this->controller->view_object->create_view('register');
+	}
+	else{
+	echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/';</script>";	
+
+	}
 
 	}
 	function login(){
-		$this->controller->view_object->create_view('login');
+		if(!isset($_SESSION['id'])){
+			$this->controller->view_object->create_view('login');
+
+		}
+		else{
+		echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/';</script>";	
+
+		}
 
 	}
 function signup(){

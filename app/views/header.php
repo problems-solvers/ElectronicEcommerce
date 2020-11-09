@@ -33,22 +33,22 @@
 
 </head>
 
-<body class="d-flex flex-column">
+<body class="">
 
-<div class="col-12">
-<div class="row">
-            <div class="col-lg-3 col-sm-12 mx-2">
+<div class="header" id="myHeader">
+<div class="row "  >
+            <div class="col-lg-3 col-md-4 col-sm-12 mx-2">
                 <a class="navbar-brand" href="#"> <img
                         src="/ElectronicEcommerce/app/assets/images/login_store_logos-2.png" class="float-left "
                         style="width:300px; height:50px;"></a>
             </div>
-<div class="col-lg-6 col-sm-12">
+<div class="col-lg-5 col-md-4 col-sm-12">
 <div class="input-group col-lg-12 col-sm-12 mt-2 ">
      <input type="search" name="search" id="" placeholder="Search..." class="form-control">
      <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
                                         </div>
 </div>
-            <div class="col-2 mx-5">
+            <div class="col-lg-3 col-md-3 col-sm-12 ml-auto">
            
                     <ul class="navbar-nav mt-2 col-12 ml-auto " style="flex-direction:inherit;">
 
@@ -57,46 +57,48 @@
 
 <a class="nav-link mx-2" href="http://localhost/ElectronicEcommerce/wishlist/">
     <div class="iconheart">
-    <span class="badge badge-light">4</span>
-            <i class=" mdi  mdi-heart-outline" style="color:#836691 ;"></i>
+    <span class="badge badge-light" style="color:#836691 ;font-size:16px;">
+            <i class=" mdi  mdi-heart-outline" style="color:#836691 ;"></i>0</span>
     </div>
 </a>
 
 <a class="nav-link mx-2" href="http://localhost/ElectronicEcommerce/compare/">
-    <div class="compare">
-    <span class="badge badge-light">4</span>
+    <div class="compare" style="heignt:10px;">
+    
+    <span class="badge badge-light" style="color:#836691 ;font-size:16px;">
 
-        <i class=" fas fa-exchange-alt" style="color:#836691 ;"></i>
+        <i class=" fas fa-exchange-alt " ></i>0</span>
     </div>
 </a>
 <a class="nav-link mx-2" href="http://localhost/ElectronicEcommerce/cart/">
     <div class="iconShopping">
-    <span class="badge badge-light">4</span>
-        <i class="mdi mdi-cart-outline" style="color:#836691 ;"></i>
+    <span class="badge badge-light" style="color:#836691 ;font-size:16px;">
+        <i class="mdi mdi-cart-outline" ></i>0</span>
     </div>
 </a>
-             
 
 
-        <?php
+
+
+
+<?php
 if(isset($_SESSION['user_name']))
 {
 
 echo' 
+<li class="nav-item submenu dropdown" >
+<span  style="color:#836691 ;font-size:16px;">
 
-<li class="nav-item submenu dropdown">
-
-<span class="badge badge-light"> </span>
-
-   <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">        <i class="fas fa-user-circle mx-2" style="color:#836691 ;"></i>
-
-</a>
-                                <ul class="dropdown-menu" > 
+                                <a href="#" class="nav-link "  data-toggle="dropdown"   style="hieght:20px"><img src="'.$_SESSION["user_img"].'" width="25px" height="25px" style="border-radius:100%;"></a></span>
+                                <ul class="dropdown-menu"  > 
+                          
                     <div class="nav-user-info">
-<h5 class="mb-0 text-white nav-user-name">'.$_SESSION['user_name'].'
-</h5>
+
 </div>
 <li class="nav-item text-dark"> <a href="http://localhost/ElectronicEcommerce/userprofiel/" class="nav-link">Profile</a></li>
+<li class="nav-item text-dark"> <a href="http://localhost/ElectronicEcommerce/userprofiel/address/" class="nav-link">Address</a></li>
+<li class="nav-item text-dark"> <a href="http://localhost/ElectronicEcommerce/userprofiel/payment/" class="nav-link">Payment</a></li>
+<li class="nav-item text-dark"> <a href="http://localhost/ElectronicEcommerce/userprofiel/order/" class="nav-link">Orders</a></li>
 <li class="nav-item text-dark"><a class="nav-link" href="http://localhost/ElectronicEcommerce/user/logout">Log Out</a></li> 
 
 </ul>
@@ -104,13 +106,11 @@ echo'
 else{
 echo '
 
-<li class="nav-item submenu dropdown">
+<li class="nav-item submenu dropdown" >
+<span  style="color:#836691 ;font-size:16px;">
 
-<span class="badge badge-light"> </span>
-
-   <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">        <i class="fas fa-user-circle mx-2" style="color:#836691 ;"></i>
-
-</a>
+                                <a href="#" class="nav-link "  data-toggle="dropdown"   style="hieght:20px"><img src="/ElectronicEcommerce/app/assets/images/img_avatar.png" width="25px" height="25px" style="border-radius:100%;"></a></span>
+                                <ul class="dropdown-menu"  > 
                                 <ul class="dropdown-menu" > 
                     <li class="nav-item text-dark"><a class="nav-link" href="http://localhost/ElectronicEcommerce/user/login">Log In</a></li>
                     
@@ -119,7 +119,6 @@ echo '
 }
 
 ?>
-
 
 </ul>
 
@@ -173,3 +172,17 @@ echo '
                 </div>
             </nav>
 
+            <script>
+    window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+    </script>

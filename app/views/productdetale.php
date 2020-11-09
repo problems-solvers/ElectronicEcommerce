@@ -19,26 +19,26 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
             <div id="js-gallery" class="gallery">
 
                 <!--Gallery Hero-->
-                <div class="gallery__hero">
+                <div class="gallery__hero" style="height:400px;">
 
 
 
-                    <img src="../<?php echo $row->main_img ?>" width="100%">
+                    <img src="<?php echo $row->main_img ?>" width="100%">
                 </div>
                 <!--Gallery Hero-->
 
                 <!--Gallery Thumbs-->
                 <div class="gallery__thumbs">
-                    <a href="../<?php echo $row->main_img ?>" data-gallery="thumb" class="is-active">
-                        <img src="../<?php echo $row->main_img ?>">
+                    <a href="<?php echo $row->main_img ?>" data-gallery="thumb" class="is-active">
+                        <img src="<?php echo $row->main_img ?>">
                     </a>
                     <?php
   $imgs=explode(',',$row->pro_imgs);
   
   foreach( $imgs as $img){
   ?>
-                    <a href="../<?php echo $img ?>" data-gallery="thumb">
-                        <img src="../<?php echo $img ?>">
+                    <a href="<?php echo $img ?>" data-gallery="thumb">
+                        <img src="<?php echo $img ?>">
                     </a>
                     <?php
   }

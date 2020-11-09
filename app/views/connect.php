@@ -1,11 +1,13 @@
 <?php
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 ?>
+<div style="height:43vw;background: rgb(120,76,18);
+      background: linear-gradient(293deg, rgba(120,76,18,0.1) 0%, rgba(145,122,33,0.1) 82%, rgba(247,81,185,0.1) 100%);">
+    
 <div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
   <h3 class="titel">Contact Us</h3>
 </div>
- <div style="background: rgb(120,76,18);
-      background: linear-gradient(293deg, rgba(120,76,18,0.1) 0%, rgba(145,122,33,0.1) 82%, rgba(247,81,185,0.1) 100%);">
+ <div >
     
 
 <div class="wrapper">
@@ -35,6 +37,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
     </div>
 
     </form>
+</div>
 </div>
 </div>
 

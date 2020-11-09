@@ -4843,3 +4843,12 @@ input[type=number] {
     line-height:30px;
     word-spacing:2px;
   }
+  .show{
+      display: block;
+  }
+  .hide{
+    display: none;
+}
+img{
+  max-width:180px;
+}

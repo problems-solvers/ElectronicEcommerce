@@ -20,7 +20,7 @@
 
     <!-- Select Basic -->
     <div class="form-group">
-        <label class=" control-label" for="product_categorie">PRODUCT CATEGORY</label>
+        <label class=" control-label" for="product_categorie">Offer Type</label>
         <div class="">
             <select class="form-control" id="cat1" name="offer_id">
 
@@ -83,11 +83,20 @@ foreach($rows as $ro){
 
     <!-- File Button -->
     <div class="form-group">
-        <label class=" control-label" for="main_img">main_image</label>
+        <label class=" control-label" for="pro_imgs">Main_image</label>
         <div class="">
             <input id="main_img" name="main_img" class="input-file" type="file">
-        </div>
-    </div>
+<img id="myImg" src="#" alt="your image" name="main_img" />
+
+
+
+<!-- Post Info -->
+<div style='position:fixed;bottom:0;left:0;    
+            background:lightgray;width:100%;'>
+     <a href='http://stackoverflow.com/q/19866677/1366033'></a>
+     </div>
+     </div>
+     </div>
    
   
     <div class="form-actions btn-sm">
@@ -97,4 +106,18 @@ foreach($rows as $ro){
 </fieldset>
 
 </form>
+<script>
+   $(function () {
+    $(":file").change(function () {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = imageIsLoaded;
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+});
 
+function imageIsLoaded(e) {
+    $('#myImg').attr('src', e.target.result);
+};
+</script>

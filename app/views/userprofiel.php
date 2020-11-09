@@ -14,7 +14,7 @@
   <img src="/ElectronicEcommerce/app/assets/images/img_avatar2.png " class="img-circle" styel=" border-radius:40px" alt="Cinque Terre" width="140" height="120" > 
 </div>
         
-<form action="signup" method="post" id="form1" onchange="validation();">
+<form action="signup" method="post" id="form1">
 <div class="col-12 col-sm-12 col-xs-12 mx-auto my-5 text-center">
   <div class="inlining-form mx-auto col-4 col-md-4 col-sm-8 col-xs-8  "> 
 <input type="text" class="form-control" name="first_name" id="first_name" value="<?php echo $row->first_name;?>" readOnly/>

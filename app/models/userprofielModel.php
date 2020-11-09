@@ -21,5 +21,44 @@ class userprofielModel extends Model
 		
 		return $result;
 	}
+	function user_address()
+	{ 
+		$table=array('address');
+		$result= $this->db->cols()
+		->table($table)
+		->where('user_id','=',"'".$_SESSION['id']."'")
+		->get()
+		->execute()
+		->fetch();
+		
+		
+		return $result;
+	}
+	function user_payment()
+	{ 
+		$table=array('payment');
+		$result= $this->db->cols()
+		->table($table)
+		->where('user_id','=',"'".$_SESSION['id']."'")
+		->get()
+		->execute()
+		->fetch();
+		
+		
+		return $result;
+	}
+	function user_order()
+	{ 
+		$table=array('orders');
+		$result= $this->db->cols()
+		->table($table)
+		->where('user_id','=',"'".$_SESSION['id']."'")
+		->get()
+		->execute()
+		->fetch();
+		
+		
+		return $result;
+	}
 }
 ?>

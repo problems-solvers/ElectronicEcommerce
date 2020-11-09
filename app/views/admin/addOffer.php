@@ -16,7 +16,7 @@
 
     <div class="row">
       <div class="col">
-      <form class="form-card"  id="programmer_form" action="/ElectronicEcommerce/admin/admin_offer/add"  method="POST" enctype="multipart/form-data">
+      <form class="form-card"  id="programmer_form" action="/ElectronicEcommerce/admin/admin_offers/add"  method="POST" enctype="multipart/form-data">
 
 <fieldset class="form-fieldset">
 <legend class="text-center text-dark mb-0">ADD OFFERS</legend>
@@ -70,7 +70,7 @@ $rows=$data['product'];
 foreach($rows as $ro){
   echo "
                                                    
-  <option value='$ro->pro_id' >$ro->name</option>";  
+  <option value='$ro->pro_id' >$ro->pro_name</option>";  
 
   
 
