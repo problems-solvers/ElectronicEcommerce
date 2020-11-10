@@ -84,12 +84,13 @@ $('#submit').click(function(e){
   var name = $("#user_name").val();
   var password = $("#user_password").val();
 
-  var x= JSON.parse(localStorage.getItem("cart")) 
+  var x= JSON.parse(localStorage.getItem("cart")); 
+  console.log(JSON.parse(localStorage.getItem("cart")) );
   $.ajax({
       type: "POST",
       url: "http://localhost/ElectronicEcommerce/user/run",
       context: document.body,
-      data: {user_name:name, user_password:password , cartdata: JSON.stringify(x) },
+      data: {user_name:name, user_password:password ,cartdata: JSON.stringify(x) },
       success: function(result) {
         //console.log(result);
         if (<?php echo isset($_SESSION['id'])?'true':'false'; ?>) {

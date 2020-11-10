@@ -354,6 +354,8 @@ if(isset($_SESSION['order_id'])==''){
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
     $(document).ready(function() {
+      console.log("before next ");
+
       if ($("#ad1").is(":checked")) {
        $("#box1").show();
        $("#box2").hide();
@@ -378,11 +380,16 @@ if(isset($_SESSION['order_id'])==''){
       var left, opacity, scale; //fieldset properties which we will animate
       var animating; //flag to prevent quick multi-click glitches
       var orderData;
+      console.log("before next ");
 
       $(".next").click(function (e) {
         var nextid=$(this).attr('id');
         var nextmsg='stop';
+        console.log("if next ");
+
         if(nextid==='next1'){
+          console.log("if first ");
+
            nextmsg='stop';
           if ($("#ad1").is(":checked")) {
             var zip_id=$('#zip_id').val();
@@ -403,6 +410,7 @@ if(isset($_SESSION['order_id'])==''){
                 if(response[0]=='noorder'){
                   //todo Message or ROute
                  // alert('hhhaa')
+                 console.log("nooorder ghj");
                  window.location.replace('http://localhost/ElectronicEcommerce/cart');
 
            
