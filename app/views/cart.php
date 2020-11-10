@@ -345,14 +345,53 @@ if(isset($_SESSION['id'])){
                       console.log(response)
                       if(response[0] =='notlogedin'){
                         console.log('hhaha');
+                     const localItems = JSON.parse(localStorage.getItem("cart"));
 
-                      }if(response[0] =='faildaddedtoOrder'){
-                        console.log('hhaha');
+                        if(localItems==0)
+                        alert("please shopping  before checkout");
+
+                        else
+                      { 
+                         window.location.href = 'http://localhost/ElectronicEcommerce/user/login'
+
+
+}
+
+                      }
+                      if(response[0] !='notlogedin'){
+                        console.log('login');
+
+                        const localItems = JSON.parse(localStorage.getItem("cart"));
+                        console.log(response[0]);
+
+                        if(response[0] =='nothingtoadd')
+                        {
+                                                     
+                      console.log('inside nothing');
+
+                      alert("please shopping  before checkout");
+
+                     }
+
+                       // else
+                        //window.location.href = 'http://localhost/ElectronicEcommerce/user/login/'
+
+
+                      }
+                      
+                      
+                      if(response[0] =='faildaddedtoOrder'){
+                        console.log('faildaddedtoOrder');
+                        alert("faildaddedtoOrder");
+                        //window.location.href = 'http://localhost/ElectronicEcommerce/cart'
+
 
                       }
                       if(response[0] =='gotopayment'){
+                        full_name="ersad";
                         totalqtycart()     
-                        window.location.href = 'http://localhost/ElectronicEcommerce/payment'
+                       // window.location.href = 'http://localhost/ElectronicEcommerce/payment?userName='+full_name+'';
+                        window.location.href = 'http://localhost/ElectronicEcommerce/payment/';
 
                       }
                       if(response[0] =='nothingtoadd'){
