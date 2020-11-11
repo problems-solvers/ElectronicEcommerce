@@ -134,6 +134,7 @@ class userprofielModel extends Model
 		->innerjoin("address","orders.address_id","address.address_id")
 		->innerjoin("oreder_details","orders.order_id","oreder_details.order_id")
 		->innerjoin("product","oreder_details.pro_id","product.pro_id")
+		->where("address.user_id","=","'".$_SESSION['id']."'")
 		->get()
 		->execute()
 		->fetch(); 

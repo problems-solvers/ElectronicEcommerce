@@ -103,7 +103,10 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                                     <h5 class="mb-0 text-white nav-user-name"><?php echo $_SESSION['user_name']; ?> </h5>
                                 </div>
                                 <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
+                               
                                 <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/"><i class="fas fa-power-off mr-2"></i>Web Site</a>
+                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/userprofiel/address/"><i ></i>Address</a>
+                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/userprofiel/payment/"><i ></i>Payment</a>
                                 <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/user/logout/"><i class="fas fa-power-off mr-2"></i>Logout</a>
                             </div>
                         </li>
@@ -111,7 +114,11 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                 </div>
             </nav>
         </div>
-        <!-- ============================================================== -->
+        <!-- <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/userprofiel/address/" class="nav-link"> <li></li> Address</a>
+                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/userprofiel/payment/" class="nav-link"><li > </li>Payment</a>
+                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/userprofiel/order/" class="nav-link">Orders</a>
+
+             ============================================================== -->
         <!-- end navbar -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
@@ -134,14 +141,14 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                                     </li>
                                     
                                     <li class="nav-item">
-                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_reports"><i class="fas fa-fw fa-chart-pie"></i>Reports</a>
+                                        <a class="nav-link" href="#"><i class="fas fa-fw fa-chart-pie"></i>Reports</a>
                                     
                                     </li>
                                     <li class="nav-item ">
-                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_users"><i class="fab fa-fw fa-wpforms"></i>Users and Roles</a>
+                                        <a class="nav-link" href="#"><i class="fab fa-fw fa-wpforms"></i>Users and Roles</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_customers"><i class="fas fa-fw fa-table"></i>Customers</a>
+                                        <a class="nav-link" href="#"><i class="fas fa-fw fa-table"></i>Customers</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_advertiment/add_adver"><i class="fas fa-fw fa-table"></i>Advertisment</a>
@@ -157,7 +164,7 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                                         <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_product"><i class="fas fa-fw fa-inbox"></i>Products <span class="badge badge-secondary">New</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_storinformition"><i class="fas fa-fw fa-columns"></i>Store Info</a>
+                                        <a class="nav-link" href="#"><i class="fas fa-fw fa-columns"></i>Store Info</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_orders"><i class="fas fa-fw fa-map-marker-alt"></i>Orders</a>

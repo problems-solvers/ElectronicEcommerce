@@ -78,12 +78,12 @@ Add Payment</button></a>
 
         </div>
 <?php 
-}} else { ?>
-
+}}
+  else { ?>
     <div class="row container col-2"> 
-            <div class=" mx-auto ">
-            <a href="http://localhost/ElectronicEcommerce/userprofiel/addPayment/">
-<button type="button " class="btadd mx-auto  col-md-2 col-sm-12 col-xm-12 m-2 bt btn-left" ><i class="fas fa-plus" ></i>
+            <div class=" mx-auto col-md-2 col-sm-12 col-xm-12">
+            <a href="http://localhost/ElectronicEcommerce/userprofiel/AddAddress/">
+<button type="button " class="btadd mx-auto  m-2 bt btn-left" ><i class="fas fa-plus" ></i>
 Add Payment</button>
 </a>
 </div>       
@@ -94,8 +94,7 @@ Add Payment</button>
     <h3> Plese Add Payment</h3>
     <img src="/ElectronicEcommerce/app/assets/images/no.jpg">
     </div>
-
-<?php }?>
+    <?php }  ?>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script>
             /*function myFunction() {

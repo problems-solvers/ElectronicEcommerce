@@ -197,8 +197,7 @@ function order(){
       $items=array(
           'orders'=>$this->model_order->getmore(),
       );
-      echo "<br>";
-      print_r($items);
+     
 
       $this->controller->view_object->create_view('view_more', $items);
   }
