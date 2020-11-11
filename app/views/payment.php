@@ -494,7 +494,7 @@ if(isset($_SESSION['order_id'])==''){
                 global: true,
                 async: false,
                 dataType: 'json',
-               url: "http://localhost:5320/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date+"&totalPrice="+totalprice,
+               url: "electronic-bank.herokuapp.com/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date+"&totalPrice="+totalprice,
               
               })
               .done(function (response) {
@@ -593,7 +593,7 @@ if(isset($_SESSION['order_id'])==''){
                type: "GET",
                 global: true,
                 dataType: 'json',
-              url: "http://localhost:5320/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date+"&totalPrice="+totalprice,
+              url: "electronic-bank.herokuapp.com/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date+"&totalPrice="+totalprice,
                   // success: function(result) {
                   // //  alert(data) 
                   // }
@@ -744,7 +744,7 @@ if(isset($_SESSION['order_id'])==''){
                global: true,
                async: false,
                dataType: 'json',
-               url: "http://localhost:5320/api/getcurrentaccount?userName="+full_name+"&BankNo="+userBank+"&expDate="+exp_date+"&totalPrice="+totalprice,
+               url: "electronic-bank.herokuapp.com/api/getcurrentaccount?userName="+full_name+"&BankNo="+userBank+"&expDate="+exp_date+"&totalPrice="+totalprice,
               
               })
 
@@ -782,7 +782,7 @@ if(isset($_SESSION['order_id'])==''){
                 global: true,
                 async: false,
                 dataType: 'json',
-               url: "http://localhost:5320/api/InsertNewTransaction",
+               url: "electronic-bank.herokuapp.com/api/InsertNewTransaction",
                   data: {recievedAccount:recievedAccount,paiedAccount:userBank,createdAt:Date.now(),transReason:'buying from log store',money:totalprice},
               })
               .done(function (response) {

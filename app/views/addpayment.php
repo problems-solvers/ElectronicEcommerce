@@ -14,6 +14,7 @@
                     <form class="needs-validation" novalidate method="POST">
 
 
+                    <input type="hidden" class="form-control" name="user_id" id="user_id"  value="<?php  echo $_SESSION['id']; ?>" required>
 
                       <div class="row align-items-center mx-auto py-3">
                         <div class="col-md-7 mx-auto">
@@ -27,14 +28,14 @@
                         <input type="text" class="form-control" id="bank_account" name="bank_account" placeholder="bank_account"required>
                         </div>
                         <div class="col-md-6 ">
-                        <input type="text" class="form-control" id="Exp_date" name="Exp_date" placeholder="Exp_date" required>
+                        <input type="date" class="form-control" id="Exp_date" name="Exp_date" placeholder="Exp_date" required>
                         </div>
                       </div>
     
                     
                       <div class="row mx-auto py-3">
                     <div class="  col-md-4 col-sm-12 col-xs-12 mx-auto ">
-        <button type="button" class="btadd mx-auto " ><i class="fas fa-plus"></i>
+        <button type="button" class="btadd mx-auto  m-2 bt "  id="add" ><i class="fas fa-plus"></i>
 
 add</button>
     </div>
@@ -53,4 +54,32 @@ add</button>
 
         </div>
 
+        <script>
+ $("#add").click(function (e) {
+  var user_id=$('#user_id').val();
+  var full_name=$('#full_name').val();
+    var Exp_date=$('#Exp_date').val();
+    var bank_account=$('#bank_account').val();
+    console.log(Exp_date);
+   $.ajax({
 
+             async: false,
+             type: "POST",
+             global: false,
+             url: "/ElectronicEcommerce/userprofiel/Newpayment/",
+             data: {user_id:user_id,full_name:full_name,bank_account:bank_account,Exp_date:Exp_date},
+             success: function(response) {
+    console.log("hhhh");
+    window.location.replace('http://localhost/ElectronicEcommerce/userprofiel/payment/');
+
+alert("SecusseFull Add");
+           
+             
+             },
+             error:function(){
+alert("Error Add");
+            
+             }
+           })
+           });
+</script>
