@@ -1,7 +1,7 @@
-<div class="container mar">
+<div class="container  form-card  col-lg-12 px-5">
         <div class="row container " style=" margin-top:2%;margin-bottom:1%;"> 
             <div class="col-md-10  mx-auto text-center">
-            <h2 class="fs-title" style="color:#836691; font-weight:bold;">show your order Details </h2>
+            <h2 class="fs-title my-2" style="color:#836691; font-weight:bold;"> ORDER Details </h2>
             </div>
             </div> 
     
@@ -56,7 +56,7 @@
                     </tbody>
                   </table>
                 
-               <div class="row">
+               <div class="row text-center">
                  <div class="col-6">
                  <address >
                     <div class="text-center">

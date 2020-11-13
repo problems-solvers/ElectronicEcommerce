@@ -18,7 +18,7 @@
         <div class="card-header ">
             <h5 class="mb-0  d-inline-block">Product Table</h5>
             <a href="http://localhost/ElectronicEcommerce/admin/admin_product/addProduct"><button type="button"
-                    class="d-inline-block btn btn-success btn-left bt" style="float:right; ">Add Product</button></a>
+                    class="d-inline-block  btn-left bt" style="float:right; ">Add Product</button></a>
 
         </div>
         <div class="card-body">

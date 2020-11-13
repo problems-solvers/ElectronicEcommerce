@@ -13,18 +13,27 @@ public $cat_model;
 public function __construct($function='admin_orders'){
 
         $this->controller=new Controller();
-        $this->model=$this->controller->model_object->create_model('admin_orders');
+        $this->model=$this->controller->model_object->create_model('admin_order');
         $this->cat_model=$this->controller->model_object->create_model('product');
         $this->$function();
         
        }
        function admin_orders(){
         $items=array(
-            'orders'=>$this->model_order->getmore(),
+            'order'=>$this->model->getorder(),
         );
-       
+       //print_r($this->model->getorder());
   
-        $this->controller->view_object->create_view('view_more', $items);
+        $this->controller->view_object->create_view('admin/view_order', $items);
+       }
+       function viewmore(){
+        $items=array(
+            'orders'=>$this->model->getmore(),
+        );
+
+       print_r($this->model->getmore());
+  
+        $this->controller->view_object->create_view('admin/view_more', $items);
        }
       
        

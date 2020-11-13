@@ -199,6 +199,67 @@ function totalqtycart(){
                      
                     })   
 
+                    function totalqtycompare(){
+          console.log(' i am here rererere')
+          const iconHeartP = document.querySelector('.compare span');
+         
+          var comparedata;
+            if (<?php echo isset($_SESSION['id'])?'true':'false'; ?>) {
+              $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost/ElectronicEcommerce/compare/getcompare',
+                    global: true,
+                    async: false,
+                    dataType: 'json',
+                    })
+                    .done(function (response) {
+                      comparedata=response;
+                    })
+                    .fail(function () {
+                     
+                    })  
+            // <?php
+            // $x= json_encode($data); 
+            //   ?>
+          console.log('hi')
+        <?php //echo $x; ?>;
+         if(comparedata[0] === 'nothingonWishlist'){
+            iconHeartP.innerHTML = '<i class="fa fa-exchange-alt" ></i>'+0+'</span>';
+          }else{
+          iconHeartP.innerHTML = '<i class="fa fa-exchange-alt" ></i>'+comparedata.length+'</span>';;
+          }
+        }
+        else{
+          if(JSON.parse(localStorage.getItem('compare')) === null){
+            iconHeartP.innerHTML ='<i class="fa fa-exchange-alt" ></i>'+0+'</span>';
+          }else{
+            var cartdata = JSON.parse(localStorage.getItem('compare'))
+            iconHeartP.innerHTML = '<i class="fa fa-exchange-alt"></i>'+cartdata.length+'</span>';
+          }
+        }
+          }
+       $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost/ElectronicEcommerce/home/getCategories',
+                   
+                    })
+                    .done(function (response) {
+                      var x=JSON.parse(response);
+                      var m='<li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/categories/show" id="parent">All Categories</a></li>';
+                      x.forEach(element => {
+                      
+                        
+                        m+= '<li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/categories/show?action=get&cat_id='+element.cat_id+'">'+element.cat_name+'</a></li>';
+                      });
+                      const a = document.querySelector('#allCategories');
+                    a.innerHTML = m;
+                  //  s=  ('#allCategories').val()
+
+                    })
+                    .fail(function () {
+                     
+                    })   
+
 
      
      //text cut
@@ -213,6 +274,7 @@ function totalqtycart(){
         totalqtycart()
        // totalqtycompare()
         totalqtywishlist()
+        totalqtycompare()
             console.log("empid")
       $('.attToCart').click(function (e) {
           let cart = [];

@@ -10,7 +10,7 @@ $rows=$data['address'];
 //print_r($rows);
 if($rows>0)
 {
-    echo '  <div class="row container " style=" margin-top:2%;margin-bottom:1%;"> 
+    echo '  <div class="row container col-12 " style=" margin-top:2%;margin-bottom:1%;"> 
             <div class="col-md-8  mx-auto text-center">
             <h2 class="fs-title text-center" style="color:#836691; font-weight:bold;">show your address </h2>
             </div>
@@ -35,7 +35,7 @@ foreach ($rows as $row)
         <li class="nav-item submenu dropdown ">
 <span class="badge badge-light"> </span>
    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">  
-             <i class="fa fa-ellipsis-v mx-1 " style="color:#836691 ;"></i></a>
+             <i class="fa fa-ellipsis-v  " style="color:#836691 ;"></i></a>
 <ul class="dropdown-menu" > 
 <li class="nav-item text-dark"> <a href='http://localhost/ElectronicEcommerce/userprofiel/updateAddress?action=update&id=<?php echo $row->address_id;?>' class="nav-link">update</a></li>
 <li class="nav-item text-dark"><a href="" class="nav-link " id="del" >delete</a></li> 
@@ -144,7 +144,7 @@ Add Address</button>
     console.log("hhhh");
     //window.location.replace('http://localhost/ElectronicEcommerce/userprofiel/address/');
 
-alert("SecusseFull Add");
+alert("SecusseFull Delete");
            
              
              },

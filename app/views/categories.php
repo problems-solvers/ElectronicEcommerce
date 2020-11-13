@@ -46,11 +46,26 @@ else{
       color:#836691;
     }
     .pagination li.active{
-      background-color: #836691;
+      background-color:#836691 !important;;
     }
-    .page-item{
+   
+    .page-link{
       color:#836691;
     }
+    .pagination-sm .page-item:first-child .page-link {
+   
+    padding:5px;
+}
+.pagination-sm .page-link {
+   
+    line-height: 1.5;
+}
+    .page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #836691;
+    border-color: #836691;
+}
   </style>
 
 

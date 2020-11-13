@@ -99,6 +99,14 @@ echo'
 <li class="nav-item text-dark"> <a href="http://localhost/ElectronicEcommerce/userprofiel/address/" class="nav-link">Address</a></li>
 <li class="nav-item text-dark"> <a href="http://localhost/ElectronicEcommerce/userprofiel/payment/" class="nav-link">Payment</a></li>
 <li class="nav-item text-dark"> <a href="http://localhost/ElectronicEcommerce/userprofiel/order/" class="nav-link">Orders</a></li>
+';
+if(isset($_SESSION['user_role'])&& $_SESSION['user_role']==1 )
+{
+    echo '
+    <i  class="nav-item text-dark  "><a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_dashboard">Controll Banel</a></i>';
+
+}
+echo'
 <li class="nav-item text-dark"><a class="nav-link" href="http://localhost/ElectronicEcommerce/user/logout">Log Out</a></li> 
 
 </ul>

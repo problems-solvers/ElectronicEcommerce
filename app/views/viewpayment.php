@@ -1,8 +1,9 @@
 <?php
 $rows=$data['payment'];
 //print_r($rows);
-if($rows>0)
-{
+$coun=count($rows);
+$index=0;
+if($coun>0){
     echo '  <div class="row container " style=" margin-top:2%;margin-bottom:1%;"> 
     <div class="col-mid-8  mx-auto text-center">
     <h2 class="fs-title text-center" style="color:#836691; font-weight:bold;">show your payment </h2>
@@ -80,8 +81,8 @@ Add Payment</button></a>
 <?php 
 }}
   else { ?>
-    <div class="row container col-2"> 
-            <div class=" mx-auto col-md-2 col-sm-12 col-xm-12">
+    <div class="row container col-12"> 
+            <div class=" col-md-2 col-sm-12 col-xm-12">
             <a href="http://localhost/ElectronicEcommerce/userprofiel/AddAddress/">
 <button type="button " class="btadd mx-auto  m-2 bt btn-left" ><i class="fas fa-plus" ></i>
 Add Payment</button>
@@ -136,7 +137,7 @@ Add Payment</button>
     console.log("hhhh");
     //window.location.replace('http://localhost/ElectronicEcommerce/userprofiel/address/');
 
-alert("SecusseFull Add");
+alert("SecusseFull Delete");
            
              
              },

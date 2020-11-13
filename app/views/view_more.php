@@ -26,8 +26,8 @@
                      <?php 
                        $ord=$data['orders'];
                        $index=0;
-                      
-                     //print_r($ord);
+                    
+                     print_r($ord);
                      $sum=0;
                      foreach($ord as $product){
                       //print_r($pro);
