@@ -1,9 +1,24 @@
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="page-header">
+              
+                <h2 class="pageheader-title">Products</h2>
+                
+                <div class="page-breadcrumb">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">SHOW Products</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
     <div class="card">
         <div class="card-header ">
             <h5 class="mb-0  d-inline-block">Product Table</h5>
             <a href="http://localhost/ElectronicEcommerce/admin/admin_product/addProduct"><button type="button"
-                    class="d-inline-block btn btn-success btn-left bt" style="float:right; ">Add Product</button></a>
+                    class="d-inline-block  btn-left bt" style="float:right; ">Add Product</button></a>
 
         </div>
         <div class="card-body">

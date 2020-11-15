@@ -16,6 +16,8 @@ class admin_catModel extends Model{
         $table=array("categories");
        $result=  $this->db->cols()
        ->table($table)
+       ->where("parent","=","0")
+       ->where("is_active","=","1")
        ->get()
        ->orderBy("create_date","DESC")
        ->execute()
@@ -91,16 +93,11 @@ return $result;
              
      }
    
-//     function update(){
-
-       
-
-
-//     }
-//     function deleteData($id){
-//         $this->db->where("cat_id","=",$id)->delete("categories");
-
-//     }
+     function delete(){
+        $id=$_REQUEST['empid'];
+        $tbls=array("categories");
+        $result=  $this->db->table($tbls)->where("cat_id","=","'".$id."'")->delete()-> execute();
+    }
 }
 
 ?>

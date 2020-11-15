@@ -33,7 +33,7 @@ if(isset($_SESSION['order_id'])==''){
             $rows=$data['products'];
                   foreach($rows as $row){
                    echo '<li class="list-group-item d-flex justify-content-between lh-condensed">
-                   <span class="text-muted justify-content-between my-4">'.$row->total_price.'</span>
+                   <span class="text-muted justify-content-between my-4">'.$row->total_price.' $</span>
                    <h6 class="my-4">'.$row->pro_name.'</h6>
                    <img class="d-block mb-2" src="'.$row->main_img.'" alt="" width="72" height="72">
                  </li>';
@@ -46,7 +46,7 @@ if(isset($_SESSION['order_id'])==''){
 
                      $sum+= $row->total_price;
 
-                   } echo $sum ?></span>
+                   } echo $sum ?> $</span>
                 <div class="text-success">
                   <h6 class="my-0"></h6>Total
                 </div>
@@ -139,7 +139,7 @@ if(isset($_SESSION['order_id'])==''){
             $rows=$data['products'];
                   foreach($rows as $row){
                    echo '<li class="list-group-item d-flex justify-content-between lh-condensed">
-                   <span class="text-muted justify-content-between my-4">'.$row->total_price.'</span>
+                   <span class="text-muted justify-content-between my-4">'.$row->total_price.' $</span>
                    <h6 class="my-4">'.$row->pro_name.'</h6>
                    <img class="d-block mb-2" src="'.$row->main_img.'" alt="" width="72" height="72">
                  </li>';
@@ -152,7 +152,7 @@ if(isset($_SESSION['order_id'])==''){
 
                      $sum+= $row->total_price;
 
-                   } echo $sum ?></span>
+                   } echo $sum ?> $</span>
                 <div class="text-success">
                   <h6 class="my-0"></h6>Total
                 </div>
@@ -195,16 +195,16 @@ if(isset($_SESSION['order_id'])==''){
                   <div class="py-2 " id="boxx1">
                       <div class="row align-items-center mx-3 py-3">
                         <div class="col-md-6 mx-auto">
-                          <input type="text" class="form-control" id="full_name" name="full_name" placeholder="full name" value="Dunia Muhammed"required>
+                          <input type="text" class="form-control" id="full_name" name="full_name" placeholder="full Name" value=""required>
                             
                         </div>
                       </div>
                       <div class="row align-items-center mx-3 py-3">
                         <div class="col-md-6 ">
-                        <input type="text" class="form-control" id="bank_account" name="bank_account" placeholder="full name" value="12121212"required>
+                        <input type="text" class="form-control" id="bank_account" name="bank_account" placeholder="Bank Account" value=""required>
                          </div>
                         <div class="col-md-6 ">
-                        <input type="text" class="form-control" id="Exp_date" name="Exp_date" placeholder="full name" value="2021-06-01"required>
+                        <input type="date" class="form-control" id="Exp_date" name="Exp_date" placeholder="Exp date" value=""required>
                            </div>
 
                       </div>
@@ -274,8 +274,8 @@ if(isset($_SESSION['order_id'])==''){
                             </td>
                            
                             <td  style="text-align: center; vertical-align:center;" > <?php echo $product->quentity; ?> </td>
-                            <td class=" text-center" style="vertical-align:center;"><?php echo $product->pro_price; ?></td>
-                            <td class=" text-center" style="vertical-align:center;"><?php echo $product->total_price; ?></td>
+                            <td class=" text-center" style="vertical-align:center;"><?php echo $product->pro_price; ?> $</td>
+                            <td class=" text-center" style="vertical-align:center;"><?php echo $product->total_price; ?> $</td>
                         </tr>
                         <?php } ?>
                         <tr>
@@ -341,7 +341,7 @@ if(isset($_SESSION['order_id'])==''){
                   
                  
    
-            <input type="button" name="previous" class="previous action-button" value="Previous" /> 
+            <input type="button" name="previous" class="previous action-button" value="Cancel" /> 
             <input type="submit" name="submit" class="submit action-button" value="Submit" />
       </fieldset>
 
@@ -354,6 +354,8 @@ if(isset($_SESSION['order_id'])==''){
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
     $(document).ready(function() {
+      console.log("before next ");
+
       if ($("#ad1").is(":checked")) {
        $("#box1").show();
        $("#box2").hide();
@@ -378,11 +380,16 @@ if(isset($_SESSION['order_id'])==''){
       var left, opacity, scale; //fieldset properties which we will animate
       var animating; //flag to prevent quick multi-click glitches
       var orderData;
+      console.log("before next ");
 
       $(".next").click(function (e) {
         var nextid=$(this).attr('id');
         var nextmsg='stop';
+        console.log("if next ");
+
         if(nextid==='next1'){
+          console.log("if first ");
+
            nextmsg='stop';
           if ($("#ad1").is(":checked")) {
             var zip_id=$('#zip_id').val();
@@ -390,7 +397,7 @@ if(isset($_SESSION['order_id'])==''){
               var country=$('#country').val();
               var city=$('#city').val();
               var street=$('#street').val();      //fetch form data
-              if(user_name!=''&& country!=''&& city!=''&& street!=''){
+              if(user_name!=''&& country!=''&& city!=''&& street!=''&& zip_id!=''){
               $.ajax({
                 async: false,
                 type: "POST",
@@ -403,6 +410,7 @@ if(isset($_SESSION['order_id'])==''){
                 if(response[0]=='noorder'){
                   //todo Message or ROute
                  // alert('hhhaa')
+                 console.log("nooorder ghj");
                  window.location.replace('http://localhost/ElectronicEcommerce/cart');
 
            
@@ -486,7 +494,7 @@ if(isset($_SESSION['order_id'])==''){
                 global: true,
                 async: false,
                 dataType: 'json',
-               url: "http://localhost:5320/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date+"&totalPrice="+totalprice,
+               url: "electronic-bank.herokuapp.com/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date+"&totalPrice="+totalprice,
               
               })
               .done(function (response) {
@@ -585,7 +593,7 @@ if(isset($_SESSION['order_id'])==''){
                type: "GET",
                 global: true,
                 dataType: 'json',
-              url: "http://localhost:5320/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date+"&totalPrice="+totalprice,
+              url: "electronic-bank.herokuapp.com/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date+"&totalPrice="+totalprice,
                   // success: function(result) {
                   // //  alert(data) 
                   // }
@@ -736,7 +744,7 @@ if(isset($_SESSION['order_id'])==''){
                global: true,
                async: false,
                dataType: 'json',
-               url: "http://localhost:5320/api/getcurrentaccount?userName="+full_name+"&BankNo="+userBank+"&expDate="+exp_date+"&totalPrice="+totalprice,
+               url: "electronic-bank.herokuapp.com/api/getcurrentaccount?userName="+full_name+"&BankNo="+userBank+"&expDate="+exp_date+"&totalPrice="+totalprice,
               
               })
 
@@ -774,7 +782,7 @@ if(isset($_SESSION['order_id'])==''){
                 global: true,
                 async: false,
                 dataType: 'json',
-               url: "http://localhost:5320/api/InsertNewTransaction",
+               url: "electronic-bank.herokuapp.com/api/InsertNewTransaction",
                   data: {recievedAccount:recievedAccount,paiedAccount:userBank,createdAt:Date.now(),transReason:'buying from log store',money:totalprice},
               })
               .done(function (response) {

@@ -92,7 +92,6 @@ public $tag_model;
                
                        print_r( $_POST);
                        $uuid=baseFunctions::uuid();
-                       print_r( $_POST['field']);
                        foreach( $_POST['field'] as $filed)
                        {
                               $tag_data.=$filed.',';
@@ -122,50 +121,10 @@ public $tag_model;
         
         }
           
-       }
+       }}
 
-    }
-    function update(){
-        $_POST['create_date']='NOW()';
-        $tag_data='';
-        foreach ($_POST['field'] as $key=>$val)
-        {
-            $tag_data .=$val.',';
-        }
-
-        $img=baseFunctions::img($_FILES['pro_imgs']);
-        $main_img=baseFunctions::main_img($_FILES['main_img']);
-        $data = array(
-            'pro_name'=>"'". $_POST['pro_name']."'",
-            'brand' =>"'".$_POST['brand']."'" ,
-            'pro_imgs' =>"'".$img."'" ,
-            'pro_quentity' =>"'".$_POST['pro_quentity']."'",
-            'pro_details' =>"'".$_POST['pro_details']."'",
-            'pro_price'=>"'".$_POST['pro_price']."'",
-            'is_active'=>"'".$_POST['is_active']."'",
-            'main_img' =>"'".$main_img."'",
-             
-
-                  );
-
-                  $data2=array(
-                    'tag_name'=>"'".$_POST['tag_name']."'",
-                  );
-                 /* $data3=array( 
-                      'tag_data'=>"'".$tag_data."'",
-                );*/
-                
-           $result=$this->cat_model->update($data);
-           //$result1=$this->cat_model->tagdetailUpdate($data3);
-           $result2=$this->cat_model->tagUpdate($data2);
-          if( $result)
-           {
-            echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/';</script>";
-           }
-           else{
-            echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/updateProduct';</script>";
-           }
-       }
+    
+    
     function updateProduct(){
         $parents=array();
         $child=array();
@@ -194,6 +153,104 @@ public $tag_model;
         $this->cat_model->delete();
         
        }
+       function update(){
+        $tag_data='';
+        $active='';
+        $data='';
+        if(isset($_POST['is_active']))
+        $active=1;
+        else
+        $active=0;
+        foreach( $_POST['field'] as $filed)
+        {
+               $tag_data.=$filed.',';
+        }
+
+        $img=baseFunctions::img($_FILES['pro_imgs']);
+        
+        echo $img;
+        $m='';
+        // foreach ( $img as $row) {
+        //     $m.=$row.',';
+        // }
+        $main_img=baseFunctions::main_img($_FILES['main_img']);
+
+        if(isset($_FILES['pro_imgs'])&&isset($_FILES['main_img']))
+       { $data = array(
+
+            'pro_name'=>"'". $_POST['pro_name']."'",
+            'brand' =>"'".$_POST['brand']."'" ,
+            'pro_details' =>"'".$_POST['pro_details']."'",
+            'pro_price'=>"'".$_POST['pro_price']."'",
+            'is_active'=>"'".$active."'",
+            'main_img' =>"'".$main_img."'",
+            'pro_imgs' =>"'".$img."'" ,
+
+                  );
+                }
+          
+
+        //           else  if(isset($_FILES['main_img']))
+        //           { $data = array(
+           
+        //                'pro_name'=>"'". $_POST['pro_name']."'",
+        //                'brand' =>"'".$_POST['brand']."'" ,
+        //                'pro_quentity' =>"'".$_POST['pro_quentity']."'",
+        //                'pro_details' =>"'".$_POST['pro_details']."'",
+        //                'pro_price'=>"'".$_POST['pro_price']."'",
+        //                'is_active'=>"'".$active."'",
+        //                'main_img' =>"'".$main_img."'",
+        //                      );}
+
+        //                      else  if(isset($_FILES['pro_imgs']))
+        //                      { $data = array(
+                      
+        //                           'pro_name'=>"'". $_POST['pro_name']."'",
+        //                           'brand' =>"'".$_POST['brand']."'" ,
+        //                           'pro_quentity' =>"'".$_POST['pro_quentity']."'",
+        //                           'pro_details' =>"'".$_POST['pro_details']."'",
+        //                           'pro_price'=>"'".$_POST['pro_price']."'",
+        //                           'is_active'=>"'".$active."'",
+        //                           'pro_imgs' =>"'".$img."'" ,
+
+        //                                 );}
+
+        // else{
+        //     $data = array(
+
+        //         'pro_name'=>"'". $_POST['pro_name']."'",
+        //         'brand' =>"'".$_POST['brand']."'" ,
+        //         'pro_quentity' =>"'".$_POST['pro_quentity']."'",
+        //         'pro_details' =>"'".$_POST['pro_details']."'",
+        //         'pro_price'=>"'".$_POST['pro_price']."'",
+        //         'is_active'=>"'".$active."'",
+        //               ); 
+        // }
+
+    //    print_r($tag_data);
+
+                  $data2=array(
+                    'tag_name'=>"'".$_POST['tag_name']."'"
+                  );
+               $data4=array(
+                'tag_data' =>"'".$tag_data."'" ,
+            );
+                
+           $result=$this->cat_model->update($data);
+           $result2=$this->cat_model->tagUpdate($data2);
+           $result1=$this->cat_model->tagdetailUpdate($data4);
+
+
+
+             if( $result)
+           {
+            echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/';</script>";
+           }
+           else{
+            echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/updateProduct';</script>";
+           }
+        }
+       
       
 
 }

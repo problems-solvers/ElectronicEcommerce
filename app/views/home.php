@@ -57,7 +57,7 @@
 </div>
 
 <div class="row mx-auto my-4 show "  >
-<div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> 
+<div class="col-md-5 col-sm-8 col-xs-8 mx-auto mb-3 "> 
     <?php
  $rows=$data['adver'];
  $img='';
@@ -74,7 +74,7 @@
 
       ?>    <button class="btn btn-sm px-3">SHOP NOW</button>
   </div>
-    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> 
+    <div class="col-md-5 col-sm-8 col-xs-8 mx-auto mb-3 "> 
     <?php
  $rows=$data['adver'];
  $img='';
@@ -123,12 +123,12 @@
   
 </div>
 <div class="row mx-auto my-4 show" >
-<div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> <img class="card-img-top "  height="100%" width="100%" src="/ElectronicEcommerce/app/assets/images/2ad.png" alt="Card image cap">
+<div class="col-md-5 col-sm-8 col-xs-8 mx-auto "> <img class="card-img-top "  height="100%" width="100%" src="/ElectronicEcommerce/app/assets/images/2ad.png" alt="Card image cap">
     <button class="btn btn-sm px-3">SHOP NOW</button>
     </div>
 </div>
 <div class="row mx-auto my-4 show "  >
-<div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> 
+<div class="col-md-5 col-sm-8 col-xs-8 mx-auto mb-3 "> 
     <?php
  $rows=$data['adver'];
  $img='';
@@ -145,7 +145,7 @@
 
       ?>    <button class="btn btn-sm px-3">SHOP NOW</button>
   </div>
-    <div class="col-md-5 col-sm-12 col-xs-12 mx-auto "> 
+    <div class="col-md-5 col-sm-8 col-xs-8 mx-auto mb-3 "> 
     <?php
  $rows=$data['adver'];
  $img='';

@@ -27,6 +27,7 @@ public $model;
     function getCart(){
         if(isset($_SESSION['id'])){
            $items = $this->model->getCartProducts();
+           
           if(count($items)>=1){
                 $res=json_encode($items);
                  echo $res; 

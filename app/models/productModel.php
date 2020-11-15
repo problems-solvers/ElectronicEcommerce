@@ -99,7 +99,7 @@ function  getcatchiled($id){
 		->execute()->fetch();      
     }
     function update($data){
-       
+        $this->db=new DB();
         $tbls=array('product');
         $id=$_POST['pro_id'];
         return $this->db->cols($data)->settingcol()->table($tbls)->where("pro_id","=","'".$id."'")->update()->execute();
@@ -114,7 +114,7 @@ function  getcatchiled($id){
     function tagdetailUpdate($data){
         $tbls=array('tag_details');
         $tag_details_id=$_POST['tag_details_id'];
-        return $this->db->cols($data)->settingcol()->table($tbls)->where("tag_details_id","=","'".$tag_details_id."'")->update()->execute();
+        return $this->db->cols($data)->settingcol()->table($tbls)->where("tag_details_id","=","'".$tag_details_id."'")->where('pro_id ','=',"'".$_POST['pro_id']."'")->update()->execute();
    
     }
 

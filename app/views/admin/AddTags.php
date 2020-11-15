@@ -41,8 +41,8 @@
 </div>
 <!-- Button -->
 <div class="form-group">
-  <div class="col-md-4">
-    <button id="singlebutton" action="/ElectronicEcommerce/admin/admin_cat" name="singlebutton" class="btn bt">ADD Tag</button>
+  <div class="col-md-5">
+    <button id="singlebutton"  name="singlebutton" class="btn btn-block bt">ADD Tag</button>
   </div>
   </div>
   </form>
@@ -76,6 +76,27 @@
             });
     });
     
+   
+    var tag_name=$('#tag_name').val();
+    var field1=$('#field1').val();
+   $.ajax({
+             async: false,
+             type: "POST",
+             global: false,
+             url: "/ElectronicEcommerce/admin/admin_cat/addTags",
+             data: {tag_name:tag_name,field1:field1},
+             success: function(response) {
+           
+             
+             },
+             error:function(){
+              window.location.replace('http://localhost/ElectronicEcommerce/admin/admin_cat/');
+
+alert("SecusseFull Add");
+             }
+           })
+    
+ 
 
     
 });

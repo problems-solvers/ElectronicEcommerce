@@ -39,8 +39,8 @@ $loginUrl = $helper->getLoginUrl($redirectTo, $data);
 </div>
 
 <div class="col-md-7 mx-auto">
-<a  href="googlelogin"><img src="../app/assets/images/loging.png"  class=" mx-auto"  width="150px"></a> 
-<a href=' <?php echo  $loginUrl ;?>'><img src="../app/assets/images/loginfb.png" class=" flex-end" width="150px"></a>
+<a  href="googlelogin"><img src="/ElectronicEcommerce/app/assets/images/loging.png"  class=" mx-auto"  width="150px"></a> 
+<a href=' <?php echo  $loginUrl ;?>'><img src="/ElectronicEcommerce/app/assets/images/loginfb.png" class=" flex-end" width="150px"></a>
 </div>
 <div class="inlining-form  col-md-12 col-sm-12 col-xs-12 mx-auto  my-3 align-center text_center">
   <div class=" inlining col-md-2 col-sm-12 col-xs-12"></div>
@@ -84,12 +84,13 @@ $('#submit').click(function(e){
   var name = $("#user_name").val();
   var password = $("#user_password").val();
 
-  var x= JSON.parse(localStorage.getItem("cart")) 
+  var x= JSON.parse(localStorage.getItem("cart")); 
+  console.log(JSON.parse(localStorage.getItem("cart")) );
   $.ajax({
       type: "POST",
       url: "http://localhost/ElectronicEcommerce/user/run",
       context: document.body,
-      data: {user_name:name, user_password:password , cartdata: JSON.stringify(x) },
+      data: {user_name:name, user_password:password ,cartdata: JSON.stringify(x) },
       success: function(result) {
         //console.log(result);
         if (<?php echo isset($_SESSION['id'])?'true':'false'; ?>) {

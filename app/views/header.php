@@ -33,10 +33,10 @@
 
 </head>
 
-<body class="d-flex flex-column">
+<body class="">
 
-<div class="">
-<div class="row">
+<div class="header" id="myHeader">
+<div class="row "  >
             <div class="col-lg-3 col-md-4 col-sm-12 mx-2">
                 <a class="navbar-brand" href="#"> <img
                         src="/ElectronicEcommerce/app/assets/images/login_store_logos-2.png" class="float-left "
@@ -81,29 +81,53 @@
 
 
 
-<li class="nav-item submenu dropdown" >
-<span class="badge badge-light" style="color:#836691 ;font-size:16px;">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  style="color:#836691 ;"><i class="fas fa-user-circle mx-2" style="color:#836691 ;"></i></a></span>
-                                <ul class="dropdown-menu"  > 
-                          
-                           
-
-                                 
-
-
-        <?php
-if(isset($_SESSION['id']))
+<?php
+if(isset($_SESSION['user_name']))
 {
 
-echo' <li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/userprofiel/" class="nav-link">Profile</a></li>
-<li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/user/logout">Log Out</a></li> ';}
+echo' 
+<li class="nav-item submenu dropdown" >
+<span  style="color:#836691 ;font-size:16px;">
+
+                                <a href="#" class="nav-link "  data-toggle="dropdown"   style="hieght:20px"><img src="'.$_SESSION["user_img"].'" width="25px" height="25px" style="border-radius:100%;"></a></span>
+                                <ul class="dropdown-menu"  > 
+                          
+                    <div class="nav-user-info">
+
+</div>
+<li class="nav-item text-dark"> <a href="http://localhost/ElectronicEcommerce/userprofiel/" class="nav-link">Profile</a></li>
+<li class="nav-item text-dark"> <a href="http://localhost/ElectronicEcommerce/userprofiel/address/" class="nav-link">Address</a></li>
+<li class="nav-item text-dark"> <a href="http://localhost/ElectronicEcommerce/userprofiel/payment/" class="nav-link">Payment</a></li>
+<li class="nav-item text-dark"> <a href="http://localhost/ElectronicEcommerce/userprofiel/order/" class="nav-link">Orders</a></li>
+';
+if(isset($_SESSION['user_role'])&& $_SESSION['user_role']==1 )
+{
+    echo '
+    <i  class="nav-item text-dark  "><a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_dashboard">Controll Banel</a></i>';
+
+}
+echo'
+<li class="nav-item text-dark"><a class="nav-link" href="http://localhost/ElectronicEcommerce/user/logout">Log Out</a></li> 
+
+</ul>
+</li>';}
 else{
-echo ' <li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/user/login">Log In</a></li>';
+echo '
+
+<li class="nav-item submenu dropdown" >
+<span  style="color:#836691 ;font-size:16px;">
+
+                                <a href="#" class="nav-link "  data-toggle="dropdown"   style="hieght:20px"><img src="/ElectronicEcommerce/app/assets/images/img_avatar.png" width="25px" height="25px" style="border-radius:100%;"></a></span>
+                                <ul class="dropdown-menu"  > 
+                                <ul class="dropdown-menu" > 
+                    <li class="nav-item text-dark"><a class="nav-link" href="http://localhost/ElectronicEcommerce/user/login">Log In</a></li>
+                    
+</ul>
+</li>';
 }
 
 ?>
-  </ul>
-                            </li> 
+
 </ul>
 
                     
@@ -156,3 +180,17 @@ echo ' <li class="nav-item"><a class="nav-link" href="http://localhost/Electroni
                 </div>
             </nav>
 
+            <script>
+    window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+    </script>

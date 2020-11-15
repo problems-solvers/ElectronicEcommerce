@@ -88,29 +88,7 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
 		 <div id="output"></div>
     </div>                            </div>
                         </li>
-                        <li class="nav-item dropdown notification">
-                            <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i> <span class="indicator"></span></a>
-                            <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
-                                <li>
-                                    <div class="notification-title"> Notification</div>
-                                    <div class="notification-list">
-                                        <div class="list-group">
-                                            <a href="#" class="list-group-item list-group-item-action">
-                                                <div class="notification-info">
-                                                    <div class="notification-list-user-img"><img src="../app/assets/images/login_store_logos-1.png"   style="width:70px; height:70px;" alt="" class="user-avatar-md rounded-circle"></div>
-                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Jessica Caruso</span>accepted your invitation to join the team.
-                                                        <div class="notification-date">2 min ago</div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="list-footer"> <a href="#">View all notifications</a></div>
-                                </li>
-                            </ul>
-                        </li>
+                  
                         <!-- <li class="nav-item dropdown nav-user">
                             <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/ElectronicEcommerce/app/assets/images/login_store_logos-1.png"   style="width:60px; height:50px;" alt="" class="user-avatar-md rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
@@ -119,12 +97,16 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                             </div>
                         </li> -->
                         <li class="nav-item dropdown nav-user">
-                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/ElectronicEcommerce/app/assets/images/avatar-5.jpg"   style="width:30px; height:30px;" alt="" class="user-avatar-md rounded-circle"></a>
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?php echo $_SESSION['user_img']; ?>"   style="width:30px; height:30px;" alt="" class="user-avatar-md rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name"><?php echo $_SESSION['user_name']; ?> </h5>
                                 </div>
                                 <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
+                               
+                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/"><i class="fas fa-power-off mr-2"></i>Web Site</a>
+                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/userprofiel/address/"><i ></i>Address</a>
+                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/userprofiel/payment/"><i ></i>Payment</a>
                                 <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/user/logout/"><i class="fas fa-power-off mr-2"></i>Logout</a>
                             </div>
                         </li>
@@ -132,7 +114,11 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                 </div>
             </nav>
         </div>
-        <!-- ============================================================== -->
+        <!-- <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/userprofiel/address/" class="nav-link"> <li></li> Address</a>
+                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/userprofiel/payment/" class="nav-link"><li > </li>Payment</a>
+                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/userprofiel/order/" class="nav-link">Orders</a>
+
+             ============================================================== -->
         <!-- end navbar -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
@@ -155,14 +141,14 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                                     </li>
                                     
                                     <li class="nav-item">
-                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_reports"><i class="fas fa-fw fa-chart-pie"></i>Reports</a>
+                                        <a class="nav-link" href="#"><i class="fas fa-fw fa-chart-pie"></i>Reports</a>
                                     
                                     </li>
                                     <li class="nav-item ">
-                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_users"><i class="fab fa-fw fa-wpforms"></i>Users and Roles</a>
+                                        <a class="nav-link" href="#"><i class="fab fa-fw fa-wpforms"></i>Users and Roles</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_customers"><i class="fas fa-fw fa-table"></i>Customers</a>
+                                        <a class="nav-link" href="#"><i class="fas fa-fw fa-table"></i>Customers</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_advertiment/add_adver"><i class="fas fa-fw fa-table"></i>Advertisment</a>
@@ -178,7 +164,7 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                                         <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_product"><i class="fas fa-fw fa-inbox"></i>Products <span class="badge badge-secondary">New</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_storinformition"><i class="fas fa-fw fa-columns"></i>Store Info</a>
+                                        <a class="nav-link" href="#"><i class="fas fa-fw fa-columns"></i>Store Info</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_orders"><i class="fas fa-fw fa-map-marker-alt"></i>Orders</a>
@@ -186,9 +172,7 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                                     <li class="nav-item">
                                         <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_offers"><i class="fas fa-fw fa-map-marker-alt"></i>Offers</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_advertiment/add_adver"><i class="fas fa-fw fa-table"></i>Advertisment</a>
-                                    </li>
+                                    
                                 </ul>
                             </div>
                         </nav>

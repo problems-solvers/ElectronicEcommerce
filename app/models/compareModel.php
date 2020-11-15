@@ -10,7 +10,7 @@ class compareModel extends Model{
       // Session::init();  
       }
 
-function getcomparetProducts(){
+function getcompareProducts(){
     //todo get more info from product table
     $this->db=new DB();
     $cols=array('cart_id', 'total_price', 'quentity', 'type', 'user_id','pro_name', 'cart.pro_id' );
