@@ -6,9 +6,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
   <h3 class="titel">Cart</h3>
 </div>
 <?php
-if(isset($_SESSION['id'])){
-  $x= json_encode($data); 
-}
+
 ?>
 <br>
 <!-- <h4>heddin</h4> -->
@@ -72,7 +70,7 @@ if(isset($_SESSION['id'])){
             tableData ="<img src='/ElectronicEcommerce/app/assets/images/no.jpg'><h2 class='text-center'>No data in cart</h2>"
           }else{
          cartdata.map(data=>{
-          tableData +='<div class="card  mx-auto my-3  px-2 py-2" style=" border:1px solid #836691;  border-radius:10px;"><div class="row mx-1 align-content-middle"><a  href="http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id='+data.pro_id+'" class=" px-0 align-items-center " style="height:150px; width:150px;"><img style="height:150px; width:150px;" src="'+data.main_img+'" alt="Card image cap"></a><div class="card-body py-1  m-auto  mx-auto"><h5 class="card-title">'+data.pro_name+'</h5><span style="font-weight:bold; color:#836691;">'+data.total_price+'$</span><br><div class="py-2   align-content-end"><a   class="my-3 py-2 addToWish" id="'+data.pro_id+'"><i class=" mdi mdi-heart-outline" style="color:#836691;"></i><span  class="mx-2">add to wishlist</span> </a></div></div><div  ><div   style=" position:absolute; top:0px; right:5px ;font-size:20px; "> <a    class="deletefromCart" id="'+data.cart_id+'" pro_id="'+data.pro_id+'" ><i class="fas fa-times " ></i></a></div><br><br><br><div class="row my-2" style=" position:absolute;  right:20px ; color:#836691; font-size:20px; bottom:0px; "> <div class=" mx-2">  <a   class="decreseqty" id="'+data.cart_id+'" pro_id="'+data.pro_id+'"><i class="fas fa-minus-circle " ></i></a></div> <div class="mx-2"> <p>' +data.quentity+'</p></div>  <div class="mx-2">  <a  class="addqty" id="'+data.cart_id+'" pro_id="'+data.pro_id+'"><i class="fas fa-plus-circle " ></i></a></div>    </div></div></div></div>';
+          tableData +='<div class="card  mx-auto my-3  px-2 py-2" style=" border:1px solid #836691;  border-radius:10px;"><div class="row mx-1 align-content-middle"><a  href="http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id='+data.pro_id+'" class=" px-0 align-items-center " style="height:150px; width:150px;"><img style="height:150px; width:150px;" src="'+data.main_img+'" alt="Card image cap"></a><div class="card-body py-1  m-auto  mx-auto"><h5 class="card-title">'+data.pro_name+'</h5><span style="font-weight:bold; color:#836691;">'+data.total_price+'$</span><br><div class="py-2   align-content-end"><a   class="my-3 py-2 addToWish" id="'+data.pro_id+'"><i class=" mdi mdi-heart-outline" style="color:#836691;"></i><span  class="mx-2">add to wishlist</span> </a></div></div><div  ><div   style=" position:absolute; top:0px; right:5px ;font-size:20px; "> <a    class="deletefromCart" id="'+data.cart_id+'" pro_id="'+data.pro_id+'" ><i class="fas fa-times " ></i></a></div><br><br><br><div class="row justify-content-center align-items-center my-2" style=" position:absolute;  right:20px ; color:#836691; font-size:20px; bottom:0px; "> <div class="mx-2">  <a   class="decreseqty" id="'+data.cart_id+'" pro_id="'+data.pro_id+'"><i class="fas fa-minus-circle " ></i></a></div> <div class=" px-0" style="width:50px;"> <input class="form-control" value="' +data.quentity+'" /></div>  <div class=" mx-2">  <a  class="addqty" id="'+data.cart_id+'" pro_id="'+data.pro_id+'"><i class="fas fa-plus-circle " ></i></a></div>    </div></div></div></div>';
           });
             var sum= 0;
            
@@ -91,7 +89,7 @@ if(isset($_SESSION['id'])){
             tableData ="no data in cart"
           }else{
             JSON.parse(localStorage.getItem('cart')).map(data=>{
-           tableData +='<div class="card  mx-auto my-3  px-2 py-2" style=" border:1px solid #836691;  border-radius:10px;"><div class="row mx-1 align-content-middle"><a     href="http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id='+data.pro_id+'" class=" px-0 align-items-center " style="height:150px; width:150px;"><img style="height:150px; width:150px;"  src="'+data.pro_img+'" alt="Card image cap"></a><div class="card-body py-1 m-auto  mx-auto"><h5 class="card-title">'+data.pro_name+'</h5><span style="font-weight:bold; color:#836691;">'+parseFloat(data.total_price*data.quentity).toFixed( 2 )+'$</span><br><div class="py-2   align-content-end"><a   class="my-3 py-2 addToWish" id="'+data.pro_id+'"><i class=" mdi mdi-heart-outline " style="color:#836691;" ></i><span  class="mx-2 ">add to wishlist</span> </a></div></div><div  ><div   style=" position:absolute; top:0px; right:5px ;font-size:20px; "> <a    class="deletefromCart" id="'+data.cart_id+'" pro_id="'+data.pro_id+'" ><i class="fas fa-times " ></i></a></div><br><br><br><div class="row my-2" style=" position:absolute;  right:20px ; color:#836691; font-size:20px; bottom:0px; "> <div class=" mx-2">  <a   class="decreseqty" id="'+data.cart_id+'" pro_id="'+data.pro_id+'"><i class="fas fa-minus-circle " ></i></a></div> <div class="mx-2"> <p>' +data.quentity+'</p></div>  <div class="mx-2">  <a  class="addqty"  id="'+data.cart_id+'" pro_id="'+data.pro_id+'"><i class="fas fa-plus-circle " ></i></a></div>    </div></div></div></div>';
+           tableData +='<div class="card  mx-auto my-3  px-2 py-2" style=" border:1px solid #836691;  border-radius:10px;"><div class="row mx-1 align-content-middle"><a     href="http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id='+data.pro_id+'" class=" px-0 align-items-center " style="height:150px; width:150px;"><img style="height:150px; width:150px;"  src="'+data.pro_img+'" alt="Card image cap"></a><div class="card-body py-1 m-auto  mx-auto"><h5 class="card-title">'+data.pro_name+'</h5><span style="font-weight:bold; color:#836691;">'+parseFloat(data.total_price*data.quentity).toFixed( 2 )+'$</span><br><div class="py-2   align-content-end"><a   class="my-3 py-2 addToWish" id="'+data.pro_id+'"><i class=" mdi mdi-heart-outline " style="color:#836691;" ></i><span  class="mx-2 ">add to wishlist</span> </a></div></div><div  ><div   style=" position:absolute; top:0px; right:5px ;font-size:20px; "> <a    class="deletefromCart" id="'+data.cart_id+'" pro_id="'+data.pro_id+'" ><i class="fas fa-times " ></i></a></div><br><br><br><div class="row justify-content-center align-items-center my-2" style=" position:absolute;  right:20px ; color:#836691; font-size:20px; bottom:0px; "> <div class=" mx-2">  <a   class="decreseqty" id="'+data.cart_id+'" pro_id="'+data.pro_id+'"><i class="fas fa-minus-circle " ></i></a></div> <div class=" px-0" style="width:50px;"> <input class="form-control" value="' +data.quentity+'" /></div>  <div class="mx-2">  <a  class="addqty"  id="'+data.cart_id+'" pro_id="'+data.pro_id+'"><i class="fas fa-plus-circle " ></i></a></div>    </div></div></div></div>';
             });
             var cartData =JSON.parse(localStorage.getItem('cart'))
             var sum=0;
@@ -150,18 +148,19 @@ if(isset($_SESSION['id'])){
               totalqtycart()     
           });
         $(document).delegate('.addqty', 'click', function(e){
-            console.log("empid")
+            console.log("empid",e.target.parentElement.parentElement.parentElement.children[1].children[0].value)
               let cart = [];
             var cart_id = $(this).attr('id');
             var pro_id =  $(this).attr('pro_id');
             console.log(pro_id)
            // $(this).attr('id');
-             var qty= e.target.parentElement.parentElement.parentElement.children[1].children[0].textContent
+             var qty= e.target.parentElement.parentElement.parentElement.children[1].children[0].value
              if(parseInt(qty)<0){
               qty =1
              }
-              e.target.parentElement.parentElement.parentElement.children[1].children[0].textContent=parseInt(qty)+1
-             var qty= e.target.parentElement.parentElement.parentElement.children[1].children[0].textContent
+              e.target.parentElement.parentElement.parentElement.children[1].children[0].value=parseInt(qty)+1
+             var qty= e.target.parentElement.parentElement.parentElement.children[1].children[0].value
+             
               var price= e.target.parentElement.parentElement.parentElement.parentElement.parentElement.children[1].children[1].textContent
               if (<?php echo isset($_SESSION['id'])?'true':'false'; ?>) {
                 $.ajax({
@@ -207,7 +206,7 @@ if(isset($_SESSION['id'])){
 
                     })
                     .fail(function () {
-                      e.target.parentElement.parentElement.parentElement.children[1].children[0].textContent=parseInt(qty)-1
+                      e.target.parentElement.parentElement.parentElement.children[1].children[0].value=parseInt(qty)-1
                        console.log('dss');
                     })   
               }else {
@@ -247,17 +246,18 @@ if(isset($_SESSION['id'])){
             var pro_id =  $(this).attr('pro_id');
             console.log(pro_id)
            // $(this).attr('id');
-            var qty= e.target.parentElement.parentElement.parentElement.children[1].children[0].textContent
-            if(parseInt(qty)<0){
-              qty =1
-             }
-            if(parseInt(qty)-1 !=0){
-           e.target.parentElement.parentElement.parentElement.children[1].children[0].textContent=parseInt(qty)-1
+            var qty= e.target.parentElement.parentElement.parentElement.children[1].children[0].value
+           
+           if(parseInt(qty)-1 > 0){
+           e.target.parentElement.parentElement.parentElement.children[1].children[0].value=parseInt(qty)-1
+            }
+            else  if(parseInt(qty)<0){
+              e.target.parentElement.parentElement.parentElement.children[1].children[0].value= 1
             }
             else{
-              e.target.parentElement.parentElement.parentElement.children[1].children[0].textContent= 1
+              e.target.parentElement.parentElement.parentElement.children[1].children[0].value= 1
             }
-           var qty= e.target.parentElement.parentElement.parentElement.children[1].children[0].textContent
+           var qty= e.target.parentElement.parentElement.parentElement.children[1].children[0].value
           
            var price= e.target.parentElement.parentElement.parentElement.parentElement.parentElement.children[1].children[1].textContent
             if (<?php echo isset($_SESSION['id'])?'true':'false'; ?>) {
@@ -301,7 +301,7 @@ if(isset($_SESSION['id'])){
                     }) 
                     })
                     .fail(function () {
-                      e.target.parentElement.parentElement.parentElement.children[1].children[0].textContent=parseInt(qty)+1
+                      e.target.parentElement.parentElement.parentElement.children[1].children[0].value=parseInt(qty)+1
                        console.log('dss');
                     })   
               }else {
