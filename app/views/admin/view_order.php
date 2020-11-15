@@ -35,7 +35,6 @@
                     <tbody>
                         <?php
   $ord=$data['order'];
-  print_r($ord);
   $index=0;  
   foreach($ord as $or){
     $index=$index+1; ?>

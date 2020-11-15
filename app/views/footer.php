@@ -261,7 +261,100 @@ function totalqtycart(){
                     })   
 
 
-     
+function inCart(id){
+  var found =false;
+  if (<?php echo isset($_SESSION['id'])?'true':'false'; ?>) {
+              $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost/ElectronicEcommerce/cart/getCart',
+                    global: true,
+                    async: false,
+                    dataType: 'json',
+                    })
+                    .done(function (response) {
+                      cartdata=response;
+                      found=true;
+                      console.log(cartdata);
+                    })
+                    .fail(function () {
+                      found=5;
+
+                    })             
+        }
+ else {
+   const localItems = JSON.parse(localStorage.getItem("cart"));
+   found = localItems.findIndex((x)=> x.pro_id ===id);
+  console.log(found);
+  if(found==null){
+    found=false;              
+
+                  }
+  else
+      found=true;              
+  return found; }
+}
+function inWish(id){
+  const localItems = JSON.parse(localStorage.getItem("wishlist"));
+  var found = localItems.findIndex((x)=> x.pro_id ===id);
+  console.log(found);
+  if(found==null){
+    found=false;              
+
+                  }
+  else
+      found=true;              
+  return found; 
+}
+function inCompare(id){
+  const localItems = JSON.parse(localStorage.getItem("compare"));
+  var found = localItems.findIndex((x)=> x.pro_id ===id);
+  console.log(found);
+  if(found==null){
+    found=false;              
+
+                  }
+  else
+      found=true;              
+  return found; 
+}
+     function checkCart(){
+       var pro=[];
+      var cartex = JSON.parse(localStorage.getItem('cart'))
+      console.log(pro);
+      console.log("inside check");
+      console.log(cartex);
+      cartex.forEach(element => {
+      console.log("inside ele");
+    // var inwish=inwish(element.pro_id);
+    //,in_wishlist:inwish,in_compare:incompare
+      var incart=inCart(element.pro_id);
+     // var incompare=inCompare(element.pro_id);
+      pro.push({pro_id:element.pro_id,pro_name:element.pro_name,in_cart:incart});      
+                        
+                    });
+                    console.log(pro);
+
+     }
+     function checkWish(){
+       var pro=[];
+      var cartex = JSON.parse(localStorage.getItem('wishlist'))
+      console.log(pro);
+      console.log("inside check");
+      console.log(cartex);
+      cartex.forEach(element => {
+      console.log("inside wishlist");
+    // var inwish=inwish(element.pro_id);
+    //,in_wishlist:inwish,in_compare:incompare
+      var inwish=inWish(element.pro_id);
+     // var incompare=inCompare(element.pro_id);
+      pro.push({pro_id:element.pro_id,pro_name:element.pro_name,in_wish:inwish});      
+      console.log(pro);
+                        
+                    });
+
+     }
+
+
      //text cut
   
         //cart box
@@ -271,6 +364,8 @@ function totalqtycart(){
         //     cartBox.classList.add('active');
         // });
     $(document).ready(function() {
+      checkCart();
+      checkWish();
         totalqtycart()
        // totalqtycompare()
         totalqtywishlist()

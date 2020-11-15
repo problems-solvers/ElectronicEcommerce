@@ -75,7 +75,7 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="index.html"><img src="/ElectronicEcommerce/app/assets/images/login_store_logos-2.png"   style=" height:50px;" alt="" class=""></a>
+                <a class="navbar-brand" href="#"><img src="/ElectronicEcommerce/app/assets/images/login_store_logos-2.png"   style=" height:50px;" alt="" class=""></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -83,10 +83,17 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                     <ul class="navbar-nav ml-auto navbar-right-top">
                         <li class="nav-item">
                             <div id="custom-search" class="top-search-bar">
-                            <div class="bs-example">
-        <input type="text" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Search">
-		 <div id="output"></div>
-    </div>                            </div>
+                           
+<div class="con-search notValue">
+        <div class="con-input">
+            <input type="text">
+            <i class='bx bx-search'></i>
+            <i  class='bx bx-x' ></i>
+        </div>
+        <div class="content-results">
+            <div class="con-results"></div>
+        </div>
+    </div>      </div>
                         </li>
                   
                         <!-- <li class="nav-item dropdown nav-user">
@@ -102,11 +109,11 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name"><?php echo $_SESSION['user_name']; ?> </h5>
                                 </div>
-                                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
+                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/userprofiel/"><i class="fas fa-user mr-2"></i>Account</a>
                                
-                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/"><i class="fas fa-power-off mr-2"></i>Web Site</a>
-                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/userprofiel/address/"><i ></i>Address</a>
-                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/userprofiel/payment/"><i ></i>Payment</a>
+                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/userprofiel/address/"><i class="fa fa-address-book-o mr-2"></i></i>Address</a>
+                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/userprofiel/payment/"><i class="fa fa-address-card-o mr-2"></i>Payment</a>
+                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/"><i class="fab fa-font-awesome mr-2"></i>Web Site</a>
                                 <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/user/logout/"><i class="fas fa-power-off mr-2"></i>Logout</a>
                             </div>
                         </li>
@@ -163,9 +170,7 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                                     <li class="nav-item">
                                         <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_product"><i class="fas fa-fw fa-inbox"></i>Products <span class="badge badge-secondary">New</span></a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#"><i class="fas fa-fw fa-columns"></i>Store Info</a>
-                                    </li>
+                                   
                                     <li class="nav-item">
                                         <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_orders"><i class="fas fa-fw fa-map-marker-alt"></i>Orders</a>
                                     </li>

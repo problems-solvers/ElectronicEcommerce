@@ -93,10 +93,26 @@ return $result;
              
      }
    
+     function upadtecat(){
+        $this->db=new DB();
+        $id=$_REQUEST['cat_id'];
+        $tbls=array("categories");
+        $result=  $this->db->cols()->table($tbls)->where("cat_id","=","'".$id."'")->get()-> execute()->fetch();
+   
+     }
      function delete(){
-        $id=$_REQUEST['empid'];
+        $this->db=new DB();
+
+        $id=$_REQUEST['cat_id'];
         $tbls=array("categories");
         $result=  $this->db->table($tbls)->where("cat_id","=","'".$id."'")->delete()-> execute();
+    }
+    function deltag(){
+        $this->db=new DB();
+
+        $id=$_REQUEST['tag_id'];
+        $tbls=array("tags");
+        $result=  $this->db->table($tbls)->where("tag_id","=","'".$id."'")->delete()-> execute();
     }
 }
 

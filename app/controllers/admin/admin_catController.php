@@ -105,8 +105,6 @@ public function __construct($function){
             $result=$this->model->addTags($data);
              if($result=='done') {
               echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_cat/addCattegories';</script>";
-
-
              }
              else{
               echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_cat/';</script>";
@@ -116,10 +114,22 @@ public function __construct($function){
     
 
        }
+   function updateCategory(){
+          $items=array(
+                 'category'=>$this->model->upadtecat()
 
+          );
+          print_r($items);
+       $this->controller->view_object->create_view('admin/updateCategory',$items);
+
+   }
 
        function delcat(){
-              $this->cat_model->delete();
+              $this->model->delete();
+              
+             }
+             function deltag(){
+              $this->model->deltag();
               
              }
 
