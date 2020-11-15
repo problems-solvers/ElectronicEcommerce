@@ -1,6 +1,8 @@
 <!-- to do color of footer and havor li and responsive -->
 <div class="flex-grow-1 flex-shrink-0">
 </div>
+<div class="footer-copyright">
+
 <footer id="footer" class="flex-shrink-0">
     <div class="main-footer text-center ">
     <div class="container-flude">
@@ -56,8 +58,7 @@
     </div>
     </div>
       
-    <div class="footer-copyright">
-    <div class="container">
+      <div class="container">
     <div class="row">
     <div class="col-md-12 text-center">
     <p class="text-center copyright py-2 my-0">&copy; Copyright 2020 - Electronic ecommerce Site. All rights

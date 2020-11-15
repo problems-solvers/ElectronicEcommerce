@@ -104,9 +104,11 @@ class DB{
 
     }
     function settingcol(){
+      
+
         $heads=explode(',',$this->columnsHead);
         $body=explode(',',$this->columns);
-       
+     
        for ($i=0; $i < count($heads) ; $i++) { 
            
         if(empty($this->finalcol))
@@ -136,7 +138,7 @@ class DB{
       
     }
     function execute(){
-  //   echo $this->final_query;
+   //  echo $this->final_query;
        $result;
         try {
            $this->stmt = $this->connection->prepare($this->final_query);

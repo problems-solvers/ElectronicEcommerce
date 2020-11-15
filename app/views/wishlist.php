@@ -3,23 +3,15 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 ?>
 <div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
   <h3 class="titel col-12"> Wishlist</h3>
-</div> 
-<div class="nam mx-auto  my-2 py-2 col-4 text-center text-light" >
- 
-<?php
-if(isset($_SESSION['id'])){
-  $x= json_encode($data); 
-}
-?>
 </div>
 <br>
 <!-- <h4>heddin</h4> -->
 
 
-<div class="col-12">
+<div>
 <!-- wishlist -->
-  
-<div class="row col-8 d-inline-block">
+<div class="row">
+<div class=" col-8 ">
 <div class="col-10  mx-auto wishlistBox">
 
 <div class="show">
@@ -31,7 +23,7 @@ if(isset($_SESSION['id'])){
 </div>
 <!-- Advertisment -->
 
-<div class="row col-4  d-inline-block" style="position:absolute;">
+<div class=" col-4  " >
   
 <div class="row mx-auto my-4 show "  >
 <div class="col-md-12 col-sm-12 col-xs-12 mx-auto ">
@@ -47,7 +39,7 @@ if(isset($_SESSION['id'])){
   </div> 
   </div>
 </div>
-
+</div>
 <script>
 //adding wishlistbox data in table
         //show item in wishlist
