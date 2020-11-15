@@ -5,3 +5,4 @@ RewriteCond %{REQUEST_FILENAME} !-l
 RewriteCond %{REQUEST_FILENAME} !-f
 
 RewriteRule ^([0-9A-Za-z].+)$ index.php?url=$1 [NC,QSA,L]
+ErrorDocument 404 /error.php
