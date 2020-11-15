@@ -168,13 +168,8 @@ public $tag_model;
 
         $img=baseFunctions::img($_FILES['pro_imgs']);
         
-        echo $img;
-        $m='';
-        // foreach ( $img as $row) {
-        //     $m.=$row.',';
-        // }
+        //print_r($img);
         $main_img=baseFunctions::main_img($_FILES['main_img']);
-
         if(isset($_FILES['pro_imgs'])&&isset($_FILES['main_img']))
        { $data = array(
 
@@ -188,46 +183,45 @@ public $tag_model;
 
                   );
                 }
-          
 
-        //           else  if(isset($_FILES['main_img']))
-        //           { $data = array(
+                  else  if(isset($_FILES['main_img']))
+                  { $data = array(
            
-        //                'pro_name'=>"'". $_POST['pro_name']."'",
-        //                'brand' =>"'".$_POST['brand']."'" ,
-        //                'pro_quentity' =>"'".$_POST['pro_quentity']."'",
-        //                'pro_details' =>"'".$_POST['pro_details']."'",
-        //                'pro_price'=>"'".$_POST['pro_price']."'",
-        //                'is_active'=>"'".$active."'",
-        //                'main_img' =>"'".$main_img."'",
-        //                      );}
+                       'pro_name'=>"'". $_POST['pro_name']."'",
+                       'brand' =>"'".$_POST['brand']."'" ,
+                       'pro_quentity' =>"'".$_POST['pro_quentity']."'",
+                       'pro_details' =>"'".$_POST['pro_details']."'",
+                       'pro_price'=>"'".$_POST['pro_price']."'",
+                       'is_active'=>"'".$active."'",
+                       'main_img' =>"'".$main_img."'",
+                             );}
 
-        //                      else  if(isset($_FILES['pro_imgs']))
-        //                      { $data = array(
+                             else  if(isset($_FILES['pro_imgs']))
+                             { $data = array(
                       
-        //                           'pro_name'=>"'". $_POST['pro_name']."'",
-        //                           'brand' =>"'".$_POST['brand']."'" ,
-        //                           'pro_quentity' =>"'".$_POST['pro_quentity']."'",
-        //                           'pro_details' =>"'".$_POST['pro_details']."'",
-        //                           'pro_price'=>"'".$_POST['pro_price']."'",
-        //                           'is_active'=>"'".$active."'",
-        //                           'pro_imgs' =>"'".$img."'" ,
+                                  'pro_name'=>"'". $_POST['pro_name']."'",
+                                  'brand' =>"'".$_POST['brand']."'" ,
+                                  'pro_quentity' =>"'".$_POST['pro_quentity']."'",
+                                  'pro_details' =>"'".$_POST['pro_details']."'",
+                                  'pro_price'=>"'".$_POST['pro_price']."'",
+                                  'is_active'=>"'".$active."'",
+                                  'pro_imgs' =>"'".$img."'" ,
 
-        //                                 );}
+                                        );}
 
-        // else{
-        //     $data = array(
+        else{
+            $data = array(
 
-        //         'pro_name'=>"'". $_POST['pro_name']."'",
-        //         'brand' =>"'".$_POST['brand']."'" ,
-        //         'pro_quentity' =>"'".$_POST['pro_quentity']."'",
-        //         'pro_details' =>"'".$_POST['pro_details']."'",
-        //         'pro_price'=>"'".$_POST['pro_price']."'",
-        //         'is_active'=>"'".$active."'",
-        //               ); 
-        // }
+                'pro_name'=>"'". $_POST['pro_name']."'",
+                'brand' =>"'".$_POST['brand']."'" ,
+                'pro_quentity' =>"'".$_POST['pro_quentity']."'",
+                'pro_details' =>"'".$_POST['pro_details']."'",
+                'pro_price'=>"'".$_POST['pro_price']."'",
+                'is_active'=>"'".$active."'",
+                      ); 
+        }
 
-    //    print_r($tag_data);
+        print_r($tag_data);
 
                   $data2=array(
                     'tag_name'=>"'".$_POST['tag_name']."'"

@@ -107,6 +107,7 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                                 <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/"><i class="fas fa-power-off mr-2"></i>Web Site</a>
                                 <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/userprofiel/address/"><i ></i>Address</a>
                                 <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/userprofiel/payment/"><i ></i>Payment</a>
+
                                 <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/user/logout/"><i class="fas fa-power-off mr-2"></i>Logout</a>
                             </div>
                         </li>
