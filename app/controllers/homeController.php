@@ -14,7 +14,6 @@ public $model;
         $this->cat=$this->controller->model_object->create_model('admin_cat');
         $this->$function();
 
-
     }
        function home(){
 
@@ -31,6 +30,18 @@ public $model;
 
         $this->controller->view_object->create_view('home',$items);
        
+    }
+    function recentally(){
+
+        $items=$this->model->getRecentAddData();
+        $res=json_encode($items);
+            echo $res;
+    }
+    function featured(){
+
+        $items=$this->model->getAllProCatData();
+        $res=json_encode($items);
+            echo $res;
     }
 
     function whoare(){

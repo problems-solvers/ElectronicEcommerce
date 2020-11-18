@@ -79,7 +79,13 @@ update</button>
   console.log(user_id);
   //console.log(address_id);
                 console.log(user_id);
- 
+                if(user_id==='' || full_name ==='' || Exp_date ===''){
+    var x = document.getElementById("snackbar")
+      x.innerHTML='please fill empty fields '
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000); 
+
+   }else{
    $.ajax({
 
              async: false,
@@ -90,16 +96,22 @@ update</button>
              success: function(response) {
     console.log("hhhh");
     window.location.replace('http://localhost/ElectronicEcommerce/userprofiel/payment/');
+    var x = document.getElementById("snackbar")
+      x.innerHTML='updated successfully'
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000); 
 
-alert("SecusseFull Add");
            
              
              },
              error:function(){
-alert("Error Add");
-            
+              var x = document.getElementById("snackbar")
+      x.innerHTML='something went wrong '
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000); 
+
              }
-           })
+           })}
            });
 
 </script>

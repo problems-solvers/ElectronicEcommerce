@@ -38,6 +38,21 @@ public $model;
           }
         }
     }
+    function getCurrentCart(){
+        if(isset($_SESSION['id'])){
+           $items = $this->model->getCartProductsbyId();
+           
+          if(count($items)==1){
+            $s=array("true");
+            $res=json_encode($s);
+                 echo $res; 
+          }else{
+            $s=array("false");
+            $res=json_encode($s);
+            echo $res;
+          }
+        }
+    }
     function updateqty(){
         $this->model->updateCart();
     }

@@ -48,6 +48,7 @@ public $model_payment;
         'country' =>"'".$_REQUEST['country']."'",
         'city' =>"'".$_REQUEST['city']."'",
         'street' =>"'".$_REQUEST['street']."'",
+        'user_name' =>"'".$_REQUEST['user_name']."'",
         'zip_id' =>"'".$_REQUEST['zip_id']."'"
         );
         $result=$this->model_payment->addNewAddress($data);
@@ -76,6 +77,7 @@ public $model_payment;
             'user_id' =>"'".$_REQUEST['user_id']."'",
             'country' =>"'".$_REQUEST['country']."'",
             'city' =>"'".$_REQUEST['city']."'",
+             'user_name' =>"'".$_REQUEST['user_name']."'",
             'street' =>"'".$_REQUEST['street']."'",
             'zip_id' =>"'".$_REQUEST['zip_id']."'"
             );

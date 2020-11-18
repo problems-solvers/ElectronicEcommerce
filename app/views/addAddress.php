@@ -19,12 +19,23 @@
                       <div class="row align-items-center mx-auto py-3">
                        
                       </div>
+                      <div class="col-md-6 mx-auto">
+                          <input type="text" class="form-control" name="user_name" id="user_name" placeholder="user name" value="" required>
+                        </div>
                       <div class="row align-items-center mx-auto py-3">
                         <div class="col-md-6 ">
-                          <input type="text" class="form-control" name="country" id="country" placeholder="country" value="" required>
+                        <select class="custom-select d-block w-100" id="country" name="country" required>
+                            <option value="0">country</option>
+                            <option value="United">United States</option>
+                          </select>
+                           <!-- <input type="text" class="form-control" name="country" id="country" placeholder="country" value="" required> -->
                         </div>
                         <div class="col-md-6 ">
-                          <input type="text" class="form-control " name="city"  id="city" placeholder="city" required>
+                        <select class="custom-select d-block w-100" id="city"  name="city"required>
+                            <option value="">city</option>
+                            <option value="California">California</option>
+                          </select> 
+                          <!-- <input type="text" class="form-control " name="city"  id="city" placeholder="city" required> -->
                         </div>
                       </div>
                       <div class="row align-items-center mx-auto py-3">
@@ -61,30 +72,46 @@ Add</button>
 <script>
  $("#add").click(function (e) {
   var user_id=$('#user_id').val();
+  var user_name=$('#user_name').val();
   var country=$('#country').val();
     var city=$('#city').val();
+    console.log(country,city)
     var street=$('#street').val();
     var zip_id=$('#zip_id').val();
     console.log(user_id);
+    if(user_id==='' || user_name==='' || country ==='0' || city ==='' || street ===''  || zip_id ===''){
+    var x = document.getElementById("snackbar")
+      x.innerHTML='please fill empty fields '
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000); 
+
+   }
+   else{
    $.ajax({
 
              async: false,
              type: "POST",
              global: false,
              url: "/ElectronicEcommerce/userprofiel/NewAddress/",
-             data: {user_id:user_id,country:country,city:city,street:street,zip_id:zip_id},
+             data: {user_id:user_id,user_name:user_name,country:country,city:city,street:street,zip_id:zip_id},
              success: function(response) {
     console.log("hhhh");
     window.location.replace('http://localhost/ElectronicEcommerce/userprofiel/address/');
 
-alert("SecusseFull Add");
+    var x = document.getElementById("snackbar")
+      x.innerHTML='successfully Added'
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000); 
            
              
              },
              error:function(){
-alert("Error Add");
+              var x = document.getElementById("snackbar")
+      x.innerHTML='something went wrong'
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000); 
             
              }
-           })
+           })}
            });
 </script>

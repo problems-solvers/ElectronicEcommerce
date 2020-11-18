@@ -4,14 +4,15 @@
 <?php
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 ?>
-<div class="container" id="jar">
-<div class="row w-75 mx-auto ">
+<div class="row container-flude" id="jar">
+<div class="col-9 mx-auto ">
+<div class="row">
 <?php 
  $rows=$data['categories'];
  if(count($rows)){
      foreach ($rows as $row) { echo ' 
 
-<div class="col-lg-4  col-md-5 col-sm-6 col-xm-12 my-2 mx-auto content">
+<div class="col-lg-3  col-md-4 col-sm-6 col-xm-12 my-2 mx-auto content">
 <a href="http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id='.$row->pro_id.'" style="color:#303030; height:100%; text-decoration:none;">
 <div class="card productCard mx-auto " >
 <img class="card-img-top" src="'.$row->main_img.'" alt="Card image cap">
@@ -37,6 +38,23 @@ else{
 } 
     ?>
     </div>
+    </div>
+    <!-- <div class="col-4  w-25 mx-auto  " > -->
+  
+<!-- <div class="row mx-auto my-4 show "  >
+<div class="col-md-12 col-sm-12 col-xs-12 mx-auto ">
+<img class="card-img-top" height="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> 
+ 
+       <button class="btn btn-sm px-3">SHOP NOW</button>
+  </div>
+  </div>
+  <div class="row mx-auto my-4 show "  >
+    <div class="col-md-12 col-sm-12 col-xs-12 mx-auto "> 
+  <img class="card-img-top" height="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> 
+   <button class="btn btn-sm px-3">SHOP NOW</button>
+  </div> 
+  </div> -->
+<!-- </div> -->
 </div>
 
   <ul style="color:#836691;" class="pagination justify-content-center pagination-sm">
@@ -67,77 +85,6 @@ else{
     border-color: #836691;
 }
   </style>
-
-
-    <script>
-      
-    //   window.onload = function(){
-    //     //cart box
-    //     const iconShopping = document.querySelector('.iconShopping');
-    //     const cartBox = document.querySelector('.cartBox');
-    //     iconShopping.addEventListener("click",function(){
-    //         cartBox.classList.add('active');
-    //     });
-    //     $(document).ready(function() {
-    //         console.log("empid")
-    //         $('.attToCart').click(function (e) {
-    //           let cart = [];
-    //         var empid = $(this).attr('id');
-    //         let item = {
-    //                      pro_id:empid,
-    //                      pro_img:e.target.parentElement.parentElement.children[0].src,
-    //                      pro_name:e.target.parentElement.parentElement.children[2].children[0].textContent,
-    //                      total_price:e.target.parentElement.parentElement.children[2].children[1].textContent,
-    //                      catgory:    e.target.parentElement.parentElement.children[2].children[2].textContent,
-    //                      quentity:1
-    //                  };
-    // if (<?php // echo isset($_SESSION['id'])?'true':'false'; ?>) {
-    //             cart.push(item)
-    //             $.ajax({
-    //                 type: 'POST',
-    //                 url: 'http://localhost/ElectronicEcommerce/cart/addCart',
-    //                 data:  "cartdata="+JSON.stringify(cart) 
-    //                 })
-    //                 .done(function (response) {
-    //                     console.log('hhaha');
-    //                 })
-    //                 .fail(function () {
-    //                    console.log('dss');
-    //                 })   
-            
-    // } else {
-      
-    //              if(JSON.parse(localStorage.getItem('cart')) === null){
-    //                  localStorage.setItem("cart",JSON.stringify(cart));
-    //              }else{
-    //                  const localItems = JSON.parse(localStorage.getItem("cart"));
-    //                  localItems.map(data=>{
-    //                      if(item.pro_id == data.pro_id){
-    //                          item.quentity = data.quentity + 1;
-                             
-    //                      }else{
-    //                          cart.push(data);
-    //                      }
-    //                      localStorage.setItem("cart",JSON.stringify(cart));
-    //                  });
-    //                  cart.push(item);
-    //                  localStorage.setItem('cart',JSON.stringify(cart));
-    //                  var mx= JSON.parse(localStorage.getItem('cart'))
-    //                  console.log('fds',mx)
-    //               }
-    //             cart = [];
-              
-    //             const iconShoppingP = document.querySelector('.iconShopping p');
-    //     var cartdata = JSON.parse(localStorage.getItem('cart'))
-    //     iconShoppingP.innerHTML = cartdata.length;
-    //           }
-
-    //         }) })}
-    </script>
-
-
-  
-
     <script>
      text_truncate = function(str, length, ending) {
       if (length == null) {
@@ -174,12 +121,6 @@ $('#parent').change(function () {
             });
     </script>
     <script>
-      // Returns an array of maxLength (or less) page numbers
-// where a 0 in the returned array denotes a gap in the series.
-// Parameters:
-//   totalPages:     total number of pages
-//   page:           current page
-//   maxLength:      maximum size of returned array
 function getPageList(totalPages, page, maxLength) {
   if (maxLength < 5) throw "maxLength must be at least 5";
 

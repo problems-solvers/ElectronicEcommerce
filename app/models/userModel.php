@@ -38,11 +38,10 @@ class userModel extends Model
 		->execute()
 		->fetch();
 		$count = count($res);
-		echo "count ".$count;
-		print_r($res);
+		//echo "count ".$count;
+		//print_r($res);
 		if ($count > 0) {
 			$s=$res[0];
-			Session::init();
 			
 			Session::set('user_role',$s->user_role );
 			Session::set('user_img',$s->user_img );
@@ -53,25 +52,40 @@ class userModel extends Model
 			$this->cartm=new cartModel();
 			$this->cartm->addCats();		
 			
-			print_r($_SESSION);
-			echo Session::get('user_role');
+			//print_r($_SESSION);
+		    //echo Session::get('user_role');
 			//print_r($result);
 			//echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/';</script>";	
-			if(isset($_SESSION['user_role']) && $_SESSION['user_role']==1)
-			echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_dashboard/';</script>";
-			if(isset($_SESSION['user_role']) && $_SESSION['user_role']==2)
+			if(isset($_SESSION['user_role']) && $_SESSION['user_role']==1){
+			$s=array("Admin");
+            $res=json_encode($s);
+            echo $res;
+		//	echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_dashboard/';</script>";
+			}if(isset($_SESSION['user_role']) && $_SESSION['user_role']==2)
 			{
-				if(isset($_SESSION['url'])) 
-   $url = $_SESSION['url']; // holds url for last page visited.
-else 
-   $url ='http://localhost/ElectronicEcommerce/' ;
-   echo "<script type='text/javascript'>window.location.href ='". $url."';</script>";
-
+				
+				if(isset($_SESSION['url'])) {
+				 $url = $_SESSION['url']; // holds url for last page visited.
+				 $s=array('back',$url);
+            $res=json_encode($s);
+            echo $res;
+				}
+				 else {
+               $url ='http://localhost/ElectronicEcommerce/' ;
+			//	echo "<script type='text/javascript'>window.location.href ='". $url."';</script>";
+				$s=array($url);
+				$res=json_encode($s);
+				echo $res;
+				
+				 }
 			}
 		} 
 		else {
 			Session::set('loggedIn', false);
-			echo "<script type='text/javascript'>window.location.href ='http://localhost/ElectronicEcommerce/user/login';</script>";
+			$s=array('notlogedin');
+				$res=json_encode($s);
+				echo $res;
+			echo "<script type='text/javascript'></script>";
 		}
 		
 		

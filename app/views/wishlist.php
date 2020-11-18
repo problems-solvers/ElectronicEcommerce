@@ -1,7 +1,7 @@
 <?php
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 ?>
-<div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
+<div class="mx-auto  my-2 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
   <h3 class="titel col-12"> Wishlist</h3>
 </div>
 <br>
@@ -10,9 +10,9 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 <div>
 <!-- wishlist -->
+<div class="col-9 mx-auto">
 <div class="row">
-<div class=" col-8 ">
-<div class="col-10  mx-auto wishlistBox">
+<div class="col-8  mx-auto wishlistBox">
 
 <div class="show">
 
@@ -20,7 +20,6 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
         
 </div>
 
-</div>
 <!-- Advertisment -->
 
 <div class=" col-4  " >
@@ -38,6 +37,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
    <button class="btn btn-sm px-3">SHOP NOW</button>
   </div> 
   </div>
+</div>
 </div>
 </div>
 <script>
@@ -74,7 +74,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
           tableData ='<img src="/ElectronicEcommerce/app/assets/images/no.jpg" class="mx-3 img-rounded"><p class="text-center col-12 mb-5">no data available for this category</p>';
           }else{
             wishlistdata.map(data=>{
-          tableData +='<div class="card  mx-auto my-3  px-2 py-2" style=" border:1px solid #836691;  border-radius:10px;"><div class="d-flex align-content-middle"><div   class=" px-0 align-items-center " style="height:150px; width:150px;"><img style="height:150px; width:150px;" src="'+data.main_img+'" alt="Card image cap"></div><div class="card-body py-1  m-auto  mx-auto"><h5 class="card-title">'+data.pro_name+'</h5><span style="font-weight:bold; color:#836691;">'+data.total_price+'$</span><br><div class="py-2   align-content-end"><a   class="my-3 py-2 addtoCart"  id="'+data.pro_id+'"><i class="fas fa-heart " style="color:#836691;"></i><span  class="mx-2">add to Cart</span> </a></div></div><div class="col-3" ><div   style=" position:absolute; top:0px; right:5px ;font-size:20px; "> <a    class="deletefromCart" id="'+data.cart_id+'" pro_id="'+data.pro_id+'" ><i class="fas fa-times " ></i></a></div><br></div></div></div>';
+          tableData +='<div class="card  mx-auto my-3  px-2 py-2" style=" box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);  border-radius:10px;"><div class="d-flex align-content-middle"><div   class=" px-0 align-items-center " style="height:150px; width:150px;"><img style="height:150px; width:150px;" src="'+data.main_img+'" alt="Card image cap"></div><div class="card-body py-1  m-auto  mx-auto"><h5 class="card-title">'+data.pro_name+'</h5><span style="font-weight:bold; color:#836691;">'+data.total_price+'$</span><br><div class="py-2   align-content-end"><a   class="my-3 py-2 addtoCart"  id="'+data.pro_id+'"><i class="fas fa-heart " style="color:#836691;"></i><span  class="mx-2">add to Cart</span> </a></div></div><div class="col-3" ><div   style=" position:absolute; top:0px; right:5px ;font-size:20px; "> <a    class="deletefromCart" id="'+data.cart_id+'" pro_id="'+data.pro_id+'" ><i class="mdi mdi-close" ></i></a></div><br></div></div></div>';
           });}
         }
         else{
@@ -82,7 +82,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
             tableData ='<img src="/ElectronicEcommerce/app/assets/images/no.jpg" class="mx-3 img-rounded"><p class="text-center col-12 mb-5">no data available for this category</p>';
           }else{
             JSON.parse(localStorage.getItem('wishlist')).map(data=>{
-           tableData +='<div class="card  mx-auto my-3  px-2 py-2" style=" border:1px solid #836691;  border-radius:10px;"><div class="d-flex align-content-middle"><div   class=" px-0 align-items-center " style="height:150px; width:150px;"><img style="height:150px; width:150px;"  src="'+data.pro_img+'" alt="Card image cap"></div><div class="card-body py-1  m-auto  mx-auto"><h5 class="card-title">'+data.pro_name+'</h5><span style="font-weight:bold; color:#836691;">'+data.total_price+'$</span><br><div class="py-2   align-content-end"><a   class="my-3 py-2 addtoCart"  id="'+data.pro_id+'"><i class="fas fa-heart " style="color:#836691;" ></i><span  class="mx-2">add to Cart</span> </a></div></div><div class="col-3" ><div   style=" position:absolute; top:0px; right:5px ;font-size:20px; "> <a    class="deletefromCart" id="'+data.cart_id+'" pro_id="'+data.pro_id+'" ><i class="fas fa-times " ></i></a></div><br></div></div></div>';
+           tableData +='<div class="card  mx-auto my-3  px-2 py-2" style=" box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);   border-radius:10px;"><div class="d-flex align-content-middle"><div   class=" px-0 align-items-center " style="height:150px; width:150px;"><img style="height:150px; width:150px;"  src="'+data.pro_img+'" alt="Card image cap"></div><div class="card-body py-1  m-auto  mx-auto"><h5 class="card-title">'+data.pro_name+'</h5><span style="font-weight:bold; color:#836691;">'+data.total_price+'$</span><br><div class="py-2   align-content-end"><a   class="my-3 py-2 addtoCart"  id="'+data.pro_id+'"><i class="fas fa-heart " style="color:#836691;" ></i><span  class="mx-2">add to Cart</span> </a></div></div><div class="col-3" ><div   style=" position:absolute; top:0px; right:5px ;font-size:20px; "> <a    class="deletefromCart" id="'+data.cart_id+'" pro_id="'+data.pro_id+'" ><i class="mdi mdi-close" ></i></a></div><br></div></div></div>';
             });
           }
         }

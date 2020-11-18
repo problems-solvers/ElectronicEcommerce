@@ -17,13 +17,14 @@ body{
    border-bottom:3px solid #F37C21;
 }
 .productCard{
-  width: 13rem; 
+  width: 240px; 
   height:350px;
   padding:5px;
   border-radius: 10px;
   box-shadow: 0px 10px 20px #8888;
 
 }
+
 .productCardbtns{
 
 font-size:26px;
@@ -76,6 +77,29 @@ transform: skew(0deg, -5deg)
   text-decoration: none;
 content:'|'
 
+}
+.nav-btn{
+
+
+}
+.nav-btn i{
+  color:#F37C21;
+  font-size: 24px;
+  text-align: center;
+
+}
+/* .owl-carousel{
+  width:80%;
+} */
+.prev-slide{
+  position: absolute;
+  left: 0px;
+  top:calc(100% - 60%);
+}
+.next-slide{
+  position: absolute;
+  right: 0px;
+  top:calc(100% - 60%);
 }
 .nam{
 margin-top: 20px;
@@ -134,10 +158,10 @@ login&signup
  height: 30px;
  width:100%;
  border-radius: 4vh;
- background-color: #E1B199;
- border: 2px #E1B199 solid;
+ background-color: #F37C21;
+ border: 2px #F37C21 solid;
  color: white;
-margin-right: -10%;
+/* margin-right: -10%; */
 }
 .bt1{
  height: 30px;
@@ -457,7 +481,10 @@ However, delay the fade out process for 2.5 seconds */
 
 
 }
+.dropdown-toggle::after {
+display: none;
 
+}
 
 .dropdown .dropbtn {
  visibility: hidden;
@@ -700,9 +727,12 @@ footer .main-footer{padding: 20px 0;
 .footer-copyright {padding: 5px 0; text-align: center;}
 ul.social-footer2 {	margin: 0;padding: 0;	width: auto;}
 ul.social-footer2 li {display: inline-block;padding: 0;}
-ul.social-footer2 li a:hover {background-color:#E1B199;}
-ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: center;}
-
+ul.social-footer2 li a:hover {background-color:#F37C21;}
+ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: center; text-decoration: none;}
+ul.social-2 {	margin: 0;padding: 0;	width: auto; }
+ul.social-2 li {display: inline-block;padding: 0;}
+ul.social-2 li a {display: block;	height:30px;width: 30px;text-align: center; text-decoration: none; color:#836691 }
+ul.social-footer2 li a:hover{color:#F37C21;}
 /*advertisment img */
 .show {
   position: relative;
@@ -726,13 +756,12 @@ ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: cent
 }
 
 .show .btn:hover {
-  background-color: #E1B199;
+  background-color: #F37C21;
 }
 /*contact us form */
 
 .ccform {
   margin: 0 auto;
-   width: 800px;
 }
 .ccfield-prepend{
  margin-bottom:10px;
@@ -740,7 +769,7 @@ ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: cent
 }
 
 .ccform-addon{
- color:#f8ae45; 
+ color:#836691; 
  float:left;
  padding:8px;
  width:8%;
@@ -760,7 +789,7 @@ ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: cent
 .ccbtn{
  display:block;
  border:none;
- background:#ff8d1e;
+ background:#F37C21;
  color:#FFFFFF;
  padding:12px 25px;
  cursor:pointer;
@@ -769,7 +798,7 @@ ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: cent
 }
 .ccbtn:hover{
  
- background:#f8ae45;
+ background:#F37C21;
 }
  .pro-text{
    line-height:30px;
@@ -803,6 +832,13 @@ text-align: center;
   top: 0;
   width: 100%;
   z-index:99999;
-  background: rgb(131, 102, 145);
-   background: linear-gradient(293deg, rgb(131, 102, 145) 0%, rgba(145,122,33,0.1) 82%, rgba(247,81,185,0.1) 100%);
+  background-color: #fff !important;
+  border-bottom: 3px solid #F37C21;
+   /* background: linear-gradient(293deg, rgb(131, 102, 145) 0%, rgba(145,122,33,0.1) 82%, rgba(247,81,185,0.1) 100%); */
+}
+
+@media only screen and (min-width:991px) {
+  #navbarSupportedContent{
+    margin:auto 150px;
+  }
 }

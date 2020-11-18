@@ -25,6 +25,22 @@ function getCartProducts(){
    ->fetch();
 return $result;
 }
+function getCartProductsbyId(){
+    $this->db=new DB();
+    $id=$_REQUEST['id'];
+    $type=$_REQUEST['type'];
+    $table=array("cart");
+    $user_id= Session::get('id');
+   $result=  $this->db->cols()
+   ->table($table)
+   ->where('user_id','=', "'".$user_id."'" )
+   ->where('pro_id','=', "'".$id."'" )
+   ->where('type','=', $type )
+   ->get()
+   ->execute()
+   ->fetch();
+return $result;
+}
     function  getAllCatData(){
         $this->db=new DB();
         $cols=array();
@@ -110,7 +126,7 @@ return $result;
        ->fetch();
        if(count($result)==1){
         $this->db=new DB();
-        echo 'i m hre once';
+       // echo 'i m hre once';
         $price=$result[0]->total_price+ ($a->total_price * $a->quentity);
         $qty=$result[0]->quentity+$a->quentity;
         $data = array(
