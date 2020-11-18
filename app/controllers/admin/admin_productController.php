@@ -49,21 +49,18 @@ public $tag_model;
        public function view_product(){
  
         $items=array(
-            'product'=>$this->cat_model->view_more(),
+            //'tag'=>$this->cat_model->view_tag(),
+            'product'=>$this->cat_model->view_more(),  
         );
         $this->controller->view_object->create_view('admin/view_product',$items);
        }
 
        function add(){
         $uuid=baseFunctions::uuid();
-        $tag=baseFunctions::uuid();
-        $tag_details_id=baseFunctions::uuid();
-
-        $_POST['tag_details_id']= $tag_details_id;
+     
         $_POST['pro_id']= $uuid;
-        $_POST['tag_id']= $tag;
         $_POST['create_date']= date('Y-m-d H:i:s');
-
+         $data='';
         $img=baseFunctions::img($_FILES['pro_imgs']);
         $main_img=baseFunctions::main_img($_FILES['main_img']);
       
@@ -80,44 +77,50 @@ public $tag_model;
             'create_date' =>"'".$_POST['create_date']."'",
             'pro_imgs' =>"'".$img."'"            
             );
-            $data2 = array(
-                'tag_id' =>"'".$_POST['tag_id']."'",
-                'tag_name' =>"'".$_POST['tag_name']."'"                );
-                $tag_data='';
-                if(!isset($_POST['tag_name'])){
+           
+                if(!isset($_POST['name'])){
                        
-                       $this->controller->view_object->create_view('admin/addTags');
+                       $this->controller->view_object->create_view('admin/admin_product/addProduct');
                 }
                 else{
-               
-                       print_r( $_POST);
+            
                        $uuid=baseFunctions::uuid();
-                       foreach( $_POST['field'] as $filed)
+                       foreach( $_POST['name'] as $filed)
                        {
-                              $tag_data.=$filed.',';
+
+                         $tag=baseFunctions::uuid();
+                         $_POST['tag_id']= $tag;
+                         $data2 = array(
+                        'tag_id' =>"'".$_POST['tag_id']."'",
+                        'tag_name' =>"'".$filed."'"                );
+                        $result= $this->tag_model->addTags($data2);
+                        foreach( $_POST['data'] as $datas)
+                       {
+                           //$data.=$datas."@ ";
+                           $tag_details_id=baseFunctions::uuid();
+                           $_POST['tag_details_id']= $tag_details_id;
+                       $data3 = array(
+                            'tag_id' =>"'".$_POST['tag_id']."'",
+                            'pro_id' =>"'".$_POST['pro_id']."'",
+                           'tag_details_id' =>"'".$_POST['tag_details_id']."'",
+                           'tag_data' =>"'".$datas."'"
+                           );
+                        $result3= $this->tag_model->addTagsDetails($data3);
+                       break;
                        }
-          $data3 = array(
-                  'tag_id' =>"'".$_POST['tag_id']."'",
-                  'pro_id' =>"'".$_POST['pro_id']."'",
-                 'tag_details_id' =>"'".$_POST['tag_details_id']."'",
-                 'tag_data' =>"'".$tag_data."'"
-                 );
+                    }
+         
                 
-           $result= $this->tag_model->addTags($data2);
            $result2= $this->cat_model->add($data);
 
-           if(!$result)
-          { 
+      
             if(!$result2) {
-                $result3= $this->tag_model->addTagsDetails($data3);
 
-                 if( $result3)
-           {
             echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/addProduct';</script>";
            }
            else{
             echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product';</script>";
-           }}
+          
         
         }
           
@@ -154,22 +157,45 @@ public $tag_model;
         
        }
        function update(){
-        $tag_data='';
         $active='';
-        $data='';
+        print_r($_POST);
         if(isset($_POST['is_active']))
         $active=1;
         else
         $active=0;
-        foreach( $_POST['field'] as $filed)
-        {
-               $tag_data.=$filed.',';
-        }
-
+      print_r($_POST);
         $img=baseFunctions::img($_FILES['pro_imgs']);
-        
-        //print_r($img);
         $main_img=baseFunctions::main_img($_FILES['main_img']);
+
+       /* if(!isset($_POST['name'])){
+                       
+            $this->controller->view_object->create_view('admin/admin_product/addProduct');
+     }
+     else{
+ 
+            foreach( $_POST['name'] as $filed)
+            {
+
+              $data2 = array(
+             'tag_name' =>"'".$filed."'"                );
+           $result2=$this->cat_model->tagUpdate($data2);
+
+             foreach( $_POST['data'] as $datas)
+            {
+                //$data.=$datas."@ ";
+            $data3 = array(
+                 'tag_id' =>"'".$_POST['tag_id']."'",
+                 'pro_id' =>"'".$_POST['pro_id']."'",
+                'tag_details_id' =>"'".$_POST['tag_details_id']."'",
+                'tag_data' =>"'".$datas."'"
+                );
+           $result1=$this->cat_model->tagdetailUpdate($data3);
+
+            break;
+            }
+         }}
+
+         */
         if(isset($_FILES['pro_imgs'])&&isset($_FILES['main_img']))
        { $data = array(
 
@@ -221,33 +247,22 @@ public $tag_model;
                       ); 
         }
 
-        print_r($tag_data);
+            
+            $result=$this->cat_model->update($data);
 
-                  $data2=array(
-                    'tag_name'=>"'".$_POST['tag_name']."'"
-                  );
-               $data4=array(
-                'tag_data' =>"'".$tag_data."'" ,
-            );
-                
-           $result=$this->cat_model->update($data);
-           $result2=$this->cat_model->tagUpdate($data2);
-           $result1=$this->cat_model->tagdetailUpdate($data4);
-
-
-
-             if( $result)
-           {
+        
+            /*if($result){
             echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/';</script>";
            }
            else{
-            echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/updateProduct';</script>";
-           }
-        }
+            echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/updateProduct';</script>";   
+        }*/
+    }
+}
        
       
 
-}
+
 
 
 ?>

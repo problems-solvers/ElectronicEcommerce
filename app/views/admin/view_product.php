@@ -1,9 +1,29 @@
 
 <?php $rows=$data['product'];
   //to do pro imgs
+  //print_r($rows);
+ $pro_name='';
+ $pro_imgs='';
+ $main_img='';
+ $tagData=[];
+ $tagName=[];
+ $pro_price='';
+ $cat_name='';
+ $pro_details='';
+ $index=0;
   foreach($rows as $row){
-   
-  
+    $pro_name=$row->pro_name;
+    $pro_imgs=explode('@',$row->pro_imgs);
+    $main_img=$row->main_img;
+    $tagData[$index]=$row->tag_data;
+    $tagName[$index]=$row->tag_name;
+    $pro_price=$row->pro_price;
+    $cat_name=$row->cat_name;
+    $pro_details=$row->pro_details;
+    $index++;
+  }
+ 
+
     ?>
 <div class="container mt-4">
 
@@ -18,28 +38,29 @@
 
 
 
-                    <img src="../../<?php echo $row->main_img ?>" width="100%">
+                    <img class="m-2" src="../../<?php echo $main_img ?>" width="100%">
                 </div>
                 <!--Gallery Hero-->
 
                 <!--Gallery Thumbs-->
                 <div class="gallery__thumbs">
-                    <a href="../../<?php echo $row->main_img ?>" data-gallery="thumb" class="is-active">
-                        <img src="../../<?php echo $row->main_img ?>">
+                    <a href="../../<?php echo $main_img ?>" data-gallery="thumb" class="is-active">
+                        <img class="m-2"src="../../<?php echo $main_img ?>">
                     </a>
                     <?php
-  $imgs=explode(',',$row->pro_imgs);
+  $imgs=$pro_imgs;
   $image=sizeof( $imgs);
   //print_r($image);
   foreach( $imgs as $img){
      if($image >1){
+         $image=$image-1;
       
   ?>
                     <a href="../../<?php echo $img ?>" data-gallery="thumb">
-                        <img src="../../<?php echo $img ?>">
+                        <img class="m-2" src="../../<?php echo $img ?>">
                     </a>
                     <?php
-                     $image=$image-1;}
+                   }
                     
   }
   ?>
@@ -53,12 +74,12 @@
             <div class="product-dtl">
                 <div class="product-info">
                     <div class="product-name  mb-3">
-                        <?php echo $row->pro_name;?>
+                        <?php echo $pro_name;?>
                     </div>
 
                     <div>
                         <h4>
-                            <?php echo $row->pro_price;?> $
+                            <?php echo $pro_price;?> $
                         </h4>
                     </div>
                 </div>
@@ -66,18 +87,24 @@
                     <h5 class="d-inline-block mr-1">Categories : </h5>
 
                     <div class="quantity d-inline-block">
-                        <?php echo $row->cat_name; ?>
+                        <?php  echo $cat_name; ?>
 
                     </div>
 
-                </div>
+       <?php
+       for($i=0;$i<sizeOf($tagName);$i++)
+       
+{
+        ?>         </div>
+            
                 <div class="product-size border-bottom">
-                    <h5 class="d-inline-block mr-1"> <?php echo $row->tag_name; ?> : </h5>
+                    <h5 class="d-inline-block mr-1"> <?php echo $tagName[$i];  ?> : </h5>
                     <div class="quantity  d-inline-block">
-                        <?php echo $row->tag_data; ?>
+                
+                        <?php echo $tagData[$i]; ?>
                     </div>
-                   
-                    <div class="product-info-tabs">
+       <?php }?>
+      <div class="product-info-tabs">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description"
@@ -88,13 +115,12 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="description" role="tabpanel"
                                 aria-labelledby="description-tab">
-                                <?php echo $row->pro_details; ?>
+                                <?php echo $pro_details; ?>
                             </div>
 
                         </div>
                     </div>
-                    <a style="float:right;text-align:center;font-size:18px" class="bt ml-auto col-3" href="/ElectronicEcommerce/admin/admin_product/update"  type="submit">Update</a>
-        <a style="float:left ;text-align:center;font-size:18px" class="bt1 mr-auto col-3" href="/ElectronicEcommerce/admin/admin_product/"  type="submit">Back</a>
+                    <a  class=" btn-outline-light float-right btn-lg btn-color" href="/ElectronicEcommerce/admin/admin_product/update"  type="submit">Update</a>
 
                 </div>
 
@@ -108,7 +134,7 @@
 </div>
 
 <?php
-  }
+  
   ?>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>

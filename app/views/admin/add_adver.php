@@ -1,8 +1,26 @@
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="page-header">
+        <h2 class="pageheader-title">E-commerce Advertisment </h2>
 
+
+            <div class="page-breadcrumb">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" class="haver">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"> Advertisment</li>
+                        <li class="breadcrumb-item active" aria-current="page">Add Advertisment</li>
+                    </ol>
+                </nav>
+          
+
+            </div>
+        </div>
+    </div>
+</div>
 <form class="form-card"  id="programmer_form" action="/ElectronicEcommerce/admin/admin_advertiment/add"  method="POST" enctype="multipart/form-data">
 
 <fieldset class="form-fieldset">
-<legend class="text-center text-dark mb-0">ADD Advertisment</legend>
     <div class="form-radio form-radio-inline">
         
       
@@ -99,8 +117,8 @@ foreach($rows as $ro){
      </div>
    
   
-    <div class="form-actions btn-sm">
-    <button class=" bt " action="/ElectronicEcommerce/admin/admin_advertiment/"  type="submit"> Add Advertisment</button>
+    <div class="form-actions btn-sm col-12 ">
+    <button class="btn btn-outline-light col-4 mx-auto btn-color"  action="/ElectronicEcommerce/admin/admin_advertiment/"  type="submit"> Add Advertisment</button>
 </div>
     </div>
 </fieldset>

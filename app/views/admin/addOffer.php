@@ -1,12 +1,14 @@
 <div class="row">
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="page-header">
-            <h2 class="pageheader-title">Categories and Tags </h2>
+        <h2 class="pageheader-title">E-commerce Offers </h2>
+
            <div class="page-breadcrumb">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Categories and Tags</li>
+                        <li class="breadcrumb-item"><a href="#" class="haver">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"> Offers</li>
+                        <li class="breadcrumb-item active" aria-current="page"> Add Offers</li>
                     </ol>
                 </nav>
             </div>
@@ -19,7 +21,6 @@
       <form class="form-card"  id="programmer_form" action="/ElectronicEcommerce/admin/admin_offers/add"  method="POST" enctype="multipart/form-data">
 
 <fieldset class="form-fieldset">
-<legend class="text-center text-dark mb-0">ADD OFFERS</legend>
     <div class="form-radio form-radio-inline">
         
       
@@ -188,8 +189,8 @@ foreach($rows as $ro){
         
       </div>
       <div class="form-group">
-  <div class="col-md-5">
-    <button id="singlebutton" name="singlebutton" class="btn btn-block bt">ADD Offers</button>
+  <div class="col-12">
+    <button id="singlebutton" class="btn btn-outline-light col-4 mx-auto btn-color">ADD Offers</button>
   </div>
   </div>
     </div>

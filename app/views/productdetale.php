@@ -6,9 +6,31 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 </div>
 <?php $rows=$data['product'];
   //to do pro imgs
+  //print_r($rows);
+ $pro_id='';
+ $pro_name='';
+ $pro_imgs='';
+ $main_img='';
+ $tagData=[];
+ $tagName=[];
+ $pro_price='';
+ $cat_name='';
+ $pro_details='';
+ $index=0;
   foreach($rows as $row){
-   
-  
+    $pro_id=$row->pro_id;
+    $pro_name=$row->pro_name;
+    $pro_imgs=explode('@',$row->pro_imgs);
+    $main_img=$row->main_img;
+    $tagData[$index]=$row->tag_data;
+    $tagName[$index]=$row->tag_name;
+    $pro_price=$row->pro_price;
+    $cat_name=$row->cat_name;
+    $pro_details=$row->pro_details;
+    $index++;
+  }
+ 
+
     ?>
 <div class="container mt-4">
 
@@ -23,17 +45,17 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 
 
-                    <img src="<?php echo $row->main_img ?>" width="100%">
+                    <img src="<?php echo $main_img ?>" width="100%">
                 </div>
                 <!--Gallery Hero-->
 
                 <!--Gallery Thumbs-->
                 <div class="gallery__thumbs">
-                    <a href="<?php echo $row->main_img ?>" data-gallery="thumb" class="is-active">
-                        <img src="<?php echo $row->main_img ?>">
+                    <a href="<?php echo $main_img ?>" data-gallery="thumb" class="is-active">
+                        <img src="<?php echo $main_img ?>">
                     </a>
                     <?php
-  $imgs=explode(',',$row->pro_imgs);
+  $imgs=$pro_imgs;
   
   foreach( $imgs as $img){
   ?>
@@ -53,12 +75,12 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
             <div class="product-dtl">
                 <div class="product-info">
                     <div class="product-name  mb-3">
-                        <?php echo $row->pro_name;?>
+                        <?php echo $pro_name;?>
                     </div>
 
                     <div>
                         <h4>
-                            <?php echo $row->pro_price;?> $
+                            <?php echo $pro_price;?> $
                         </h4>
                     </div>
                 </div>
@@ -66,30 +88,37 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
                     <h5 class="d-inline-block mr-1">Categories : </h5>
 
                     <div class="quantity d-inline-block">
-                        <?php echo $row->cat_name; ?>
+                        <?php echo $cat_name; ?>
 
                     </div>
 
                 </div>
+                
+       <?php
+       for($i=0;$i<sizeOf($tagName);$i++)
+       
+{
+        ?> 
                 <div class="product-size border-bottom">
-                    <h5 class="d-inline-block mr-1"> <?php echo $row->tag_name; ?> : </h5>
+                    <h5 class="d-inline-block mr-1"> <?php echo  $tagName[$i]; ?> : </h5>
                     <div class="quantity  d-inline-block">
-                        <?php echo $row->tag_data; ?>
+                        <?php echo $tagData[$i]; ?>
                     </div>
                     <div>
                         <div>
+<?php }?>
                         <img style="visibility:hidden;" height="0px" width="0px" src="../<?php echo $row->main_img;?>"> 
 
                             <div style="visibility:hidden; width:0px;height:0px;" >
-                                <h5 style="width:0px;height:0px;" ><?php echo $row->pro_name;?></h5>
-                                <span style="width:0px;height:0px;" ><?php echo $row->pro_price;?></span>
+                                <h5 style="width:0px;height:0px;" ><?php echo $pro_name;?></h5>
+                                <span style="width:0px;height:0px;" ><?php echo $pro_price;?></span>
 
-                                <span style="width:0px;height:0px;"> <?php echo $row->cat_name; ?></span>
+                                <span style="width:0px;height:0px;"> <?php echo $cat_name; ?></span>
                             </div>
                             <div class="row productCardbtns mx-0">
-                                <a title="add to wishlist" id="'.$row->pro_id.'"class="mdi mdi-heart-outline addTowish mx-auto"></a>
-                                <a title="add to compare" id="'.$row->pro_id.'"class="fas fa-exchange-alt addTocompare mx-auto"></a>
-                                <a title="add to cart" id="'.$row->pro_id.'" class="attToCart mdi  mdi-cart-outline mx-auto"></a>
+                                <a title="add to wishlist" id="'.$pro_id.'"class="mdi mdi-heart-outline addTowish mx-auto"></a>
+                                <a title="add to compare" id="'.$pro_id.'"class="fas fa-exchange-alt addTocompare mx-auto"></a>
+                                <a title="add to cart" id="'.$pro_id.'" class="attToCart mdi  mdi-cart-outline mx-auto"></a>
                             </div>
                         </div>
                     </div>
@@ -105,7 +134,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="description" role="tabpanel"
                                 aria-labelledby="description-tab">
-                                <?php echo $row->pro_details; ?>
+                                <?php echo $pro_details; ?>
                             </div>
 
                         </div>
@@ -121,9 +150,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
     </div>
 
 </div>
-<?php
-  }
-  ?>
+
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>

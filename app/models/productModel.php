@@ -85,7 +85,7 @@ function  getcatchiled($id){
         ->innerjoin("tags","tag_details.tag_id","tags.tag_id")*/
     }
     function  updateProduct(){
-        $id=$_GET['pro_id'];
+        $id=$_REQUEST['pro_id'];
         $tbls=array("product");
         $cols=array("product.pro_name", "product.pro_id","product.pro_price" ,"product.pro_quentity","product.pro_details","product.brand","product.main_img","product.pro_imgs","product.is_active","product.cat_id","categories.cat_name","tags.tag_id" ,"tags.tag_name","tag_details.tag_details_id","tag_details.tag_data");
         return  $this->db
@@ -114,7 +114,9 @@ function  getcatchiled($id){
     function tagdetailUpdate($data){
         $tbls=array('tag_details');
         $tag_details_id=$_POST['tag_details_id'];
-        return $this->db->cols($data)->settingcol()->table($tbls)->where("tag_details_id","=","'".$tag_details_id."'")->where('pro_id ','=',"'".$_POST['pro_id']."'")->update()->execute();
+        $id=$_POST['pro_id'];
+
+        return $this->db->cols($data)->settingcol()->table($tbls)->where("tag_details_id","=","'".$tag_details_id."'")->where('pro_id ','=',"'".$id."'")->update()->execute();
    
     }
 
@@ -132,6 +134,19 @@ function view_more(){
     ->get()
     ->execute()->fetch();  
 }
+/*function view_tag(){tagdetailUpdate
+        $id=$_REQUEST['pro_id'];
+        $tbls=array("product");
+        $cols=array("tags.tag_id" ,"tags.tag_name","tag_details.tag_details_id","tag_details.tag_data");
+        return  $this->db
+        ->cols($cols)
+        ->table($tbls)
+        ->innerjoin("tag_details","product.pro_id","tag_details.pro_id")
+        ->innerjoin("tags","tag_details.tag_id","tags.tag_id")
+        ->where("product.pro_id","=","'".$id."'")
+        ->get()
+        ->execute()->fetch();  
+    } */
 }
 
 ?>

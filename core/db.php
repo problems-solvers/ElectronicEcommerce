@@ -92,7 +92,7 @@ class DB{
     }
     function get(){
         $this->isSelect=true;
-       $this->final_query="select ".$this->columns." from ".$this->tables.$this->join.$this->condation.$this->count.$this->orderBy.$this->groupBy.$this->limit;
+       $this->final_query=" select ".$this->columns." from ".$this->tables.$this->join.$this->condation.$this->count.$this->orderBy.$this->groupBy.$this->limit;
          return $this;
        // return $this;
 
@@ -142,10 +142,10 @@ class DB{
        $result;
         try {
            $this->stmt = $this->connection->prepare($this->final_query);
-           echo $this->final_query;
+         echo $this->final_query;
            $this->stmt->execute();
            $result='done';
-           echo $this->final_query;
+           //echo $this->final_query;
         } catch (PDOException $exception) {  die($exception->getMessage()); }
 
           

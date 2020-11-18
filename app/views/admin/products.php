@@ -2,13 +2,13 @@
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="page-header">
               
-                <h2 class="pageheader-title">Products</h2>
+                <h2 class="pageheader-title">E-commerce Products</h2>
                 
                 <div class="page-breadcrumb">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">SHOW Products</li>
+                            <li class="breadcrumb-item"><a href="#" class="haver">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Show Products</li>
                         </ol>
                     </nav>
                 </div>
@@ -18,12 +18,12 @@
         <div class="card-header ">
             <h5 class="mb-0  d-inline-block">Product Table</h5>
             <a href="http://localhost/ElectronicEcommerce/admin/admin_product/addProduct"><button type="button"
-                    class="d-inline-block  btn-left bt" style="float:right; ">Add Product</button></a>
+            class="btn btn-outline-light float-right  btn-color">Add Product</button></a>
 
         </div>
         <div class="card-body">
             <div class="table-responsive col-12 w-100">
-                <table id="example" class="table table-striped table-bordered second" style="width:100%">
+                <table id="example" class="table table-striped text-center table-bordered second" style="width:100%">
                     <thead>
                         <tr>
                             <th class="th-sm">#
@@ -50,14 +50,14 @@ foreach($rows as $row){
 if($row->is_active=="1")
 $active="Active";
 else
-$active="de_active";
+$active="Inactive";
 echo "
 <tr>
 <td>$index</td>
-        <td><img class='rounded' src='../$row->main_img' width='70'>
-        <br>
+        <td class='col-3'><img width='50px' height='50px' class='rounded col-4' src='../$row->main_img' width='70'>
+        
         $row->pro_name</td>
-<td>$row->pro_price</td>
+<td>$row->pro_price $</td>
 <td>$row->pro_quentity</td>
 <td>$active</td>
 
@@ -66,13 +66,13 @@ echo "
 ";
 echo "<td>
 <a  href='http://localhost/ElectronicEcommerce/admin/admin_product/view_product?action=view&pro_id=".$row->pro_id."' class='update'>
-<i class='btn fas fa-info-circle ' style='font-size:24px;'></i></a>
+<i class='btn fas fa-info-circle view-btn ' style='font-size:20px;'></i></a>
 
 <a  href='http://localhost/ElectronicEcommerce/admin/admin_product/updateProduct?action=update&pro_id=".$row->pro_id."' class='update'>
-	  <i class='btn fa fa-pencil text-primary' style='font-size:24px;'></i></a>
+	  <i class='btn fa fa-pencil view-btn ' style='font-size:20px;'></i></a>
 
 <a class='delete_employee' data-emp-id='$row->pro_id' href='javascript:void(0)'>
-<i  class=' btn fa fa-trash-o text-danger' style='font-size:24px;' ></i></a>
+<i  class=' btn fa fa-trash-o view-btn ' style='font-size:20px;' ></i></a>
 
 
 </td>
