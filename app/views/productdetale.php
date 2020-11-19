@@ -135,12 +135,13 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 </div>
 <div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
-  <h3 class="titel">Featured Items</h3>
+  <h3 class="titel">Items you may like</h3>
 </div>
-
-<div id="featured" class="featured owl-carousel owl-theme mx-auto py-4"  style="background: rgb(120,76,18);
+<div  style="background: rgb(120,76,18);
       background: linear-gradient(293deg, rgba(120,76,18,0.1) 0%, rgba(145,122,33,0.1) 82%, rgba(247,81,185,0.1) 100%);">
+<div id="featured" class="featured owl-carousel owl-theme mx-auto py-4"  >
 
+</div>
 </div>
 <?php
   }

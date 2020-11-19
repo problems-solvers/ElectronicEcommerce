@@ -67,13 +67,13 @@ class userModel extends Model
 				if(isset($_SESSION['url'])) {
 				 $url = $_SESSION['url']; // holds url for last page visited.
 				 $s=array('back',$url);
-            $res=json_encode($s);
-            echo $res;
+                  $res=json_encode($s);
+                  echo $res;
 				}
 				 else {
                $url ='http://localhost/ElectronicEcommerce/' ;
 			//	echo "<script type='text/javascript'>window.location.href ='". $url."';</script>";
-				$s=array($url);
+				$s=array('user');
 				$res=json_encode($s);
 				echo $res;
 				

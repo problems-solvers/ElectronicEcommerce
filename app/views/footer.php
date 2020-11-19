@@ -99,9 +99,44 @@
 <script src="/ElectronicEcommerce/app/assets/libs/js/CustomerScript.js"></script>
 
 <script>
+     text_truncate = function(str, length, ending) {
 
+      if (length == null) {
+        length = 100;
+      }
+      if (ending == null) {
+        ending = '...';
+      }
+      if (str.length > length) {
+        return str.substring(0, length - ending.length) + ending;
+      } else {
+        return str;
+      }
+    };
+   
+
+ $.ajax({
+        type: 'POST',
+        url: 'http://localhost/ElectronicEcommerce/home/getCategories',
+
+    })
+    .done(function (response) {
+            var x = JSON.parse(response);
+            var m = '<li class="nav-item"><a class="nav-link categorieslink"  id="">All Categories</a></li>';
+            x.forEach(element => {
+
+              
+                m += '<li class="nav-item"><a class="nav-link categorieslink" id="?action=get&cat_id=' + element.cat_id + '">' + element.cat_name + '</a></li>';
+            });
+            const a = document.querySelector('#allCategories');
+            a.innerHTML = m;
+            //  s=  ('#allCategories').val()
+
+        })
+        .fail(function () {
+
+        })
     function totalqtycart() {
-        console.log(' i am here rererere')
         //cardBoxTable.innerHTML = tableData;
         const iconShoppingP = document.querySelector('.iconShopping span');
 
@@ -123,10 +158,8 @@
             // <?php
             // $x= json_encode($data); 
             //   ?>
-            console.log('hi')
                 // var cartdata = 
                 <?php //echo $x; ?>;
-        console.log(cartdata);
             if (cartdata[0] === 'nothingonCart') {
                 iconShoppingP.innerHTML = '<i class="mdi mdi-cart-outline" ></i>' + 0 + '</span>';;
             } else {
@@ -144,7 +177,6 @@
 
     }
     function totalqtywishlist() {
-        console.log(' i am here rererere')
         const iconHeartP = document.querySelector('.iconheart span');
 
         var wishlistdata;
@@ -165,7 +197,6 @@
             // <?php
             // $x= json_encode($data); 
             //   ?>
-            console.log('hi')
                 <?php //echo $x; ?>;
          if (wishlistdata[0] === 'nothingonWishlist') {
                 iconHeartP.innerHTML = '<i class="mdi mdi-heart-outline" ></i>' + 0 + '</span>';
@@ -182,30 +213,7 @@
             }
         }
     }
-    $.ajax({
-        type: 'POST',
-        url: 'http://localhost/ElectronicEcommerce/home/getCategories',
-
-    })
-    .done(function (response) {
-            var x = JSON.parse(response);
-            var m = '<li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/categories/show" id="parent">All Categories</a></li>';
-            x.forEach(element => {
-
-
-                m += '<li class="nav-item"><a class="nav-link" href="http://localhost/ElectronicEcommerce/categories/show?action=get&cat_id=' + element.cat_id + '">' + element.cat_name + '</a></li>';
-            });
-            const a = document.querySelector('#allCategories');
-            a.innerHTML = m;
-            //  s=  ('#allCategories').val()
-
-        })
-        .fail(function () {
-
-        })
-
     function totalqtycompare() {
-        console.log(' i am here rererere')
         const iconHeartP = document.querySelector('.compare span');
 
         var comparedata;
@@ -226,7 +234,6 @@
             // <?php
             // $x= json_encode($data); 
             //   ?>
-            console.log('hi')
                 <?php //echo $x; ?>;
          if (comparedata[0] === 'nothingonWishlist') {
                 iconHeartP.innerHTML = '<i class="fa fa-exchange-alt" ></i>' + 0 + '</span>';
@@ -248,7 +255,7 @@
    
       $.ajax({
                 type: 'POST',
-                url: 'http://localhost/ElectronicEcommerce/home/'+data.type,
+                url: 'http://localhost/ElectronicEcommerce/'+data.type,
                 global: true,
                 async: false,
                 dataType: 'json',
@@ -301,57 +308,94 @@
         }
         else {
             const localItems = JSON.parse(localStorage.getItem(localName));
+            if(localItems != null){
             iteminCart = localItems.findIndex((x) => x.pro_id === id);
-            console.log(found);
-            if (iteminCart == null) {
+             if (iteminCart == -1) 
                 found = '-outline';
+                else
+                  found = '';
 
             }
-            else
+            else{
                 found = '';
-           
+            }
+
         }
-        console.log(found)
         return found;
     }
     function loadHome(data){
-  console.log('niiiiiiiiiiiiiiiiiii')
-  vdata={
-    type:data.type,
+      
+  if(data.type=='CategoriesLoop'){
+    vdata={
+    type:'categories/show'+data.id,
     id:data.id
   }
-  const dataBox = document.querySelector('.'+vdata.type);
+   var product= getProData(vdata)
+   var c='';
+  const catdataBox = document.querySelector('#'+data.type);
+  if(product.length>0){
+  product.forEach(element => {
+    // col-lg-3  col-md-4 col-sm-6 col-xm-12
+  c+='<div class=" my-3 mx-2 content " style="width:240px"><div class="card productCard mx-auto "><a href="http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id='+element.pro_id+'" style="color:#303030;  text-decoration:none;"><img class="card-img-top" src="/ElectronicEcommerce/'+element.main_img+'" alt="Card image cap"><div class="card-body py-1"><h5 class="cardtitle1">'+element.pro_name+'</h5><span style="float:right; color:#836691; font-weight:bold;">'+element.pro_price+'$</span><span>'+element.cat_name+'</span></div></a><div class="row productCardbtns mx-0"><a  title="add to wishlist" id="'+element.pro_id+'" class=" addTowish mx-auto" ><li class="mdi mdi-heart'+element.isInWishlist+'" style="list-style:none;"></li></a><a  title="add to compare" id="'+element.pro_id+'" class="addTocompare mx-auto" style="list-style:none;"><li class="fas fa-exchange-alt '+element.isInCompare+'" style="list-style:none;"></li></a><a  title="add to cart" id="'+element.pro_id+'" class="attToCart  mx-auto" style="list-style:none;"><li class="mdi  mdi-cart'+element.isInCart+'" style="list-style:none;"></li></a></div></div></div> '
+  });
+}
+else{
+    c='<img src="/ElectronicEcommerce/app/assets/images/no.jpg" class="img-rounded"><p class="text-center col-12 mb-5">no data available for this category</p>';
+}
+  catdataBox.innerHTML=c
+  const titles = document.getElementsByClassName('cardtitle1')
+
+for(var i=0;i < titles.length; i++ ){
+    console.log('dd')
+ x= titles[i].innerText
+ titles[i].innerText=text_truncate(x,16)
+}
+  }
+  else{
+    vdata={
+    type:'home/'+data.type,
+    id:data.id
+  }
+   const dataBox = document.querySelector('.'+data.type);
    var product= getProData(vdata)
    var d='';
-   //mdi-cart
-   //mdi-heart
    product.forEach(element => {
-       if(data.id===null){
-         d='<div class="item "><div class="card productCard mx-auto "><a href="http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id='+element.pro_id+'" style="color:#303030; height:100%; text-decoration:none;"><img class="card-img-top" src="/ElectronicEcommerce/'+element.main_img+'" alt="Card image cap"><div class="card-body py-1"><h5 class="cardtitle">'+element.pro_name+'</h5><span style="float:right; color:#836691; font-weight:bold;">'+element.pro_price+'$</span><span>'+element.cat_name+'</span></div></a><div class="row productCardbtns mx-0"><a  title="add to wishlist" id="'+element.pro_id+'" class=" addTowish mx-auto" ><li class="mdi mdi-heart'+element.isInWishlist+'" style="list-style:none;"></li></a><a  title="add to compare" id="'+element.pro_id+'" class="addTocompare mx-auto" style="list-style:none;"><li class="fas fa-exchange-alt '+element.isInCompare+'" style="list-style:none;"></li></a><a  title="add to cart" id="'+element.pro_id+'" class="attToCart  mx-auto" style="list-style:none;"><li class="mdi  mdi-cart'+element.isInCart+'" style="list-style:none;"></li></a></div></div></div> '
-        $('#'+vdata.type).trigger('add.owl.carousel', [d])
+         d='<div class="item "><div class="card productCard mx-auto "><a href="http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id='+element.pro_id+'" style="color:#303030; height:100%; text-decoration:none;"><img class="card-img-top" src="/ElectronicEcommerce/'+element.main_img+'" alt="Card image cap"><div class="card-body py-1"><h5 class="cardtitle1">'+element.pro_name+'</h5><span style="float:right; color:#836691; font-weight:bold;">'+element.pro_price+'$</span><span>'+element.cat_name+'</span></div></a><div class="row productCardbtns mx-0"><a  title="add to wishlist" id="'+element.pro_id+'" class=" addTowish mx-auto" ><li class="mdi mdi-heart'+element.isInWishlist+'" style="list-style:none;"></li></a><a  title="add to compare" id="'+element.pro_id+'" class="addTocompare mx-auto" style="list-style:none;"><li class="fas fa-exchange-alt '+element.isInCompare+'" style="list-style:none;"></li></a><a  title="add to cart" id="'+element.pro_id+'" class="attToCart  mx-auto" style="list-style:none;"><li class="mdi  mdi-cart'+element.isInCart+'" style="list-style:none;"></li></a></div></div></div> '
+        $('#'+data.type).trigger('add.owl.carousel', [d])
         .trigger('refresh.owl.carousel');
-       }else{
-//todo
+     
 
+        });
+        const titles = document.getElementsByClassName('cardtitle1')
 
-       }
-});
-return d;
+for(var i=0;i < titles.length; i++ ){
+ x= titles[i].innerText
+ titles[i].innerText=text_truncate(x,16)
+}
+  }
 
 }
     $(document).ready(function () {
        loadHome({type:'recentally',id:null})
       loadHome({type:'featured',id:null})
+     
         // checkCart();
         // checkWish();
         totalqtycart();
         // totalqtycompare()
         totalqtywishlist()
         totalqtycompare()
-      
+        $(document).delegate('.categorieslink', 'click', function(e){
+           // getUrlParameter('technology');
+            var empid = $(this).attr('id');
+            window.location.replace('http://localhost/ElectronicEcommerce/categories'+empid);
+          //  loadHome({type:'CategoriesLoop',id:empid})
+
+        })
+
     $('.attToCart').click(function (e) {
        
- //  console.log( $(this),e.target.parentElement.parentElement.children[0])
+        //  console.log( $(this),e.target.parentElement.parentElement.children[0])
 
             let cart = [];
             var empid = $(this).attr('id');
@@ -379,7 +423,6 @@ return d;
                     
                 })
                 .fail(function () {
-                    console.log('dss');
                 })
         } else {
             if (JSON.parse(localStorage.getItem('cart')) === null) {
@@ -400,7 +443,6 @@ return d;
                 cart.push(item);
                 localStorage.setItem('cart', JSON.stringify(cart));
                 var mx = JSON.parse(localStorage.getItem('cart'))
-                console.log('fds', mx)
             }
             cart = [];
             totalqtycart()
@@ -418,7 +460,6 @@ return d;
                 catgory: e.target.parentElement.parentElement.parentElement.children[0].children[1].children[2].textContent,
                 quentity: 1
         };
-        console.log(item)
         if (<?php echo isset($_SESSION['id']) ? 'true' : 'false'; ?>) {
         compare.push(item)
         $.ajax({
@@ -427,10 +468,8 @@ return d;
             data: "comparedata=" + JSON.stringify(compare)
         })
             .done(function (response) {
-                console.log('hhaha');
             })
             .fail(function () {
-                console.log('dss');
             })
     } else {
         if (JSON.parse(localStorage.getItem('compare')) === null) {
@@ -449,7 +488,6 @@ return d;
             compare.push(item);
             localStorage.setItem('compare', JSON.stringify(compare));
             var mx = JSON.parse(localStorage.getItem('compare'))
-            console.log('fds', mx)
         }
         compare = [];
         totalqtycompare()
@@ -467,7 +505,6 @@ return d;
                 catgory: e.target.parentElement.parentElement.parentElement.children[0].children[1].children[2].textContent,
                 quentity: 1
         };
-        console.log(item)
         if (<?php echo isset($_SESSION['id']) ? 'true' : 'false'; ?>) {
         cart.push(item)
         $.ajax({
@@ -478,10 +515,8 @@ return d;
             .done(function (response) {
                 totalqtywishlist()
                 $(e.target).attr('class',"mdi  mdi-heart")
-                     console.log('hhaha');
             })
             .fail(function () {
-                console.log('dss');
             })
     } else {
         if (JSON.parse(localStorage.getItem('wishlist')) === null) {

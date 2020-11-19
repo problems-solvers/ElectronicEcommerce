@@ -34,11 +34,30 @@
             0:{
                 items:1
             },
-            600:{
+            500:{
+                items:2
+            },
+
+            650:{
                 items:3
             },
-            1000:{
+            800:{
+                items:3
+            },
+            900:{
                 items:4
+            },
+            1100:{
+                items:4
+            },
+            1300:{
+                items:5
+            },
+            1400:{
+                items:5
+            },
+            1700:{
+                items:6
             }
         }
     }); }
@@ -48,17 +67,37 @@
   $('#featured').owlCarousel({
     loop:true,
     margin:10,
+    navText : ['<div class="nav-btn prev-slide"><i class=" fas fa-chevron-circle-left" aria-hidden="true"></i></div>','<div class="nav-btn next-slide"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></div>'],
 
     nav:true,
     responsive:{
         0:{
             items:1
         },
-        600:{
+        500:{
+            items:2
+        },
+
+        650:{
             items:3
         },
-        1000:{
+        800:{
+            items:3
+        },
+        900:{
+            items:4
+        },
+        1100:{
+            items:4
+        },
+        1300:{
             items:5
+        },
+        1400:{
+            items:5
+        },
+        1700:{
+            items:6
         }
     }
 });}

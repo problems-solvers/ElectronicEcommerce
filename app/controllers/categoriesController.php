@@ -43,47 +43,50 @@ public $cat_model;
 
        }
        function categories($cat_id='All'){
-        $parents=array();
-           $child=array();
-           $allcat=$this->cat_model->getAllCatData();
-           $featured=$this->product_model->getAllProCatData();
-           $parents=array();
-           $child=array();
-           foreach ( $allcat as $row) {
-            if($row->parent =='0'){
-               array_push($parents,$row);
-            }
-            if($row->parent !='0'){
-               array_push($child,$row);
-            }
+      //   $parents=array();
+      //      $child=array();
+      //      $allcat=$this->cat_model->getAllCatData();
+      //      $featured=$this->product_model->getAllProCatData();
+      //      $parents=array();
+      //      $child=array();
+      //      foreach ( $allcat as $row) {
+      //       if($row->parent =='0'){
+      //          array_push($parents,$row);
+      //       }
+      //       if($row->parent !='0'){
+      //          array_push($child,$row);
+      //       }
+     $this->controller->view_object->create_view('categories');
+
    
-      }
+     // }
    
       
-     $categories=array('parents'=>$parents,'child'=> $child);
+   //   $categories=array('parents'=>$parents,'child'=> $child);
    
-    $items=array(
-        'categories'=>$categories,
-        'featured'=>$featured,
-            );
-    $this->controller->view_object->create_view('categories',$items);
+   //  $items=array(
+   //      'categories'=>$categories,
+   //      'featured'=>$featured,
+   //          );
+   //  $this->controller->view_object->create_view('categories',$items);
 
     }
 
     function show(){
       if(isset($_GET['cat_id'])){
       
-      $items=array(
-        'categories'=>$this->cat_model->getadd(),
-     );
-     $this->controller->view_object->create_view('categories',$items);
+      $items=$this->cat_model->getadd();
+    // $this->controller->view_object->create_view('categories',$items);
      }
      else{
-      $featured=array(
-         'categories'=>$this->product_model->getAllProCatData(),
-      );
-      $this->controller->view_object->create_view('categories',$featured);
+      $items=$this->product_model->getAllProCatData();
+
+
+     
+     // $this->controller->view_object->create_view('categories',$featured);
      }
+     $res=json_encode($items);
+     echo $res;
    }
     
     //    function index(){

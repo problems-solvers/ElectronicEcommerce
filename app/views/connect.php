@@ -33,7 +33,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
         <span class="ccform-addon"><i class="fa fa-comment"></i></span>
         <textarea class="ccformfield" name="comments" rows="8" placeholder="Message" required></textarea>
     </div>
-    <div class="col-5 mx-auto text-center">
+    <div class="col-5 ml-auto text-center">
     
       <button class="bt mx-auto login_btn">Send</button>
     </div>
@@ -63,14 +63,14 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
                         <!-- col-xs-5 col-sm-8 col-md-12 col-lg-9 -->
                         <div class="mx-auto">
              <div class="mx-auto my-5 " style="display:table; margin:auto;">
-             <i class="fas fa-map-marker-alt mx-2 my-2"  style="color:#836691 "></i>
-              <span  style="color:#836691 " >Yemen,Sanaa,Haddah</span><br>
-              <a  href="mailto:loginstore@gmail.com" style="text-decoration:none; color:#836691;" target="_self">
-              <span ><i  style="color:#836691 " class="fas fa-envelope  mx-2 my-2"></i>
-              </span  style="color:#836691 " >loginstore@gmail.com </a><br >
-              <a  href="tel:+14029993330"  style="text-decoration:none; color:#836691;" target="_self">
-              <span ><i  style="color:#836691 "  class="fas fa-phone mx-2 my-2"></i>
-              </span  style="color:#836691 "> +1(402) 993339-555 </a>
+             <i class="fas fa-map-marker-alt mx-2 my-2"  style="color:#29242D "></i>
+              <span  style="color:#29242D " >Yemen,Sanaa,Haddah</span><br>
+              <a  href="mailto:loginstore@gmail.com" style="text-decoration:none; color:#29242D;" target="_self">
+              <span ><i  style="color:#29242D " class="fas fa-envelope  mx-2 my-2"></i>
+              </span  style="color:#29242D " >loginstore@gmail.com </a><br >
+              <a  href="tel:+14029993330"  style="text-decoration:none; color:#29242D;" target="_self">
+              <span ><i  style="color:#29242D "  class="fas fa-phone mx-2 my-2"></i>
+              </span  style="color:#29242D "> +1(402) 993339-555 </a>
              </div>
             </div>   </div>     
 </div>
