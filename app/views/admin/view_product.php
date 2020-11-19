@@ -38,14 +38,14 @@
 
 
 
-                    <img class="m-2" src="../../<?php echo $main_img ?>" width="100%">
+                    <img class="m-2" width="100%" src="../../<?php echo $main_img ?>" width="100%">
                 </div>
                 <!--Gallery Hero-->
 
                 <!--Gallery Thumbs-->
                 <div class="gallery__thumbs">
                     <a href="../../<?php echo $main_img ?>" data-gallery="thumb" class="is-active">
-                        <img class="m-2"src="../../<?php echo $main_img ?>">
+                        <img width="100px " height="100px"class="m-2"src="../../<?php echo $main_img ?>">
                     </a>
                     <?php
   $imgs=$pro_imgs;
@@ -56,8 +56,8 @@
          $image=$image-1;
       
   ?>
-                    <a href="../../<?php echo $img ?>" data-gallery="thumb">
-                        <img class="m-2" src="../../<?php echo $img ?>">
+                    <a href="../../<?php echo $img ?>"  width="20px " height="20px"data-gallery="thumb">
+                        <img width="100px " height="100px" class="m-2" src="../../<?php echo $img ?>">
                     </a>
                     <?php
                    }

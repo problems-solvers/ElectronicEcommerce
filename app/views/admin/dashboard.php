@@ -156,7 +156,7 @@ $order=$data['order'];
                     <!-- ============================================================== -->
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 px-5 ">
                         <div class="card box-shad">
-                            <h5 class="card-header">Last Users </h5>
+                            <h5 class="card-header">Last Registered </h5>
                             <div class="card-body p-0 text-center">
                                 <div class="table-responsive">
                                     <table class="table">

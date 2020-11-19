@@ -100,42 +100,72 @@ foreach($rows as $ro){
 
 
     <!-- File Button -->
-    <div class="form-group">
-        <label class=" control-label" for="pro_imgs">Main_image</label>
+    
+     <div class="row ">
+        
+        <div class="col-12 mx-auto">
         <div class="">
-            <input id="main_img" name="main_img" class="input-file" type="file">
-<img id="myImg" src="#" alt="your image" name="main_img" />
+            <img id="image1" style="border:2px solid #CC8B79; width:150px; height:150px"  alt="" height="200px" width="200px" name="main_img" class="img-fluid rounded shadow-sm mx-auto d-block">
+        </div>
+
+    </div>
+</div>
 
 
+<div class="row py-4">
+    <div class="col-12 mx-auto">
 
-<!-- Post Info -->
-<div style='position:fixed;bottom:0;left:0;    
-            background:lightgray;width:100%;'>
-     <a href='http://stackoverflow.com/q/19866677/1366033'></a>
-     </div>
-     </div>
-     </div>
+        <div class="input-group ">
+            <label for="upload" class=" p-2 mx-auto col-4 ml-4 text-center" style="background-color: #CC8B79; color:#fff;" >Main Image</label>
+            <input id="upload" type="file" onchange="onFilePicked(event)"  accept="image/*"  style="display: none;">
+            
+        </div>
+    </div>
+</div>
+
    
   
     <div class="form-actions btn-sm col-12 ">
-    <button class="btn btn-outline-light col-4 mx-auto btn-color"  action="/ElectronicEcommerce/admin/admin_advertiment/"  type="submit"> Add Advertisment</button>
+    <button class="btn btn-outline-light col-4 mx-auto" style="background-color:#836691;color:white"  action="/ElectronicEcommerce/admin/admin_advertiment/"  type="submit"> Add Advertisment</button>
 </div>
     </div>
 </fieldset>
 
 </form>
 <script>
-   $(function () {
-    $(":file").change(function () {
-        if (this.files && this.files[0]) {
-            var reader = new FileReader();
-            reader.onload = imageIsLoaded;
-            reader.readAsDataURL(this.files[0]);
-        }
-    });
-});
 
-function imageIsLoaded(e) {
-    $('#myImg').attr('src', e.target.result);
-};
+function  onFilePicked (event) {
+    
+    const files = event.target.files
+    console.log(files)
+    let filename = files[0].name
+    if (filename.lastIndexOf('.') <= 0) {
+      return alert('not image')
+    }
+    let filesize = files[0].size
+    console.log(filesize)
+    if (filesize > 400 * 400) {
+      return alert('size must be 500* 500 or less')
+    }
+    let fileType = files[0].type
+    console.log(fileType)
+
+    if (fileType !== 'image/png') {
+      if (fileType !== 'image/jpeg') {
+        return alert('image type not supported')
+      }
+    }
+    const fileReder = new FileReader()
+    let formData = new FormData()
+    formData.append('file', files[0])
+    fileReder.addEventListener('load', () => {
+      let dataURI = fileReder.result
+      if (dataURI) {
+      document.getElementById('image1').src = dataURI
+         
+      }
+    })
+    fileReder.readAsDataURL(files[0])
+    console.log(this.image)
+  }
 </script>

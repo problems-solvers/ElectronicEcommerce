@@ -1,7 +1,6 @@
 <?php
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 ?>
-
 <div class="row container text-center" > 
             <div class="col-md-12  mx-auto text-center"style="margin-top:2%;margin-bottom:2%; ">
             <h2 class="fs-title" style="color:#836691; font-weight:bold;font-size:20px;margin-left:25%">Products Comparision </h2>
@@ -27,16 +26,58 @@ if(isset($_SESSION['id'])){
         <div class="container row show"style=" margin-left:0%;margin-top:4%;">
 
 
-                 </div> 
-                  <table class="table table-hover">
+                <div class="col-2">
+                <table class="table table-hover" style="border:5px;">
                 
-                    <tbody class="text-left compare-table">
-                   
+                    <tbody class="text-left "  style="color:#836691; font-weight:bold;font-size:16px;">
+                    <tr>
+                   <td>
+                   <div style=" margin:10px"> 
+                   <br><br><br>
+                   img:
+                   <br><br><br><br>
+                   </div>
+                    </td>
+                   </tr>
+                    <tr>
+                   <td>Name : </td>
+                   </tr>
+                   <tr>
+                   <td>cart :<br>
+                   </td>
+                   </tr>
+                   <tr>
+                   <td>more :<br>
+                   </td>
+                   </tr>
+                   <tr>
+                   <td>wishlist :<br>
+                   </td>
+                   </tr>
+                   <tr>
+                   <td>price :</td>
+                   </tr>
+                   <tr>
+                   <tr>
+                   <td>brand :</td>
+                   </tr>
+
+                   <tr>
+                   <td>description :</td>
+                   </tr>
                     </tbody>
                   </table>
+</div>
+<div class="col-10">
+                  <table class="table table-hover " style="border:5px;">
                 
+                <tbody class="text-center compare-table"  style="color:#000; font-size:16px;">
+
               
-                  
+                </tbody>
+              </table>
+                  </div>           
+
       </fieldset>
             </div>
     
@@ -60,12 +101,12 @@ if(isset($_SESSION['id'])){
 
         </div>
         
-<script>
+       <script>
 //adding comparebox data in table
         //show item in wishlist
         function loadData(){
           console.log(' i am here rererere')
-          let tableData = '';
+        //  let tableData = '';
           let compareData = '';
           const wishlistBox = document.querySelector('.compareBox');
           const cardBoxTable = wishlistBox.querySelector('.show');
@@ -93,25 +134,32 @@ if(isset($_SESSION['id'])){
         <?php //echo $x; ?>;
         console.log(wishlistdata);
          if(wishlistdata[0] === 'nothingonWishlist'){
-          tableData ='<img src="/ElectronicEcommerce/app/assets/images/no.jpg" class="mx-3 img-rounded"><p class="text-center col-12 mb-5">no data available for this category</p>';
+         // tableData ='<img src="/ElectronicEcommerce/app/assets/images/no.jpg" class="mx-3 img-rounded"><p class="text-center col-12 mb-5">no data available for this category</p>';
+         compareData ='<img src="/ElectronicEcommerce/app/assets/images/no.jpg" class="mx-3 img-rounded"><p class="text-center col-12 mb-5">no data available for this category</p>';
+
           }else{
             wishlistdata.map(data=>{
-          tableData +='<div class="card  mx-auto my-3  px-2 py-2" style=" border:1px solid #836691;  border-radius:10px;"><div class="d-flex align-content-middle"><div   class=" px-0 align-items-center " style="height:150px; width:150px;"><img style="height:150px; width:150px;" src="'+data.main_img+'" alt="Card image cap"></div><div class="card-body py-1  m-auto  mx-auto"><h5 class="card-title">'+data.pro_name+'</h5><span style="font-weight:bold; color:#836691;">'+data.total_price+'$</span><br><div class="py-2   align-content-end"><a   class="my-3 py-2 addtoCart"  id="'+data.pro_id+'"><i class="fas fa-heart " style="color:#836691;"></i><span  class="mx-2">add to Cart</span> </a></div></div><div class="col-3" ><div   style=" position:absolute; top:0px; right:5px ;font-size:20px; "> <a    class="deletefromCart" id="'+data.cart_id+'" pro_id="'+data.pro_id+'" ><i class="fas fa-times " ></i></a></div><br></div></div></div>';
-          compareData+=' <tr> <th scope="row" style="color:#836691; font-weight:bold;">Name</th><td>'+data.pro_name+'</td> <th scope="row" style="color:#836691; font-weight:bold;">Price</th><td>'+data.total_price+'</td> <th scope="row" style="color:#836691; font-weight:bold;">Brand</th> <td>'+data.catgory+'</td> <th scope="row" style="color:#836691; font-weight:bold;">Description</th><td>'+data.pro_details+'</td></tr>';
-          });}
+         // tableData +='<div class="card  mx-auto my-3  px-2 py-2" style=" border:1px solid #836691;  border-radius:10px;"><div class="d-flex align-content-middle"><div   class=" px-0 align-items-center " style="height:150px; width:150px;"><img style="height:150px; width:150px;" src="'+data.main_img+'" alt="Card image cap"></div><div class="card-body py-1  m-auto  mx-auto"><h5 class="card-title">'+data.pro_name+'</h5><span style="font-weight:bold; color:#836691;">'+data.total_price+'$</span><br><div class="py-2   align-content-end"><a   class="my-3 py-2 addtoCart"  id="'+data.pro_id+'"><i class="fas fa-heart " style="color:#836691;"></i><span  class="mx-2">add to Cart</span> </a></div></div><div class="col-3" ><div   style=" position:absolute; top:0px; right:5px ;font-size:20px; "> <a    class="deletefromCart" id="'+data.cart_id+'" pro_id="'+data.pro_id+'" ><i class="fas fa-times " ></i></a></div><br></div></div></div>';
+          compareData+='<tr><td><div class="col-md-3 col-4 col-sm-8 col-xs-10" style="margin-left:37%;">  <img class="card-img-top" src="'+data.main_img+'" alt="Card image cap" width="90px" height="190px"></div></td> </tr><tr><td>'+data.pro_name+'</td></tr><tr><td><div class="col-12"><a  title="add to cart" id="'.$row->pro_id.'" class="attToCart mdi  mdi-cart-outline mx-auto"> </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span  style="margin:5px;">add to cart </span></div></td>
+</tr><tr><td><button style="color:black; background-color:white; border:1px #836691 solid; border-radius: 15px;">find out more>></button></td></tr>
+<tr><td><a  title="add to wishlist" id="'.$row->pro_id.'" class="mdi mdi-heart-outline addTowish mx-auto"></a> &nbsp;<span  style="margin:5px;">add to wishlist</span>
+</td></tr><tr><td>'+data.total_price+'</td></tr><tr><td>'+data.brand+'</td></tr><tr><td>'+data.pro_details+'</td></tr>';});}
         }
         else{
           if(JSON.parse(localStorage.getItem('compare')).length ===0){
             tableData ='<img src="/ElectronicEcommerce/app/assets/images/no.jpg" class="mx-3 img-rounded"><p class="text-center col-12 mb-5">no data available for this category</p>';
           }else{
             JSON.parse(localStorage.getItem('compare')).map(data=>{
-           tableData +='<div class="card  mx-auto my-3  px-2 py-2" style=" border:1px solid #836691;  border-radius:10px;"><div class="d-flex align-content-middle"><div   class=" px-0 align-items-center " style="height:150px; width:150px;"><img style="height:150px; width:150px;"  src="'+data.pro_img+'" alt="Card image cap"></div><div class="card-body py-1  m-auto  mx-auto"><h5 class="card-title">'+data.pro_name+'</h5><span style="font-weight:bold; color:#836691;">'+data.total_price+'$</span><br><div class="py-2   align-content-end"><a   class="my-3 py-2 addtoCart"  id="'+data.pro_id+'"><i class="fas fa-heart " style="color:#836691;" ></i><span  class="mx-2">add to Cart</span> </a></div></div><div class="col-3" ><div   style=" position:absolute; top:0px; right:5px ;font-size:20px; "> <a    class="deletefromCart" id="'+data.cart_id+'" pro_id="'+data.pro_id+'" ><i class="fas fa-times " ></i></a></div><br></div></div></div>';
-          compareData+=' <tr> <th scope="row" style="color:#836691; font-weight:bold;">Name</th><td>'+data.pro_name+'</td> <th scope="row" style="color:#836691; font-weight:bold;">Price</th><td>'+data.total_price+'</td> <th scope="row" style="color:#836691; font-weight:bold;">Brand</th> <td>'+data.catgory+'</td> <th scope="row" style="color:#836691; font-weight:bold;">Description</th><td>'+data.pro_details+'</td></tr>';
+          // tableData +='<div class="card  mx-auto my-3  px-2 py-2" style=" border:1px solid #836691;  border-radius:10px;"><div class="d-flex align-content-middle"><div   class=" px-0 align-items-center " style="height:150px; width:150px;"><img style="height:150px; width:150px;"  src="'+data.pro_img+'" alt="Card image cap"></div><div class="card-body py-1  m-auto  mx-auto"><h5 class="card-title">'+data.pro_name+'</h5><span style="font-weight:bold; color:#836691;">'+data.total_price+'$</span><br><div class="py-2   align-content-end"><a   class="my-3 py-2 addtoCart"  id="'+data.pro_id+'"><i class="fas fa-heart " style="color:#836691;" ></i><span  class="mx-2">add to Cart</span> </a></div></div><div class="col-3" ><div   style=" position:absolute; top:0px; right:5px ;font-size:20px; "> <a    class="deletefromCart" id="'+data.cart_id+'" pro_id="'+data.pro_id+'" ><i class="fas fa-times " ></i></a></div><br></div></div></div>';
+          compareData+='<tr><td><div class="col-md-3 col-4 col-sm-8 col-xs-10" style="margin-left:37%;">  <img class="card-img-top" src="'+data.main_img+'" alt="Card image cap" width="90px" height="190px"></div></td> </tr><tr><td>'+data.pro_name+'</td></tr><tr><td><div class="col-12"><a  title="add to cart" id="'.$row->pro_id.'" class="attToCart mdi  mdi-cart-outline mx-auto"> </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span  style="margin:5px;">add to cart </span></div></td>
+</tr><tr><td><button style="color:black; background-color:white; border:1px #836691 solid; border-radius: 15px;">find out more>></button></td></tr>
+<tr><td><a  title="add to wishlist" id="'.$row->pro_id.'" class="mdi mdi-heart-outline addTowish mx-auto"></a> &nbsp;<span  style="margin:5px;">add to wishlist</span>
+</td></tr><tr><td>'+data.total_price+'</td></tr><tr><td>'+data.brand+'</td></tr><tr><td>'+data.pro_details+'</td></tr>';});}
            
             });
           }
         }
-        cardBoxTable.innerHTML = tableData;
+      //  cardBoxTable.innerHTML = tableData;
         compareTable.innerHTML = compareData;
           }
       window.onload = function(){
@@ -222,3 +270,8 @@ if(isset($_SESSION['id'])){
 }
         
 </script>
+
+
+
+
+

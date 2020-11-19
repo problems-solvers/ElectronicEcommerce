@@ -18,7 +18,7 @@
 $rows=$data['updateProduct'];
 
   //to do pro imgs
-  print_r($rows);
+  //print_r($rows);
  $pro_name='';
  $pro_imgs='';
  $main_img='';
@@ -29,8 +29,8 @@ $rows=$data['updateProduct'];
  $pro_details='';
  $is_active='';
  $cat_id='';
- $tag_id=[];
- $tag_details_id=[];
+ $tag_id='';
+ $tag_details_id='';
 $pro_quentity='';
 $brand='';
  $index=0;
@@ -39,9 +39,9 @@ $brand='';
       print_r($row);
     $pro_id=$row->pro_id;
     $pro_name=$row->pro_name;
-    $tag_id[$index]=$row->tag_id;
+    $tag_id=$row->tag_id;
     $cat_id=$row->cat_id;
-    $tag_details_id[$index]=$row->tag_details_id;
+    $tag_details_id=$row->tag_details_id;
     $is_active=$row->is_active;
     $pro_imgs=explode('@',$row->pro_imgs);
     $main_img=$row->main_img;
@@ -144,9 +144,7 @@ foreach($cat['parents'] as $ro){
             ?>
             <div class="form-group fieldGroup">
         <div class="input-group">
-        <input type="hidden" name="tag_id" value="<?php echo $tag_id[$i]; ?>">
-                    <input type="hidden" name="tag_details_id" value="<?php echo $tag_details_id[$i]; ?>">
-                    
+            
             <input type="text" id="name" name="name[]" class="form-control col-5 my-2 ml-4 p-1 w-100" value="<?php echo $tagName[$i]; ?>"/>
             <input type="text" id="data" name="data[]" class="form-control col-4 my-2  ml-1 w-100" value="<?php echo $tagData[$i]; ?>"/>
             <div class="input-group-addon">
@@ -257,6 +255,9 @@ foreach($cat['parents'] as $ro){
 
             <div class="form-group btn-sm">
                 <div class="col-12">
+                <input type="hidden" name="tag_id" value="<?php echo $tag_id; ?>">
+                    <input type="hidden" name="tag_details_id" value="<?php echo $tag_details_id; ?>">
+                
                     <input type="hidden" id="pro_id" name="pro_id" value="<?php echo $pro_id; ?>">
                    <button class="btn btn-outline-light col-4 mx-auto btn-color" action="/ElectronicEcommerce/admin/admin_product/view"
                         type="submit">Update</button>

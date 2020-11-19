@@ -22,7 +22,7 @@
       
         <div class="form-group col-12">
         <div class="col-12">
-            <input id="product_name" name="pro_name" placeholder="PRODUCT NAME" class=" form-control w-100 col-12 mr-3"required="" type="text">
+            <input id="product_name" name="pro_name" placeholder="PRODUCT NAME" class=" form-control p-2 w-100 col-12 mr-3"required="" type="text">
 
         </div>
     </div>
@@ -30,7 +30,7 @@
     <!-- Text input-->
     <div class="form-group col-12 m-2">
 
-            <select class="form-control col-5 m-1" id="cat1" name="cat_id">
+            <select class="form-control col-5 m-1 mr-2  mt-2 p-2" id="cat1" name="cat_id">
                 <option value="">category</option>
 
                 <?php
@@ -52,14 +52,14 @@ foreach($rows['parents'] as $ro){
 }
 ?>
             </select>
-            <input id="product_brand" name="brand" placeholder="PRODUCT BRAND" class="m-1 w-100 form-control col-6"required="" type="text">
+            <input id="product_brand" name="brand" placeholder="PRODUCT BRAND" class="m-1 w-100 form-control p-2  mt-2 col-6"required="" type="text">
 
         
     </div>
     <div class="form-group col-12 m-2">
-    <input id="pro_price" name="pro_price" placeholder="PRODUCT PRICE" class="form-control col-5 m-1"
+    <input id="pro_price" name="pro_price" placeholder="PRODUCT PRICE" class="form-control p-2 col-5 m-1  mr-2  mt-2"
                 required="" type="number">
-    <input id="pro_quentity" name="pro_quentity" placeholder="AVAILABLE QUANTITY" class="m-1 w-100 form-control col-6"required="" type="number">
+    <input id="pro_quentity" name="pro_quentity" placeholder="AVAILABLE QUANTITY" class="m-1 p-2 w-100 mt-2 form-control col-6"required="" type="number">
        
          
      
@@ -71,7 +71,7 @@ foreach($rows['parents'] as $ro){
 
 <div class="form-group fieldGroup">
         <div class="input-group">
-            <input type="text" id="name" name="name[]" class="form-control col-5 my-2 ml-4 p-1 w-100" placeholder="Tag Name"/>
+            <input type="text" id="name" name="name[]" class="form-control  col-5 my-2 ml-4 p-1 w-100" placeholder="Tag Name"/>
             <input type="text" id="data" name="data[]" class="form-control col-4 my-2  ml-1 w-100" placeholder="Tag Data"/>
             <div class="input-group-addon"> 
                 <a href="javascript:void(0)" class="btn  addMore my-2" style="color:#fff;background-color: #CC8B79;"><span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span> +</a>
@@ -89,10 +89,10 @@ foreach($rows['parents'] as $ro){
     </div>
 </div>
 
-    <div class="form-group">
+    <div class="form-group mt-2">
        
         <div class="col-12">
-            <input class="form-control col-6 ml-3"id="is_active" name="is_active" type="checkbox"> ACTIVE
+            <input class="form-control col-6 ml-3 "id="is_active" name="is_active" type="checkbox"> ACTIVE
         </div>
     </div>
     <div class="email editor">
@@ -109,34 +109,37 @@ foreach($rows['parents'] as $ro){
 
     <!-- Text input-->
    
+   
+            <div class="row ">
+        
+            <div class="col-12 mx-auto">
+            <div class="">
+                <img id="image1" style="border:1px solid #CC8B79; width:150px; height:150px"  alt="" height="200px" width="200px" name="main_img" class="img-fluid rounded shadow-sm mx-auto d-block">
+            </div>
+
+        </div>
+    </div>
+
+ 
     <div class="row py-4">
         <div class="col-12 mx-auto">
 
             <div class="input-group ">
-                <label for="upload" class=" p-2 col-4 ml-4" style="background-color: #CC8B79; color:#fff;" >Main Image</label>
+                <label for="upload" class=" p-2 mx-auto col-4 ml-4" style="background-color: #CC8B79; color:#fff;" >Main Image</label>
                 <input id="upload" type="file" onchange="onFilePicked(event)"  accept="image/*"  style="display: none;">
                 
             </div>
         </div>
     </div>
-            <div class="row ">
-        
-            <div class="col-12 mx-auto">
-            <div class="">
-                <img id="image1"  alt="" height="200px" width="200px" name="main_img" class="img-fluid rounded shadow-sm mx-auto d-block">
-            </div>
-
-        </div>
-    </div>
-
-
 
    
-    <div class="form-group">
-        <label class=" col-3 control-label" for="pro_imgs">Images</label>
+
+    <div class="form-group ">
+    <div class="gallery" style="border:1px solid #CC8B79;width:100%;height:100;"></div>
+
+        <label class=" col-4 control-label ml-4 mt-4" for="pro_imgs">Product Images</label>
         <div class="">
-        <input type="file"  multiple id="gallery-photo-add" name="pro_imgs[]">
-<div class="gallery" width="20px" height="20px"></div>
+        <input type="file"  multiple id="gallery-photo-add"  class="mt-4"   name="pro_imgs[]">
 
 
         </div>
@@ -146,7 +149,7 @@ foreach($rows['parents'] as $ro){
     
   
     <div class="form-actions btn-sm col-12">
-    <button class="btn btn-outline-light col-4 mx-auto btn-color" type="submit"> Add Product</button>
+    <button class="btn btn-outline-light col-4 mx-auto " style="background-color:#836691;color:white" type="submit"> Add Product</button>
 </div>
    
 </fieldset>

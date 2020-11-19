@@ -25,7 +25,7 @@
 
                       <div class="row align-items-center mx-auto py-3">
                         <div class="col-md-6 ">
-                        <input type="text" class="form-control" id="bank_account" name="bank_account" placeholder="bank_account"required>
+                        <input type="text" class="form-control" id="bank_account" name="bank_account" placeholder="bank account"required>
                         </div>
                         <div class="col-md-6 ">
                         <input type="date" class="form-control" id="Exp_date" name="Exp_date" placeholder="Exp_date" required>
@@ -61,6 +61,14 @@ add</button>
     var Exp_date=$('#Exp_date').val();
     var bank_account=$('#bank_account').val();
     console.log(Exp_date);
+   if(user_id==='' || full_name ==='' || Exp_date ===''){
+    var x = document.getElementById("snackbar")
+      x.innerHTML='please fill empty fields '
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000); 
+
+   }
+   else{
    $.ajax({
 
              async: false,
@@ -72,14 +80,24 @@ add</button>
     console.log("hhhh");
     window.location.replace('http://localhost/ElectronicEcommerce/userprofiel/payment/');
 
-alert("SecusseFull Add");
-           
+// alert("SecusseFull Add");
+
              
+    // Get the snackbar DIV
+       var x = document.getElementById("snackbar")
+      x.innerHTML='Added successfully'
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000); 
+
              },
              error:function(){
-alert("Error Add");
+   var x = document.getElementById("snackbar")
+      x.innerHTML='something went wrong'
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000); 
+
             
              }
-           })
+           })}
            });
 </script>

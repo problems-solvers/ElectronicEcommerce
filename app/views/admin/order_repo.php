@@ -12,10 +12,9 @@
                                         <thead class="bg-light">
                                             <tr class="border-0">
                                                 <th class="border-0">#</th>
+                                                <th class="border-0">Product Image</th>
                                                 <th class="border-0">Product Name</th>
-                                                <th class="border-0">Product Brand</th>
-                                                <th class="border-0">Product  Price</th>
-                                                <th class="border-0">Quntitey</th>
+                                                <th class="border-0">Orders</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -29,9 +28,9 @@
  
     $index=$index+1; ?>
                                    <tr>      <td> <?php echo $index; ?> </td>
+    <td> <img scr="/ElectronicEcommerce/<?php echo $val->main_img; ?>"  width="200px" hieght="200px" alt="Porduct image">  </td>
+
     <td> <?php echo $val->pro_name; ?> </td>
-    <td> <?php echo $val->brand; ?> </td>
-    <td><?php echo $val->pro_price; ?></td>
     
             <td> <?php echo  $val->quentity; ?></td>
 
@@ -64,10 +63,10 @@
                                         <thead class="bg-light">
                                             <tr class="border-0">
                                                 <th class="border-0">#</th>
+                                                <th class="border-0">Product Image</th>
                                                 <th class="border-0">Product Name</th>
-                                                <th class="border-0">Product Brand</th>
-                                                <th class="border-0">Product  Price</th>
-                                                <th class="border-0">Quntitey</th>
+                                               
+                                                <th class="border-0">Ordered</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -81,9 +80,9 @@
  
     $index=$index+1; ?>
                                    <tr>      <td> <?php echo $index; ?> </td>
+    <td> <img scr="/ElectronicEcommerce/<?php echo $val->main_img; ?>"  width="200px" hieght="200px" alt="Porduct image">  </td>
+
     <td> <?php echo $val->pro_name; ?> </td>
-    <td> <?php echo $val->brand; ?> </td>
-    <td><?php echo $val->pro_price; ?></td>
     
             <td> <?php echo  $val->quentity; ?></td>
 

@@ -164,10 +164,8 @@ public $tag_model;
         else
         $active=0;
       print_r($_POST);
-        $img=baseFunctions::img($_FILES['pro_imgs']);
-        $main_img=baseFunctions::main_img($_FILES['main_img']);
-
-       /* if(!isset($_POST['name'])){
+       
+       if(!isset($_POST['name'])){
                        
             $this->controller->view_object->create_view('admin/admin_product/addProduct');
      }
@@ -195,9 +193,13 @@ public $tag_model;
             }
          }}
 
-         */
+         
         if(isset($_FILES['pro_imgs'])&&isset($_FILES['main_img']))
-       { $data = array(
+       {  $img=baseFunctions::img($_FILES['pro_imgs']);
+        $main_img=baseFunctions::main_img($_FILES['main_img']);
+
+           
+        $data = array(
 
             'pro_name'=>"'". $_POST['pro_name']."'",
             'brand' =>"'".$_POST['brand']."'" ,
@@ -211,7 +213,11 @@ public $tag_model;
                 }
 
                   else  if(isset($_FILES['main_img']))
-                  { $data = array(
+                  {  
+                    $main_img=baseFunctions::main_img($_FILES['main_img']);
+            
+                      
+                    $data = array(
            
                        'pro_name'=>"'". $_POST['pro_name']."'",
                        'brand' =>"'".$_POST['brand']."'" ,
@@ -223,7 +229,10 @@ public $tag_model;
                              );}
 
                              else  if(isset($_FILES['pro_imgs']))
-                             { $data = array(
+                             { 
+                                 
+                      $img=baseFunctions::img($_FILES['pro_imgs']);
+                      $data = array(
                       
                                   'pro_name'=>"'". $_POST['pro_name']."'",
                                   'brand' =>"'".$_POST['brand']."'" ,
@@ -251,12 +260,12 @@ public $tag_model;
             $result=$this->cat_model->update($data);
 
         
-            /*if($result){
+            if($result){
             echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/';</script>";
            }
            else{
             echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_product/updateProduct';</script>";   
-        }*/
+        }
     }
 }
        

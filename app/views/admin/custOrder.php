@@ -5,7 +5,7 @@
                     <!-- ============================================================== -->
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 px-5 ">
                         <div class="card box-shad">
-                            <h5 class="card-header"> Most Customer Requested  </h5>
+                            <h5 class="card-header"> Most Ordered Customer   </h5>
                             <div class="card-body p-0 text-center">
                                 <div class="table-responsive">
                                 <table class="table">
@@ -56,7 +56,7 @@
                     <!-- ============================================================== -->
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 px-5 ">
                         <div class="card box-shad">
-                            <h5 class="card-header"> Less Customer Requested  </h5>
+                            <h5 class="card-header"> Less Ordered Customer   </h5>
                             <div class="card-body p-0 text-center">
                                 <div class="table-responsive">
                                     <table class="table">

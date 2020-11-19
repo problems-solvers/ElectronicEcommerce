@@ -20,13 +20,16 @@
             }
         ]
     });
-    var conveniancecount = $("#owl-one").length;
+    var conveniancecount = $("#recentally").length;
     console.log(conveniancecount)
     if(conveniancecount>0){
-    $('#owl-one').owlCarousel({
+    $('#recentally').owlCarousel({
         loop:true,
-        margin:10,
         nav:true,
+        autoplay:true,
+        autoplayTimeout:10000,
+      //  autoWidth:true,
+        navText : ['<div class="nav-btn prev-slide"><i class=" fas fa-chevron-circle-left" aria-hidden="true"></i></div>','<div class="nav-btn next-slide"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></div>'],
         responsive:{
             0:{
                 items:1
@@ -35,16 +38,17 @@
                 items:3
             },
             1000:{
-                items:5
+                items:4
             }
         }
     }); }
-    var owl2 = $("#owl-two").length;
+    var owl2 = $("#featured").length;
     console.log(owl2)
     if(owl2>0){
-  $('#owl-two').owlCarousel({
+  $('#featured').owlCarousel({
     loop:true,
     margin:10,
+
     nav:true,
     responsive:{
         0:{

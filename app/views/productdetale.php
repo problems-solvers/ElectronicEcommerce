@@ -1,7 +1,7 @@
 <?php
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 ?>
-<div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light">
+<div class="mx-auto  my-2 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light">
     <h3 class="titel">Product Details</h3>
 </div>
 <?php $rows=$data['product'];
@@ -40,32 +40,38 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
             <!-- Gallery -->
             <div id="js-gallery" class="gallery">
 
-                <!--Gallery Hero-->
-                <div class="gallery__hero" style="height:400px;">
+<!--Gallery Hero-->
+<div class="gallery__hero">
 
 
 
-                    <img src="<?php echo $main_img ?>" width="100%">
-                </div>
-                <!--Gallery Hero-->
+    <img class="m-2" width="100%" src="../../<?php echo $main_img ?>" width="100%">
+</div>
+<!--Gallery Hero-->
 
-                <!--Gallery Thumbs-->
-                <div class="gallery__thumbs">
-                    <a href="<?php echo $main_img ?>" data-gallery="thumb" class="is-active">
-                        <img src="<?php echo $main_img ?>">
-                    </a>
-                    <?php
-  $imgs=$pro_imgs;
-  
-  foreach( $imgs as $img){
-  ?>
-                    <a href="<?php echo $img ?>" data-gallery="thumb">
-                        <img src="<?php echo $img ?>">
-                    </a>
-                    <?php
-  }
-  ?>
-                </div>
+<!--Gallery Thumbs-->
+<div class="gallery__thumbs">
+    <a href="../../<?php echo $main_img ?>" data-gallery="thumb" class="is-active">
+        <img width="100px " height="100px"class="m-2"src="../../<?php echo $main_img ?>">
+    </a>
+    <?php
+$imgs=$pro_imgs;
+$image=sizeof( $imgs);
+//print_r($image);
+foreach( $imgs as $img){
+if($image >1){
+$image=$image-1;
+
+?>
+    <a href="../../<?php echo $img ?>"  width="20px " height="20px"data-gallery="thumb">
+        <img width="100px " height="100px" class="m-2" src="../../<?php echo $img ?>">
+    </a>
+    <?php
+   }
+    
+}
+?>
+</div>
                 <!--Gallery Thumbs-->
 
             </div>
@@ -84,8 +90,8 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
                         </h4>
                     </div>
                 </div>
-                <div class="product-size border-bottom">
-                    <h5 class="d-inline-block mr-1">Categories : </h5>
+                <div class="product-size border-bottom py-2">
+                    <span class="d-inline-block mr-1">Categories : </span>
 
                     <div class="quantity d-inline-block">
                         <?php echo $cat_name; ?>
@@ -122,13 +128,25 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
                             </div>
                         </div>
                     </div>
-
-                    <div class="product-info-tabs">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+        
+                    <div class="product-info-tabs my-3">
+                        <ul class="nav nav-tabs my-3" id="myTab" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description"
                                     role="tab" aria-controls="description" aria-selected="true">Description</a>
                             </li>
+                            <li>
+                            <!-- <ul class="social-footer2 mx-auto col-12 text-center ">
+                            <li  style="color:#836691 !important; font-size:20px" class="mx-auto">
+                            <a href="https://www.facebook.com/" class="fab fa-facebook " target="_blank" title="Facebook"></a>
+                     
+                           </li>
+                            <li  style="color:#836691 !important; font-size:20px" class="mx-auto">
+                            <a href="https://twitter.com" class="fab fa-twitter" target="_blank" title="Twitter"></a></li>
+                            <li  style="color:#836691 !important; font-size:20px" class="mx-auto">
+                            <a title="instagram" class="fab fa-whatsapp" target="_blank" href="https://www.instagram.com/"></a>     </li>
+                        </ul> -->
+</li>
 
                         </ul>
                         <div class="tab-content" id="myTabContent">
@@ -138,6 +156,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
                             </div>
 
                         </div>
+                        
                     </div>
 
                 </div>
@@ -148,6 +167,14 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
         </div>
 
     </div>
+
+</div>
+<div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
+  <h3 class="titel">Featured Items</h3>
+</div>
+
+<div id="featured" class="featured owl-carousel owl-theme mx-auto py-4"  style="background: rgb(120,76,18);
+      background: linear-gradient(293deg, rgba(120,76,18,0.1) 0%, rgba(145,122,33,0.1) 82%, rgba(247,81,185,0.1) 100%);">
 
 </div>
 

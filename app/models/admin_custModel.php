@@ -27,13 +27,13 @@ return $result;
     function  update($data){
         $this->db=new DB();
           $id=$_REQUEST['user_id'];
-        $table=array("user");
-       $result=  $this->db->cols($data)->settingcol()
+        $table=array("user ");
+        return  $this->db->cols($data)->settingcol()
        ->table($table)
        ->where("user_id","=","'".$id."'")
        ->update()
        ->execute();
-return $result;
+ 
     }
     
 }

@@ -2,36 +2,56 @@
 $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 ?>
 
-  <div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
+  <div class="mx-auto  my-2 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
   <h3 class="titel">Cart</h3>
 </div>
 <?php
 
 ?>
-<br>
 <!-- <h4>heddin</h4> -->
-<div class="row col-12">
-<div class="col-5 my-8 mx-auto cartBox">
+<div class="col-9 mx-auto">
+<div class="row" >
+<div class="col-8   cartBox">
 <div class="show">
 
 </div> 
         
 </div>
 
-<div class="col-5 my-8 mx-auto cartBox">
+<div class="col-2 my-3 cartBox">
 
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 19rem;">
   <div class="card-body">
-    <h5 class="card-title">The Total Amount Of The Cart is </h5>
-    <h6 class="card-subtitle mb-2 text-muted" id="totalPrice"></h6>
-     <button class="bt" id="checkoutbtn">Check Out</button>
+  <div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" style="border-bottom:2px dashed  #888">
+    <h5  style="color:black;" class="text-center">ORDAR SUMMERY </h5> 
+
+</div>
+<div class="d-flex justify-content-between">
+  <span >
+    Sub-Total
+  </span>
+  <span class=" " style="color:#836691; font-waight:bold" id="stotalPrice"></span>
+</div>
+<div class="d-flex justify-content-between">
+  <span >
+    fees
+  </span>
+  <span class=" " style="color:#836691; font-waight:bold">0$</span>
+</div>
+<div class="d-flex justify-content-between py-2 my-3 " style="border-top:2px dashed  #888">
+  <span class="sub-title">
+    Total
+  </span>
+  <span class=" " style="color:#836691; font-waight:bold" id="totalPrice"></span>
+</div>
+     <button class="bt my-3" id="checkoutbtn">Check Out</button>
   </div>
 
 </div>
 
   </div>
   </div>
-
+  </div>
 <script>
 //adding cartbox data in table
         //show item in cart
@@ -42,6 +62,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
           let tableData = '';
           const cartBox = document.querySelector('.cartBox');
           const totalPrice = document.querySelector('#totalPrice');
+          const stotalPrice = document.querySelector('#stotalPrice');
           const cardBoxTable = cartBox.querySelector('.show');
           //cardBoxTable.innerHTML = tableData;
           var cartdata;
@@ -70,7 +91,7 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
             tableData ="<img src='/ElectronicEcommerce/app/assets/images/no.jpg'><h2 class='text-center'>No data in cart</h2>"
           }else{
          cartdata.map(data=>{
-          tableData +='<div class="card  mx-auto my-3  px-2 py-2" style=" border:1px solid #836691;  border-radius:10px;"><div class="row mx-1 align-content-middle"><a  href="http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id='+data.pro_id+'" class=" px-0 align-items-center " style="height:150px; width:150px;"><img style="height:150px; width:150px;" src="'+data.main_img+'" alt="Card image cap"></a><div class="card-body py-1  m-auto  mx-auto"><h5 class="card-title">'+data.pro_name+'</h5><span style="font-weight:bold; color:#836691;">'+data.total_price+'$</span><br><div class="py-2   align-content-end"><a   class="my-3 py-2 addToWish" id="'+data.pro_id+'"><i class=" mdi mdi-heart-outline" style="color:#836691;"></i><span  class="mx-2">add to wishlist</span> </a></div></div><div  ><div   style=" position:absolute; top:0px; right:5px ;font-size:20px; "> <a    class="deletefromCart" id="'+data.cart_id+'" pro_id="'+data.pro_id+'" ><i class="fas fa-times " ></i></a></div><br><br><br><div class="row justify-content-center align-items-center my-2" style=" position:absolute;  right:20px ; color:#836691; font-size:20px; bottom:0px; "> <div class="mx-2">  <a   class="decreseqty" id="'+data.cart_id+'" pro_id="'+data.pro_id+'"><i class="fas fa-minus-circle " ></i></a></div> <div class=" px-0" style="width:50px;"> <input class="form-control" value="' +data.quentity+'" /></div>  <div class=" mx-2">  <a  class="addqty" id="'+data.cart_id+'" pro_id="'+data.pro_id+'"><i class="fas fa-plus-circle " ></i></a></div>    </div></div></div></div>';
+          tableData +='<div class="card  mx-auto my-3  px-2 py-2" style="    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); border-radius:10px;"><div class="row mx-1 align-content-middle"><a  href="http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id='+data.pro_id+'" class=" px-0 align-items-center " style="height:150px; width:150px;"><img style="height:150px; width:150px;" src="'+data.main_img+'" alt="Card image cap"></a><div class="card-body py-1  m-auto  mx-auto"><h6 style="color:black;" >'+data.pro_name+'</h6><span style="font-weight:bold; color:#836691;">'+data.total_price+'$</span><br><div class="py-2   align-content-end"><a   class="my-3 py-2 addToWish" id="'+data.pro_id+'"><i class=" mdi mdi-heart-outline" style="color:#836691;"></i><span  class="mx-2">add to wishlist</span> </a></div></div><div  ><div   style=" position:absolute; top:0px; right:5px ;font-size:20px; "> <a    class="deletefromCart" id="'+data.cart_id+'" pro_id="'+data.pro_id+'" ><i class="mdi mdi-close" ></i></a></div><br><br><br><div class="row justify-content-center align-items-center my-2" style=" position:absolute;  right:20px ; color:#836691; font-size:20px; bottom:0px; "> <div class="mx-2">  <a   class="decreseqty" id="'+data.cart_id+'" pro_id="'+data.pro_id+'"><i class=" mdi mdi-minus-circle" ></i></a></div> <div class=" px-0" style="width:50px;"> <input class="form-control text-center" value="' +data.quentity+'" /></div>  <div class=" mx-2">  <a  class="addqty" id="'+data.cart_id+'" pro_id="'+data.pro_id+'"><i class="mdi mdi-plus-circle" ></i></a></div>    </div></div></div></div>';
           });
             var sum= 0;
            
@@ -79,7 +100,8 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
               sum += parseFloat(cartdata[i].total_price);
              }
-            totalPrice.innerHTML = parseFloat(sum).toFixed( 2 );
+            totalPrice.innerHTML = parseFloat(sum).toFixed( 2 )+"$";
+            stotalPrice.innerHTML = parseFloat(sum).toFixed( 2 )+"$";
 
           }
           
@@ -89,14 +111,15 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
             tableData ="no data in cart"
           }else{
             JSON.parse(localStorage.getItem('cart')).map(data=>{
-           tableData +='<div class="card  mx-auto my-3  px-2 py-2" style=" border:1px solid #836691;  border-radius:10px;"><div class="row mx-1 align-content-middle"><a     href="http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id='+data.pro_id+'" class=" px-0 align-items-center " style="height:150px; width:150px;"><img style="height:150px; width:150px;"  src="'+data.pro_img+'" alt="Card image cap"></a><div class="card-body py-1 m-auto  mx-auto"><h5 class="card-title">'+data.pro_name+'</h5><span style="font-weight:bold; color:#836691;">'+parseFloat(data.total_price*data.quentity).toFixed( 2 )+'$</span><br><div class="py-2   align-content-end"><a   class="my-3 py-2 addToWish" id="'+data.pro_id+'"><i class=" mdi mdi-heart-outline " style="color:#836691;" ></i><span  class="mx-2 ">add to wishlist</span> </a></div></div><div  ><div   style=" position:absolute; top:0px; right:5px ;font-size:20px; "> <a    class="deletefromCart" id="'+data.cart_id+'" pro_id="'+data.pro_id+'" ><i class="fas fa-times " ></i></a></div><br><br><br><div class="row justify-content-center align-items-center my-2" style=" position:absolute;  right:20px ; color:#836691; font-size:20px; bottom:0px; "> <div class=" mx-2">  <a   class="decreseqty" id="'+data.cart_id+'" pro_id="'+data.pro_id+'"><i class="fas fa-minus-circle " ></i></a></div> <div class=" px-0" style="width:50px;"> <input class="form-control" value="' +data.quentity+'" /></div>  <div class="mx-2">  <a  class="addqty"  id="'+data.cart_id+'" pro_id="'+data.pro_id+'"><i class="fas fa-plus-circle " ></i></a></div>    </div></div></div></div>';
+           tableData +='<div class="card  mx-auto my-3  px-2 py-2" style="  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);  border-radius:10px;  "><div class="row mx-1 align-content-middle"><a     href="http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id='+data.pro_id+'" class=" px-0 align-items-center " style="height:150px; width:150px;"><img style="height:150px; width:150px;"  src="'+data.pro_img+'" alt="Card image cap"></a><div class="card-body py-1 m-auto  mx-auto"><h6  style="color:black;" >'+data.pro_name+'</h6><span style="font-weight:bold; color:#836691;">'+parseFloat(data.total_price*data.quentity).toFixed( 2 )+'$</span><br><div class="py-2   align-content-end"><a   class="my-3 py-2 addToWish" id="'+data.pro_id+'"><i class=" mdi mdi-heart-outline " style="color:#836691;" ></i><span  class="mx-2 ">add to wishlist</span> </a></div></div><div  ><div   style=" position:absolute; top:0px; right:5px ;font-size:20px; "> <a    class="deletefromCart" id="'+data.cart_id+'" pro_id="'+data.pro_id+'" ><i mdi mdi-close " ></i></a></div><br><br><br><div class="row justify-content-center align-items-center my-2" style=" position:absolute;  right:20px ; color:#836691; font-size:20px; bottom:0px; "> <div class=" mx-2">  <a   class="decreseqty" id="'+data.cart_id+'" pro_id="'+data.pro_id+'"><i class="mdi mdi-minus-circle " ></i></a></div> <div class=" px-0" style="width:50px;"> <input class="form-control text-center" value="' +data.quentity+'" /></div>  <div class="mx-2">  <a  class="addqty"  id="'+data.cart_id+'" pro_id="'+data.pro_id+'"><i class="mdi mdi-plus-circle" ></i></a></div>    </div></div></div></div>';
             });
             var cartData =JSON.parse(localStorage.getItem('cart'))
             var sum=0;
             for (var i = 0; i < cartData.length; i++){
               sum += parseFloat(cartData[i].total_price*cartData[i].quentity);
              }
-             totalPrice.innerHTML = parseFloat(sum);
+             totalPrice.innerHTML = parseFloat(sum).toFixed( 2 )+"$";
+             stotalPrice.innerHTML = parseFloat(sum).toFixed( 2 )+"$";
           }
         }
         cardBoxTable.innerHTML = tableData;
@@ -200,7 +223,8 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
                        for (var i = 0; i < cartData.length; i++){
                          sum += parseFloat(cartData[i].total_price);
                        }
-                       totalPrice.innerHTML = parseFloat(sum).toFixed( 2 );
+                       totalPrice.innerHTML = parseFloat(sum).toFixed( 2 )+"$";
+                       stotalPrice.innerHTML = parseFloat(sum).toFixed( 2 )+"$";
                     })  
                       
 
@@ -226,7 +250,8 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
                       for (var i = 0; i < cartData.length; i++){
                         sum += parseFloat(cartData[i].total_price*cartData[i].quentity);
                        }
-                       totalPrice.innerHTML = parseFloat(sum);
+                       totalPrice.innerHTML = parseFloat(sum).toFixed( 2 )+"$";
+                       stotalPrice.innerHTML = parseFloat(sum).toFixed( 2 )+"$";
                      
                      var mx= JSON.parse(localStorage.getItem('cart'))
                      console.log(localItems,found,'fds',mx)
@@ -297,7 +322,8 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
                       for (var i = 0; i < cartData.length; i++){
                        sum += parseFloat(cartData[i].total_price);
                       }
-                     totalPrice.innerHTML = parseFloat(sum).toFixed( 2 );
+                     totalPrice.innerHTML = parseFloat(sum).toFixed( 2 )+"$";
+                     stotalPrice.innerHTML = parseFloat(sum).toFixed( 2 )+"$";
                     }) 
                     })
                     .fail(function () {
@@ -321,7 +347,8 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
                       for (var i = 0; i < cartData.length; i++){
                         sum += parseFloat(cartData[i].total_price*cartData[i].quentity);
                        }
-                       totalPrice.innerHTML = parseFloat(sum);
+                       totalPrice.innerHTML = parseFloat(sum).toFixed( 2 )+"$";
+                       stotalPrice.innerHTML = parseFloat(sum).toFixed( 2 )+"$";
                      
                      var mx= JSON.parse(localStorage.getItem('cart'))
                      console.log(localItems,found,'fds',mx)

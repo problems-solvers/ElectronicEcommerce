@@ -63,10 +63,10 @@
     <td class="text-center">  
        <?php 
        if( $status=="Active")
-echo '<a  id="up_user"><button type="button" class="btn btn-default btn-color">Inactive</button>
+echo '<a  id="up_user"><button type="button" class="btn btn-default  " style="background-color:#836691;color:white">Inactive</button>
 </a>';
 else
-echo '<a  class="btn " id="up_user"  ><button type="button" class="btn btn-default btn-color">Active</button>
+echo '<a  class="btn " id="up_user"  ><button type="button" class="btn btn-lg btn-default " style="background-color:#836691;color:white">Active</button>
 </a>';
 
        ?>
