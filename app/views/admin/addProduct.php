@@ -133,13 +133,22 @@ foreach($rows['parents'] as $ro){
     </div>
 
    
+    <div class="row ">
+        
+        <div class="col-12 mx-auto">
+        <div class="mx-auto" style="width:150px; height:150px">
+            <a class="mdi mdi-close-circle" id="deleteImage"></a>
+            <img id="image2" imageindex="null" style="border:1px solid #CC8B79; width:150px; height:150px ; margin-top:-20px"  alt="" height="200px" width="200px" name="main_img" class="img-fluid rounded shadow-sm mx-auto d-block">
+        </div>
 
+    </div>
+</div>
     <div class="form-group ">
     <div class="gallery" style="border:1px solid #CC8B79;width:100%;height:100;"></div>
 
-        <label class=" col-4 control-label ml-4 mt-4" for="pro_imgs">Product Images</label>
+        <label  for="gallery-photo-add" class=" col-4 control-label ml-4 mt-4" for="pro_imgs">Product Images</label>
         <div class="">
-        <input type="file"  multiple id="gallery-photo-add"  class="mt-4"   name="pro_imgs[]">
+        <input type="file"  multiple id="gallery-photo-add" style="display: none;" class="mt-4"   name="pro_imgs[]">
 
 
         </div>
@@ -167,7 +176,7 @@ foreach($rows['parents'] as $ro){
         }
     });
 });
-
+var indeximaage=[];
 function imageIsLoaded(e) {
     $('#myImg').attr('src', e.target.result);
 };
@@ -175,20 +184,60 @@ var imagesPreview = function(input, placeToInsertImagePreview) {
 
 if (input.files) {
     var filesAmount = input.files.length;
-
+console.log(filesAmount)
     for (i = 0; i < filesAmount; i++) {
+
         var reader = new FileReader();
 
-        reader.onload = function(event) {
-            $($.parseHTML('<img width="100px" height="100px"  class="img-fluid rounded shadow-sm mx-auto ">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
-        }
+        reader.onload =(function(theFile){
+    var fileName = theFile.name;
+    return function(e){
+        console.log(theFile);
+        $('#image2').attr('imageindex', fileName );
 
+        //console.log(e.target.result);
+        document.getElementById('image2').src = event.target.result;
+           $($.parseHTML('<a class="imagesmulti" id="'+fileName+'"><img width="40px" height="40px" src="'+ event.target.result+'"  class="img-fluid rounded shadow-sm mx-auto "></a>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+      
+    };
+})(input.files[i]);  
         reader.readAsDataURL(input.files[i]);
+
+
     }
 }
 
 };
 
+$('#deleteImage').on('click', function() {
+
+    //document.getElementById('image2').src = ''
+   name= $('#image2').attr('imageindex');
+   console.log(name)
+  ///  //let formData = new FormData()
+   var f = document.getElementById('gallery-photo-add')
+   console.log(f.files)
+   let fileArray = Array.from(f.files)
+   for ( var i = 0 ; i < f.files.length; i++) {
+       console.log(f.files[i].name)
+    if(f.files[i].name===name){
+       var s= f.files
+     console.log(f.files,fileArray)
+     fileArray.splice(i,1);
+     // delete(f.files[i])
+     const dt = new DataTransfer()
+
+  for (let file of fileArray)
+    if (file !== input.files[0]) 
+      dt.items.add(file)
+
+  input.onchange = null // remove event listener
+  input.files = dt.files // this will trigger a change event
+    
+     f.files=ffile
+     }
+   }
+})
 $('#gallery-photo-add').on('change', function() {
     let filesize =this.size
     console.log(filesize)
