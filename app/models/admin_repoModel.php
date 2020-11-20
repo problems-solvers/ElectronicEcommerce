@@ -83,7 +83,7 @@ return $result;
         $this->db=new DB();
 
         $table=array("orders");
-        $cols=array("COUNT(order_status) as counts"," staus ");
+        $cols=array("COUNT(order_status) as counts","staus");
        $result=  $this->db->cols()
        ->table($table)
        ->get()

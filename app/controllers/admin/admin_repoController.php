@@ -49,7 +49,36 @@ class admin_repoController extends Controller
         
         echo json_encode($results);
 	}	
+    
+    function productchart(){
+      
+        $this->controller->view_object->create_view('admin/productchart');
+      
+  }	
 
+  function datacat(){
+      $conn = new PDO("mysql:host=localhost;dbname=store", 'root', '');
+      $stmt = $conn->prepare('select COUNT(product.pro_id) as counts, categories.cat_name  from categories , product GROUP BY categories.cat_name ');
+      $stmt->execute();
+      $results = $stmt->fetchAll(PDO::FETCH_OBJ);
+      
+      echo json_encode($results);
+  }	
+
+  function userchart(){
+      
+    $this->controller->view_object->create_view('admin/userchart');
+  
+}	
+
+function datauser(){
+  $conn = new PDO("mysql:host=localhost;dbname=store", 'root', '');
+  $stmt = $conn->prepare('select COUNT(user.user_id) as counts, address.city  from user,address GROUP BY address.city ');
+  $stmt->execute();
+  $results = $stmt->fetchAll(PDO::FETCH_OBJ);
+  
+  echo json_encode($results);
+}	
 
 }
 ?>

@@ -9,7 +9,7 @@
 	$(document).ready(function() {
 
 		$.ajax({
-			url :"http://localhost/ElectronicEcommerce/admin/admin_repo/datacat",
+			url :"http://localhost/ElectronicEcommerce/admin/admin_repo/datauser",
 
 			dataType : "JSON",
 			success : function(result) {
@@ -25,25 +25,21 @@
 		function drawChart(result) {
 
 			var data = new google.visualization.DataTable();
-			data.addColumn('string', 'cat_name');
+			data.addColumn('string', 'city');
 			data.addColumn('number', 'counts');
 			var dataArray = [];
 			$.each(result, function(i, obj) {
-				dataArray.push([ obj.cat_name, parseInt(obj.counts) ]);
+				dataArray.push([ obj.city, parseInt(obj.counts) ]);
 			});
 
 			data.addRows(dataArray);
 
-			var piechart_options = {
-				title : 'Categories ',
+			var barchart_options = {
+				title : 'USER',
 				width : 400,
-				height : 300
+				height : 300,
+				legend : 'none'
 			};
-			var piechart = new google.visualization.PieChart(document
-					.getElementById('piechart_div'));
-			piechart.draw(data, piechart_options);
-
-		
 			var barchart = new google.visualization.BarChart(document
 					.getElementById('barchart_div'));
 			barchart.draw(data, barchart_options);
