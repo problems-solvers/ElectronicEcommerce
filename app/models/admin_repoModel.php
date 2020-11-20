@@ -77,6 +77,20 @@ return $result;
        ->fetch();
 return $result;
     }
+
+
+    function  orderchart(){
+        $this->db=new DB();
+
+        $table=array("orders");
+        $cols=array("COUNT(order_status) as counts","staus");
+       $result=  $this->db->cols()
+       ->table($table)
+       ->get()
+       ->execute()
+       ->fetch();
+return $result;
+    }
     
 }
 
