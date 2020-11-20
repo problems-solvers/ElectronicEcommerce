@@ -6,31 +6,9 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 </div>
 <?php $rows=$data['product'];
   //to do pro imgs
-  //print_r($rows);
- $pro_id='';
- $pro_name='';
- $pro_imgs='';
- $main_img='';
- $tagData=[];
- $tagName=[];
- $pro_price='';
- $cat_name='';
- $pro_details='';
- $index=0;
   foreach($rows as $row){
-    $pro_id=$row->pro_id;
-    $pro_name=$row->pro_name;
-    $pro_imgs=explode('@',$row->pro_imgs);
-    $main_img=$row->main_img;
-    $tagData[$index]=$row->tag_data;
-    $tagName[$index]=$row->tag_name;
-    $pro_price=$row->pro_price;
-    $cat_name=$row->cat_name;
-    $pro_details=$row->pro_details;
-    $index++;
-  }
- 
-
+   
+  
     ?>
 <div class="container mt-4">
 
@@ -40,38 +18,32 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
             <!-- Gallery -->
             <div id="js-gallery" class="gallery">
 
-<!--Gallery Hero-->
-<div class="gallery__hero">
+                <!--Gallery Hero-->
+                <div class="gallery__hero" style="height:400px;">
 
 
 
-    <img class="m-2" width="100%" src="../../<?php echo $main_img ?>" width="100%">
-</div>
-<!--Gallery Hero-->
+                    <img src="http://localhost/ElectronicEcommerce/<?php echo $row->main_img ?>" width="100%" height="100%">
+                </div>
+                <!--Gallery Hero-->
 
-<!--Gallery Thumbs-->
-<div class="gallery__thumbs">
-    <a href="../../<?php echo $main_img ?>" data-gallery="thumb" class="is-active">
-        <img width="100px " height="100px"class="m-2"src="../../<?php echo $main_img ?>">
-    </a>
-    <?php
-$imgs=$pro_imgs;
-$image=sizeof( $imgs);
-//print_r($image);
-foreach( $imgs as $img){
-if($image >1){
-$image=$image-1;
-
-?>
-    <a href="../../<?php echo $img ?>"  width="20px " height="20px"data-gallery="thumb">
-        <img width="100px " height="100px" class="m-2" src="../../<?php echo $img ?>">
-    </a>
-    <?php
-   }
-    
-}
-?>
-</div>
+                <!--Gallery Thumbs-->
+                <div class="gallery__thumbs">
+                    <a href="http://localhost/ElectronicEcommerce/<?php echo $row->main_img ?>" data-gallery="thumb" class="is-active">
+                        <img src="http://localhost/ElectronicEcommerce/<?php echo $row->main_img ?>">
+                    </a>
+                    <?php
+  $imgs=explode(',',$row->pro_imgs);
+  
+  foreach( $imgs as $img){
+  ?>
+                    <a href="http://localhost/ElectronicEcommerce/<?php echo $img ?>" data-gallery="thumb">
+                        <img src="http://localhost/ElectronicEcommerce/<?php echo $img ?>">
+                    </a>
+                    <?php
+  }
+  ?>
+                </div>
                 <!--Gallery Thumbs-->
 
             </div>
@@ -80,51 +52,44 @@ $image=$image-1;
         <div class="col-md-5 m-2 bx-2 pro-text">
             <div class="product-dtl">
                 <div class="product-info">
-                    <div class="product-name  mb-3">
-                        <?php echo $pro_name;?>
+                    <div class="product-name  mb-3" style="color:black; font-weight:bold;">
+                        <?php echo $row->pro_name;?>
                     </div>
 
                     <div>
-                        <h4>
-                            <?php echo $pro_price;?> $
-                        </h4>
+                        <h5 style="color:#836691; font-weight:bold;">
+                            <?php echo $row->pro_price;?> $
+                        </h5>
                     </div>
                 </div>
                 <div class="product-size border-bottom py-2">
                     <span class="d-inline-block mr-1">Categories : </span>
 
-                    <div class="quantity d-inline-block">
-                        <?php echo $cat_name; ?>
+                    <div class="quantity d-inline-block" style="color:black; font-weight:bold;">
+                        <?php echo $row->cat_name; ?>
 
                     </div>
 
                 </div>
-                
-       <?php
-       for($i=0;$i<sizeOf($tagName);$i++)
-       
-{
-        ?> 
-                <div class="product-size border-bottom">
-                    <h5 class="d-inline-block mr-1"> <?php echo  $tagName[$i]; ?> : </h5>
-                    <div class="quantity  d-inline-block">
-                        <?php echo $tagData[$i]; ?>
+                <div class="product-size border-bottom my-3">
+                    <span class="d-inline-block mr-1"> <?php echo $row->tag_name; ?> : </span>
+                    <div class="quantity  d-inline-block" style="color:black; font-weight:bold;">
+                        <?php echo $row->tag_data; ?>
                     </div>
                     <div>
                         <div>
-<?php }?>
                         <img style="visibility:hidden;" height="0px" width="0px" src="../<?php echo $row->main_img;?>"> 
 
                             <div style="visibility:hidden; width:0px;height:0px;" >
-                                <h5 style="width:0px;height:0px;" ><?php echo $pro_name;?></h5>
-                                <span style="width:0px;height:0px;" ><?php echo $pro_price;?></span>
+                                <h5 style="width:0px;height:0px;" ><?php echo $row->pro_name;?></h5>
+                                <span style="width:0px;height:0px; color:#836691; font-weight:bold;" ><?php echo $row->pro_price;?></span>
 
-                                <span style="width:0px;height:0px;"> <?php echo $cat_name; ?></span>
+                                <span style="width:0px;height:0px;"> <?php echo $row->cat_name; ?></span>
                             </div>
                             <div class="row productCardbtns mx-0">
-                                <a title="add to wishlist" id="'.$pro_id.'"class="mdi mdi-heart-outline addTowish mx-auto"></a>
-                                <a title="add to compare" id="'.$pro_id.'"class="fas fa-exchange-alt addTocompare mx-auto"></a>
-                                <a title="add to cart" id="'.$pro_id.'" class="attToCart mdi  mdi-cart-outline mx-auto"></a>
+                                <a title="add to wishlist" id="<?php echo $row->pro_id; ?>"class="mdi mdi-heart-outline addTowish mx-auto"></a>
+                                <a title="add to compare" id="<?php echo $row->pro_id; ?>"class="fas fa-exchange-alt addTocompare mx-auto"></a>
+                                <a title="add to cart" id="<?php echo $row->pro_id; ?>" class="attToCart mdi  mdi-cart-outline mx-auto"></a>
                             </div>
                         </div>
                     </div>
@@ -152,7 +117,7 @@ $image=$image-1;
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="description" role="tabpanel"
                                 aria-labelledby="description-tab">
-                                <?php echo $pro_details; ?>
+                                <?php echo $row->pro_details; ?>
                             </div>
 
                         </div>
@@ -170,14 +135,17 @@ $image=$image-1;
 
 </div>
 <div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
-  <h3 class="titel">Featured Items</h3>
+  <h3 class="titel">Items you may like</h3>
 </div>
-
-<div id="featured" class="featured owl-carousel owl-theme mx-auto py-4"  style="background: rgb(120,76,18);
+<div  style="background: rgb(120,76,18);
       background: linear-gradient(293deg, rgba(120,76,18,0.1) 0%, rgba(145,122,33,0.1) 82%, rgba(247,81,185,0.1) 100%);">
+<div id="featured" class="featured owl-carousel owl-theme mx-auto py-4"  >
 
 </div>
-
+</div>
+<?php
+  }
+  ?>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>

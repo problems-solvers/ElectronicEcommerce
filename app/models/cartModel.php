@@ -109,6 +109,7 @@ return $result;
        $s= json_decode($_REQUEST['cartdata']);
     //    print_r($s);
     //    echo 'fff';
+    if($s!=null){
       $user_id= Session::get('id');
     if($user_id!=null ){
 
@@ -159,6 +160,7 @@ return $result;
     else{
         return;
     }
+}
 // $tbls=array("cart");
 // $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
 // SELECT `cart_id`, `total_price`, `quentity`, `type`, `user_id`, `pro_id` FROM `cart` WHERE 1

@@ -52,9 +52,11 @@ class userModel extends Model
 			$this->cartm=new cartModel();
 			$this->cartm->addCats();		
 			
+			
 			if(isset($_SESSION['user_role']) && $_SESSION['user_role']==1){
 			$s=array("Admin");
-            $res=json_encode($s);
+			$res=json_encode($s);
+			print_r($res);
            }if(isset($_SESSION['user_role']) && $_SESSION['user_role']==2)
 			{
 				
@@ -63,12 +65,14 @@ class userModel extends Model
 				 $s=array('back',$url);
 				 //echo $url;
             $res=json_encode($s);
-            //echo $res;
+			print_r($res);
+                
 				}
 				 else {
-			   $url ='' ;
+			   $url ='User' ;
 			 $s=array($url);
 				$res=json_encode($s);
+			print_r($res);
 				
 				 }
 			}
@@ -77,6 +81,7 @@ class userModel extends Model
 			Session::set('loggedIn', false);
 			$s=array('notlogedin');
 				$res=json_encode($s);
+			print_r($res);
 				
 		}
 		

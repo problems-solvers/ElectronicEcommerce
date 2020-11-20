@@ -24,9 +24,11 @@
 <div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light"  >
   <h3 class="titel">NEW ARRAIVALS</h3>
 </div>
-<div id="recentally" class="recentally owl-carousel owl-theme mx-auto py-4"   style="background: rgb(120,76,18);
+<div style="background: rgb(120,76,18);
       background: linear-gradient(293deg, rgba(120,76,18,0.1) 0%, rgba(145,122,33,0.1) 82%, rgba(247,81,185,0.1) 100%);">
+<div id="recentally" class="recentally owl-carousel owl-theme mx-auto py-4"   >
   
+</div>
 </div>
 
 <div class="row mx-auto my-4 show  ad-first"  >
@@ -39,7 +41,7 @@
    $img=$row->adver_img;}
 
    if(empty($img))
-   {
+   { 
      echo ' <img class="card-img-top" width="300px" height="150px" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
    }
    else 
@@ -88,10 +90,11 @@
 <div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
   <h3 class="titel">Featured Items</h3>
 </div>
-
-<div id="featured" class="featured owl-carousel owl-theme mx-auto py-4"  style="background: rgb(120,76,18);
+<div  style="background: rgb(120,76,18);
       background: linear-gradient(293deg, rgba(120,76,18,0.1) 0%, rgba(145,122,33,0.1) 82%, rgba(247,81,185,0.1) 100%);">
+<div id="featured" class="featured owl-carousel owl-theme mx-auto py-4" >
 
+</div>
 </div>
 
 <div class="row mx-auto my-4 show  ad-second"  >
@@ -113,7 +116,7 @@
       ?>
     <button class="btn btn-sm px-3">SHOP NOW</button>
   </div>
-    <div class="col-md-5  col-sm-5 col-xm-12 mx-auto mb-3 "> 
+    <div class="col-md-5  col-sm-5 col-xm-12 mx-auto mb-3 ">
     <?php
  $rows=$data['adver'];
  $img='';
@@ -123,10 +126,11 @@
 
    if(empty($img))
    {
-     echo ' <img class="card-img-top"  width="200px" height="200px"  src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
+     echo ' <img class="card-img-top" height="200px" width="200px" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
    }
    else 
    echo '<img class="card-img-top"    width="200px" height="200px"  src="'.$img.'" alt="Card image cap">';
+
 
       ?>
     <button class="btn btn-sm px-3">SHOP NOW</button>
@@ -135,26 +139,7 @@
 
  <script>
    
-    text_truncate = function(str, length, ending) {
-      if (length == null) {
-        length = 100;
-      }
-      if (ending == null) {
-        ending = '...';
-      }
-      if (str.length > length) {
-        return str.substring(0, length - ending.length) + ending;
-      } else {
-        return str;
-      }
-    };
-    const titles = document.getElementsByClassName('cardtitle')
-  
-    for(i=0;i<titles.length; i++ ){
-     x= titles[i].innerText
-     titles[i].innerText=text_truncate(x,16)
-    }
-
+   
     $(document).ready(function () {
       // loadHome({type:'recentally',id:null})
       // loadHome({type:'featured',id:null})

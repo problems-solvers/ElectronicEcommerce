@@ -6,37 +6,12 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 ?>
 <div class="row container-flude" id="jar">
 <div class="col-9 mx-auto ">
-<div class="row">
-<?php 
- $rows=$data['categories'];
- if(count($rows)){
-     foreach ($rows as $row) { echo ' 
+<div class="row" id="CategoriesLoop">
 
-<div class="col-lg-3  col-md-4 col-sm-6 col-xm-12 my-2 mx-auto content">
-<a href="http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id='.$row->pro_id.'" style="color:#303030; height:100%; text-decoration:none;">
-<div class="card productCard mx-auto " >
-<img class="card-img-top" src="'.$row->main_img.'" alt="Card image cap">
 
-<div class="card-body py-1">
-  <h5 class="cardtitle">'.$row->pro_name.'</h5>
-  <span style="float:right; color:#836691; font-weight:bold;">'.$row->pro_price.'$</span>
+<!-- <img src="/ElectronicEcommerce/app/assets/images/no.jpg" class="img-rounded">
+ // <p class="text-center col-12 mb-5">no data available for this category</p>'; -->
 
-  <span>'.$row->cat_name.'</span>
-</div>
-<div class="row productCardbtns mx-0">
-  <a  title="add to wishlist" id="'.$row->pro_id.'" class="mdi mdi-heart-outline addTowish mx-auto"></a>
-  <a  title="add to compare" id="'.$row->pro_id.'" class="fas fa-exchange-alt addTocompare mx-auto" ></a>
-  <a  title="add to cart" id="'.$row->pro_id.'" class="attToCart mdi  mdi-cart-outline mx-auto"></a>          
-</div>
-</div>
- </a>
-</div> ';} }
-else{
-  //todo image to show no data
-  echo '<img src="/ElectronicEcommerce/app/assets/images/no.jpg" class="img-rounded">
-  <p class="text-center col-12 mb-5">no data available for this category</p>';
-} 
-    ?>
     </div>
     </div>
     <!-- <div class="col-4  w-25 mx-auto  " > -->
@@ -86,25 +61,20 @@ else{
 }
   </style>
     <script>
-     text_truncate = function(str, length, ending) {
-      if (length == null) {
-        length = 100;
-      }
-      if (ending == null) {
-        ending = '...';
-      }
-      if (str.length > length) {
-        return str.substring(0, length - ending.length) + ending;
-      } else {
-        return str;
-      }
-    };
-    const titles = document.getElementsByClassName('cardtitle')
-  
-    for(i=0;i<titles.length; i++ ){
-     x= titles[i].innerText
-     titles[i].innerText=text_truncate(x,16)
-    }
+     
+
+let searchParams = new URLSearchParams(window.location.search)
+let param = searchParams.get('cat_id')
+console.log(param);
+$(document).ready(function () {
+ 
+  if(param !=null){
+    cat='?cat_id='+param
+  }else{
+    cat='';
+  }
+loadHome({type:'CategoriesLoop',id:cat})
+})
 $('#parent').change(function () {
                 var id=$('#parent').val();
                 console.log(id);
@@ -119,8 +89,7 @@ $('#parent').change(function () {
           
             }); 
             });
-    </script>
-    <script>
+   
 function getPageList(totalPages, page, maxLength) {
   if (maxLength < 5) throw "maxLength must be at least 5";
 
@@ -238,5 +207,25 @@ $(function() {
     $("html,body").animate({ scrollTop: 0 }, 0);
   });
 });
+text_truncate = function(str, length, ending) {
+      if (length == null) {
+        length = 100;
+      }
+      if (ending == null) {
+        ending = '...';
+      }
+      if (str.length > length) {
+        return str.substring(0, length - ending.length) + ending;
+      } else {
+        return str;
+      }
+    };
+    const titles = document.getElementsByClassName('cardtitle1')
+  
+    for(i=0;i<titles.length; i++ ){
+      console.log('iamm')
 
+     x= titles[i].innerText
+     titles[i].innerText=text_truncate(x,16)
+    }
     </script>
