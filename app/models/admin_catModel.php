@@ -25,6 +25,20 @@ class admin_catModel extends Model{
 return $result;
     }
 
+    function  CatData(){
+        $this->db=new DB();
+        $id=$_REQUEST['cat_id'];
+
+        $table=array("categories");
+       $result=  $this->db->cols()
+       ->table($table)
+       ->where("cat_id","=","'".$id."'")
+       ->get()
+       ->execute()
+       ->fetch();
+return $result;
+    }
+
     function  sub_cat($id){
         $this->db=new DB();
         $cols=array('product.pro_id','product.pro_name','product.main_img','product.pro_price','categories.cat_id','categories.cat_name');
@@ -69,14 +83,24 @@ return $result;
 
     
     function  addCats($data){
-       print_r($data);
        $this->db=new DB();
 
         $tbls=array("categories");
         $result=  $this->db->cols($data)->table($tbls)->insert()->execute();
 
             
+
     }
+    function  catUpdate($data){
+        $this->db=new DB();
+        $id=$_REQUEST['cat_id'];
+ 
+         $tbls=array("categories");
+         $result=  $this->db->cols($data)->settingcol()->table($tbls)->where("cat_id","=","'".$id."'")->update()->execute();
+ 
+     }
+
+    
     function addTags($data){
         $this->db=new DB();
          $tbls=array("tags");

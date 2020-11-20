@@ -27,7 +27,8 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
             <!-- <link rel="stylesheet" href="../app/assets/vendor/charts/c3charts/c3.css"> -->
             <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
             <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
- 
+            <link rel="stylesheet" href="/ElectronicEcommerce/app/assets/vendor/summernote/css/summernote-bs4.css">
+
             <link href="css/addons/datatables2.min.css" rel="stylesheet">
  <!-- DataTables JS -->
             <script src="js/addons/datatables2.min.js" type="text/javascript"></script>
@@ -86,7 +87,7 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                            
 <div class="con-search notValue">
         <div class="con-input">
-            <input type="text">
+            <input type="text" placeholder="Search">
             <i class='bx bx-search'></i>
             <i  class='bx bx-x' ></i>
         </div>
@@ -109,11 +110,9 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name"><?php echo $_SESSION['user_name']; ?> </h5>
                                 </div>
-                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/userprofiel/"><i class="fas fa-user mr-2"></i>Account</a>
-                               
+                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/userprofiel/"><i class="fas fa-user mr-2"></i>Account</a>                           
                                 <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/userprofiel/address/"><i class="fa fa-address-book-o mr-2"></i></i>Address</a>
                                 <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/userprofiel/payment/"><i class="fa fa-address-card-o mr-2"></i>Payment</a>
-                                <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/"><i class="fab fa-font-awesome mr-2"></i>Web Site</a>
                                 <a class="dropdown-item" href="http://localhost/ElectronicEcommerce/user/logout/"><i class="fas fa-power-off mr-2"></i>Logout</a>
                             </div>
                         </li>
@@ -147,15 +146,26 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                                         <a class="nav-link active" href="http://localhost/ElectronicEcommerce/admin/admin_dashboard"><i class="fa fa-fw fa-user-circle"></i>Dashboard<span class="badge badge-success">6</span></a>
                                     </li>
                                     
+
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#"><i class="fas fa-fw fa-chart-pie"></i>Reports</a>
-                                    
-                                    </li>
+                                    <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2"><i class="fas fa-fw fa-chart-pie"></i>Reports</a>
+                                            <div id="submenu-1-2" class="collapse submenu" style="">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                    <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_repo/"><i class="fa fa-file"></i>Products</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                    <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_repo/custOrder"><i class="fa fa-file"></i>Customer</a>
+                                                    </li>
+                                                   
+                                                </ul>
+                                            </div>
+                                        </li>
                                     <li class="nav-item ">
                                         <a class="nav-link" href="#"><i class="fab fa-fw fa-wpforms"></i>Users and Roles</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#"><i class="fas fa-fw fa-table"></i>Customers</a>
+                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_cust/"><i class="fas fa-fw fa-table"></i>Customers</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_advertiment/add_adver"><i class="fas fa-fw fa-table"></i>Advertisment</a>

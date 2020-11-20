@@ -2,37 +2,37 @@
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="page-header">
               
-                <h2 class="pageheader-title">ORDERS</h2>
+                <h2 class="pageheader-title" >E-commerce Orders</h2>
                 
                 <div class="page-breadcrumb">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">SHOW ORDERS</li>
+                            <li class="breadcrumb-item"><a href="#" class="haver">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Show Orders</li>
                         </ol>
                     </nav>
                 </div>
             </div>
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-    <div class="card">
+    <div class="card ">
         <div class="card-header ">
             <h5 class="mb-0  d-inline-block">ORDER Table</h5>
            
         </div>
         <div class="card-body ">
             <div class="table-responsive col-12 w-100">
-                <table id="example" class="table table-striped table-bordered second" style="width:100%">
+                <table id="example" class="table table-striped table-bordered second text-center">
                 <thead>
                                            <tr>
-                                           <th scope="col"  style="color:#836691;"> #</th>
-                                           <th scope="col"  style="color:#836691;">Order date</th>
-                                           <th scope="col"  style="color:#836691;">Deliver date</th>
-                                           <th scope="col"  style="color:#836691;">Total price</th>
-                                           <th scope="col"  style="color:#836691;">Orders Status</th>
-                                           <th scope="col"  style="color:#836691;">View more</th>
+                                           <th scope="col" > #</th>
+                                           <th scope="col" >Order date</th>
+                                           <th scope="col" >Deliver date</th>
+                                           <th scope="col" >Total price</th>
+                                           <th scope="col" >Orders Status</th>
+                                           <th scope="col" >View more</th>
                                            </tr>
                                        </thead>
-                    <tbody>
+                    <tbody class="text-center">
                         <?php
   $ord=$data['order'];
   $index=0;  
@@ -53,7 +53,7 @@
             echo $status; ?> </td>
 
     <td class="text-center">  
-        <a href="http://localhost/ElectronicEcommerce/admin/admin_orders/viewmore?action=view&id=<?php echo $or->order_id;?>" ><i class="fa fa-th" aria-hidden="true"></i>
+        <a href="http://localhost/ElectronicEcommerce/admin/admin_orders/viewmore?action=view&id=<?php echo $or->order_id;?>" ><i class="fa fa-th view-btn" aria-hidden="true"></i>
             </a>
     </td>
     </tr>

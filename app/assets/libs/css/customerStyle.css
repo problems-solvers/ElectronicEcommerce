@@ -6,7 +6,11 @@ Top Header
 body{
   font-family: 'Montserrat', sans-serif;
    overflow-x:hidden;
-   overflow-y:scroll !important;
+   overflow-y: initial;
+}
+h1,h2,h3,h4,h5,h6,span,p,a,li,div{
+  font-family: 'Montserrat', sans-serif;
+
 }
 #CustTemplate{
   overflow-x:hidden;
@@ -649,6 +653,7 @@ display: none;
 .submenu ul .nav-item:hover .nav-link {
        background: #fff;
        color: #000; }
+     
  @media (min-width: 992px) {
 .submenu:hover ul {
      visibility: visible;
@@ -941,3 +946,93 @@ text-align: center;
     width:95%
   }
   }
+
+.form-control:hover,
+.form-card:focus {
+  border: 5px solid #836691;
+}
+
+.bor{
+  border-radius: 50%;
+  z-index:9999;
+}
+
+.men {
+   border: none;
+   padding: 0px;
+   border-radius: 0px;
+   box-shadow: none;
+   margin: 0px;
+   background: #E1B199;
+   box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1); 
+
+}
+
+   .mendev:hover {
+       background: #fff;
+       color: #000; }
+  
+  
+#preloder {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+  background: #000;
+  opacity: 70%;
+}
+
+.loader {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -13px;
+	margin-left: -13px;
+	border-radius: 60px;
+	animation: loader 0.8s linear infinite;
+	-webkit-animation: loader 0.8s linear infinite;
+}
+
+@keyframes loader {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+		border: 4px solid #f44336;
+		border-left-color: transparent;
+	}
+	50% {
+		-webkit-transform: rotate(180deg);
+		transform: rotate(180deg);
+		border: 4px solid #673ab7;
+		border-left-color: transparent;
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+		border: 4px solid #f44336;
+		border-left-color: transparent;
+	}
+}
+
+@-webkit-keyframes loader {
+	0% {
+		-webkit-transform: rotate(0deg);
+		border: 4px solid #f44336;
+		border-left-color: transparent;
+	}
+	50% {
+		-webkit-transform: rotate(180deg);
+		border: 4px solid #673ab7;
+		border-left-color: transparent;
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		border: 4px solid #f44336;
+		border-left-color: transparent;
+	}
+}
+

@@ -95,7 +95,7 @@ public function __construct($function){
                      $tag_data='';
                      foreach ($_REQUEST['field'] as $key=>$val)
                      {
-                         $tag_data .=$val.',';
+                         $tag_data .=$val.'@';
                      }
         $data = array(
            'tag_id' =>"'".$_POST['tag_id']."'",
@@ -116,15 +116,44 @@ public function __construct($function){
        }
    function updateCategory(){
           $items=array(
-                 'category'=>$this->model->upadtecat()
+                 'category'=>$this->model->CatData(),
+                 'categories'=>$this->model->getAllCatData()
+                 
 
           );
-          print_r($items);
+         
        $this->controller->view_object->create_view('admin/updateCategory',$items);
 
    }
 
-       function delcat(){
+       function catUpdate(){
+              $uuid=baseFunctions::uuid();
+              //print_r($__REQUEST);
+    if(isset($_REQUEST['is_active']))
+    {
+           $active=1;
+    }
+    else{
+           $active=0;
+    }
+
+        $_POST['create_date']= date('Y-m-d H:i:s');
+        $data = array(
+            'cat_name' =>"'".$_REQUEST['cat_name']."'",
+            'parent' =>"'".$_REQUEST['parent']."'",
+            'is_active' =>"'".$active."'"
+            );
+            $result=$this->model->catUpdate($data);
+            //print_r($_POST);
+            if($result=='done') {
+              echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_cat/addCattegories';</script>";
+             }
+             else{
+              echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_cat/';</script>";
+
+             }              
+             }
+             function delcat(){
               $this->model->delete();
               
              }

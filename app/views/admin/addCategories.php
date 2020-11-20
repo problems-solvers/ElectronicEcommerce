@@ -1,11 +1,13 @@
 <div class="row my-3">
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="page-header">
-            <h2 class="pageheader-title">Add New Category</h2>
+        <h2 class="pageheader-title">E-commerce Category & Tags </h2>
+
            <div class="page-breadcrumb">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Categories</a></li>
+                        <li class="breadcrumb-item"><a href="#" class="haver">Categories</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"> Category</li>
                         <li class="breadcrumb-item active" aria-current="page">Add Category</li>
                     </ol>
                 </nav>
@@ -18,9 +20,9 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="control-label mx-3" for="cat_name">Category Name</label>  
+  <label class="control-label m-3" for="cat_name">Category Name</label>  
   <div class="">
-  <input id="cat_name" name="cat_name" placeholder="Category Name" class="col-md-8  form-control input-md mx-3" required="" type="text">
+  <input id="cat_name" name="cat_name" placeholder="Category Name" class="col-md-10 form-control input-md mx-3" required="" type="text">
     
   </div>
 </div>
@@ -29,7 +31,7 @@
 <div class="form-group">
   <label class="  control-label mx-3" for="product_categorie"> CATEGORY PARENT</label>
   <div class="">
-  <select class="input form-control my-3 mx-3 col-md-8 " id="parent" name='parent'>
+  <select class="input form-control my-3 mx-3 col-md-10" id="parent" name='parent'>
   <option value='0'>Defualt</option>
     <?php
     
@@ -45,15 +47,15 @@
 </div>
 
 <div class="form-group">
-        <label class="mx-2 control-label" for="pro_imgs"></label>
+        <label class="mx-3 control-label" for="pro_imgs"></label>
         <div class="mx-3">
-            <input id="is_active" name="is_active" type="checkbox">IS_ACTIVE
+            <input id="is_active" class="mx-2"name="is_active" type="checkbox"> ACTIVE
         </div>
     </div>
 <!-- Button -->
 <div class="form-group">
-  <div class="col-md-5">
-    <button id="singlebutton"  name="singlebutton" class="btn btn-block bt">ADD Category</button>
+  <div class="form-actions btn-sm col-12">
+    <button id="singlebutton"  class="btn btn-outline-light col-4 mx-auto btn-color">ADD Category</button>
   </div>
   </div>
   </form>
@@ -66,16 +68,15 @@
              async: false,
              type: "POST",
              global: false,
-             url: "/ElectronicEcommerce/admin/admin_cat/addCattegories",
+             url: "/ElectronicEcommerce/admin/admin_cat/addCats",
              data: {cat_name:cat_name,is_active:is_active,parent:parent},
              success: function(response) {
            
-             
+            
              },
              error:function(){
               window.location.replace('http://localhost/ElectronicEcommerce/admin/admin_cat/');
-
-alert("SecusseFull Add");
+                alert("SecusseFull Add");
              }
            })
     </script>

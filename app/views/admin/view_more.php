@@ -1,9 +1,21 @@
-<div class="container  form-card  col-lg-12 px-5">
-        <div class="row container " style=" margin-top:2%;margin-bottom:1%;"> 
-            <div class="col-md-10  mx-auto text-center">
-            <h2 class="fs-title my-2" style="color:#836691; font-weight:bold;"> ORDER Details </h2>
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="page-header">
+              
+                <h2 class="pageheader-title" >E-commerce Orders</h2>
+                
+                <div class="page-breadcrumb">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#" class="haver">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Show Orders</li>
+                            <li class="breadcrumb-item active" aria-current="page"> Orders Details</li>
+                        </ol>
+                    </nav>
+                </div>
             </div>
-            </div> 
+<div class="container  form-card  col-lg-12 px-5">
+       
     
     <div class="py-5 text-center">
     </div>
@@ -11,14 +23,14 @@
     <div style=" margin-top:-13%;">
       <!-- fieldsets -->
       <fieldset>
-        <h3 style="color:#836691; font-weight:bold;">Products</h3>
+        <h3 >Products</h3>
                   <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th style="color:#836691;">Product</th>
-                            <th style="color:#836691;">Quntity </th>
-                            <th class="text-center" style="color:#836691;">Price</th>
-                            <th class="text-center"style="color:#836691;">Total</th>
+                            <th >Product</th>
+                            <th>Quntity </th>
+                            <th>Price</th>
+                            <th >Total</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,7 +57,7 @@
                         <tr>
                             <td>   </td>
                             <td>   </td>
-                            <td class="text-right" style="color:#836691; font-weight:bold;">
+                            <td class="text-right">
                                 ToTal: <?php echo $sum;?>
                             </td>
                             <td class="text-right">
@@ -60,7 +72,7 @@
                  <div class="col-6">
                  <address >
                     <div class="text-center">
-                    <h3 style="color:#836691; font-weight:bold;">Address Information</h3>
+                    <h3 >Address Information</h3>
                       </div>
                      <?php 
                        $ord=$data['orders'];
@@ -85,7 +97,7 @@
                  <div class="col-6">
                  <address >
                     <div class="text-center">
-                    <h3 style="color:#836691; font-weight:bold;">Payment Information</h3>
+                    <h3 >Payment Information</h3>
                       </div> 
                       <?php 
                        $ord=$data['orders'];

@@ -2,37 +2,37 @@
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="page-header">
               
-                <h2 class="pageheader-title">Categories</h2>
+                <h2 class="pageheader-title">E-commerce Categories</h2>
                 
                 <div class="page-breadcrumb">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Categories And Tags </li>
+                            <li class="breadcrumb-item"><a href="#" class="haver">Dashboard</a></li>
+                            <li class="breadcrumb-item " aria-current="page">Categories And Tags </li>
                         </ol>
                     </nav>
                 </div>
             </div>
+            <style>
+
+</style>
 <div class="container">
-   <ul class="nav nav-tabs">
-    <li class="nav-link active"><a href="#home">Categories</a></li>
-    <li class="nav-link"><a href="#menu1">Tag</a></li>
-    </ul>
+<div class="tab"><button  class="tablinks active" onclick="exchange(event,'home')">Categories</button>
+    <button  class="tablinks" onclick="exchange(event,'menu1')">Tag</button></div>
+    
 
   <div class="tab-content">
-    <div id="home" class="tab-pane fade in active show">
+    <div id="home"  class="tabcontent">
     
-    <h3>Categories</h3>
-      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                       <div class="card">
                           <div class="card-header ">
                               <h5 class="mb-0  d-inline-block">Categories Table</h5>
                               <a href="/ElectronicEcommerce/admin/admin_cat/addCattegories"><button type="button"
-                                      class="d-inline-block btn  btn-sm  btn-left bt"
-                                      style="float:right; 	border-radius:20px;">Add Categories</button></a>
+                              class="btn btn-outline-light float-right  btn-color">Add Categories</button></a>
   
                           </div>
-                          <div class="card-body">
+                          <div class="card-body ">
                               <div class="table-responsive col-12 w-100">
                                   <table id="example" class="table table-striped table-bordered second"
                                       style="width:100%">
@@ -75,10 +75,10 @@
   echo "<td>
 
 <a  href='http://localhost/ElectronicEcommerce/admin/admin_cat/updateCategory?action=update&cat_id=".$ro->cat_id."' class='update'>
-	  <i class='btn fa fa-pencil text-primary' style='font-size:24px;'></i></a>
+	  <i class='btn fa fa-pencil view-btn' style='font-size:24px;'></i></a>
 
-<a class='' value='$ro->cat_id' href='#' id='del'>
-<i  class=' btn fa fa-trash-o text-danger' style='font-size:24px;' ></i></a>
+<a class='' value='$ro->cat_id' href='http://localhost/ElectronicEcommerce/admin/admin_cat/' id='del'>
+<i  class=' btn fa fa-trash-o view-btn' style='font-size:24px;' ></i></a>
 
 
 </td>
@@ -106,10 +106,10 @@
   echo "<td>
 
 <a  href='http://localhost/ElectronicEcommerce/admin/admin_cat/updateCategory?action=update&cat_id=".$r->cat_id."' class='update'>
-	  <i class='btn fa fa-pencil text-primary' style='font-size:24px;'></i></a>
+	  <i class='btn fa fa-pencil view-btn' style='font-size:24px;'></i></a>
 
-<a class='' value='$r->cat_id' href='#' id='del'>
-<i  class=' btn fa fa-trash-o text-danger' style='font-size:24px;' ></i></a>
+<a class='' value='$r->cat_id' href='http://localhost/ElectronicEcommerce/admin/admin_cat/' id='del'>
+<i  class=' btn fa fa-trash-o view-btn' style='font-size:24px;' ></i></a>
 
 
 </td>
@@ -134,16 +134,14 @@
     </div>
 
 </div>
-    <div id="menu1" class="tab-pane fade">
+    <div id="menu1"  class="tabcontent">
      
-    <h3>Tags</h3>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                               <div class="card">
                                   <div class="card-header ">
                                       <h5 class="mb-0  d-inline-block">Tags Table</h5>
                                       <a href="/ElectronicEcommerce/admin/admin_cat/addTags"><button type="button"
-                                              class="d-inline-block btn btn-sm bt btn-left"
-                                              style="float:right; 	border-radius:20px;">Add Tags</button></a>
+                                      class="btn btn-outline-light float-right  btn-color">Add Tags</button></a>
   
                                   </div>
                                   <div class="card-body">
@@ -188,10 +186,10 @@
   echo "<td>
 
 <a  href='http://localhost/ElectronicEcommerce/admin/admin_product/updateProduct?action=update&pro_id=".$ro->tag_id."' class='update'>
-	  <i class='btn fa fa-pencil text-primary' style='font-size:24px;'></i></a>
+	  <i class='btn fa fa-pencil view-btn' style='font-size:24px;'></i></a>
 
-<a class='' value='$ro->tag_id' href='#' id='del_tag'>
-<i  class=' btn fa fa-trash-o text-danger' style='font-size:24px;' ></i></a>
+<a class='' value='$ro->tag_id' href='http://localhost/ElectronicEcommerce/admin/admin_cat/' id='del_tag'>
+<i  class=' btn fa fa-trash-o view-btn' style='font-size:24px;' ></i></a>
 
 
 </td>
@@ -223,12 +221,32 @@
 </div>
 
 <script>
-$(document).ready(function(){
-  $(".nav-tabs a").click(function(){
-    $(this).tab('show');
-    $(this).tab('active');
-  });
   
+ function exchange(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  navlinks = document.getElementsByClassName("nav-link");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace("active", "");
+    navlinks[i].className = navlinks[i].className.replace("active", "");
+    console.log(navlinks[i]);
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className +="active";
+}
+$(document).ready(function(){
+  /*$(".nav-tabs a").click(function(){
+    $(this).tab('active');
+    $(this).tab('show');
+  });*/
+ 
+  var show = document.getElementById("home");
+  document.getElementById("home").style.display = "block";
+
   $("#del").click(function (e) {
                
     var cat_id=$('#cat_id').val();

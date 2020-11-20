@@ -1,13 +1,24 @@
 
-<div class="col-6 text-center mx-auto mt-3">
+<div class="py-4" style="height:100%;background: rgb(120,76,18);
+      background: linear-gradient(293deg, rgba(120,76,18,0.1) 0%, rgba(145,122,33,0.1) 82%, rgba(247,81,185,0.1) 100%);">
+
+
+<div class="col-6 text-center mx-auto mt-3" >
 <a class="navbar-brand" href="#"> <img
                         src="/ElectronicEcommerce/app/assets/images/login_store_logos-2.png" class="float-left "
                         style="width:300px; height:50px;"></a>
 </div>
-<div class="block d-flex  align-items-center col-12 col-md-12 col-sm-12 col-xs-12 m-auto">
-  <div class="col-6 col-md-6 col-sm-12 col-xs-12 mx-auto ">
-<div class="card  mx-auto p-3" >
-  <h4 class="text-center my-3">Register</h4>
+    <div id="msform" > 
+
+   
+    <div class="mx-auto" >
+      <!-- fieldsets -->
+      <fieldset class="col-md-8 order-md-1 mx-auto ">
+        <h2 class="fs-title" style="color:#836691; font-weight:bold;">LogIn</h2>
+        <div class="row container">
+
+
+              <div class=" col-md-12 order-md-1 " style="margin-left:10px;"> 
 <form action="signup" method="post" id="form1" onchange="validation();">
 <div class="col-12 col-sm-12 col-xs-12 mx-auto my-5 text-center">
   <div class="inlining-form mx-auto col-4 col-md-4 col-sm-8 col-xs-8  "> 
@@ -59,10 +70,23 @@
 </div>
 
 </div>
-</form>
-</div>
-</div>
-</div>
+</form></div>
+    
+    </div>
+        </div>    
+        </fieldset>
+                </div>               
+                </div>
+             
+    
+    <div class=" d-flex  align-items-center m-auto"  >
+      <div class="col-6 col-md-6 col-sm-10 col-xs-10 mx-auto ">
+      
+    <div class="mx-auto p-3" >
+    
+    </div>
+    </div>
+    </div>
 <script>
 
 function myFunction() {

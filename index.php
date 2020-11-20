@@ -17,11 +17,28 @@ include("core/session.php");
 include("app/config/basefunc.php");
 include("app/config/config.php");
 
-$url=isset($_GET['url'])?$_GET['url']:"home";
-//echo $url;
 Session::init();
 
 
+$url=isset($_GET['url'])?$_GET['url']:"home";
+if(isset($_SESSION['user_role']) && $_SESSION['user_role']==1){
+    $clean_url=rtrim($url,'/');
+        $clean_url=explode('/',$clean_url);
+       
+        if($clean_url[0]!=='admin'){
+            echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_dashboard';</script>";
+
+        }
+}
+if(isset($_SESSION['user_role']) && $_SESSION['user_role']==2){
+    $clean_url=rtrim($url,'/');
+        $clean_url=explode('/',$clean_url);
+        if($clean_url[0]=='admin'){
+            echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/';</script>";
+          
+        }
+}
+//echo $url;
 new Route($url);
 
 

@@ -34,7 +34,7 @@ $loginUrl = $helper->getLoginUrl($redirectTo, $data);
   <form method="post" action="run"  id="form1" onchange="validation();">
   <div class="form-group col-md-8 col-sm-12 col-xs-12 mx-auto my-5">
     <!-- <label for="user_name">Email address:</label> -->
-    <input type="text" class="form-control" placeholder="Enter Username"  id="user_name" name="user_name" required>
+    <input type="text" class="form-control"  placeholder="Enter Username"  id="user_name" name="user_name" required>
     <small id="helpId1" class="text-muted"></small>
   </div>
   <div class="form-group  col-md-8 col-sm-12 col-xs-12 mx-auto my-5">
@@ -51,21 +51,22 @@ $loginUrl = $helper->getLoginUrl($redirectTo, $data);
   <span class="float-right"> <a href="http://localhost/ElectronicEcommerce/user/forgotpassword">Forgot password?</a></span>
 </div> -->
 
-<div class="col-md-8 mx-auto  my-4  justify-content-between">
+
+<div class=" d-flex justify-content-flex-around col-md-8 mx-auto  my-4  justify-content-between">
+ 
+  <button type="submit" id="submit" class="bt disabled mx-3 pb-4 "   onclick="myFunction()">login</button>
+      <!-- The actual snackbar -->
+<!-- <div id="snackbar">Some text some message..</div> -->
+
+
+ <a href="http://localhost/ElectronicEcommerce/user/register" class="bt1 btn mx-3">register</a>
+
+
+</div>
+<H5>OR</H5>
+<div class=" d-flex justify-content-flex-around col-md-8 mx-auto  my-4  justify-content-between">
 <a  href="googlelogin"><img src="/ElectronicEcommerce/app/assets/images/loging.png"    width="150px"></a> 
 <a href=' <?php echo  $loginUrl ;?>'><img src="/ElectronicEcommerce/app/assets/images/loginfb.png"  width="150px"></a>
-</div>
-<div class="inlining-form  col-md-12 col-sm-12 col-xs-12 mx-auto  my-4 align-center text_center">
-  <div class=" inlining col-md-4 col-sm-12 col-xs-12 mx-auto ">
-  <button type="submit" id="submit" class="bt mx-auto login_btn" onclick="myFunction()">login</button>
-      <!-- The actual snackbar -->
-<div id="snackbar">Some text some message..</div>
-</div>
-
-  <div class="inlining col-md-4 col-sm-12 col-xs-12 mx-auto">
-  <button type="button" class="bt1 mx-auto"><a href="http://localhost/ElectronicEcommerce/user/register" >register</button></a>
-</div>
-
 </div>
 </form></div>
     
@@ -86,16 +87,16 @@ $loginUrl = $helper->getLoginUrl($redirectTo, $data);
 </div>
 <script>
 
-function myFunction() {
-    // Get the snackbar DIV
-    var x = document.getElementById("snackbar")
+// function myFunction() {
+//     // Get the snackbar DIV
+//     var x = document.getElementById("snackbar")
 
-    // Add the "show" class to DIV
-    x.className = "show";
+//     // Add the "show" class to DIV
+//     x.className = "show";
 
-    // After 3 seconds, remove the show class from DIV
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-}
+//     // After 3 seconds, remove the show class from DIV
+//     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+// }
 </script>
 <script>
 
@@ -108,48 +109,65 @@ $('#submit').click(function(e){
 
   var name = $("#user_name").val();
   var password = $("#user_password").val();
-
-  var x= JSON.parse(localStorage.getItem("cart")); 
+  var x;
+  if(localStorage.getItem("cart")==null){
+      x=null;
+  }
+  else
+  { x= JSON.parse(localStorage.getItem("cart")); }
   console.log(JSON.parse(localStorage.getItem("cart")) );
+  console.log("before ajax");
+
   $.ajax({
       type: "POST",
       url: "http://localhost/ElectronicEcommerce/user/run",
       context: document.body,
       data: {user_name:name, user_password:password ,cartdata: JSON.stringify(x) },
-      success: function(response) {
-        //console.log(result);
+      global: true,
+      async: false,
+      dataType: 'json',
+    })
+      .done(function (response) {
+        console.log("respons");
         console.log(response[0])
         if (response[0]=='Admin') {
-          window.location.href ='http://localhost/ElectronicEcommerce/user/login';
+          window.location.href ='http://localhost/ElectronicEcommerce/admin/admin_dashboard';
+          console.log("admin");
+
         }
         if(response[0]=='back'){
           localStorage.removeItem('cart');
                var x= JSON.parse(localStorage.getItem("cart"))
                console.log(x)
-          window.location.href ='http://localhost/ElectronicEcommerce/'+response[0];
+          console.log("block ");
+
+         window.location.href ='http://localhost/'+response[1];
 
         }
-        if(response[0]=='user'){
+        if(response[0]=='User'){
           localStorage.removeItem('cart');
                var x= JSON.parse(localStorage.getItem("cart"))
                console.log(x)
+          console.log("user");
+
           window.location.href ='http://localhost/ElectronicEcommerce/';
 
         }
         if(response[0]=='notlogedin'){
           window.location.href ='http://localhost/ElectronicEcommerce/user/login';
+          console.log("notlogin");
 
         }
         else{
           console.log('couldnt')
+          console.log(response[0]);
+
         }
-    },
-    error: function(result){
-       alert("Error saving concert");
-       }
-  })
-
-
+      })
+      .fail(function () {
+        console.log("failed");
+      })
+           
 });
 });
 var form1=document.getElementById("form1");
@@ -162,7 +180,7 @@ function validation(){
 if( nameFormat.test(form1[0].value) )
 {
 	login_btn.disabled = false;
-	login_btn.className = "btn enabled"
+	login_btn.className = "btn enabled bt mx-auto pb-4"
 }
 else{
 	login_btn.disabled = true;

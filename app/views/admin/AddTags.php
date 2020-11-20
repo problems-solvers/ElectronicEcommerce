@@ -1,13 +1,13 @@
 <div class="row">
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="page-header">
-            <h2 class="pageheader-title">E-commerce Dashboard Template </h2>
-            <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
+            <h2 class="pageheader-title">E-commerce Tags </h2>
             <div class="page-breadcrumb">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">E-Commerce Dashboard Template</li>
+                        <li class="breadcrumb-item active" aria-current="page"> Tags</li>
+                        <li class="breadcrumb-item active" aria-current="page">Add Tags</li>
                     </ol>
                 </nav>
             </div>
@@ -19,21 +19,21 @@
 <fieldset>
 
 <!-- Text input-->
-<div class="form-group my-3">
+<div class="form-group m-3">
   <label class="col-md-10 control-label" for="tag_name">Tag Name</label>  
   <div class="col-md-10">
   <input id="tag_name" name="tag_name" placeholder="Tag Name" class="form-control input-md" required="" type="text">
     
   </div>
 </div>
-<div class="form-group">
+<div class="form-group m-3">
   <label class="col-md-10 control-label" for="tag_data">Tag data</label>  
   <div class="col-md-10">
 
   <input type="hidden" name="count"  id="count" value="1" />
     <div class="controls" id="profs"> 
       <div id="field" class=" form-inline">
-        <input autocomplete="off" class="input form-control my-3" id="field1" name="field[1]" type="text" placeholder="Type something" data-items="8"/>
+        <input autocomplete="off" class="input form-control mx-1" id="field1" name="field[1]" type="text" placeholder="Type something" data-items="8"/>
         <button id="b1" class="btn add-more" type="button">+</button>
       </div>
                 
@@ -41,8 +41,8 @@
 </div>
 <!-- Button -->
 <div class="form-group">
-  <div class="col-md-5">
-    <button id="singlebutton"  name="singlebutton" class="btn btn-block bt">ADD Tag</button>
+  <div class="form-actions btn-sm col-12">
+    <button id="singlebutton" class="btn btn-outline-light col-4 mx-auto btn-color">ADD Tag</button>
   </div>
   </div>
   </form>
@@ -57,7 +57,7 @@
         var addto = "#field" + next;
         var addRemove = "#field" + (next);
         next = next + 1;
-        var newIn = '<input autocomplete="off" class="input form-control" id="field' + next + '" name="field[' + next + ']" type="text">';
+        var newIn = '<input autocomplete="off" class="input form-control m-3" id="field' + next + '" name="field[' + next + ']" type="text">';
         var newInput = $(newIn);
         var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me" >-</button></div><div id="field">';
         var removeButton = $(removeBtn);

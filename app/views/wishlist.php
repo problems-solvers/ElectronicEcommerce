@@ -21,19 +21,30 @@ $_SESSION['url'] = $_SERVER['REQUEST_URI'];
 </div>
 
 <!-- Advertisment -->
+<style>
+ @media (max-width: 992px) {
+.show{
+  width:"300px";
+   height:"600px";
+}
+ }
+
+
+</style>
 
 <div class=" col-4  " >
   
-<div class="row mx-auto my-4 show "  >
-<div class="col-md-12 col-sm-12 col-xs-12 mx-auto ">
-<img class="card-img-top" height="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> 
+<div class="row mx-auto my-4 show " width="300px";
+   height="600px";  >
+<div class="col-12 mx-auto ">
+<img class="card-img-top"  height="100%" width="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> 
  
        <button class="btn btn-sm px-3">SHOP NOW</button>
   </div>
   </div>
   <div class="row mx-auto my-4 show "  >
-    <div class="col-md-12 col-sm-12 col-xs-12 mx-auto "> 
-  <img class="card-img-top" height="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> 
+    <div class="col-12 mx-auto "> 
+  <img class="card-img-top" height="100%" width="100%" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> 
    <button class="btn btn-sm px-3">SHOP NOW</button>
   </div> 
   </div>

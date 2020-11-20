@@ -1,7 +1,9 @@
 <!-- to do color of footer and havor li and responsive -->
 
 <div id="snackbar">dsds</div>
-
+<div id="preloder">
+		<div class="loader"></div>
+	</div>
 <div class="footer-copyright">
     <footer id="footer" class="flex-shrink-0">
         <div class="main-footer text-center ">
@@ -60,7 +62,6 @@
                     </div>
 
                 </div>
-
             </div>
         </div>
         <div class="container">
@@ -73,6 +74,7 @@
             </div>
         </div>
     </footer>
+</div>
 </div>
 <script src="/ElectronicEcommerce/app/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
@@ -99,6 +101,7 @@
 <script src="/ElectronicEcommerce/app/assets/libs/js/CustomerScript.js"></script>
 
 <script>
+ 
      text_truncate = function(str, length, ending) {
 
       if (length == null) {
@@ -308,7 +311,7 @@
         }
         else {
             const localItems = JSON.parse(localStorage.getItem(localName));
-            if(localItems != null){
+            if(localItems !== null){
             iteminCart = localItems.findIndex((x) => x.pro_id === id);
              if (iteminCart == -1) 
                 found = '-outline';
@@ -317,14 +320,15 @@
 
             }
             else{
-                found = '';
+                found = '-outline';
             }
 
         }
         return found;
     }
     function loadHome(data){
-      
+        $(".loader").fadeIn();
+	$("#preloder").fadeIn("slow");
   if(data.type=='CategoriesLoop'){
     vdata={
     type:'categories/show'+data.id,
@@ -363,7 +367,6 @@ for(var i=0;i < titles.length; i++ ){
          d='<div class="item "><div class="card productCard mx-auto "><a href="http://localhost/ElectronicEcommerce/product/productdetale?action=view&pro_id='+element.pro_id+'" style="color:#303030; height:100%; text-decoration:none;"><img class="card-img-top" src="/ElectronicEcommerce/'+element.main_img+'" alt="Card image cap"><div class="card-body py-1"><h5 class="cardtitle1">'+element.pro_name+'</h5><span style="float:right; color:#836691; font-weight:bold;">'+element.pro_price+'$</span><span>'+element.cat_name+'</span></div></a><div class="row productCardbtns mx-0"><a  title="add to wishlist" id="'+element.pro_id+'" class=" addTowish mx-auto" ><li class="mdi mdi-heart'+element.isInWishlist+'" style="list-style:none;"></li></a><a  title="add to compare" id="'+element.pro_id+'" class="addTocompare mx-auto" style="list-style:none;"><li class="fas fa-exchange-alt '+element.isInCompare+'" style="list-style:none;"></li></a><a  title="add to cart" id="'+element.pro_id+'" class="attToCart  mx-auto" style="list-style:none;"><li class="mdi  mdi-cart'+element.isInCart+'" style="list-style:none;"></li></a></div></div></div> '
         $('#'+data.type).trigger('add.owl.carousel', [d])
         .trigger('refresh.owl.carousel');
-     
 
         });
         const titles = document.getElementsByClassName('cardtitle1')
@@ -373,9 +376,12 @@ for(var i=0;i < titles.length; i++ ){
  titles[i].innerText=text_truncate(x,16)
 }
   }
-
+  $(".loader").fadeOut();
+	$("#preloder").fadeOut("slow");
 }
     $(document).ready(function () {
+        $(".loader").fadeOut();
+	$("#preloder").fadeOut("slow");
        loadHome({type:'recentally',id:null})
       loadHome({type:'featured',id:null})
      
@@ -425,7 +431,10 @@ for(var i=0;i < titles.length; i++ ){
                 .fail(function () {
                 })
         } else {
+
             if (JSON.parse(localStorage.getItem('cart')) === null) {
+            cart.push(item)
+
                 localStorage.setItem("cart", JSON.stringify(cart));
                 $(e.target).attr('class',"mdi  mdi-cart") } else {
                 const localItems = JSON.parse(localStorage.getItem("cart"));
@@ -472,7 +481,10 @@ for(var i=0;i < titles.length; i++ ){
             .fail(function () {
             })
     } else {
+
         if (JSON.parse(localStorage.getItem('compare')) === null) {
+        compare.push(item)
+
             localStorage.setItem("compare", JSON.stringify(compare));
         } else {
             const localItems = JSON.parse(localStorage.getItem("compare"));
@@ -506,7 +518,6 @@ for(var i=0;i < titles.length; i++ ){
                 quentity: 1
         };
         if (<?php echo isset($_SESSION['id']) ? 'true' : 'false'; ?>) {
-        cart.push(item)
         $.ajax({
             type: 'POST',
             url: 'http://localhost/ElectronicEcommerce/wishlist/addtoWishlist',
@@ -519,7 +530,11 @@ for(var i=0;i < titles.length; i++ ){
             .fail(function () {
             })
     } else {
+        cart.push(item)
+
         if (JSON.parse(localStorage.getItem('wishlist')) === null) {
+        cart.push(item)
+
             localStorage.setItem("wishlist", JSON.stringify(cart));
             $(e.target).attr('class',"mdi  mdi-heart")
         } else {

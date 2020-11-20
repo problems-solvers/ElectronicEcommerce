@@ -52,30 +52,27 @@ class userModel extends Model
 			$this->cartm=new cartModel();
 			$this->cartm->addCats();		
 			
-			//print_r($_SESSION);
-		    //echo Session::get('user_role');
-			//print_r($result);
-			//echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/';</script>";	
+			
 			if(isset($_SESSION['user_role']) && $_SESSION['user_role']==1){
 			$s=array("Admin");
-            $res=json_encode($s);
-            echo $res;
-		//	echo "<script type='text/javascript'>window.location.href = 'http://localhost/ElectronicEcommerce/admin/admin_dashboard/';</script>";
-			}if(isset($_SESSION['user_role']) && $_SESSION['user_role']==2)
+			$res=json_encode($s);
+			print_r($res);
+           }if(isset($_SESSION['user_role']) && $_SESSION['user_role']==2)
 			{
 				
 				if(isset($_SESSION['url'])) {
 				 $url = $_SESSION['url']; // holds url for last page visited.
 				 $s=array('back',$url);
-                  $res=json_encode($s);
-                  echo $res;
+				 //echo $url;
+            $res=json_encode($s);
+			print_r($res);
+                
 				}
 				 else {
-               $url ='http://localhost/ElectronicEcommerce/' ;
-			//	echo "<script type='text/javascript'>window.location.href ='". $url."';</script>";
-				$s=array('user');
+			   $url ='User' ;
+			 $s=array($url);
 				$res=json_encode($s);
-				echo $res;
+			print_r($res);
 				
 				 }
 			}
@@ -84,9 +81,11 @@ class userModel extends Model
 			Session::set('loggedIn', false);
 			$s=array('notlogedin');
 				$res=json_encode($s);
-				echo $res;
-			echo "<script type='text/javascript'></script>";
+			print_r($res);
+				
 		}
+		
+
 		
 		
 	}

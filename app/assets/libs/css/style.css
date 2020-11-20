@@ -1230,7 +1230,7 @@ Top Header
 }
 
 .navigation-horizontal .submenu {
-       background-color: #e2e2eb;
+       background-color:inherit;
     margin-top: -6px;
     margin-right: 1px;
     margin-left: 1px;
@@ -1358,7 +1358,7 @@ Left Navigation Sidebar
     padding-left: 12px;
     padding-right: 12px;
     /* margin-top: 5px; */
-    background: #fff;
+    background: inherit;
 }
 
 .nav-left-sidebar .submenu .nav .nav-item .nav-link {
@@ -4984,3 +4984,67 @@ img{
         border-radius: 5px;
         background: #000;
     }
+    .haver:hover{
+        color:#F37C21 !important; 
+       
+    }
+
+   .box-shad {
+        box-shadow: 3px 3px 3px 3px #c5c5e9;
+    }
+    .btn-color{
+        background-color:#F37C21 !important; 
+        color:#fff; 
+        border-radius:10px;
+
+    }
+    .btn-color:hover{
+        background-color:#f0ad4e !important; 
+        box-shadow: 1px 1px 1px 1px #f0ad4e;
+        color:#fff;
+        border-radius: 10px;
+    }
+    .view-btn:hover{
+        color:#F37C21 !important; 
+    }
+    
+    
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #fff;
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #fff;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+  .show{
+    background-color: #fff;
+  }

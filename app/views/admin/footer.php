@@ -1,5 +1,6 @@
 </div>
     </div>
+	
     <!-- ============================================================== -->
     <!-- footer -->
     <!-- ============================================================== -->
@@ -7,7 +8,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
-                     Copyright © 2020 <a href="https://colorlib.com/wp/">Electronic</a>  Ecommerce Site.
+                     Copyright © 2020 <a href="#" class="haver">Electronic</a>  Ecommerce Site.
                 </div>
                 <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="text-md-right footer-links d-none d-sm-block">

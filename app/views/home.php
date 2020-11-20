@@ -21,7 +21,7 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-<div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
+<div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light"  >
   <h3 class="titel">NEW ARRAIVALS</h3>
 </div>
 <div style="background: rgb(120,76,18);
@@ -30,8 +30,9 @@
   
 </div>
 </div>
-<div class="row mx-auto my-4 show ad-first "  >
-<div class="col-md-4 col-sm-4 col-xs-12 mx-auto mb-3 "> 
+
+<div class="row mx-auto my-4 show  ad-first"  >
+<div class="col-md-4 col-sm-4  col-xm-12 mx-auto mb-4 "> 
     <?php
  $rows=$data['adver'];
  $img='';
@@ -40,33 +41,15 @@
    $img=$row->adver_img;}
 
    if(empty($img))
-   {
-     echo ' <img class="card-img-top" height="150px" width="300px" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
+   { 
+     echo ' <img class="card-img-top" width="300px" height="150px" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
    }
    else 
-   echo '<img class="card-img-top" height="150px" width="300px" src="'.$img.'" alt="Card image cap">';
+   echo '<img class="card-img-top" width="300px" height="150px"  src="'.$img.'" alt="Card image cap">';
 
       ?>    <button class="btn btn-sm px-3">SHOP NOW</button>
   </div>
-
-  <div class="col-md-4 col-sm-4 col-xs-12 mx-auto mb-3 "> 
-    <?php
- $rows=$data['adver'];
- $img='';
- foreach ($rows as $row) {
-   if($row ->adver_namber==1)
-   $img=$row->adver_img;}
-
-   if(empty($img))
-   {
-     echo ' <img class="card-img-top" height="150px" width="300px" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
-   }
-   else 
-   echo '<img class="card-img-top" height="150px" width="300px" src="'.$img.'" alt="Card image cap">';
-
-      ?>    <button class="btn btn-sm px-3">SHOP NOW</button>
-  </div>
-    <div class="col-md-4 col-sm-4 col-xs-12 mx-auto mb-4 "> 
+    <div class="col-md-4 col-sm-4 col-xm-12 mx-auto mb-4 "> 
     <?php
  $rows=$data['adver'];
  $img='';
@@ -76,15 +59,34 @@
 
    if(empty($img))
    {
-     echo ' <img class="card-img-top" height="150px" width="300px" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
+     echo ' <img class="card-img-top" width="300px" height="150px" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
    }
    else 
-   echo '<img class="card-img-top" height="150px" width="300px" src="'.$img.'" alt="Card image cap">';
+   echo '<img class="card-img-top" src="'.$img.'" width="300px" height="150px" alt="Card image cap">';
+
+      ?>
+    <button class="btn btn-sm px-3">SHOP NOW</button>
+  </div> 
+  <div class="col-md-4 col-sm-4 col-xm-12 mx-auto mb-4 "> 
+    <?php
+ $rows=$data['adver'];
+ $img='';
+ foreach ($rows as $row) {
+   if($row ->adver_namber==2)
+   $img=$row->adver_img;}
+
+   if(empty($img))
+   {
+     echo ' <img class="card-img-top" width="300px" height="150px"  src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
+   }
+   else 
+   echo '<img class="card-img-top"  width="300px" height="150px" src="'.$img.'" alt="Card image cap">';
 
       ?>
     <button class="btn btn-sm px-3">SHOP NOW</button>
   </div> 
   </div>
+  
 <div class="mx-auto  my-4 py-2 col-md-12 col-sm-12 col-xs-12 text-center text-light" >
   <h3 class="titel">Featured Items</h3>
 </div>
@@ -94,8 +96,8 @@
 
 </div>
 </div>
-<div class="row mx-auto my-4 show ad-second" >
 
+<div class="row mx-auto my-4 show  ad-second"  >
 <div class="col-md-5 col-sm-5 mx-auto mb-4 "> 
     <?php
  $rows=$data['adver'];
@@ -106,15 +108,15 @@
 
    if(empty($img))
    {
-     echo ' <img class="card-img-top" height="200px" width="200px" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
+     echo ' <img class="card-img-top" width="200px" height="200px" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
    }
    else 
-   echo '<img class="card-img-top" height="200px" width="200px"  src="'.$img.'" alt="Card image cap">';
+   echo '<img class="card-img-top"  width="200px" height="200px"   src="'.$img.'" alt="Card image cap">';
 
       ?>
     <button class="btn btn-sm px-3">SHOP NOW</button>
-  </div> 
-    <div class="col-md-5 col-sm-5 mx-auto mb-4 "> 
+  </div>
+    <div class="col-md-5  col-sm-5 col-xm-12 mx-auto mb-3 ">
     <?php
  $rows=$data['adver'];
  $img='';
@@ -127,7 +129,8 @@
      echo ' <img class="card-img-top" height="200px" width="200px" src="/ElectronicEcommerce/app/assets/images/4ad.png" alt="Card image cap"> ';
    }
    else 
-   echo '<img class="card-img-top" height="200px" width="200px"  src="'.$img.'" alt="Card image cap">';
+   echo '<img class="card-img-top"    width="200px" height="200px"  src="'.$img.'" alt="Card image cap">';
+
 
       ?>
     <button class="btn btn-sm px-3">SHOP NOW</button>
@@ -139,7 +142,7 @@
    
     $(document).ready(function () {
       // loadHome({type:'recentally',id:null})
-       //loadHome({type:'featured',id:null})
+      // loadHome({type:'featured',id:null})
     })
 
     </script>
