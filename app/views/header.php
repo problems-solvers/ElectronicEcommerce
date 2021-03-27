@@ -104,7 +104,7 @@
                
                <span  style="color:#836691 ;font-size:16px;">
                <div class="w3-dropdown-hover bor">
-               <a href="#"> <img src="'.$_SESSION["user_img"].'" width="25px" height="25px" style="border-radius:100%;">
+               <a  class="nav-link mx-2" href="#"> <img src="'.$_SESSION["user_img"].'" width="25px" height="25px" style="border-radius:100%;">
                                                </a>
                                 <div class="w3-dropdown-content w3-bar-block w3-border men">
                                   

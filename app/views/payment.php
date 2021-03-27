@@ -33,13 +33,12 @@ if(isset($_SESSION['order_id'])==''){
             $rows=$data['products'];
                   foreach($rows as $row){
                    echo '<li class="list-group-item d-flex justify-content-between lh-condensed">
-                   <span class="text-muted justify-content-between my-4">'.$row->total_price.' $</span>
-                   <h6 class="my-4">'.$row->pro_name.'</h6>
+                   <span class="text-muted justify-content-between my-4">'.$row->pro_name.'</br>'.$row->total_price.' $</span>
                    <img class="d-block mb-2" src="'.$row->main_img.'" alt="" width="72" height="72">
                  </li>';
                   }?>
                <li class="list-group-item d-flex justify-content-between bg-light">
-                <span class="text-success"><?php
+                <span style="color:#29242D"><?php
                 $sum = 0;
                  $rows=$data['products'];
                  foreach($rows as $row){
@@ -47,7 +46,7 @@ if(isset($_SESSION['order_id'])==''){
                      $sum+= $row->total_price;
 
                    } echo $sum ?> $</span>
-                <div class="text-success">
+                <div style="color:#29242D">
                   <h6 class="my-0"></h6>Total
                 </div>
               </li>
@@ -129,7 +128,7 @@ if(isset($_SESSION['order_id'])==''){
      </div>
      </div>
 </div>
-<button type="button" name="next" id="next1" class="next action-button" value="Next" >Next</button>
+<button type="button" name="next" id="next1" class=" next action-button bt" value="Next" >Next</button>
           </fieldset>
       <fieldset>
         <div class="row container">
@@ -139,13 +138,12 @@ if(isset($_SESSION['order_id'])==''){
             $rows=$data['products'];
                   foreach($rows as $row){
                    echo '<li class="list-group-item d-flex justify-content-between lh-condensed">
-                   <span class="text-muted justify-content-between my-4">'.$row->total_price.' $</span>
-                   <h6 class="my-4">'.$row->pro_name.'</h6>
+                   <span class="text-muted justify-content-between my-4">'.$row->pro_name.'</br>'.$row->total_price.' $</span>
                    <img class="d-block mb-2" src="'.$row->main_img.'" alt="" width="72" height="72">
                  </li>';
                   }?>
                <li class="list-group-item d-flex justify-content-between bg-light">
-                <span class="text-success"><?php
+                <span style="color:#29242D"><?php
                 $sum = 0;
                  $rows=$data['products'];
                  foreach($rows as $row){
@@ -153,7 +151,7 @@ if(isset($_SESSION['order_id'])==''){
                      $sum+= $row->total_price;
 
                    } echo $sum ?> $</span>
-                <div class="text-success">
+                <div  style="color:#29242D">
                   <h6 class="my-0"></h6>Total
                 </div>
               </li>
@@ -243,20 +241,21 @@ if(isset($_SESSION['order_id'])==''){
 
               </div>
               </div>  
-         <input type="button" name="previous" class="previous action-button" value="Previous" /> 
+         <input type="button" name="previous" class="bt1  previous action-button" value="Previous" /> 
         <input type="button" name="next" id="next2" class="next action-button" value="Next" />
       </fieldset>
       <fieldset>
-        <h3>Products</h3>
+        <h3 style="color:#F37C21; font-weight:bold; opacity:70%;">Products</h3>
+        <div class="table-responsive ">
                   <table class="table table-hover">
                     <thead>
                         <tr>
                           
-                        <th>Product Image</th>
-                            <th>Product Name</th>
-                            <th>Quntity </th>
-                            <th class="text-center">Price</th>
-                            <th class="text-center">Total</th>
+                        <th  scope="col">Product Image</th>
+                            <th  scope="col">Product Name</th>
+                            <th  scope="col">Quntity </th>
+                            <th  scope="col" class="text-center">Price</th>
+                            <th  scope="col" class="text-center">Total</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -292,22 +291,49 @@ if(isset($_SESSION['order_id'])==''){
                         </tr>
                     </tbody>
                   </table>
-                
+                  </div>
                <div class="row">
-                 <div class="col-6">
-                   <style>
-                   
-                   </style>
-                 <div style="    border: 1px solid #836691;
-                 
-    border-radius: 20px;
-    padding: 10px;">
+                 <div class="col-xs-12 col-sm-12 col-md-6">
+                 <div style="    padding: 10px;">
                     <div class="text-center" >
-                    <h4>Address Information</h4>
+                    <h4 style="color:#F37C21; font-weight:bold; opacity:70%;">Address Information</h4>
                       </div>
                      
+       <table class="table text-left text-light" >
+<style>
+    .table td, .table th {
+    border-bottom: 1px solid #dee2e6;
+    border-top: none;
+    font-size:13px;
+    color:rgb(71, 71, 71);
+    }
+</style>
+                      <tbody>
+                          <tr>
+                          <th scope="row"  id="username3" ></th>
+                          <td></td>
+                          </tr>
+                          <tr>
+                          <th scope="row"  id="country3"></th>
+                          <td></td>
+                          </tr>
+                          <tr>
+                          <th scope="row"  id="city3" ></th>
+                          <td></td>
+                          </tr>
+                          <tr>
+                          <th scope="row" id="street3">Z</th>
+                          <td></td>
+                          </tr>
+                          <tr>
+                          <th scope="row" id="zip_id3"></th>
+                          <td></td>
+                          </tr>
+                      </tbody>
+                      </table>
+
                         <!-- <strong>ElectronicEcommerce</strong> -->
-                        <span class="ml-3" id="username3"></span>
+                        <!-- <span class="ml-3" id="username3"></span>
                         <br>
                         <span title="Phone" id="country3"></span> 
                         <br>
@@ -315,26 +341,54 @@ if(isset($_SESSION['order_id'])==''){
                          <br>
                           <span title="Phone" id="street3"></span> 
                           <br>
-                        <span title="Phone" id="zip_id3" class="ml-5"> </span>
+                        <span title="Phone" id="zip_id3" class="ml-5"> </span> -->
                      </div>
                  </div>
-                 <div class="col-6">
-                 <div style="    border: 1px solid #836691;
-                 
-                 border-radius: 20px;
+                 <div class="col-xs-12 col-sm-12 col-md-6">
+                 <div style=" 
                  padding: 10px;">
                     <div class="text-center">
-                    <h4>Payment Information</h4>
+                    <h4 style="color:#F37C21; font-weight:bold; opacity:70%;">Payment Information</h4>
                       </div> 
                         <!-- <strong>ElectronicEcommerce</strong> -->
-                        <span class="ml-3" id="bankid3"></span>
+                        <table class="table text-left text-light" >
+<style>
+    /* .table td, .table th {
+    border-bottom: 1px solid #dee2e6;
+    border-top: none;
+    font-size:12px;
+    color:rgb(71, 71, 71);
+
+    } */
+</style>
+                      <tbody>
+                          <tr>
+                          <th scope="row"id="bankid3" >Name : <?php  echo $product->full_name ;?></th>
+                          <td></td>
+                          </tr>
+                          <tr>
+                          <th scope="row"  id="expDate3">Bank Account : <?php  echo $product->userbank_id ;?></th>
+                          <td></td>
+                          </tr>
+                          <tr>
+                          <th scope="row"   id="fullName">Exp Date : <?php  echo $product->ex_date ;?></th>
+                          <td></td>
+                          </tr>
+                          <tr>
+                          <th scope="row"   id="total_price">Exp Date : <?php  echo $product->ex_date ;?></th>
+                         
+                          </tr>
+
+                      </tbody>
+                      </table>
+                        <!-- <span class="ml-3" id="bankid3"></span>
                         <br>
                         <span title="Phone" id="expDate3" ></span>
                         <br>
                         <span title="Phone" id="fullName" class="ml-5"></span>
                          <br>
                           <span title="Phone" id="total_price" ></span>
-                     
+                      -->
                     </div>
                  </div>
                </div>
@@ -494,7 +548,7 @@ if(isset($_SESSION['order_id'])==''){
                 global: true,
                 async: false,
                 dataType: 'json',
-               url: "electronic-bank.herokuapp.com/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date+"&totalPrice="+totalprice,
+               url: "http://localhost:5320/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date+"&totalPrice="+totalprice,
               
               })
               .done(function (response) {
@@ -572,7 +626,7 @@ if(isset($_SESSION['order_id'])==''){
                 //todo error message
 
                 swal({
-                     text: 'no account like this one..!',
+                     text: 'no connection to the bank somethings went wrong!',
                      });
               })  
               }
@@ -593,7 +647,7 @@ if(isset($_SESSION['order_id'])==''){
                type: "GET",
                 global: true,
                 dataType: 'json',
-              url: "electronic-bank.herokuapp.com/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date+"&totalPrice="+totalprice,
+              url: "http://localhost:5320/api/getcurrentaccount?userName="+full_name+"&BankNo="+bank_account+"&expDate="+Exp_date+"&totalPrice="+totalprice,
                   // success: function(result) {
                   // //  alert(data) 
                   // }
@@ -744,10 +798,9 @@ if(isset($_SESSION['order_id'])==''){
                global: true,
                async: false,
                dataType: 'json',
-               url: "electronic-bank.herokuapp.com/api/getcurrentaccount?userName="+full_name+"&BankNo="+userBank+"&expDate="+exp_date+"&totalPrice="+totalprice,
+               url: "http://localhost:5320/api/getcurrentaccount?userName="+full_name+"&BankNo="+userBank+"&expDate="+exp_date+"&totalPrice="+totalprice,
               
               })
-
               .done(function (response) {
                  if(response.available==false){
                    //to do error message
@@ -782,7 +835,7 @@ if(isset($_SESSION['order_id'])==''){
                 global: true,
                 async: false,
                 dataType: 'json',
-               url: "electronic-bank.herokuapp.com/api/InsertNewTransaction",
+               url: "http://localhost:5320/api/InsertNewTransaction",
                   data: {recievedAccount:recievedAccount,paiedAccount:userBank,createdAt:Date.now(),transReason:'buying from log store',money:totalprice},
               })
               .done(function (response) {

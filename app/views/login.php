@@ -24,7 +24,7 @@ $loginUrl = $helper->getLoginUrl($redirectTo, $data);
    
     <div class="mx-auto" >
       <!-- fieldsets -->
-      <fieldset class="col-md-8 order-md-1 mx-auto ">
+      <fieldset class="col-md-6 order-md-1 mx-auto ">
         <h2 class="fs-title" style="color:#836691; font-weight:bold;">LogIn</h2>
         <div class="row container">
 
@@ -59,14 +59,14 @@ $loginUrl = $helper->getLoginUrl($redirectTo, $data);
 <!-- <div id="snackbar">Some text some message..</div> -->
 
 
- <a href="http://localhost/ElectronicEcommerce/user/register" class="bt1 btn mx-3">register</a>
+ <a href="http://localhost/ElectronicEcommerce/user/register" class="bt1 pb-3 mx-3" style="background-color:white; border:2px #F37C21 solid;">register</a>
 
 
 </div>
 <H5>OR</H5>
-<div class=" d-flex justify-content-flex-around col-md-8 mx-auto  my-4  justify-content-between">
-<a  href="googlelogin"><img src="/ElectronicEcommerce/app/assets/images/loging.png"    width="150px"></a> 
-<a href=' <?php echo  $loginUrl ;?>'><img src="/ElectronicEcommerce/app/assets/images/loginfb.png"  width="150px"></a>
+<div class=" d-flex justify-content-flex-around col-md-6 mx-5 my-3  justify-content-between">
+<a  href="googlelogin" style=" border-radius: 4vh;"><img src="/ElectronicEcommerce/app/assets/images/loging.png"    width="150px" width="150px" style="border-radius: 4vh;"></a> 
+<a href=' <?php echo  $loginUrl ;?>' style=" border-radius: 4vh;"><img src="/ElectronicEcommerce/app/assets/images/loginfb.png"  width="150px"style=" border-radius: 4vh;"></a>
 </div>
 </form></div>
     

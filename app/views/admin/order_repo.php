@@ -51,8 +51,8 @@
     $index=$index+1; ?>
                                             <tr>
                                                 <td> <?php echo $index; ?> </td>
-                                                <td> <img scr="/ElectronicEcommerce/<?php echo $val->main_img; ?>"
-                                                        width="200px" hieght="200px" alt="Porduct image"> </td>
+                                                <td> <?php echo '<img scr="http://localhost/ElectronicEcommerce/'.$val->main_img.'"
+                                                        width="100px" height="100px" alt=""Porduct image">';?> </td>
 
                                                 <td> <?php echo $val->pro_name; ?> </td>
 
@@ -105,7 +105,7 @@
     $index=$index+1; ?>
                                             <tr>
                                                 <td> <?php echo $index; ?> </td>
-                                                <td> <img scr="/ElectronicEcommerce/<?php echo $val->main_img; ?>"
+                                                <td> <img scr="../<?php echo $val->main_img; ?>"
                                                         width="200px" hieght="200px" alt="Porduct image"> </td>
 
                                                 <td> <?php echo $val->pro_name; ?> </td>

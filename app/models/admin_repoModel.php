@@ -54,7 +54,7 @@ return $result;
        ->innerjoin("oreder_details","orders.order_id","oreder_details.order_id")
        ->innerjoin("user","address.user_id","user.user_id")
        ->orderBy("oreder_details.quentity","Asc")
-       ->limit(0,10)
+       ->limit(0,3)
        ->get()
        ->execute()
        ->fetch();
@@ -71,7 +71,7 @@ return $result;
        ->innerjoin("oreder_details","orders.order_id","oreder_details.order_id")
        ->innerjoin("user","address.user_id","user.user_id")
        ->orderBy("oreder_details.quentity","DESC")
-       ->limit(0,10)
+       ->limit(0,3)
        ->get()
        ->execute()
        ->fetch();

@@ -13,9 +13,12 @@
                         </ol>
                     </nav>
                 </div>
-            </div>
-<div class="container  form-card  col-lg-12 px-5">
-       
+            </div><div class="  form-card  col-lg-12 px-5">
+        <div class="row container " style=" margin-top:2%;margin-bottom:1%;"> 
+            <!-- <div class="col-md-10  mx-auto text-center">
+            <h3 class="fs-title my-2" style="color:#F37C21; font-weight:bold; opacity:65%"> Order Details </h3>
+            </div> -->
+            </div> 
     
     <div class="py-5 text-center">
     </div>
@@ -23,14 +26,15 @@
     <div style=" margin-top:-13%;">
       <!-- fieldsets -->
       <fieldset>
-        <h3 >Products</h3>
-                  <table class="table table-hover">
+        <h4 style="color:rgb(71, 71, 71); font-weight:bold;">Products</h4>
+                  <table class="table table-responsive table-hover" style="opacity:80%">
                     <thead>
                         <tr>
-                            <th >Product</th>
-                            <th>Quntity </th>
-                            <th>Price</th>
-                            <th >Total</th>
+                        <th style="color:#F37C21;">Product Image</th>
+                            <th style="color:#F37C21;">Product Name</th>
+                            <th style="color:#F37C21;">Quntity </th>
+                            <th class="text-center" style="color:#F37C21;">Price</th>
+                            <th class="text-center"style="color:#F37C21;">Total</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,25 +49,31 @@
                       //print_r($pro);
                      ?>
                         <tr>
-                            <td class="col-md-9">
+                        <td style="vertical-align:center;">
                             <img class="d-block mb-2" src="<?php echo $product->main_img; ?>" alt="" width="72" height="72">
-                            <em><?php echo $product->pro_name; ?></em></h4>
                             </td>
-                            <td class="col-md-1" style="text-align: center"> <?php echo $product->quentity; ?> </td>
-                            <td class="col-md-1 text-center"><?php echo $product->pro_price; ?></td>
-                            <td class="col-md-1 text-center"><?php echo $product->total_price; ?></td>
-                        </tr>
+                            <td style="vertical-align:center;">
+                             <p><?php echo $product->pro_name; ?></p></h4>
+                            </td>
+                            <td  style="text-align: center; vertical-align:center;" > <?php echo $product->quentity; ?> </td>
+                            <td class=" text-center" style="vertical-align:center;"><?php echo $product->pro_price; ?> $</td>
+                            <td class=" text-center" style="vertical-align:center;"><?php echo $product->total_price; ?> $</td>
+                       </tr>
                         <?php $sum=$sum+$product->total_price;} ?>
-                        <tr>
+                        <tr class="text-center">
+                        <td>   </td>
                             <td>   </td>
                             <td>   </td>
-                            <td class="text-right">
-                                ToTal: <?php echo $sum;?>
+                            <td class="text-center" style="color:rgb(71, 71, 71); ; font-weight:bold;">
+                                ToTal:
                             </td>
+                
+                
                             <td class="text-right">
-                                <strong id="tblTotalPrice"> </strong>
+                                <strong id="tblTotalPrice"> <?php echo $sum;?> </strong>
                             </td>
                             
+
                         </tr>
                     </tbody>
                   </table>
@@ -71,52 +81,90 @@
                <div class="row text-center">
                  <div class="col-6">
                  <address >
-                    <div class="text-center">
-                    <h3 >Address Information</h3>
+                 <div class="text-left" style="margin-top:20px;">
+                    <h5 style="color:#F37C21; font-weight:bold; opacity:70%;">Address Information</h5>
                       </div>
-                     <?php 
-                       $ord=$data['orders'];
-                       $index=0;
-                      
-                     //print_r($ord);
-                     $sum=0;
-                     foreach($ord as $product){
-                     ?>
-                        <!-- <strong>ElectronicEcommerce</strong> -->
-                        <span title="Phone" id="zip_id3" >Full Name : <?php  echo $product->user_name;?> </span><br>
-
-<span  id="username3">Country : <?php  echo $product->country;?></span><br>
-<span title="Phone" id="country3">City : <?php  echo $product->city;?></span> <br>
- 
-<span title="Phone" id="city3" >Street: <?php  echo $product->country;?> </span><br>
- 
-  <span title="Phone" id="street3">Zip_id : <?php  echo $product->zip_id;?></span> <br>
-<?php }?>
-                  </address>
-                 </div>
-                 <div class="col-6">
-                 <address >
-                    <div class="text-center">
-                    <h3 >Payment Information</h3>
-                      </div> 
                       <?php 
                        $ord=$data['orders'];
                        $index=0;
                       
                      //print_r($ord);
                      $sum=0;
-                     foreach($ord as $product){
                      ?>
-                        <!-- <strong>ElectronicEcommerce</strong> -->
-                        <span title="Phone" id="zip_id3" >Full Name : <?php  echo $product->full_name ;?> </span><br>
+       <table class="table text-left text-light" >
+<style>
+    .table td, .table th {
+    border-bottom: 1px solid #dee2e6;
+    border-top: none;
+    font-size:13px;
+    color:rgb(71, 71, 71);
+    }
+</style>
+                      <tbody>
+                          <tr>
+                          <th scope="row" id="zip_id3" >Full Name : <?php  echo $product->user_name;?></th>
+                          <td></td>
+                          </tr>
+                          <tr>
+                          <th scope="row"  id="username3">Country : <?php  echo $product->country;?></th>
+                          <td></td>
+                          </tr>
+                          <tr>
+                          <th scope="row"  id="city3" >Street: <?php  echo $product->street;?></th>
+                          <td></td>
+                          </tr>
+                          <tr>
+                          <th scope="row" id="street3">Zip_id : <?php  echo $product->zip_id;?></th>
+                          <td></td>
+                          </tr>
+                      </tbody>
+                      </table>
 
-<span  id="username3">Bank Account : <?php  echo $product->userbank_id ;?></span><br>
-<span title="Phone" id="country3">Exp Date : <?php  echo $product->ex_date ;?></span> <br>
- 
- 
-<?php }?>
-                     
                   </address>
+                 </div>
+                 <div class="col-6">
+
+                 <address >
+                 <div class="text-left" style="margin-top:20px;">
+                    <h5 style="color:#F37C21; font-weight:bold; opacity:70%;">Payment Information</h5>
+                      </div>
+                      <?php 
+                       $ord=$data['orders'];
+                       $index=0;
+                      
+                     //print_r($ord);
+                     $sum=0;
+                     ?>
+       <table class="table text-left text-light" >
+<style>
+    .table td, .table th {
+    border-bottom: 1px solid #dee2e6;
+    border-top: none;
+    font-size:12px;
+    color:rgb(71, 71, 71);
+
+    }
+</style>
+                      <tbody>
+                          <tr>
+                          <th scope="row"id="zip_id3" >Name : <?php  echo $product->full_name ;?></th>
+                          <td></td>
+                          </tr>
+                          <tr>
+                          <th scope="row"  id="username3">Bank Account : <?php  echo $product->userbank_id ;?></th>
+                          <td></td>
+                          </tr>
+                          <tr>
+                          <th scope="row"   id="country3">Exp Date : <?php  echo $product->ex_date ;?></th>
+                          <td></td>
+                          </tr>
+
+                      </tbody>
+                      </table>
+
+                  </div>
+                  </address>
+
                  </div>
                </div>
                   

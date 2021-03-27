@@ -1,7 +1,7 @@
 
 <div id="carouselExampleIndicators" class=" col-md-12 col-sm-12 col-xs-12 mx-0 px-0 carousel slide"  data-ride="carousel">
 
-  <div class="carousel-inner " style="height:500px; ">
+  <div class="carousel-inner " style="max-height:500px; ">
     <div class="carousel-item active ">
       <img class="d-block w-100 " src="/ElectronicEcommerce/app/assets/images/3ad.png" alt="First slide">
     </div>

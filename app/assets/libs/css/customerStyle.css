@@ -947,9 +947,10 @@ text-align: center;
   }
   }
 
+.form-control.active,
 .form-control:hover,
 .form-card:focus {
-  border: 5px solid #836691;
+  border: 1px solid #836691;
 }
 
 .bor{

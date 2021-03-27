@@ -28,6 +28,9 @@
                         <tr>
                             <th class="th-sm">#
                             </th>
+                            <th class="th-sm"> Image
+                            </th>
+                            </th>
                             <th class="th-sm">Product Name
                             </th>
                             <th class="th-sm">Price
@@ -54,9 +57,9 @@ $active="Inactive";
 echo "
 <tr>
 <td>$index</td>
-        <td class='col-3'><img width='50px' height='50px' class='rounded col-4' src='../$row->main_img' width='70'>
+        <td class=''><img width='100px' height='100px' class='rounded col-4' src='../$row->main_img' width='70'>
         
-        $row->pro_name</td>
+       </td><td> $row->pro_name</td>
 <td>$row->pro_price $</td>
 <td>$row->pro_quentity</td>
 <td>$active</td>

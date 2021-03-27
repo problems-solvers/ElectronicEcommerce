@@ -97,60 +97,7 @@ $order=$data['order'];
                <!-- ============================================================== -->
                     <!-- top selling products  -->
                     <!-- ============================================================== -->
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 px-5 ">
-                        <div class="card box-shad">
-                            <h5 class="card-header">Top Order </h5>
-                            <div class="card-body p-0 text-center">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead class="bg-light">
-                                            <tr class="border-0">
-                                                <th class="border-0">#</th>
-                                                <th class="border-0">Order Date</th>
-                                                <th class="border-0">Deliver Date</th>
-                                                <th class="border-0">Total Price</th>
-                                                <th class="border-0">Order Status</th>
-                                                <th class="border-0">Customer</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php
-  $ord=$data['orders'];
-  $index=0;  
-  foreach($ord as $or){
-    $index=$index+1; ?>
-                                   <tr>      <td> <?php echo $index; ?> </td>
-    <td> <?php echo $or->start_date; ?> </td>
-    <td> <?php echo $or->end_date; ?> </td>
-    <td><?php echo $or->total_price; ?></td>
-    <td> <?php $status='';
-    if($or->order_status==1)
-                   $status="In Prograss" ;
-    
-            else if($or->order_status==2) 
-            $status="Delivered " ;
-
-            echo $status; ?> </td>
-            <td> <?php echo $or->first_name.' '.$or->last_name; ?></td>
-
-                                            </tr>
-                                            
-                                           
-                                         
-                                            <?php } ?>
-                                            <tr>
-                                                <td colspan="8"><a href="http://localhost/ElectronicEcommerce/admin/admin_orders" class="btn btn-outline-light float-right  mx-auto btn-color">View Details</a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ============================================================== -->
-                    <!-- end top selling products  -->
-                    <!-- ============================================================== -->
-         
+                   
                <!-- ============================================================== -->
                     <!-- last user  -->
                     <!-- ============================================================== -->

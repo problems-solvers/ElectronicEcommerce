@@ -137,22 +137,76 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
+                            <?php
+                          $url=isset($_GET['url'])?$_GET['url']:"home";
+                          
+                          $admin_dashboard='';
+                          $admin_repo='';
+                          $admin_cust='';
+                          $userchart='';
+                          $admin_cat='';
+                          $admin_product='';
+                          $admin_orders='';
+                          $admin_offers='';
+                          if($url=='home'){
+                          $home='active';
+                          
+                          }
+                          if($url=='admin/admin_dashboard'){
+                              $admin_dashboard='active';  
+                           }
+                           if($url=='admin/admin_repo'){
+                            $admin_repo='active';  
+                         }
+                           if($url=='admin/admin_repo/custOrder'){
+                            $admin_repo='active';  
+                           }
+                           if($url=='admin/admin_repo/chart'){
+                            $admin_repo='active';  
+                           }
+
+                           if($url=='admin/admin_repo/productchart'){
+                            $admin_repo='active';  
+                           }
+                           if($url=='admin/admin_repo/userchart'){
+                            $admin_repo='active';  
+                           }
+                           if($url=='admin/admin_cust'){
+                            $admin_cust='active';  
+                           }
+                           if($url=='admin_advertiment/add_adver'){
+                            $admin_repo='active';  
+                           }
+                           if($url=='admin/admin_cat'){
+                            $admin_cat='active';  
+                           }
+                           if($url=='admin/admin_product'){
+                              $admin_product='active';  
+                           }
+                           if($url=='admin/admin_orders'){
+                            $admin_orders='active';  
+                         }
+                         if($url=='admin/admin_offers'){
+                            $admin_offers='active';  
+                         }
+                           
+                          ?>
                             <div class="collapse navbar-collapse" id="navbarNav">
                                 <ul class="navbar-nav flex-column">
                                     <li class="nav-divider">
                                         Menu
                                     </li>
+                         
                                     <li class="nav-item ">
-                                        <a class="nav-link active" href="http://localhost/ElectronicEcommerce/admin/admin_dashboard"><i class="fa fa-fw fa-user-circle"></i>Dashboard<span class="badge badge-success">6</span></a>
+                                        <a class="nav-link <?php echo $admin_dashboard ?>" href="http://localhost/ElectronicEcommerce/admin/admin_dashboard"><i class="fa fa-fw fa-user-circle"></i>Dashboard<span class="badge badge-success">6</span></a>
                                     </li>
-                                    
-
+                          
                                     <li class="nav-item">
-                                    <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2"><i class="fas fa-fw fa-chart-pie"></i>Reports</a>
+                                    <a class="nav-link " href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2"><i class="fas fa-fw fa-chart-pie"></i>Reports</a>
                                             <div id="submenu-1-2" class="collapse submenu" style="">
                                                 <ul class="nav flex-column">
                                                     <li class="nav-item">
-                                                    <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_repo/"><i class="fa fa-file"></i>Products</a>
+                                                    <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_repo"><i class="fa fa-file"></i>Products</a>
                                                     </li>
                                                     <li class="nav-item">
                                                     <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_repo/custOrder"><i class="fa fa-file"></i>Customer</a>
@@ -164,35 +218,39 @@ echo "<script type='text/javascript'>window.location.href = 'http://localhost/El
                                                     <li class="nav-item">
                                                     <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_repo/productchart"><i class="fa fa-file"></i>Categories</a>
                                                     </li>
+                                                    <li class="nav-item">
+                                                    <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_repo/userchart"><i class="fa fa-file"></i>Users</a>
+                                                    </li>
                                                    
                                                 </ul>
                                             </div>
                                         </li>
+                                                 
                                     <li class="nav-item ">
-                                        <a class="nav-link" href="#"><i class="fab fa-fw fa-wpforms"></i>Users and Roles</a>
+                                        <a class="nav-link " href="#"><i class="fab fa-fw fa-wpforms"></i>Users and Roles</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_cust/"><i class="fas fa-fw fa-table"></i>Customers</a>
+                                        <a class="nav-link <?php echo $admin_cust ?>" href="http://localhost/ElectronicEcommerce/admin/admin_cust"><i class="fas fa-fw fa-table"></i>Customers</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_advertiment/add_adver"><i class="fas fa-fw fa-table"></i>Advertisment</a>
+                                        <a class="nav-link <?php echo $add_adver ?>" href="http://localhost/ElectronicEcommerce/admin/admin_advertiment/add_adver"><i class="fas fa-fw fa-table"></i>Advertisment</a>
                                     </li>
                                     <li class="nav-divider">
                                         Products Management
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_cat"><i class="fas fa-fw fa-file"></i> Categories and Tags </a>
+                                        <a class="nav-link <?php echo $admin_cat ?>" href="http://localhost/ElectronicEcommerce/admin/admin_cat"><i class="fas fa-fw fa-file"></i> Categories and Tags </a>
                                       
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_product"><i class="fas fa-fw fa-inbox"></i>Products <span class="badge badge-secondary">New</span></a>
+                                        <a class="nav-link <?php echo $admin_product ?>" href="http://localhost/ElectronicEcommerce/admin/admin_product"><i class="fas fa-fw fa-inbox"></i>Products <span class="badge badge-secondary">New</span></a>
                                     </li>
                                    
                                     <li class="nav-item">
-                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_orders"><i class="fas fa-fw fa-map-marker-alt"></i>Orders</a>
+                                        <a class="nav-link <?php echo $admin_orders ?>" href="http://localhost/ElectronicEcommerce/admin/admin_orders"><i class="fas fa-fw fa-map-marker-alt"></i>Orders</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="http://localhost/ElectronicEcommerce/admin/admin_offers"><i class="fas fa-fw fa-map-marker-alt"></i>Offers</a>
+                                        <a class="nav-link  <?php echo $admin_offers ?>" href="http://localhost/ElectronicEcommerce/admin/admin_offers"><i class="fas fa-fw fa-map-marker-alt"></i>Offers</a>
                                     </li>
                                     
                                 </ul>
